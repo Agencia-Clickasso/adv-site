@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react"
+import { MapPin, Phone, Mail, Instagram, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -21,13 +21,10 @@ export default function Footer() {
                 experiência e compromisso com a excelência.
               </p>
               <div className="flex space-x-4">
-                <Link href="#" className="text-slate-400 hover:text-amber-400 transition-colors">
-                  <Facebook className="h-6 w-6" />
-                </Link>
-                <Link href="#" className="text-slate-400 hover:text-amber-400 transition-colors">
+                <Link href="https://www.instagram.com/lucimeirexavieradvocacia/" className="text-slate-400 hover:text-amber-400 transition-colors">
                   <Instagram className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="text-slate-400 hover:text-amber-400 transition-colors">
+                <Link href="https://www.linkedin.com/in/lucimeire-xavier-b8b18aa0/" className="text-slate-400 hover:text-amber-400 transition-colors">
                   <Linkedin className="h-6 w-6" />
                 </Link>
               </div>
@@ -73,19 +70,19 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-3 text-amber-400" />
-                  <span className="text-sm">(11) 9999-8888</span>
+                  <span className="text-sm">(11) 96758-6911</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-amber-400" />
-                  <span className="text-sm">contato@lucimeirexavier.com.br</span>
+                  <span className="text-sm">contato@lucimeirexavieradvocacia.adv.br</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 Lucimeire Xavier Advocacia. Todos os direitos reservados.</p>
-            <p className="mt-2 text-sm">OAB/SP 123.456 | CNPJ: 12.345.678/0001-90</p>
+            <p>&copy; {new Date().getFullYear()} Lucimeire Xavier Advocacia. Todos os direitos reservados.</p>
+            <p className="mt-2 text-sm">OAB/SP 508937</p>
           </div>
         </div>
       </footer>

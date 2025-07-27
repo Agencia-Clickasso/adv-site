@@ -67,9 +67,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold mb-1">Telefone</h4>
                     <p className="text-slate-300">
-                      (11) 9999-8888
-                      <br />
-                      (11) 3333-4444
+                      (11) 96758-6911
                     </p>
                   </div>
                 </div>
@@ -78,7 +76,7 @@ export default function Contact() {
                   <Mail className="h-6 w-6 text-amber-400 mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">E-mail</h4>
-                    <p className="text-slate-300">contato@lucimeirexavier.com.br</p>
+                    <p className="text-slate-300">contato@lucimeirexavieradvocacia.adv.br</p>
                   </div>
                 </div>
 
