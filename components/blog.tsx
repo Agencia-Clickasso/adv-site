@@ -1,33 +1,11 @@
 import { Calendar, ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { getSortedPostsData } from "@/lib/blog"
+import Link from "next/link"
 
 export default function Blog() {
-  const posts = [
-    {
-      title: "Mudanças na Lei Trabalhista: O que Você Precisa Saber",
-      excerpt:
-        "Análise das principais alterações na legislação trabalhista e seus impactos para empregadores e empregados.",
-      date: "15 de Janeiro, 2024",
-      readTime: "5 min de leitura",
-      category: "Direito Trabalhista",
-    },
-    {
-      title: "Contratos Empresariais: Cláusulas Essenciais",
-      excerpt: "Guia completo sobre as cláusulas mais importantes que não podem faltar em contratos comerciais.",
-      date: "10 de Janeiro, 2024",
-      readTime: "7 min de leitura",
-      category: "Direito Empresarial",
-    },
-    {
-      title: "Direitos do Consumidor: Como Se Proteger",
-      excerpt:
-        "Conheça seus direitos como consumidor e saiba como proceder em casos de problemas com produtos e serviços.",
-      date: "5 de Janeiro, 2024",
-      readTime: "4 min de leitura",
-      category: "Direito Civil",
-    },
-  ]
+  const posts = getSortedPostsData()
 
   return (
     <section id="blog" className="py-20 bg-custom-bg-secondary">
@@ -46,7 +24,11 @@ export default function Blog() {
                 <CardHeader>
                   <div className="flex items-center text-sm text-custom-text-primary mb-2">
                     <Calendar className="h-4 w-4 mr-2" />
-                    {post.date}
+                    {new Date(post.date).toLocaleDateString('pt-BR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
                   </div>
                   <div className="text-xs text-custom-text-primary mb-3 uppercase tracking-wide">{post.category}</div>
                   <CardTitle className="text-xl text-custom-text-secondary leading-tight">{post.title}</CardTitle>
@@ -55,9 +37,11 @@ export default function Blog() {
                 <CardContent>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-custom-text-primary">{post.readTime}</span>
-                    <Button variant="ghost" size="sm" className="text-custom-text-primary hover:text-custom-text-secondary">
-                      Ler mais <ArrowRight className="h-4 w-4 ml-1" />
-                    </Button>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button variant="ghost" size="sm" className="text-custom-text-primary hover:text-custom-text-secondary">
+                        Ler mais <ArrowRight className="h-4 w-4 ml-1" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -65,13 +49,15 @@ export default function Blog() {
           </div>
 
           <div className="text-center">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary bg-transparent"
-            >
-              Ver Todos os Artigos
-            </Button>
+            <Link href="#blog">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary bg-transparent"
+              >
+                Ver Todos os Artigos
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
