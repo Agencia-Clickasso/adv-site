@@ -64,10 +64,10 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contato</h3>
               <div className="space-y-3 text-slate-300">
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <MapPin className="h-5 w-5 mr-3 text-amber-400" />
                   <span className="text-sm">Rua das Flores, 123 - São Paulo, SP</span>
-                </div>
+                </div> */}
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-3 text-amber-400" />
                   <span className="text-sm">(11) 96758-6911</span>

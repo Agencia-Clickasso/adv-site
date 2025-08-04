@@ -48,7 +48,7 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-8">Informações de Contato</h3>
 
               <div className="space-y-6 mb-8">
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-amber-400 mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Endereço</h4>
@@ -60,7 +60,7 @@ export default function Contact() {
                       CEP: 01234-567
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 text-amber-400 mr-4 mt-1" />
