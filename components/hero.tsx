@@ -22,7 +22,7 @@ export default function Hero() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 text-lg"
             >
-              <Link href="#contact">Agendar Consulta Gratuita</Link>
+              <Link href="#contact">Agendar Consulta</Link>
             </Button>
             <Button
               asChild

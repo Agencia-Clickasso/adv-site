@@ -38,7 +38,7 @@ export default function Contact() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Estamos prontos para ajudá-lo. Agende uma consulta gratuita e descubra como podemos resolver sua questão
+              Estamos prontos para ajudá-lo. Agende uma consulta e descubra como podemos resolver sua questão
               jurídica.
             </p>
           </div>
