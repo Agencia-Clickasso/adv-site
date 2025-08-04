@@ -60,7 +60,7 @@ export default function About() {
                     href="https://repositorio-api.animaeducacao.com.br/server/api/core/bitstreams/7f34702a-53ac-4367-b201-9fabd77e8a29/content" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-sm text-custom-text-primary hover:text-custom-text-secondary underline"
+                    className="text-sm text-[#B80618] hover:text-[#B80618]/80 underline"
                   >
                     📄 Acessar TCC Completo
                   </a>
