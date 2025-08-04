@@ -49,7 +49,7 @@ export default function Blog() {
           </div>
 
           <div className="text-center">
-            <Link href="#blog">
+            <Link href="/blog">
               <Button
                 variant="outline"
                 size="lg"
