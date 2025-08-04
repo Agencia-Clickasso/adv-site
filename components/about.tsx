@@ -55,7 +55,15 @@ export default function About() {
                     Este estudo aprofundou-se na análise de como o incentivo fiscal Drawback influencia positivamente 
                     as exportações do setor avícola brasileiro, contribuindo para a competitividade internacional e o crescimento econômico.
                   </p>
-                  <p className="text-sm text-gray-400">Período: nov de 2022 - nov de 2023</p>
+                  <p className="text-sm text-gray-400 mb-3">Período: nov de 2022 - nov de 2023</p>
+                  <a 
+                    href="https://repositorio-api.animaeducacao.com.br/server/api/core/bitstreams/7f34702a-53ac-4367-b201-9fabd77e8a29/content" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-red-500 hover:text-red-400 underline"
+                  >
+                    📄 Acessar TCC Completo
+                  </a>
                 </div>
 
                 <div className="ml-9">
