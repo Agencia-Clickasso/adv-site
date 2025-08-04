@@ -36,6 +36,14 @@ export default function About() {
                   </div>
                 </div>
                 
+                <div className="flex items-start space-x-3">
+                  <GraduationCap className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-white">UNISC</h4>
+                    <p className="text-sm text-gray-400">Pós graduada em Direito Tributário (2024 - 2025)</p>
+                  </div>
+                </div>
+                
                 <div className="ml-9">
                   <h5 className="font-medium text-white mb-2">Trabalho de Conclusão de Curso</h5>
                   <p className="text-sm text-gray-300 mb-3">
