@@ -17,11 +17,11 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <Image
-                src="/placeholder.svg?height=500&width=400"
+                src="/profile-photo.jpeg"
                 alt="Dra. Lucimeire Xavier"
                 width={400}
                 height={500}
-                className="rounded-lg shadow-lg w-full"
+                className="rounded-lg shadow-lg w-full object-cover"
               />
             </div>
             <div>
