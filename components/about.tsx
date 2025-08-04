@@ -26,23 +26,25 @@ export default function About() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Formação e Experiência</h3>
-              <div className="space-y-4 text-gray-300">
-                <div className="flex items-start space-x-3">
-                  <GraduationCap className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-white">Universidade São Judas Tadeu</h4>
-                    <p className="text-sm text-gray-400">Acadêmica de Direito (2019 - 2023)</p>
-                    <p className="text-sm text-gray-400">Nota: 10</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3">
+
+              <div className="flex items-start space-x-3">
                   <GraduationCap className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-white">UNISC</h4>
                     <p className="text-sm text-gray-400">Pós graduada em Direito Tributário (2024 - 2025)</p>
                   </div>
                 </div>
+
+              <div className="space-y-4 text-gray-300">
+                <div className="flex items-start space-x-3">
+                  <GraduationCap className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-white">Universidade São Judas Tadeu</h4>
+                    <p className="text-sm text-gray-400">Bacharela em Direito (2019 - 2023)</p>
+                    <p className="text-sm text-gray-400">Nota: 10</p>
+                  </div>
+                </div>
+                
                 
                 <div className="ml-9">
                   <h5 className="font-medium text-white mb-2">Trabalho de Conclusão de Curso</h5>
@@ -57,8 +59,12 @@ export default function About() {
                 </div>
 
                 <div className="ml-9">
-                  <h5 className="font-medium text-white mb-2">Cursos de Extensão e Projetos</h5>
-                  <ul className="text-sm text-gray-300 space-y-1">
+                  <div className="flex items-start space-x-3 mb-2">
+                    <BookOpen className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
+                    <h5 className="font-medium text-white">Cursos de Extensão e Projetos</h5>
+                  </div>
+                  <ul className="text-sm text-gray-300 space-y-1 ml-8">
+                    <li>• Curso "Universo Tributário: teoria e prática descomplicadas" (45h) - CEISC (2024-2025)</li>
                     <li>• Projeto de Extensão "Propostas para integração de imigrantes e refugiados" (80h) - USTJ</li>
                     <li>• Curso "Tópicos aprofundados de Teoria Penal e crimes em espécie" (24h) - USJT</li>
                     <li>• Curso "Introdução às Ciências Penais" (24h) - USJT</li>
