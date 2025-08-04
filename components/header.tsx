@@ -19,7 +19,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800">
+    <header className="fixed top-0 w-full bg-custom-bg-secondary/95 backdrop-blur-sm z-50 border-b border-custom-bg-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center">
@@ -38,7 +38,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-amber-100 hover:text-amber-300 transition-colors duration-200 font-medium"
+                className="text-custom-text-secondary hover:text-custom-text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
               </Link>
@@ -46,7 +46,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6">
+            <Button asChild className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-6">
               <Link href="#contact">Agendar Consulta</Link>
             </Button>
           </div>
@@ -54,23 +54,23 @@ export default function Header() {
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden text-amber-100">
+              <Button variant="ghost" size="icon" className="md:hidden text-custom-text-secondary">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-slate-900 border-slate-800">
+            <SheetContent side="right" className="bg-custom-bg-secondary border-custom-bg-primary">
               <div className="flex flex-col space-y-6 mt-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-amber-100 hover:text-amber-300 transition-colors duration-200 font-medium text-lg"
+                    className="text-custom-text-secondary hover:text-custom-text-primary transition-colors duration-200 font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white font-semibold mt-4">
+                <Button asChild className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold mt-4">
                   <Link href="#contact" onClick={() => setIsOpen(false)}>
                     Agendar Consulta
                   </Link>

@@ -42,12 +42,12 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="py-20 bg-slate-50">
+    <section id="services" className="py-20 bg-custom-bg-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Áreas de Atuação</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Áreas de Atuação</h2>
+            <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
               Oferecemos serviços jurídicos especializados em diversas áreas do direito, sempre com foco na excelência e
               resultados efetivos.
             </p>
@@ -57,15 +57,15 @@ export default function Services() {
             {services.map((service, index) => (
               <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-amber-600 mb-4" />
-                  <CardTitle className="text-xl text-slate-900">{service.title}</CardTitle>
-                  <CardDescription className="text-slate-600">{service.description}</CardDescription>
+                  <service.icon className="h-12 w-12 text-custom-text-primary mb-4" />
+                  <CardTitle className="text-xl text-custom-text-secondary">{service.title}</CardTitle>
+                  <CardDescription className="text-custom-text-primary">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-slate-700">
-                        <div className="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>
+                      <li key={featureIndex} className="flex items-center text-sm text-custom-text-primary">
+                        <div className="w-2 h-2 bg-custom-text-primary rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}

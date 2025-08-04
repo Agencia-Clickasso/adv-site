@@ -30,12 +30,12 @@ export default function Blog() {
   ]
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-custom-bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Insights Jurídicos</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Insights Jurídicos</h2>
+            <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
               Mantenha-se informado com nossos artigos sobre as principais mudanças e tendências do mundo jurídico.
             </p>
           </div>
@@ -44,18 +44,18 @@ export default function Blog() {
             {posts.map((post, index) => (
               <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
-                  <div className="flex items-center text-sm text-amber-600 mb-2">
+                  <div className="flex items-center text-sm text-custom-text-primary mb-2">
                     <Calendar className="h-4 w-4 mr-2" />
                     {post.date}
                   </div>
-                  <div className="text-xs text-slate-500 mb-3 uppercase tracking-wide">{post.category}</div>
-                  <CardTitle className="text-xl text-slate-900 leading-tight">{post.title}</CardTitle>
-                  <CardDescription className="text-slate-600">{post.excerpt}</CardDescription>
+                  <div className="text-xs text-custom-text-primary mb-3 uppercase tracking-wide">{post.category}</div>
+                  <CardTitle className="text-xl text-custom-text-secondary leading-tight">{post.title}</CardTitle>
+                  <CardDescription className="text-custom-text-primary">{post.excerpt}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-500">{post.readTime}</span>
-                    <Button variant="ghost" size="sm" className="text-amber-600 hover:text-amber-700">
+                    <span className="text-sm text-custom-text-primary">{post.readTime}</span>
+                    <Button variant="ghost" size="sm" className="text-custom-text-primary hover:text-custom-text-secondary">
                       Ler mais <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
                   </div>
@@ -68,7 +68,7 @@ export default function Blog() {
             <Button
               variant="outline"
               size="lg"
-              className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white bg-transparent"
+              className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary bg-transparent"
             >
               Ver Todos os Artigos
             </Button>

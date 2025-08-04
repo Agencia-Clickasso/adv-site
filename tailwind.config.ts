@@ -77,6 +77,10 @@ const config: Config = {
           800: "#92400e",
           900: "#78350f",
         },
+        'custom-text-primary': '#CEA785',
+        'custom-text-secondary': '#FEFBD7',
+        'custom-bg-primary': '#1A212B',
+        'custom-bg-secondary': '#111721',
       },
       borderRadius: {
         lg: "var(--radius)",

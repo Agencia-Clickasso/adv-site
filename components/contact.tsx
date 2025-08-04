@@ -32,12 +32,12 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-slate-900 text-white">
+    <section id="contact" className="py-20 bg-custom-bg-primary text-custom-text-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
               Estamos prontos para ajudá-lo. Agende uma consulta e descubra como podemos resolver sua questão
               jurídica.
             </p>
@@ -49,10 +49,10 @@ export default function Contact() {
 
               <div className="space-y-6 mb-8">
                 {/* <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-amber-400 mr-4 mt-1" />
+                  <MapPin className="h-6 w-6 text-custom-text-primary mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Endereço</h4>
-                    <p className="text-slate-300">
+                    <p className="text-custom-text-primary">
                       Rua das Flores, 123, Sala 456
                       <br />
                       Centro - São Paulo, SP
@@ -63,28 +63,28 @@ export default function Contact() {
                 </div> */}
 
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-amber-400 mr-4 mt-1" />
+                  <Phone className="h-6 w-6 text-custom-text-primary mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Telefone</h4>
-                    <p className="text-slate-300">
+                    <p className="text-custom-text-primary">
                       (11) 96758-6911
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-amber-400 mr-4 mt-1" />
+                  <Mail className="h-6 w-6 text-custom-text-primary mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">E-mail</h4>
-                    <p className="text-slate-300">contato@lucimeirexavieradvocacia.adv.br</p>
+                    <p className="text-custom-text-primary">contato@lucimeirexavieradvocacia.adv.br</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <Clock className="h-6 w-6 text-amber-400 mr-4 mt-1" />
+                  <Clock className="h-6 w-6 text-custom-text-primary mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Horário de Atendimento</h4>
-                    <p className="text-slate-300">
+                    <p className="text-custom-text-primary">
                       Segunda a Sexta: 8h às 18h
                       <br />
                       Sábado: 8h às 12h
@@ -94,7 +94,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <Card className="bg-white text-slate-900">
+            <Card className="bg-custom-bg-secondary text-custom-text-secondary">
               <CardHeader>
                 <CardTitle>Agende sua Consulta</CardTitle>
                 <CardDescription>Preencha o formulário abaixo e entraremos em contato em até 24 horas.</CardDescription>
@@ -157,7 +157,7 @@ export default function Contact() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3"
+                    className="w-full bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold py-3"
                   >
                     Enviar Mensagem
                   </Button>
