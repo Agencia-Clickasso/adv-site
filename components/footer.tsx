@@ -24,7 +24,7 @@ export default function Footer() {
                 <Link href="https://www.instagram.com/lucimeirexavieradvocacia/" className="text-custom-text-primary hover:text-custom-text-secondary transition-colors">
                   <Instagram className="h-6 w-6" />
                 </Link>
-                <Link href="https://www.linkedin.com/in/lucimeire-xavier-b8b18aa0/" className="text-custom-text-primary hover:text-custom-text-secondary transition-colors">
+                <Link href="https://www.linkedin.com/in/lucimeire-xavier" className="text-custom-text-primary hover:text-custom-text-secondary transition-colors">
                   <Linkedin className="h-6 w-6" />
                 </Link>
               </div>
