@@ -84,7 +84,7 @@ export default function About() {
             <div className="text-center p-6 bg-gray-800 rounded-lg border border-gray-700">
               <Award className="h-12 w-12 text-red-500 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-white mb-2">Nota 10</h4>
-              <p className="text-gray-400">TCC Direito Tributário</p>
+              <p className="text-gray-400">TCC Bacharelado em Direito</p>
             </div>
             <div className="text-center p-6 bg-gray-800 rounded-lg border border-gray-700">
               <GraduationCap className="h-12 w-12 text-red-500 mx-auto mb-4" />
