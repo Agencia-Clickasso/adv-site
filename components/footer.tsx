@@ -17,8 +17,8 @@ export default function Footer() {
                 className="h-12 w-auto mb-4"
               />
               <p className="text-custom-text-primary mb-6 max-w-md">
-                Escritório de advocacia especializado em soluções jurídicas personalizadas, com mais de 15 anos de
-                experiência e compromisso com a excelência.
+                Escritório de advocacia especializado em Direito Tributário e soluções jurídicas personalizadas, 
+                com formação de excelência e compromisso com resultados eficazes para nossos clientes.
               </p>
               <div className="flex space-x-4">
                 <Link href="https://www.instagram.com/lucimeirexavieradvocacia/" className="text-custom-text-primary hover:text-custom-text-secondary transition-colors">
