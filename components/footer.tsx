@@ -64,10 +64,16 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contato</h3>
               <div className="space-y-3 text-custom-text-primary">
-                {/* <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-3 text-amber-400" />
-                  <span className="text-sm">Rua das Flores, 123 - São Paulo, SP</span>
-                </div> */}
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 mr-3 text-custom-text-secondary" />
+                  <span className="text-sm">
+                    Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101
+                    <br />
+                    Centro - São Bernardo do Campo - SP
+                    <br />
+                    CEP: 09750-730
+                  </span>
+                </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-3 text-custom-text-secondary" />
                   <span className="text-sm">(11) 96758-6911</span>

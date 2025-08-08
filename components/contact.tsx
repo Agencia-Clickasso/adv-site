@@ -48,19 +48,19 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-8">Informações de Contato</h3>
 
               <div className="space-y-6 mb-8">
-                {/* <div className="flex items-start">
+                <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-custom-text-primary mr-4 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Endereço</h4>
                     <p className="text-custom-text-primary">
-                      Rua das Flores, 123, Sala 456
+                      Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101
                       <br />
-                      Centro - São Paulo, SP
+                      Centro - São Bernardo do Campo - SP
                       <br />
-                      CEP: 01234-567
+                      CEP: 09750-730
                     </p>
                   </div>
-                </div> */}
+                </div>
 
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 text-custom-text-primary mr-4 mt-1" />
