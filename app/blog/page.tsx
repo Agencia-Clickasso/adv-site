@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Calendar, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Calendar, ArrowRight, ArrowLeft, User } from 'lucide-react'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -80,6 +80,12 @@ export default function BlogPage() {
                       <div className="text-xs text-custom-text-primary mb-3 uppercase tracking-wide font-semibold">
                         {post.category}
                       </div>
+                      {post.author && (
+                        <div className="flex items-center text-xs text-custom-text-primary mb-3">
+                          <User className="h-3 w-3 mr-1" />
+                          {post.author}
+                        </div>
+                      )}
                       <CardTitle className="text-xl text-custom-text-secondary leading-tight hover:text-custom-text-primary transition-colors">
                         {post.title}
                       </CardTitle>
