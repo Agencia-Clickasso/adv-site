@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, Phone, Mail, Instagram, Linkedin } from "lucide-react"
+import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, Youtube } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -21,11 +21,58 @@ export default function Footer() {
                 com formação de excelência e compromisso com resultados eficazes para nossos clientes.
               </p>
               <div className="flex space-x-4">
-                <Link href="https://www.instagram.com/lucimeirexavieradvocacia/" className="text-custom-text-primary hover:text-custom-text-secondary transition-colors">
+                <Link
+                  href="https://www.instagram.com/dra.lucimeirexavier"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-custom-text-primary hover:text-custom-text-secondary transition-colors"
+                >
                   <Instagram className="h-6 w-6" />
                 </Link>
-                <Link href="https://www.linkedin.com/in/lucimeire-xavier" className="text-custom-text-primary hover:text-custom-text-secondary transition-colors">
+                <Link
+                  href="https://www.facebook.com/share/1AuufW4tkE/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="text-custom-text-primary hover:text-custom-text-secondary transition-colors"
+                >
+                  <Facebook className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/lucimeire-xavier/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-custom-text-primary hover:text-custom-text-secondary transition-colors"
+                >
                   <Linkedin className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@lucimeirexavier4203"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="text-custom-text-primary hover:text-custom-text-secondary transition-colors"
+                >
+                  <Youtube className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://www.tiktok.com/@lucimeirexavier"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  className="text-custom-text-primary hover:text-custom-text-secondary transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    className="h-6 w-6"
+                  >
+                    <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                  </svg>
                 </Link>
               </div>
             </div>
