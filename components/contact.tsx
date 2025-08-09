@@ -18,10 +18,43 @@ export default function Contact() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const form = e.target as HTMLFormElement
+      const formDataObj = new FormData(form)
+      
+      // Submit to Netlify Forms
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formDataObj as any).toString(),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -100,7 +133,34 @@ export default function Contact() {
                 <CardDescription>Preencha o formulário abaixo e entraremos em contato em até 24 horas.</CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form 
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true" 
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit} 
+                  className="space-y-4"
+                >
+                  {/* Hidden input for Netlify Forms */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  
+                  {/* Honeypot field to prevent spam */}
+                  <div className="hidden">
+                    <input name="bot-field" />
+                  </div>
+
+                  {submitStatus === "success" && (
+                    <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                      Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                  )}
+
+                  {submitStatus === "error" && (
+                    <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                      Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente.
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Input
@@ -109,6 +169,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -119,6 +180,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -131,6 +193,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -140,6 +203,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -152,14 +216,16 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
                   <Button
                     type="submit"
                     className="w-full bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold py-3"
+                    disabled={isSubmitting}
                   >
-                    Enviar Mensagem
+                    {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                   </Button>
                 </form>
               </CardContent>
