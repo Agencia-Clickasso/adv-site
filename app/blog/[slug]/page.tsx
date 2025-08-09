@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Article content */}
           <article className="prose prose-lg max-w-none">
-            <div className="bg-custom-bg-secondary/20 rounded-lg p-8">
+            <div className="bg-white/95 dark:bg-slate-800/95 rounded-lg p-8 shadow-lg border border-slate-200/50 dark:border-slate-700/50">
               <MDXRemote 
                 source={post.content} 
                 components={mdxComponents}

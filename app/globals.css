@@ -92,3 +92,48 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom prose styles for better readability */
+@layer components {
+  .prose {
+    @apply text-slate-800 dark:text-slate-200;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply text-slate-900 dark:text-slate-100 font-bold;
+  }
+  
+  .prose p {
+    @apply text-slate-700 dark:text-slate-300 leading-relaxed;
+  }
+  
+  .prose strong {
+    @apply text-slate-900 dark:text-slate-100 font-semibold;
+  }
+  
+  .prose code {
+    @apply bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 px-2 py-1 rounded text-sm;
+  }
+  
+  .prose pre {
+    @apply bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/20;
+  }
+  
+  .prose ul,
+  .prose ol {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+  
+  .prose li {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+}
