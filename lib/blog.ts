@@ -10,6 +10,7 @@ export interface BlogPost {
   date: string
   readTime: string
   category: string
+  author?: string
   content: string
   published?: boolean
 }
@@ -51,6 +52,7 @@ export function getSortedPostsData(): BlogPost[] {
         date: data.date || '',
         readTime: stats.text,
         category: data.category || '',
+        author: data.author || '',
         content,
         published: data.published !== false, // Default to true if not specified
       } as BlogPost
@@ -82,6 +84,7 @@ export function getPostData(slug: string): BlogPost | null {
       date: data.date || '',
       readTime: stats.text,
       category: data.category || '',
+      author: data.author || '',
       content,
       published: data.published !== false,
     }

@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Calendar, ArrowLeft, Clock } from 'lucide-react'
+import { Calendar, ArrowLeft, Clock, User } from 'lucide-react'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostData, getAllPostSlugs } from '@/lib/blog'
@@ -90,6 +90,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Clock className="h-4 w-4 mr-2" />
                 {post.readTime}
               </div>
+              {post.author && (
+                <div className="flex items-center">
+                  <User className="h-4 w-4 mr-2" />
+                  {post.author}
+                </div>
+              )}
             </div>
           </header>
 

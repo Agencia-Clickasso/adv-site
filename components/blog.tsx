@@ -1,4 +1,4 @@
-import { Calendar, ArrowRight } from "lucide-react"
+import { Calendar, ArrowRight, User } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getSortedPostsData } from "@/lib/blog"
@@ -31,6 +31,12 @@ export default function Blog() {
                     })}
                   </div>
                   <div className="text-xs text-custom-text-primary mb-3 uppercase tracking-wide">{post.category}</div>
+                  {post.author && (
+                    <div className="flex items-center text-xs text-custom-text-primary mb-3">
+                      <User className="h-3 w-3 mr-1" />
+                      {post.author}
+                    </div>
+                  )}
                   <CardTitle className="text-xl text-custom-text-secondary leading-tight">{post.title}</CardTitle>
                   <CardDescription className="text-custom-text-primary">{post.excerpt}</CardDescription>
                 </CardHeader>

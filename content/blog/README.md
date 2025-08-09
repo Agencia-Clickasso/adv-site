@@ -12,6 +12,7 @@ title: "Título do Post"
 excerpt: "Breve descrição do conteúdo do post"
 date: "2024-01-15"
 category: "Categoria do Post"
+author: "Nome do Autor"
 published: true
 ---
 
@@ -27,6 +28,10 @@ Seu conteúdo aqui...
 - **date**: Data de publicação no formato YYYY-MM-DD
 - **category**: Categoria do post (ex: "Direito Trabalhista", "Direito Civil")
 - **published**: `true` para publicar, `false` para manter como rascunho
+
+## Frontmatter Opcional
+
+- **author**: Nome do autor do artigo (será exibido com ícone de usuário)
 
 ## Nome do Arquivo
 
