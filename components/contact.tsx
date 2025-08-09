@@ -31,7 +31,7 @@ export default function Contact() {
       const formDataObj = new FormData(form)
 
       // Submit to Netlify Forms via the static detection file
-      const response = await fetch("/__forms.html", {
+      const response = await fetch("/forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formDataObj as any).toString(),
