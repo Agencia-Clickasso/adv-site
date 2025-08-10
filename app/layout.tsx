@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: 'Lucimeire Xavier Advocacia',
   description: 'Lucimeire Xavier Advocacia',
   generator: 'Lucimeire Xavier Advocacia',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
 }
 
 export default function RootLayout({
