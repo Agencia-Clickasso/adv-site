@@ -1,7 +1,22 @@
 import { Building, Users, FileText, Gavel, Home, Briefcase, Calculator } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Services() {
+  const getServiceSlug = (title: string) => {
+    const slugs: { [key: string]: string } = {
+      "Direito Empresarial": "direito-empresarial",
+      "Direito Civil": "direito-civil",
+      "Direito Imobiliário": "direito-imobiliario",
+      "Direito Trabalhista": "direito-trabalhista",
+      "Direito Tributário": "direito-tributario",
+      "Direito Processual": "direito-processual",
+      "Consultoria Jurídica": "consultoria-juridica"
+    }
+    return slugs[title] || "#"
+  }
+
   const services = [
     {
       icon: Building,
@@ -76,6 +91,13 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-4 pt-4 border-t border-custom-bg-secondary">
+                    <Button asChild variant="outline" size="sm" className="w-full border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary">
+                      <Link href={`/areas/${getServiceSlug(service.title)}`}>
+                        Saiba Mais
+                      </Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}

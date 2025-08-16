@@ -81,32 +81,32 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Áreas de Atuação</h3>
               <ul className="space-y-2 text-custom-text-primary">
                 <li>
-                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/direito-civil" className="hover:text-custom-text-secondary transition-colors">
                     Direito Civil
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/direito-empresarial" className="hover:text-custom-text-secondary transition-colors">
                     Direito Empresarial
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/direito-trabalhista" className="hover:text-custom-text-secondary transition-colors">
                     Direito Trabalhista
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/direito-imobiliario" className="hover:text-custom-text-secondary transition-colors">
                     Direito Imobiliário
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/direito-tributario" className="hover:text-custom-text-secondary transition-colors">
                     Direito Tributário
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/consultoria-juridica" className="hover:text-custom-text-secondary transition-colors">
                     Consultoria Jurídica
                   </Link>
                 </li>
