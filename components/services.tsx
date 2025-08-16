@@ -1,4 +1,4 @@
-import { Building, Users, FileText, Gavel, Home, Briefcase } from "lucide-react"
+import { Building, Users, FileText, Gavel, Home, Briefcase, Calculator } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Services() {
@@ -26,6 +26,12 @@ export default function Services() {
       title: "Direito Trabalhista",
       description: "Defesa dos direitos trabalhistas e assessoria em relações de trabalho.",
       features: ["Rescisões contratuais", "Ações trabalhistas", "Consultoria preventiva"],
+    },
+    {
+      icon: Calculator,
+      title: "Direito Tributário",
+      description: "Assessoria em questões tributárias, planejamento fiscal e defesa em processos tributários.",
+      features: ["Planejamento tributário", "Defesa em execuções fiscais", "Consultoria fiscal"],
     },
     {
       icon: Gavel,

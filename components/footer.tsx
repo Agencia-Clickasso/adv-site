@@ -102,6 +102,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="#" className="hover:text-custom-text-secondary transition-colors">
+                    Direito Tributário
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-custom-text-secondary transition-colors">
                     Consultoria Jurídica
                   </Link>
                 </li>
