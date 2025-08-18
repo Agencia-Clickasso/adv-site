@@ -45,17 +45,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              {/* Trust indicators */}
-              <div className="flex items-center gap-6 text-sm text-custom-text-primary/80">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>+5 anos de experiência</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>100+ casos resolvidos</span>
-                </div>
-              </div>
+
 
               {/* CTA buttons with enhanced styling */}
               <div className="flex flex-col sm:flex-row gap-4">
