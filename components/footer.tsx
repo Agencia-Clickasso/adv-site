@@ -19,6 +19,11 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Serviços</h3>
               <ul className="space-y-2 text-custom-text-primary">
                 <li>
+                  <Link href="/areas/direito-tributario" className="hover:text-custom-text-secondary transition-colors">
+                    Direito Tributário
+                  </Link>
+                </li>
+                <li>
                   <Link href="/areas/direito-civil" className="hover:text-custom-text-secondary transition-colors">
                     Direito Civil
                   </Link>
@@ -36,11 +41,6 @@ export default function Footer() {
                 <li>
                   <Link href="/areas/direito-imobiliario" className="hover:text-custom-text-secondary transition-colors">
                     Direito Imobiliário
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/areas/direito-tributario" className="hover:text-custom-text-secondary transition-colors">
-                    Direito Tributário
                   </Link>
                 </li>
                 <li>

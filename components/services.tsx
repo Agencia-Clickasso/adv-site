@@ -19,6 +19,13 @@ export default function Services() {
 
   const services = [
     {
+      icon: Calculator,
+      title: "Direito Tributário",
+      description: "Assessoria em questões tributárias, planejamento fiscal e defesa em processos tributários.",
+      features: ["Planejamento tributário", "Defesa em execuções fiscais", "Consultoria fiscal"],
+      highlight: true, // Highlight the main specialty
+    },
+    {
       icon: Building,
       title: "Direito Empresarial",
       description: "Consultoria jurídica para empresas, contratos comerciais, fusões e aquisições.",
@@ -45,13 +52,6 @@ export default function Services() {
       description: "Defesa dos direitos trabalhistas e assessoria em relações de trabalho.",
       features: ["Rescisões contratuais", "Ações trabalhistas", "Consultoria preventiva"],
       highlight: false,
-    },
-    {
-      icon: Calculator,
-      title: "Direito Tributário",
-      description: "Assessoria em questões tributárias, planejamento fiscal e defesa em processos tributários.",
-      features: ["Planejamento tributário", "Defesa em execuções fiscais", "Consultoria fiscal"],
-      highlight: true, // Highlight the main specialty
     },
     {
       icon: Gavel,
