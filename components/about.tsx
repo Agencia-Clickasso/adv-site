@@ -21,7 +21,7 @@ export default function About() {
             </h2>
             <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
               Advogada especializada em Direito Tributário, dedicada a oferecer soluções jurídicas eficazes
-              e personalizadas para seus clientes com mais de 5 anos de experiência no mercado.
+              e personalizadas para seus clientes.
             </p>
           </div>
 
