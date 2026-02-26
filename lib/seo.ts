@@ -60,6 +60,35 @@ export function createPageMetadata(input: PageMetadataInput): Metadata {
   }
 }
 
+export function createBlogPostMetadata(input: {
+  title: string
+  description: string
+  path: string
+}): Metadata {
+  const url = canonicalUrl(input.path)
+
+  return {
+    title: input.title,
+    description: input.description,
+    alternates: {
+      canonical: input.path,
+    },
+    openGraph: {
+      type: "article",
+      locale: SEO.locale,
+      siteName: SEO.siteName,
+      title: input.title,
+      description: input.description,
+      url,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: input.title,
+      description: input.description,
+    },
+  }
+}
+
 const areaPages: Record<
   string,
   { title: string; description: string; keywords: string[] }

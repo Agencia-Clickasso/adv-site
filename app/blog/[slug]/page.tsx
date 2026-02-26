@@ -7,7 +7,7 @@ import { getPostData, getAllPostSlugs } from '@/lib/blog'
 import { Button } from '@/components/ui/button'
 import mdxComponents from '@/components/mdx-components'
 import JsonLd from '@/components/seo/json-ld'
-import { buildBlogPostingSchema, canonicalUrl } from '@/lib/seo'
+import { buildBlogPostingSchema, createBlogPostMetadata } from '@/lib/seo'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -34,20 +34,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
   }
 
-  return {
+  return createBlogPostMetadata({
     title: post.title,
     description: post.excerpt,
-    alternates: {
-      canonical: `/blog/${slug}`,
-    },
-    openGraph: {
-      type: "article",
-      title: post.title,
-      description: post.excerpt,
-      url: canonicalUrl(`/blog/${slug}`),
-      locale: "pt_BR",
-    },
-  }
+    path: `/blog/${slug}`,
+  })
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

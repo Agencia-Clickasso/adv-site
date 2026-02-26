@@ -4,20 +4,27 @@ import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { getSortedPostsData } from '@/lib/blog'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Blog Jurídico e Tributário",
   description:
     "Conteúdo jurídico com foco em Direito Tributário, compliance, contratos e prevenção de riscos para empresas e profissionais.",
-  alternates: {
-    canonical: "/blog",
-  },
-}
+  path: "/blog",
+  keywords: [
+    "blog direito tributário",
+    "artigos tributários",
+    "compliance tributário",
+    "execução fiscal",
+    "planejamento tributário",
+  ],
+})
 
 export const dynamic = "force-dynamic"
 
 export default async function BlogPage() {
   const posts = await getSortedPostsData()
+  const taxPosts = posts.filter((post) => post.category.toLowerCase().includes("tribut"))
   
   // Group posts by category
   const postsByCategory = posts.reduce((acc, post) => {
@@ -29,7 +36,13 @@ export default async function BlogPage() {
     return acc
   }, {} as Record<string, typeof posts>)
 
-  const categories = Object.keys(postsByCategory).sort()
+  const categories = Object.keys(postsByCategory).sort((a, b) => {
+    const aIsTax = a.toLowerCase().includes("tribut")
+    const bIsTax = b.toLowerCase().includes("tribut")
+    if (aIsTax && !bIsTax) return -1
+    if (!aIsTax && bIsTax) return 1
+    return a.localeCompare(b, "pt-BR")
+  })
 
   return (
     <div className="min-h-screen bg-custom-bg-primary">
@@ -49,14 +62,84 @@ export default async function BlogPage() {
             
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-custom-text-secondary mb-6">
-                Insights Jurídicos
+                Blog Jurídico com Foco em Direito Tributário
               </h1>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Todos os nossos artigos organizados por área do direito. 
-                Mantenha-se informado com as principais mudanças e tendências do mundo jurídico.
+                Conteúdos com prioridade em temas tributários para empresas e profissionais, além de artigos
+                complementares em outras áreas para prevenção de riscos e tomada de decisão.
               </p>
             </div>
           </div>
+
+          {/* Tax highlights */}
+          {taxPosts.length > 0 && (
+            <section className="mb-16">
+              <div className="mb-8">
+                <div className="inline-flex items-center rounded-full border border-custom-text-primary/20 bg-custom-text-primary/10 px-4 py-2 text-sm font-semibold text-custom-text-primary">
+                  Prioridade SEO
+                </div>
+                <h2 className="text-3xl font-bold text-custom-text-secondary mt-4 mb-2">
+                  Destaques em Direito Tributário
+                </h2>
+                <div className="w-24 h-1 bg-custom-text-primary rounded"></div>
+                <p className="text-custom-text-primary mt-4 max-w-3xl">
+                  Conteúdos prioritários sobre planejamento tributário, execuções fiscais, consultoria fiscal e
+                  compliance para empresas e profissionais.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {taxPosts.slice(0, 3).map((post) => (
+                  <Card
+                    key={`tax-${post.slug}`}
+                    className="h-full border-2 border-custom-text-primary/30 bg-custom-bg-secondary/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  >
+                    <CardHeader>
+                      <div className="flex items-center text-sm text-custom-text-primary mb-2">
+                        <Calendar className="h-4 w-4 mr-2" />
+                        {new Date(post.date).toLocaleDateString('pt-BR', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </div>
+                      <div className="text-xs text-custom-text-primary mb-3 uppercase tracking-wide font-semibold">
+                        {post.category}
+                      </div>
+                      {post.author && (
+                        <div className="flex items-center text-xs text-custom-text-primary mb-3">
+                          <User className="h-3 w-3 mr-1" />
+                          {post.author}
+                        </div>
+                      )}
+                      <CardTitle className="text-xl text-custom-text-secondary leading-tight hover:text-custom-text-primary transition-colors">
+                        {post.title}
+                      </CardTitle>
+                      <CardDescription className="text-custom-text-primary">
+                        {post.excerpt}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-custom-text-primary">
+                          {post.readTime}
+                        </span>
+                        <Link href={`/blog/${post.slug}`}>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="text-custom-text-primary hover:text-custom-text-secondary hover:bg-custom-bg-secondary/30"
+                          >
+                            Ler mais <ArrowRight className="h-4 w-4 ml-1" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Posts by Category */}
           {categories.map((category) => (
