@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 import { getSortedPostsData } from "@/lib/blog"
 import Link from "next/link"
 
-export default function Blog() {
-  const posts = getSortedPostsData()
+export default async function Blog() {
+  const posts = await getSortedPostsData()
 
   return (
     <section id="blog" className="py-24 bg-custom-bg-secondary relative overflow-hidden">

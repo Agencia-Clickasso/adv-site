@@ -14,8 +14,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function BlogPage() {
-  const posts = getSortedPostsData()
+export const dynamic = "force-dynamic"
+
+export default async function BlogPage() {
+  const posts = await getSortedPostsData()
   
   // Group posts by category
   const postsByCategory = posts.reduce((acc, post) => {
