@@ -1,7 +1,11 @@
+import type { Metadata } from "next"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Gavel, FileText, Shield, Scale, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import { createAreaMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = createAreaMetadata("direito-processual")
 
 export default function DireitoProcessualPage() {
   const services = [

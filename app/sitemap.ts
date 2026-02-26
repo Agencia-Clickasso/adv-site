@@ -1,12 +1,11 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next"
+import { getAllPostSlugs } from "@/lib/blog"
+import { SEO } from "@/lib/seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lucimeirexavieradvocacia.com.br' // Replace with your actual domain
-  
-  // Get current date for lastModified
+  const baseUrl = SEO.siteUrl
   const currentDate = new Date()
-  
-  // Static routes
+
   const staticRoutes = [
     {
       url: baseUrl,
@@ -22,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Areas of practice routes
   const areasRoutes = [
     'consultoria-juridica',
     'direito-civil',
@@ -38,18 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Blog post routes (based on the MDX files found)
-  const blogPosts = [
-    'contratos-empresariais-clausulas-essenciais',
-    'direitos-consumidor-como-se-proteger',
-    'mudancas-lei-trabalhista-2024',
-  ].map(slug => ({
+  const blogPosts = getAllPostSlugs().map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
 
-  // Combine all routes
   return [...staticRoutes, ...areasRoutes, ...blogPosts]
 }

@@ -14,6 +14,21 @@ const nextConfig = {
     unoptimized: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "lucimeirexavieradvocacia.adv.br",
+          },
+        ],
+        destination: "https://www.lucimeirexavieradvocacia.adv.br/:path*",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({

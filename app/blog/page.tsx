@@ -6,8 +6,12 @@ import { Button } from '@/components/ui/button'
 import { getSortedPostsData } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Blog - Insights Jurídicos | Lucimeire Xavier Advocacia',
-  description: 'Artigos especializados sobre direito trabalhista, empresarial, civil e muito mais. Mantenha-se informado com nossos insights jurídicos.',
+  title: "Blog Jurídico e Tributário",
+  description:
+    "Conteúdo jurídico com foco em Direito Tributário, compliance, contratos e prevenção de riscos para empresas e profissionais.",
+  alternates: {
+    canonical: "/blog",
+  },
 }
 
 export default function BlogPage() {

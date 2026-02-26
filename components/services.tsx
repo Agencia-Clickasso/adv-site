@@ -87,8 +87,8 @@ export default function Services() {
               Áreas de Atuação
             </h2>
             <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
-              Oferecemos serviços jurídicos especializados em diversas áreas do direito, sempre com foco na excelência e
-              resultados efetivos para nossos clientes.
+              Atuação jurídica com foco principal em Direito Tributário para empresas e profissionais, além de áreas
+              complementares para suporte estratégico e prevenção de riscos.
             </p>
           </div>
 
@@ -173,10 +173,10 @@ export default function Services() {
               </div>
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-custom-text-secondary mb-1">
-                  Precisa de Aconselhamento Jurídico?
+                  Precisa de Assessoria Tributária?
                 </h3>
                 <p className="text-sm text-custom-text-primary/80">
-                  Agende uma consulta e descubra como podemos ajudar
+                  Agende uma consulta e entenda o melhor caminho para sua situação fiscal
                 </p>
               </div>
               <Button

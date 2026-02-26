@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Scale, Shield, Users, ArrowRight, Star, CheckCircle } from "lucide-react"
+import { Scale, Shield, Users, ArrowRight, Star } from "lucide-react"
 import Link from "next/link"
 
 export default function Hero() {
@@ -34,14 +34,14 @@ export default function Hero() {
               {/* Main heading with improved typography */}
               <div className="space-y-4">
                 <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                  <span className="text-custom-text-secondary">Excelência em</span>
+                  <span className="text-custom-text-secondary">Advocacia</span>
                   <span className="text-custom-text-primary block bg-gradient-to-r from-custom-text-primary to-custom-text-primary/80 bg-clip-text text-transparent">
-                    Advocacia
+                    Tributária Estratégica
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-custom-text-primary/90 leading-relaxed max-w-lg">
-                  Defendendo seus direitos com dedicação, experiência e compromisso. Soluções jurídicas personalizadas para
-                  cada cliente.
+                  Assessoria em Direito Tributário para empresas e profissionais em São Bernardo do Campo, com foco em
+                  planejamento tributário, execuções fiscais e consultoria fiscal preventiva.
                 </p>
               </div>
 

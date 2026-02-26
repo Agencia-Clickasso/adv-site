@@ -6,6 +6,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostData, getAllPostSlugs } from '@/lib/blog'
 import { Button } from '@/components/ui/button'
 import mdxComponents from '@/components/mdx-components'
+import JsonLd from '@/components/seo/json-ld'
+import { buildBlogPostingSchema, canonicalUrl } from '@/lib/seo'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -31,8 +33,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} | Lucimeire Xavier Advocacia`,
+    title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: canonicalUrl(`/blog/${slug}`),
+      locale: "pt_BR",
+    },
   }
 }
 
@@ -46,6 +58,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-custom-bg-primary">
+      <JsonLd
+        data={buildBlogPostingSchema({
+          title: post.title,
+          description: post.excerpt,
+          slug,
+          datePublished: post.date,
+          author: post.author,
+          category: post.category,
+        })}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Back button */}

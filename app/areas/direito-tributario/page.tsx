@@ -1,7 +1,12 @@
+import type { Metadata } from "next"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calculator, FileText, Shield, Scale, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import JsonLd from "@/components/seo/json-ld"
+import { buildTaxServiceSchema, createAreaMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = createAreaMetadata("direito-tributario")
 
 export default function DireitoTributarioPage() {
   const services = [
@@ -33,6 +38,7 @@ export default function DireitoTributarioPage() {
 
   return (
     <div className="min-h-screen bg-custom-bg-primary">
+      <JsonLd data={buildTaxServiceSchema()} />
       {/* Header */}
       <div className="bg-custom-bg-secondary border-b border-custom-bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -54,8 +60,8 @@ export default function DireitoTributarioPage() {
               Direito Tributário
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Especialistas em questões tributárias. Oferecemos assessoria completa em planejamento fiscal, 
-              defesa em execuções e consultoria tributária para proteger seus interesses.
+              Assessoria tributária estratégica para empresas e profissionais, com atuação em planejamento tributário,
+              execuções fiscais, consultoria fiscal e contencioso para proteger patrimônio e reduzir riscos fiscais.
             </p>
             <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
               <Link href="/#contact">Agendar Consulta</Link>
@@ -71,7 +77,8 @@ export default function DireitoTributarioPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços em Direito Tributário para otimizar sua situação fiscal.
+                Soluções tributárias consultivas e contenciosas para regularizar passivos, otimizar carga fiscal e
+                fortalecer a conformidade do seu negócio.
               </p>
             </div>
 
@@ -108,8 +115,7 @@ export default function DireitoTributarioPage() {
               Precisa de Assessoria Tributária?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para ajudá-lo com suas questões tributárias. 
-              Entre em contato e agende uma consulta.
+              Fale com a Dra. Lucimeire Xavier e receba orientação tributária personalizada para o seu caso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
