@@ -1,19 +1,13 @@
 import { Calendar, ArrowRight, User, Star, Clock, TrendingUp } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { getSortedPostsData } from "@/lib/blog"
+import { getSortedPostsData, PRIORITY_POST_SLUGS, sortPostsByPriority } from "@/lib/blog"
 import Link from "next/link"
 
 export default async function Blog() {
   const posts = await getSortedPostsData()
-  const prioritySlugs = new Set([
-    "planejamento-tributario-para-empresas-como-reduzir-riscos",
-    "defesa-em-execucao-fiscal-estrategias-para-empresas",
-    "consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",
-  ])
-  const prioritizedPosts = posts.filter((post) => prioritySlugs.has(post.slug))
-  const fallbackPosts = posts.filter((post) => !prioritySlugs.has(post.slug))
-  const displayPosts = [...prioritizedPosts, ...fallbackPosts].slice(0, 6)
+  const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
+  const displayPosts = sortPostsByPriority(posts).slice(0, 6)
 
   return (
     <section id="blog" className="py-24 bg-custom-bg-secondary relative overflow-hidden">
@@ -42,6 +36,8 @@ export default async function Blog() {
                 "Execução Fiscal",
                 "Consultoria Fiscal",
                 "Recuperação de Créditos",
+                "Cobrança Tributária",
+                "Suspensão de Execução",
               ].map((topic) => (
                 <span
                   key={topic}
@@ -84,7 +80,7 @@ export default async function Blog() {
                       </div>
                       {prioritySlugs.has(post.slug) ? (
                         <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-custom-text-primary">
-                          BOFU
+                          Prioridade
                         </div>
                       ) : post.author ? (
                         <div className="flex items-center text-xs text-custom-text-primary/70">
@@ -109,7 +105,7 @@ export default async function Blog() {
                   <div className="flex items-center justify-between pt-4 border-t border-custom-text-primary/10">
                     <div className="flex items-center gap-2 text-sm text-custom-text-primary/70">
                       <Star className="h-3 w-3 text-custom-text-primary/50" />
-                      <span>{prioritySlugs.has(post.slug) ? "Leitura comercial prioritária" : "Artigo recomendado"}</span>
+                      <span>{prioritySlugs.has(post.slug) ? "Artigo prioritário do cluster tributário" : "Artigo recomendado"}</span>
                     </div>
                     <Link href={`/blog/${post.slug}`}>
                       <Button 

@@ -3,7 +3,7 @@ import { Calendar, ArrowRight, ArrowLeft, User } from 'lucide-react'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { getSortedPostsData } from '@/lib/blog'
+import { getSortedPostsData, PRIORITY_POST_SLUGS, sortPostsByPriority } from '@/lib/blog'
 import { createPageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = createPageMetadata({
@@ -25,6 +25,8 @@ export const dynamic = "force-dynamic"
 export default async function BlogPage() {
   const posts = await getSortedPostsData()
   const taxPosts = posts.filter((post) => post.category.toLowerCase().includes("tribut"))
+  const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
+  const highlightedTaxPosts = sortPostsByPriority(taxPosts).slice(0, 6)
   
   // Group posts by category
   const postsByCategory = posts.reduce((acc, post) => {
@@ -83,13 +85,13 @@ export default async function BlogPage() {
                 </h2>
                 <div className="w-24 h-1 bg-custom-text-primary rounded"></div>
                 <p className="text-custom-text-primary mt-4 max-w-3xl">
-                  Conteúdos prioritários sobre planejamento tributário, execuções fiscais, consultoria fiscal e
-                  compliance para empresas e profissionais.
+                  Conteúdos prioritários sobre planejamento tributário, execução fiscal, cobrança tributária,
+                  consultoria fiscal e recuperação de crédito para empresas e profissionais.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {taxPosts.slice(0, 3).map((post) => (
+                {highlightedTaxPosts.map((post) => (
                   <Card
                     key={`tax-${post.slug}`}
                     className="h-full border-2 border-custom-text-primary/30 bg-custom-bg-secondary/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -106,12 +108,19 @@ export default async function BlogPage() {
                       <div className="text-xs text-custom-text-primary mb-3 uppercase tracking-wide font-semibold">
                         {post.category}
                       </div>
-                      {post.author && (
-                        <div className="flex items-center text-xs text-custom-text-primary mb-3">
-                          <User className="h-3 w-3 mr-1" />
-                          {post.author}
-                        </div>
-                      )}
+                      <div className="flex items-center justify-between gap-3 mb-3">
+                        {post.author ? (
+                          <div className="flex items-center text-xs text-custom-text-primary">
+                            <User className="h-3 w-3 mr-1" />
+                            {post.author}
+                          </div>
+                        ) : <div />}
+                        {prioritySlugs.has(post.slug) ? (
+                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-custom-text-primary">
+                            Prioridade
+                          </span>
+                        ) : null}
+                      </div>
                       <CardTitle className="text-xl text-custom-text-secondary leading-tight hover:text-custom-text-primary transition-colors">
                         {post.title}
                       </CardTitle>

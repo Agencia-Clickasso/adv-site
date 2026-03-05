@@ -17,6 +17,17 @@ export interface BlogPost {
   source?: "turso" | "file"
 }
 
+export const PRIORITY_POST_SLUGS = [
+  "planejamento-tributario-para-empresas-como-reduzir-riscos",
+  "defesa-em-execucao-fiscal-estrategias-para-empresas",
+  "consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",
+  "recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados",
+  "como-suspender-execucao-fiscal-para-empresa",
+  "o-que-fazer-ao-receber-cobranca-tributaria-na-empresa",
+] as const
+
+const priorityPostIndex = new Map(PRIORITY_POST_SLUGS.map((slug, index) => [slug, index]))
+
 const postsDirectory = path.join(process.cwd(), "content/blog")
 
 function getFilePosts(): BlogPost[] {
@@ -139,4 +150,25 @@ export async function getAllPostSlugs(): Promise<string[]> {
   const dbSlugs = dbPosts.map((p) => p.slug)
 
   return Array.from(new Set([...fileSlugs, ...dbSlugs]))
+}
+
+export function sortPostsByPriority(posts: BlogPost[]): BlogPost[] {
+  return [...posts].sort((a, b) => {
+    const aPriority = priorityPostIndex.get(a.slug)
+    const bPriority = priorityPostIndex.get(b.slug)
+
+    if (aPriority !== undefined && bPriority !== undefined) {
+      return aPriority - bPriority
+    }
+
+    if (aPriority !== undefined) {
+      return -1
+    }
+
+    if (bPriority !== undefined) {
+      return 1
+    }
+
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
 }
