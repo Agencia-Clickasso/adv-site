@@ -58,12 +58,18 @@ export default function DireitoImobiliarioPage() {
               Direito Imobiliário
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Soluções jurídicas especializadas em questões imobiliárias. Oferecemos assessoria completa 
-              em compra, venda, locação e regularização de imóveis.
+              Apoio jurídico para compra, locação, regularização e proteção patrimonial em operações
+              imobiliárias. Esta atuação complementa o trabalho principal do escritório em tributário,
+              especialmente quando a operação traz reflexo fiscal ou patrimonial relevante.
             </p>
-            <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-              <Link href="/#contact">Agendar Consulta</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
+                <Link href="/#contact">Analisar operação imobiliária</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+                <Link href="/areas/direito-tributario">Ver atuação em Direito Tributário</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +81,8 @@ export default function DireitoImobiliarioPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços em Direito Imobiliário para proteger seus investimentos.
+                Suporte jurídico para reduzir risco documental, contratual e patrimonial em negócios
+                imobiliários.
               </p>
             </div>
 
@@ -104,23 +111,40 @@ export default function DireitoImobiliarioPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-custom-bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
+              Imóveis também pedem leitura tributária
+            </h2>
+            <p className="text-xl text-custom-text-primary mb-8">
+              Compra e venda, holdings, locação e regularização podem afetar ITBI, ganho de capital e
+              organização patrimonial. O encaminhamento para a área tributária evita olhar parcial sobre a operação.
+            </p>
+            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+              <Link href="/areas/direito-tributario">Entender o impacto tributário</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-custom-bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa de Assessoria Imobiliária?
+              Vai comprar, vender ou regularizar um imóvel?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para ajudá-lo com suas questões imobiliárias. 
-              Entre em contato e agende uma consulta.
+              Revisar a operação antes da assinatura reduz risco contratual e custo de correção. Se houver
+              efeito fiscal, a análise segue integrada com a frente tributária.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar Consulta</Link>
+                <Link href="/#contact">Agendar consulta</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/">Voltar ao Início</Link>
+                <Link href="/areas/direito-tributario">Falar com tributário</Link>
               </Button>
             </div>
           </div>

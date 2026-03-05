@@ -58,12 +58,18 @@ export default function ConsultoriaJuridicaPage() {
               Consultoria Jurídica
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Orientação jurídica preventiva e estratégica para pessoas físicas e jurídicas. Oferecemos 
-              soluções personalizadas para suas necessidades legais.
+              Consultoria preventiva para empresas e profissionais que precisam decidir com clareza antes
+              de assinar, reestruturar ou assumir risco. O recorte prioritário do escritório continua sendo
+              tributário, com esta frente apoiando análise contratual e compliance.
             </p>
-            <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-              <Link href="/#contact">Agendar Consulta</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
+                <Link href="/#contact">Solicitar consultoria</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+                <Link href="/areas/direito-tributario">Ver atuação em Direito Tributário</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +81,8 @@ export default function ConsultoriaJuridicaPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços de consultoria jurídica para proteger seus interesses.
+                Consultoria orientada a prevenção, documentação correta e decisões com menor risco jurídico
+                e fiscal.
               </p>
             </div>
 
@@ -104,23 +111,41 @@ export default function ConsultoriaJuridicaPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-custom-bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
+              A consultoria ganha valor quando inclui leitura tributária
+            </h2>
+            <p className="text-xl text-custom-text-primary mb-8">
+              Revisões preventivas perdem eficácia quando deixam de fora impacto fiscal, obrigações acessórias
+              e risco de autuação. Por isso, a consultoria aqui funciona como porta de entrada para um diagnóstico
+              mais completo.
+            </p>
+            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+              <Link href="/areas/direito-tributario">Ver diagnóstico tributário</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-custom-bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa de Consultoria Jurídica?
+              Precisa decidir antes que o problema vire passivo?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para orientá-lo com suas questões jurídicas. 
-              Entre em contato e agende uma consulta.
+              Uma boa consulta preventiva reduz retrabalho, exposição e custo de correção. Se a decisão envolver
+              tributos, a análise segue integrada com a frente principal do escritório.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar Consulta</Link>
+                <Link href="/#contact">Agendar consulta</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/">Voltar ao Início</Link>
+                <Link href="/areas/direito-tributario">Falar com tributário</Link>
               </Button>
             </div>
           </div>

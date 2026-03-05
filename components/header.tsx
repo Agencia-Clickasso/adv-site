@@ -47,7 +47,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Button asChild className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-6">
-              <Link href="#contact">Agendar Consulta</Link>
+              <Link href="#contact">Consulta Tributária</Link>
             </Button>
           </div>
 
@@ -72,7 +72,7 @@ export default function Header() {
                 ))}
                 <Button asChild className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold mt-4">
                   <Link href="#contact" onClick={() => setIsOpen(false)}>
-                    Agendar Consulta
+                    Consulta Tributária
                   </Link>
                 </Button>
               </div>

@@ -58,12 +58,18 @@ export default function DireitoCivilPage() {
               Direito Civil
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Proteção dos seus direitos civis com expertise e dedicação. Oferecemos soluções jurídicas 
-              personalizadas para questões relacionadas a contratos, responsabilidade civil e direitos pessoais.
+              Atuação civil voltada para contratos, responsabilidade e prevenção de litígios. Esta frente
+              complementa nosso trabalho principal com empresas e decisões estratégicas que também impactam
+              risco patrimonial e operação.
             </p>
-            <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-              <Link href="/#contact">Agendar Consulta</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
+                <Link href="/#contact">Falar sobre o caso</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+                <Link href="/areas/direito-tributario">Ver atuação em Direito Tributário</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +81,8 @@ export default function DireitoCivilPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços em Direito Civil para atender às suas necessidades jurídicas.
+                Apoio jurídico para conflitos civis e revisão de instrumentos que afetam patrimônio,
+                previsibilidade contratual e tomada de decisão.
               </p>
             </div>
 
@@ -104,23 +111,41 @@ export default function DireitoCivilPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-custom-bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
+              Quando Direito Civil e Tributário se cruzam
+            </h2>
+            <p className="text-xl text-custom-text-primary mb-8">
+              Estruturação contratual, passivos entre sócios, cobranças e disputas patrimoniais podem exigir
+              leitura conjunta do risco civil e fiscal. Nesses casos, a orientação tributária deve entrar cedo
+              para evitar custo maior adiante.
+            </p>
+            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+              <Link href="/areas/direito-tributario">Conhecer a área tributária</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-custom-bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa de Ajuda com Questões Civis?
+              Precisa revisar um contrato ou conflito civil?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para ajudá-lo com suas questões jurídicas. 
-              Entre em contato e agende uma consulta.
+              A análise certa no início reduz desgaste, custo e exposição. Se houver impacto patrimonial
+              ou empresarial, avaliamos também a frente tributária da decisão.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar Consulta</Link>
+                <Link href="/#contact">Agendar consulta</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/">Voltar ao Início</Link>
+                <Link href="/areas/direito-tributario">Falar com tributário</Link>
               </Button>
             </div>
           </div>

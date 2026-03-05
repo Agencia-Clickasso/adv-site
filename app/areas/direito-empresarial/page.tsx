@@ -58,12 +58,18 @@ export default function DireitoEmpresarialPage() {
               Direito Empresarial
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Soluções jurídicas especializadas para empresas. Oferecemos assessoria completa em 
-              constituição, contratos comerciais, compliance e operações corporativas.
+              Estruturação jurídica para empresas com foco em contratos, governança e redução de risco
+              operacional. Esta área funciona em conjunto com o núcleo tributário para decisões que afetam
+              caixa, expansão e exposição fiscal.
             </p>
-            <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-              <Link href="/#contact">Agendar Consulta</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
+                <Link href="/#contact">Agendar consulta empresarial</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+                <Link href="/areas/direito-tributario">Ver atuação em Direito Tributário</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +81,8 @@ export default function DireitoEmpresarialPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços em Direito Empresarial para impulsionar o sucesso da sua empresa.
+                Apoio empresarial para estruturar decisões com mais previsibilidade jurídica e menos ruído
+                contratual, societário e regulatório.
               </p>
             </div>
 
@@ -104,23 +111,41 @@ export default function DireitoEmpresarialPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-custom-bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
+              Empresarial com impacto tributário exige leitura conjunta
+            </h2>
+            <p className="text-xl text-custom-text-primary mb-8">
+              Constituição societária, contratos, reorganização e due diligence podem gerar efeitos fiscais
+              relevantes. Por isso, esta frente apoia a operação empresarial sem competir com o foco principal
+              do escritório em estratégia tributária.
+            </p>
+            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+              <Link href="/areas/direito-tributario">Conhecer a frente tributária</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-custom-bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa de Assessoria Empresarial?
+              Precisa estruturar uma decisão empresarial com mais segurança?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para ajudar sua empresa a crescer com segurança jurídica. 
-              Entre em contato e agende uma consulta.
+              Revisamos contratos, estrutura e riscos da operação. Quando houver reflexo fiscal,
+              o encaminhamento para a área tributária acontece desde o início.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar Consulta</Link>
+                <Link href="/#contact">Agendar consulta</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/">Voltar ao Início</Link>
+                <Link href="/areas/direito-tributario">Ir para Direito Tributário</Link>
               </Button>
             </div>
           </div>

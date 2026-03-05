@@ -78,11 +78,40 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Áreas de Atuação</h3>
+              <h3 className="text-lg font-semibold mb-4">Atuação Principal</h3>
               <ul className="space-y-2 text-custom-text-primary">
                 <li>
-                  <Link href="/areas/direito-tributario" className="hover:text-custom-text-secondary transition-colors">
+                  <Link href="/areas/direito-tributario" className="font-medium hover:text-custom-text-secondary transition-colors">
                     Direito Tributário
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-custom-text-secondary transition-colors">
+                    Conteúdo Tributário
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#contact" className="hover:text-custom-text-secondary transition-colors">
+                    Consulta Tributária
+                  </Link>
+                </li>
+              </ul>
+
+              <h3 className="text-lg font-semibold mb-4 mt-8">Áreas Complementares</h3>
+              <ul className="space-y-2 text-custom-text-primary">
+                <li>
+                  <Link href="/areas/direito-empresarial" className="hover:text-custom-text-secondary transition-colors">
+                    Direito Empresarial
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/areas/direito-processual" className="hover:text-custom-text-secondary transition-colors">
+                    Direito Processual
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/areas/consultoria-juridica" className="hover:text-custom-text-secondary transition-colors">
+                    Consultoria Jurídica
                   </Link>
                 </li>
                 <li>
@@ -91,23 +120,13 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/areas/direito-empresarial" className="hover:text-custom-text-secondary transition-colors">
-                    Direito Empresarial
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/areas/direito-trabalhista" className="hover:text-custom-text-secondary transition-colors">
-                    Direito Trabalhista
-                  </Link>
-                </li>
-                <li>
                   <Link href="/areas/direito-imobiliario" className="hover:text-custom-text-secondary transition-colors">
                     Direito Imobiliário
                   </Link>
                 </li>
                 <li>
-                  <Link href="/areas/consultoria-juridica" className="hover:text-custom-text-secondary transition-colors">
-                    Consultoria Jurídica
+                  <Link href="/areas/direito-trabalhista" className="hover:text-custom-text-secondary transition-colors">
+                    Direito Trabalhista
                   </Link>
                 </li>
               </ul>

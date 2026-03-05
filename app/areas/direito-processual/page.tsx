@@ -58,12 +58,18 @@ export default function DireitoProcessualPage() {
               Direito Processual
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Representação processual especializada em todas as instâncias. Oferecemos assessoria 
-              completa em processos judiciais e administrativos.
+              Atuação processual para defesa técnica em litígios judiciais e administrativos. Nesta frente,
+              o foco é dar suporte a disputas estratégicas, inclusive quando envolvem cobrança, execução fiscal
+              e contencioso ligado à operação empresarial.
             </p>
-            <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-              <Link href="/#contact">Agendar Consulta</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
+                <Link href="/#contact">Avaliar estratégia processual</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+                <Link href="/areas/direito-tributario">Ver contencioso tributário</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +81,8 @@ export default function DireitoProcessualPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços em Direito Processual para defender seus interesses.
+                Representação em disputas que exigem resposta técnica, leitura de risco e alinhamento com
+                a estratégia do negócio.
               </p>
             </div>
 
@@ -104,23 +111,41 @@ export default function DireitoProcessualPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-custom-bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
+              Execução fiscal não é apenas processo
+            </h2>
+            <p className="text-xl text-custom-text-primary mb-8">
+              Quando a disputa envolve cobrança tributária, garantia, parcelamento ou defesa administrativa,
+              a estratégia processual precisa caminhar junto com a tese fiscal. É nesse ponto que a área
+              tributária concentra o protagonismo.
+            </p>
+            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+              <Link href="/areas/direito-tributario">Conhecer a atuação tributária</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-custom-bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa de Representação Processual?
+              Precisa definir a melhor estratégia para um processo?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para representá-lo em seus processos. 
-              Entre em contato e agende uma consulta.
+              A resposta errada aumenta custo, demora e exposição. Em demandas com componente fiscal,
+              a condução considera desde o início o impacto tributário do caso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar Consulta</Link>
+                <Link href="/#contact">Agendar consulta</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/">Voltar ao Início</Link>
+                <Link href="/areas/direito-tributario">Ir para Direito Tributário</Link>
               </Button>
             </div>
           </div>

@@ -58,12 +58,18 @@ export default function DireitoTrabalhistaPage() {
               Direito Trabalhista
             </h1>
             <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Defendemos seus direitos trabalhistas com expertise e dedicação. Oferecemos assessoria 
-              completa em questões trabalhistas para empregadores e empregados.
+              Orientação trabalhista para reduzir passivo, revisar rotinas e responder a disputas com mais
+              segurança. Para empresas, essa frente ganha valor quando alinhada à organização tributária e
+              ao custo real da operação.
             </p>
-            <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-              <Link href="/#contact">Agendar Consulta</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
+                <Link href="/#contact">Avaliar risco trabalhista</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+                <Link href="/areas/direito-tributario">Ver atuação em Direito Tributário</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +81,8 @@ export default function DireitoTrabalhistaPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
               <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Oferecemos uma ampla gama de serviços em Direito Trabalhista para proteger seus direitos.
+                Apoio para prevenir litígios, revisar documentos e reduzir exposição trabalhista em relações
+                de trabalho e gestão de equipe.
               </p>
             </div>
 
@@ -104,23 +111,40 @@ export default function DireitoTrabalhistaPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-custom-bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
+              Passivo trabalhista também afeta caixa e planejamento fiscal
+            </h2>
+            <p className="text-xl text-custom-text-primary mb-8">
+              Empresas que acumulam risco trabalhista normalmente convivem com impacto financeiro e reflexos
+              tributários na operação. Por isso, a análise pode evoluir para um diagnóstico mais amplo da estrutura.
+            </p>
+            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
+              <Link href="/areas/direito-tributario">Ver diagnóstico tributário</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-custom-bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa de Ajuda Trabalhista?
+              Precisa reduzir risco trabalhista antes que vire passivo?
             </h2>
             <p className="text-xl text-custom-text-primary mb-8">
-              Nossa equipe está pronta para defender seus direitos trabalhistas. 
-              Entre em contato e agende uma consulta.
+              Revisar rotina, contratos e contingências antes do litígio costuma custar menos do que corrigir
+              depois. Quando o caso tocar estrutura fiscal, a frente tributária entra no mesmo fluxo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar Consulta</Link>
+                <Link href="/#contact">Agendar consulta</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/">Voltar ao Início</Link>
+                <Link href="/areas/direito-tributario">Falar com tributário</Link>
               </Button>
             </div>
           </div>
