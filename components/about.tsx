@@ -20,8 +20,8 @@ export default function About() {
               Dra. Lucimeire Xavier
             </h2>
             <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
-              Advogada especializada em Direito Tributário, dedicada a oferecer soluções jurídicas eficazes
-              e personalizadas para seus clientes.
+              Advogada com atuação voltada ao Direito Tributário, unindo formação jurídica e visão empresarial
+              para apoiar decisões com impacto direto em caixa, passivo fiscal e segurança operacional.
             </p>
           </div>
 
@@ -55,8 +55,16 @@ export default function About() {
               <div>
                 <h3 className="text-3xl font-bold text-custom-text-secondary mb-8 flex items-center gap-3">
                   <GraduationCap className="h-8 w-8 text-custom-text-primary" />
-                  Formação e Experiência
+                  Formação e Visão de Negócio
                 </h3>
+
+                <div className="p-6 bg-custom-text-primary/10 rounded-xl border border-custom-text-primary/20">
+                  <p className="text-custom-text-primary/90 leading-relaxed">
+                    A atuação é direcionada a empresas e profissionais que precisam organizar a operação fiscal,
+                    revisar tributos pagos, estruturar prevenção contra autuações e responder com rapidez a
+                    execuções fiscais e cobranças indevidas.
+                  </p>
+                </div>
 
                 <div className="space-y-6">
                   {/* UNISC */}
@@ -67,7 +75,7 @@ export default function About() {
                       </div>
                       <div className="flex-1">
                         <h4 className="font-bold text-custom-text-secondary text-lg mb-2">UNISC</h4>
-                        <p className="text-custom-text-primary/90 mb-2">Pós graduada em Direito Tributário</p>
+                        <p className="text-custom-text-primary/90 mb-2">Pós-graduação em Direito Tributário</p>
                         <p className="text-sm text-custom-text-primary/70">2024 - 2025</p>
                       </div>
                     </div>
@@ -83,13 +91,9 @@ export default function About() {
                         <h4 className="font-bold text-custom-text-secondary text-lg mb-2">Universidade São Judas Tadeu</h4>
                         <p className="text-custom-text-primary/90 mb-2">Bacharela em Direito</p>
                         <p className="text-sm text-custom-text-primary/70">2019 - 2023</p>
-                        <div className="flex items-center gap-2 mt-2">
-                          <span className="text-sm text-custom-text-primary/70">Nota:</span>
-                          <span className="inline-flex items-center gap-1 bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-sm font-medium">
-                            <Star className="h-3 w-3" />
-                            10
-                          </span>
-                        </div>
+                        <p className="text-sm text-custom-text-primary/70 mt-2">
+                          Formação jurídica com aprofundamento em temas empresariais e tributários.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -99,15 +103,15 @@ export default function About() {
                     <div className="space-y-4">
                       <div className="flex items-center gap-3 mb-3">
                         <BookOpen className="h-5 w-5 text-custom-text-primary" />
-                        <h5 className="font-semibold text-custom-text-secondary">Trabalho de Conclusão de Curso</h5>
+                        <h5 className="font-semibold text-custom-text-secondary">Pesquisa aplicada em matéria tributária</h5>
                       </div>
                       <div className="space-y-3">
                         <p className="text-sm text-custom-text-primary/90">
-                          <strong className="text-custom-text-secondary">Tema:</strong> "O Impacto do Incentivo Fiscal Drawback nas Exportações de Carne de Frango in natura"
+                          <strong className="text-custom-text-secondary">Tema:</strong> &quot;O Impacto do Incentivo Fiscal Drawback nas Exportações de Carne de Frango in natura&quot;
                         </p>
                         <p className="text-sm text-custom-text-primary/80 leading-relaxed">
-                          Este estudo aprofundou-se na análise de como o incentivo fiscal Drawback influencia positivamente 
-                          as exportações do setor avícola brasileiro, contribuindo para a competitividade internacional e o crescimento econômico.
+                          O estudo reforça uma base prática em incentivos fiscais, competitividade empresarial
+                          e interpretação de instrumentos tributários aplicados à realidade econômica.
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-custom-text-primary/70">Período: nov de 2022 - nov de 2023</span>
@@ -130,7 +134,7 @@ export default function About() {
                     <div className="space-y-4">
                       <div className="flex items-center gap-3 mb-3">
                         <BookOpen className="h-5 w-5 text-custom-text-primary" />
-                        <h5 className="font-semibold text-custom-text-secondary">Cursos de Extensão e Projetos</h5>
+                        <h5 className="font-semibold text-custom-text-secondary">Aprofundamento técnico contínuo</h5>
                       </div>
                       <ul className="space-y-2">
                         {[
@@ -153,7 +157,7 @@ export default function About() {
                   {/* Competências */}
                   <div className="p-4 bg-custom-text-primary/10 rounded-xl border border-custom-text-primary/20">
                     <p className="text-sm text-custom-text-primary/90">
-                      <strong className="text-custom-text-secondary">Competências:</strong> Negociação, Relacionamentos interpessoais
+                      <strong className="text-custom-text-secondary">Diferencial de atuação:</strong> leitura jurídica com foco em operação, negociação e prevenção de risco tributário.
                     </p>
                   </div>
                 </div>
@@ -167,29 +171,29 @@ export default function About() {
               <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
                 <Award className="h-8 w-8 text-custom-text-primary" />
               </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">10</h4>
-              <p className="text-custom-text-primary/80">Nota no TCC</p>
+              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Tributário</h4>
+              <p className="text-custom-text-primary/80">Atuação com foco em matéria fiscal</p>
             </div>
             <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
                 <GraduationCap className="h-8 w-8 text-custom-text-primary" />
               </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">4 Anos</h4>
-              <p className="text-custom-text-primary/80">Formação em Direito</p>
+              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">São Bernardo</h4>
+              <p className="text-custom-text-primary/80">Atendimento com base local</p>
             </div>
             <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
                 <BookOpen className="h-8 w-8 text-custom-text-primary" />
               </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">200h+</h4>
-              <p className="text-custom-text-primary/80">Cursos de Extensão</p>
+              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Prevenção</h4>
+              <p className="text-custom-text-primary/80">Consultoria para reduzir exposição fiscal</p>
             </div>
             <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
                 <Users className="h-8 w-8 text-custom-text-primary" />
               </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Especialista</h4>
-              <p className="text-custom-text-primary/80">em Direito Tributário</p>
+              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Estratégia</h4>
+              <p className="text-custom-text-primary/80">Defesa e planejamento para empresas</p>
             </div>
           </div>
         </div>

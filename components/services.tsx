@@ -84,11 +84,11 @@ export default function Services() {
               Nossas Especialidades
             </div>
             <h2 className="text-5xl font-bold text-custom-text-secondary mb-6 leading-tight">
-              Áreas de Atuação
+              Soluções em Direito Tributário
             </h2>
             <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
-              Atuação jurídica com foco principal em Direito Tributário para empresas e profissionais, além de áreas
-              complementares para suporte estratégico e prevenção de riscos.
+              O foco principal está em questões tributárias com impacto financeiro direto. As áreas complementares
+              entram como suporte estratégico quando a operação exige proteção contratual, empresarial e processual.
             </p>
           </div>
 
@@ -114,7 +114,7 @@ export default function Services() {
                     </div>
                     {service.highlight && (
                       <div className="bg-custom-text-primary text-custom-bg-secondary px-2 py-1 rounded-full text-xs font-bold">
-                        ESPECIALIDADE
+                        FOCO PRINCIPAL
                       </div>
                     )}
                   </div>
@@ -155,7 +155,7 @@ export default function Services() {
                       }`}
                     >
                       <Link href={`/areas/${getServiceSlug(service.title)}`} className="flex items-center justify-center gap-2">
-                        Saiba Mais
+                        Ver página da área
                         <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </Link>
                     </Button>
@@ -173,10 +173,10 @@ export default function Services() {
               </div>
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-custom-text-secondary mb-1">
-                  Precisa de Assessoria Tributária?
+                  Sua empresa está pagando tributos a mais ou sofrendo cobrança fiscal?
                 </h3>
                 <p className="text-sm text-custom-text-primary/80">
-                  Agende uma consulta e entenda o melhor caminho para sua situação fiscal
+                  Entenda o cenário, os riscos e as alternativas jurídicas antes que o passivo aumente
                 </p>
               </div>
               <Button
@@ -185,7 +185,7 @@ export default function Services() {
                 className="bg-custom-text-primary hover:bg-custom-text-primary/90 text-custom-bg-secondary font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <Link href="#contact">
-                  Agendar Consulta
+                  Solicitar Análise
                 </Link>
               </Button>
             </div>
