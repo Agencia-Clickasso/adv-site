@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
@@ -19,60 +19,66 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-custom-bg-secondary/95 backdrop-blur-sm z-50 border-b border-custom-bg-primary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center">
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="container mx-auto px-4 pt-4 sm:px-6 lg:px-8">
+        <div className="home-panel flex h-20 items-center justify-between rounded-full px-4 sm:px-6">
+          <Link href="/" className="flex items-center gap-3" aria-label="Lucimeire Xavier Advocacia">
             <Image
               src="/images/logo.png"
               alt="Lucimeire Xavier Advocacia"
               width={200}
               height={80}
-              className="h-12 w-auto"
+              className="h-11 w-auto sm:h-12"
+              priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-custom-text-secondary hover:text-custom-text-primary transition-colors duration-200 font-medium"
+                className="text-sm font-medium text-custom-text-secondary/88 transition hover:text-custom-text-primary"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <Button asChild className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-6">
-              <Link href="#contact">Consulta Tributária</Link>
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="tel:+5511967586911"
+              className="inline-flex items-center gap-2 rounded-full border border-custom-text-primary/14 px-4 py-2 text-sm text-custom-text-primary transition hover:border-custom-text-primary/36 hover:text-custom-text-secondary"
+            >
+              <Phone className="h-4 w-4" />
+              (11) 96758-6911
+            </a>
+            <Button asChild className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary">
+              <Link href="#contact">Agendar consulta</Link>
             </Button>
           </div>
 
-          {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden text-custom-text-secondary">
+              <Button variant="ghost" size="icon" className="text-custom-text-secondary md:hidden">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-custom-bg-secondary border-custom-bg-primary">
-              <div className="flex flex-col space-y-6 mt-8">
+            <SheetContent side="right" className="border-custom-text-primary/12 bg-custom-bg-secondary text-custom-text-secondary">
+              <div className="mt-10 flex flex-col space-y-5">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-custom-text-secondary hover:text-custom-text-primary transition-colors duration-200 font-medium text-lg"
+                    className="text-lg font-medium text-custom-text-secondary transition hover:text-custom-text-primary"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <Button asChild className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold mt-4">
+                <Button asChild className="mt-4 rounded-full bg-custom-text-primary text-custom-bg-primary hover:bg-custom-text-secondary">
                   <Link href="#contact" onClick={() => setIsOpen(false)}>
-                    Consulta Tributária
+                    Agendar consulta
                   </Link>
                 </Button>
               </div>
