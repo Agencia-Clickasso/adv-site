@@ -17,31 +17,63 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      priority: 0.85,
     },
   ]
 
-  const areasRoutes = [
-    'consultoria-juridica',
-    'direito-civil',
-    'direito-empresarial',
-    'direito-imobiliario',
-    'direito-processual',
-    'direito-trabalhista',
-    'direito-tributario',
-  ].map(area => ({
+  const areasPriorityMap: Record<string, number> = {
+    'direito-tributario': 0.95,
+    'direito-empresarial': 0.55,
+    'direito-processual': 0.5,
+    'consultoria-juridica': 0.5,
+    'direito-civil': 0.4,
+    'direito-imobiliario': 0.4,
+    'direito-trabalhista': 0.4,
+  }
+
+  const areasChangeFrequencyMap: Record<string, MetadataRoute.Sitemap[number]["changeFrequency"]> = {
+    'direito-tributario': 'weekly',
+    'direito-empresarial': 'monthly',
+    'direito-processual': 'monthly',
+    'consultoria-juridica': 'monthly',
+    'direito-civil': 'yearly',
+    'direito-imobiliario': 'yearly',
+    'direito-trabalhista': 'yearly',
+  }
+
+  const areasRoutes = Object.keys(areasPriorityMap).map(area => ({
     url: `${baseUrl}/areas/${area}`,
     lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    changeFrequency: areasChangeFrequencyMap[area],
+    priority: areasPriorityMap[area],
   }))
 
-  const blogPosts = (await getAllPostSlugs()).map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const postsPriorityMap: Record<string, { priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }> = {
+    'planejamento-tributario-para-empresas-como-reduzir-riscos': { priority: 0.8, changeFrequency: 'monthly' },
+    'defesa-em-execucao-fiscal-estrategias-para-empresas': { priority: 0.8, changeFrequency: 'monthly' },
+    'consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita': { priority: 0.8, changeFrequency: 'monthly' },
+    'recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados': { priority: 0.8, changeFrequency: 'monthly' },
+    'parcelamento-de-divida-fiscal-para-empresas-quando-vale-a-pena': { priority: 0.75, changeFrequency: 'monthly' },
+    'quais-documentos-separar-antes-de-uma-consultoria-tributaria': { priority: 0.7, changeFrequency: 'monthly' },
+    'compliance-tributario-como-evitar-autuacoes': { priority: 0.68, changeFrequency: 'monthly' },
+    'simples-nacional-lucro-presumido-e-lucro-real-como-avaliar-o-regime-tributario': { priority: 0.68, changeFrequency: 'monthly' },
+    'como-suspender-execucao-fiscal-para-empresa': { priority: 0.78, changeFrequency: 'monthly' },
+    'o-que-fazer-ao-receber-cobranca-tributaria-na-empresa': { priority: 0.78, changeFrequency: 'monthly' },
+    'contratos-empresariais-clausulas-essenciais': { priority: 0.35, changeFrequency: 'yearly' },
+    'direitos-consumidor-como-se-proteger': { priority: 0.25, changeFrequency: 'yearly' },
+    'mudancas-lei-trabalhista-2024': { priority: 0.25, changeFrequency: 'yearly' },
+  }
+
+  const blogPosts = (await getAllPostSlugs()).map((slug) => {
+    const config = postsPriorityMap[slug] || { priority: 0.4, changeFrequency: 'yearly' as const }
+
+    return {
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: config.changeFrequency,
+      priority: config.priority,
+    }
+  })
 
   return [...staticRoutes, ...areasRoutes, ...blogPosts]
 }
