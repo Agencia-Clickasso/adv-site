@@ -107,7 +107,7 @@ export default function About() {
                       </div>
                       <div className="space-y-3">
                         <p className="text-sm text-custom-text-primary/90">
-                          <strong className="text-custom-text-secondary">Tema:</strong> "O Impacto do Incentivo Fiscal Drawback nas Exportações de Carne de Frango in natura"
+                          <strong className="text-custom-text-secondary">Tema:</strong> &quot;O Impacto do Incentivo Fiscal Drawback nas Exportações de Carne de Frango in natura&quot;
                         </p>
                         <p className="text-sm text-custom-text-primary/80 leading-relaxed">
                           O estudo reforça uma base prática em incentivos fiscais, competitividade empresarial
