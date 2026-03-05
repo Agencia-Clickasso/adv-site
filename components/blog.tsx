@@ -6,6 +6,14 @@ import Link from "next/link"
 
 export default async function Blog() {
   const posts = await getSortedPostsData()
+  const prioritySlugs = new Set([
+    "planejamento-tributario-para-empresas-como-reduzir-riscos",
+    "defesa-em-execucao-fiscal-estrategias-para-empresas",
+    "consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",
+  ])
+  const prioritizedPosts = posts.filter((post) => prioritySlugs.has(post.slug))
+  const fallbackPosts = posts.filter((post) => !prioritySlugs.has(post.slug))
+  const displayPosts = [...prioritizedPosts, ...fallbackPosts].slice(0, 6)
 
   return (
     <section id="blog" className="py-24 bg-custom-bg-secondary relative overflow-hidden">
@@ -28,11 +36,26 @@ export default async function Blog() {
               Artigos voltados a planejamento tributário, execução fiscal, compliance e prevenção de riscos para
               empresas e profissionais que precisam tomar decisões com mais segurança.
             </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-8">
+              {[
+                "Planejamento Tributário",
+                "Execução Fiscal",
+                "Consultoria Fiscal",
+                "Recuperação de Créditos",
+              ].map((topic) => (
+                <span
+                  key={topic}
+                  className="rounded-full border border-custom-text-primary/20 bg-custom-text-primary/10 px-4 py-2 text-sm font-medium text-custom-text-primary"
+                >
+                  {topic}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Enhanced blog posts grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {posts.map((post, index) => (
+            {displayPosts.map((post, index) => (
               <Card 
                 key={index} 
                 className="group h-full bg-custom-bg-primary/30 backdrop-blur-sm border border-custom-text-primary/10 hover:bg-custom-bg-primary/50 hover:border-custom-text-primary/30 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
@@ -59,12 +82,16 @@ export default async function Blog() {
                       <div className="inline-flex items-center gap-1 bg-custom-text-primary/20 text-custom-text-primary px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
                         {post.category}
                       </div>
-                      {post.author && (
+                      {prioritySlugs.has(post.slug) ? (
+                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-custom-text-primary">
+                          BOFU
+                        </div>
+                      ) : post.author ? (
                         <div className="flex items-center text-xs text-custom-text-primary/70">
                           <User className="h-3 w-3 mr-1" />
                           {post.author}
                         </div>
-                      )}
+                      ) : null}
                     </div>
                   </div>
 
@@ -82,8 +109,7 @@ export default async function Blog() {
                   <div className="flex items-center justify-between pt-4 border-t border-custom-text-primary/10">
                     <div className="flex items-center gap-2 text-sm text-custom-text-primary/70">
                       <Star className="h-3 w-3 text-custom-text-primary/50" />
-                        <span>Artigo recomendado</span>
-                        
+                      <span>{prioritySlugs.has(post.slug) ? "Leitura comercial prioritária" : "Artigo recomendado"}</span>
                     </div>
                     <Link href={`/blog/${post.slug}`}>
                       <Button 
