@@ -22,11 +22,11 @@ export default async function Blog() {
               Conteúdo Jurídico
             </div>
             <h2 className="text-5xl font-bold text-custom-text-secondary mb-6 leading-tight">
-              Insights Jurídicos
+              Conteúdo sobre Direito Tributário
             </h2>
             <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
-              Mantenha-se informado com nossos artigos sobre as principais mudanças e tendências do mundo jurídico.
-              Conhecimento é poder, e estamos aqui para compartilhar o nosso.
+              Artigos voltados a planejamento tributário, execução fiscal, compliance e prevenção de riscos para
+              empresas e profissionais que precisam tomar decisões com mais segurança.
             </p>
           </div>
 
@@ -82,7 +82,8 @@ export default async function Blog() {
                   <div className="flex items-center justify-between pt-4 border-t border-custom-text-primary/10">
                     <div className="flex items-center gap-2 text-sm text-custom-text-primary/70">
                       <Star className="h-3 w-3 text-custom-text-primary/50" />
-                      <span>Artigo recomendado</span>
+                        <span>Artigo recomendado</span>
+                        
                     </div>
                     <Link href={`/blog/${post.slug}`}>
                       <Button 
@@ -105,10 +106,10 @@ export default async function Blog() {
             <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-custom-bg-primary/30 backdrop-blur-sm border border-custom-text-primary/20 rounded-2xl px-8 py-6">
               <div className="text-left">
                 <h3 className="text-xl font-semibold text-custom-text-secondary mb-2">
-                  Quer se manter atualizado?
+                  Quer entender melhor seu risco tributário?
                 </h3>
                 <p className="text-custom-text-primary/80 max-w-md">
-                  Acesse nosso blog completo e descubra mais insights jurídicos valiosos para você.
+                  Acesse o blog e veja conteúdos práticos para reduzir incerteza fiscal e agir antes da autuação.
                 </p>
               </div>
               <Link href="/blog">
