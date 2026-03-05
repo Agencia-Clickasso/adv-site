@@ -10,6 +10,49 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .blog-grid-pattern {
+    background-image:
+      linear-gradient(rgba(206, 167, 133, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(206, 167, 133, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 90%);
+  }
+
+  .blog-orb {
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(206, 167, 133, 0.28), rgba(206, 167, 133, 0.02) 60%, transparent 72%);
+    filter: blur(18px);
+  }
+
+  .blog-kicker {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(206, 167, 133, 0.2);
+    background: rgba(206, 167, 133, 0.1);
+    padding: 0.55rem 0.95rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(254, 251, 215, 0.88);
+  }
+
+  .blog-paper {
+    background:
+      linear-gradient(180deg, rgba(255, 251, 244, 0.98) 0%, rgba(247, 239, 225, 0.98) 100%);
+    border: 1px solid rgba(214, 192, 166, 0.85);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2);
+  }
+
+  .blog-prose > :first-child {
+    margin-top: 0;
+  }
+
+  .blog-prose > :last-child {
+    margin-bottom: 0;
+  }
   
   /* Custom animations */
   .animate-float {

@@ -1,128 +1,69 @@
-import { MDXComponents } from 'mdx/types'
-import { ReactNode } from 'react'
+import { MDXComponents } from "mdx/types"
+import { ReactNode } from "react"
+import { blogSerif } from "@/lib/blog-design"
+
+const headingClass = blogSerif.className
 
 const components: MDXComponents = {
   h1: ({ children }: { children: ReactNode }) => (
-    <h1 className="text-4xl font-bold text-custom-text-secondary mb-6 leading-tight">
-      {children}
-    </h1>
+    <h1 className={`${headingClass} text-4xl leading-tight text-slate-950 mb-6`}>{children}</h1>
   ),
   h2: ({ children }: { children: ReactNode }) => (
-    <h2 className="text-3xl font-bold text-custom-text-secondary mb-4 mt-8 leading-tight">
-      {children}
-    </h2>
+    <h2 className={`${headingClass} mt-12 mb-4 text-3xl leading-tight text-slate-950 sm:text-4xl`}>{children}</h2>
   ),
   h3: ({ children }: { children: ReactNode }) => (
-    <h3 className="text-2xl font-semibold text-custom-text-secondary mb-3 mt-6 leading-tight">
-      {children}
-    </h3>
+    <h3 className={`${headingClass} mt-10 mb-3 text-2xl leading-tight text-slate-900 sm:text-3xl`}>{children}</h3>
   ),
   h4: ({ children }: { children: ReactNode }) => (
-    <h4 className="text-xl font-semibold text-custom-text-secondary mb-2 mt-4">
-      {children}
-    </h4>
+    <h4 className={`${headingClass} mt-8 mb-2 text-xl leading-tight text-slate-900 sm:text-2xl`}>{children}</h4>
   ),
-  p: ({ children }: { children: ReactNode }) => (
-    <p className="text-custom-text-primary mb-4 leading-relaxed">
-      {children}
-    </p>
-  ),
+  p: ({ children }: { children: ReactNode }) => <p className="mb-5 text-[1.06rem] leading-8 text-slate-700">{children}</p>,
   ul: ({ children }: { children: ReactNode }) => (
-    <ul className="list-disc list-inside text-custom-text-primary mb-4 space-y-2 pl-4">
-      {children}
-    </ul>
+    <ul className="mb-6 ml-5 list-disc space-y-3 text-[1.02rem] leading-8 text-slate-700 marker:text-[#9c744a]">{children}</ul>
   ),
   ol: ({ children }: { children: ReactNode }) => (
-    <ol className="list-decimal list-inside text-custom-text-primary mb-4 space-y-2 pl-4">
-      {children}
-    </ol>
+    <ol className="mb-6 ml-5 list-decimal space-y-3 text-[1.02rem] leading-8 text-slate-700 marker:text-[#9c744a]">{children}</ol>
   ),
-  li: ({ children }: { children: ReactNode }) => (
-    <li className="text-custom-text-primary leading-relaxed">
-      {children}
-    </li>
-  ),
+  li: ({ children }: { children: ReactNode }) => <li>{children}</li>,
   blockquote: ({ children }: { children: ReactNode }) => (
-    <blockquote className="border-l-4 border-custom-text-primary pl-6 py-2 my-6 italic text-custom-text-primary bg-custom-bg-secondary/30 rounded-r">
+    <blockquote className="my-8 rounded-[1.5rem] border border-[#d8b998] bg-[#f4e8d3] px-6 py-5 italic text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
       {children}
     </blockquote>
   ),
   code: ({ children, className }: { children: ReactNode; className?: string }) => {
-    // Inline code
     if (!className) {
-      return (
-        <code className="bg-custom-bg-secondary text-custom-text-secondary px-2 py-1 rounded text-sm font-mono">
-          {children}
-        </code>
-      )
+      return <code className="rounded bg-slate-900 px-1.5 py-1 text-sm text-[#f8f0df]">{children}</code>
     }
-    
-    // Code block
-    return (
-      <code className={`${className} block bg-custom-bg-secondary text-custom-text-primary p-4 rounded-lg my-4 overflow-x-auto font-mono text-sm leading-relaxed`}>
-        {children}
-      </code>
-    )
+
+    return <code className={`${className} block overflow-x-auto rounded-2xl bg-slate-950 p-5 text-sm leading-7 text-slate-100`}>{children}</code>
   },
   pre: ({ children }: { children: ReactNode }) => (
-    <pre className="bg-custom-bg-secondary p-4 rounded-lg my-4 overflow-x-auto">
-      {children}
-    </pre>
+    <pre className="my-6 overflow-x-auto rounded-2xl bg-slate-950 p-1 shadow-[0_18px_45px_rgba(15,23,42,0.18)]">{children}</pre>
   ),
   a: ({ children, href }: { children: ReactNode; href?: string }) => (
-    <a 
-      href={href} 
-      className="text-custom-text-secondary underline hover:text-custom-text-primary transition-colors duration-200"
+    <a
+      href={href}
+      className="font-semibold text-[#7d5532] underline decoration-[#c5a37f] decoration-2 underline-offset-4 transition hover:text-slate-950"
       target="_blank"
       rel="noopener noreferrer"
     >
       {children}
     </a>
   ),
-  strong: ({ children }: { children: ReactNode }) => (
-    <strong className="font-bold text-custom-text-secondary">
-      {children}
-    </strong>
-  ),
-  em: ({ children }: { children: ReactNode }) => (
-    <em className="italic text-custom-text-primary">
-      {children}
-    </em>
-  ),
-  hr: () => (
-    <hr className="border-custom-text-primary/30 my-8" />
-  ),
+  strong: ({ children }: { children: ReactNode }) => <strong className="font-semibold text-slate-950">{children}</strong>,
+  em: ({ children }: { children: ReactNode }) => <em className="italic text-slate-700">{children}</em>,
+  hr: () => <hr className="my-10 border-t border-[#d7c0a1]" />,
   table: ({ children }: { children: ReactNode }) => (
-    <div className="overflow-x-auto my-6">
-      <table className="min-w-full border-collapse border border-custom-text-primary/30">
-        {children}
-      </table>
+    <div className="my-8 overflow-x-auto rounded-[1.5rem] border border-[#dcc3a4]">
+      <table className="min-w-full border-collapse bg-white">{children}</table>
     </div>
   ),
-  thead: ({ children }: { children: ReactNode }) => (
-    <thead className="bg-custom-bg-secondary">
-      {children}
-    </thead>
-  ),
-  tbody: ({ children }: { children: ReactNode }) => (
-    <tbody>
-      {children}
-    </tbody>
-  ),
-  tr: ({ children }: { children: ReactNode }) => (
-    <tr className="border-b border-custom-text-primary/30">
-      {children}
-    </tr>
-  ),
-  td: ({ children }: { children: ReactNode }) => (
-    <td className="border border-custom-text-primary/30 px-4 py-2 text-custom-text-primary">
-      {children}
-    </td>
-  ),
+  thead: ({ children }: { children: ReactNode }) => <thead className="bg-[#f4e8d3]">{children}</thead>,
+  tbody: ({ children }: { children: ReactNode }) => <tbody>{children}</tbody>,
+  tr: ({ children }: { children: ReactNode }) => <tr className="border-b border-[#ead8c0] last:border-b-0">{children}</tr>,
+  td: ({ children }: { children: ReactNode }) => <td className="px-4 py-3 text-sm leading-7 text-slate-700">{children}</td>,
   th: ({ children }: { children: ReactNode }) => (
-    <th className="border border-custom-text-primary/30 px-4 py-2 text-custom-text-secondary font-semibold text-left">
-      {children}
-    </th>
+    <th className="px-4 py-3 text-left text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">{children}</th>
   ),
 }
 
