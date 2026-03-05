@@ -1,156 +1,57 @@
 import type { Metadata } from "next"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Briefcase, FileText, Shield, Users, ArrowLeft } from "lucide-react"
-import Link from "next/link"
+import { Briefcase, FileText, Shield, Users } from "lucide-react"
+import AreaPage from "@/components/area-page"
 import { createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("consultoria-juridica")
 
 export default function ConsultoriaJuridicaPage() {
-  const services = [
-    {
-      icon: FileText,
-      title: "Pareceres Jurídicos",
-      description: "Análises jurídicas especializadas sobre questões específicas, fornecendo orientação clara e fundamentada.",
-      features: ["Análise de contratos", "Interpretação de leis", "Orientação sobre procedimentos", "Pareceres técnicos"]
-    },
-    {
-      icon: Shield,
-      title: "Consultoria Preventiva",
-      description: "Orientação para evitar problemas jurídicos e manter a conformidade com a legislação aplicável.",
-      features: ["Revisão de documentos", "Políticas internas", "Compliance legal", "Auditorias preventivas"]
-    },
-    {
-      icon: Briefcase,
-      title: "Due Diligence",
-      description: "Análise completa de empresas e ativos para identificar riscos e oportunidades em transações.",
-      features: ["Análise societária", "Verificação de contratos", "Análise de riscos", "Relatórios detalhados"]
-    },
-    {
-      icon: Users,
-      title: "Treinamentos e Capacitação",
-      description: "Programas de capacitação para equipes sobre temas jurídicos relevantes para seus negócios.",
-      features: ["Treinamentos in company", "Workshops especializados", "Material didático", "Acompanhamento"]
-    }
-  ]
-
   return (
-    <div className="min-h-screen bg-custom-bg-primary">
-      {/* Header */}
-      <div className="bg-custom-bg-secondary border-b border-custom-bg-primary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link href="/" className="inline-flex items-center text-custom-text-primary hover:text-custom-text-secondary transition-colors">
-            <ArrowLeft className="h-5 w-5 mr-2" />
-            Voltar ao início
-          </Link>
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-custom-bg-primary via-custom-bg-secondary to-custom-bg-primary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <Briefcase className="h-20 w-20 text-custom-text-primary mx-auto" />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-custom-text-secondary mb-6">
-              Consultoria Jurídica
-            </h1>
-            <p className="text-xl text-custom-text-primary mb-8 leading-relaxed">
-              Consultoria preventiva para empresas e profissionais que precisam decidir com clareza antes
-              de assinar, reestruturar ou assumir risco. O recorte prioritário do escritório continua sendo
-              tributário, com esta frente apoiando análise contratual e compliance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Solicitar consultoria</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/areas/direito-tributario">Ver atuação em Direito Tributário</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-custom-bg-primary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-custom-text-secondary mb-4">Nossos Serviços</h2>
-              <p className="text-xl text-custom-text-primary max-w-3xl mx-auto">
-                Consultoria orientada a prevenção, documentação correta e decisões com menor risco jurídico
-                e fiscal.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {services.map((service, index) => (
-                <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300 border-custom-bg-secondary">
-                  <CardHeader>
-                    <service.icon className="h-12 w-12 text-custom-text-primary mb-4" />
-                    <CardTitle className="text-xl text-custom-text-secondary">{service.title}</CardTitle>
-                    <CardDescription className="text-custom-text-primary">{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-custom-text-primary">
-                          <div className="w-2 h-2 bg-custom-text-primary rounded-full mr-3"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-custom-bg-primary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              A consultoria ganha valor quando inclui leitura tributária
-            </h2>
-            <p className="text-xl text-custom-text-primary mb-8">
-              Revisões preventivas perdem eficácia quando deixam de fora impacto fiscal, obrigações acessórias
-              e risco de autuação. Por isso, a consultoria aqui funciona como porta de entrada para um diagnóstico
-              mais completo.
-            </p>
-            <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-              <Link href="/areas/direito-tributario">Ver diagnóstico tributário</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-custom-bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-custom-text-secondary mb-6">
-              Precisa decidir antes que o problema vire passivo?
-            </h2>
-            <p className="text-xl text-custom-text-primary mb-8">
-              Uma boa consulta preventiva reduz retrabalho, exposição e custo de correção. Se a decisão envolver
-              tributos, a análise segue integrada com a frente principal do escritório.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-custom-text-primary hover:bg-custom-text-secondary text-custom-bg-secondary font-semibold px-8 py-4 text-lg">
-                <Link href="/#contact">Agendar consulta</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg bg-transparent">
-                <Link href="/areas/direito-tributario">Falar com tributário</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <AreaPage
+      icon={Briefcase}
+      title="Consultoria jurídica para decidir antes que o problema vire passivo"
+      badge="Área complementar"
+      intro="Consultoria preventiva para empresas e profissionais que precisam revisar documentos, processos e decisões com clareza. O eixo prioritário continua sendo tributário, com esta frente apoiando análise contratual e compliance."
+      highlights={[
+        { title: "Onde ganha valor", description: "Na prevenção, na revisão de documentos e na organização de decisões que ainda podem ser corrigidas a tempo." },
+        { title: "Quando escalar", description: "Quando o tema envolve tributos, obrigações acessórias, contrato com reflexo fiscal ou reorganização empresarial." },
+        { title: "Papel da consultoria", description: "Funcionar como porta de entrada para um diagnóstico mais completo e estratégico." },
+      ]}
+      services={[
+        {
+          icon: FileText,
+          title: "Pareceres jurídicos",
+          description: "Análises técnicas sobre pontos específicos para orientar decisão com fundamento.",
+          features: ["Análise de contratos", "Interpretação de leis", "Orientação sobre procedimentos", "Pareceres técnicos"],
+        },
+        {
+          icon: Shield,
+          title: "Consultoria preventiva",
+          description: "Organização documental e conformidade para reduzir retrabalho e risco.",
+          features: ["Revisão de documentos", "Políticas internas", "Compliance legal", "Auditorias preventivas"],
+        },
+        {
+          icon: Briefcase,
+          title: "Due diligence",
+          description: "Leitura completa de empresa ou ativo para mapear risco e oportunidade.",
+          features: ["Análise societária", "Verificação de contratos", "Análise de riscos", "Relatórios detalhados"],
+        },
+        {
+          icon: Users,
+          title: "Treinamentos e capacitação",
+          description: "Programas internos para equipes em temas jurídicos sensíveis ao negócio.",
+          features: ["Treinamentos in company", "Workshops especializados", "Material didático", "Acompanhamento"],
+        },
+      ]}
+      bridgeTitle="A consultoria ganha valor quando inclui leitura tributária"
+      bridgeText="Revisão preventiva perde eficácia quando deixa de fora impacto fiscal, obrigações acessórias e risco de autuação. Por isso, a consultoria aqui funciona como entrada para uma análise mais completa."
+      bridgeCta={{ label: "Ver diagnóstico tributário", href: "/areas/direito-tributario" }}
+      primaryCta={{ label: "Solicitar consultoria", href: "/#contact" }}
+      secondaryCta={{ label: "Ver atuação em Direito Tributário", href: "/areas/direito-tributario" }}
+      finalTitle="Precisa decidir antes que o problema vire passivo?"
+      finalText="Uma boa consulta preventiva reduz retrabalho, exposição e custo de correção. Se a decisão envolver tributos, a análise segue integrada com a frente principal do escritório."
+      finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
+      finalSecondaryCta={{ label: "Falar com tributário", href: "/areas/direito-tributario" }}
+    />
   )
 }

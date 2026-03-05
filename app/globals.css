@@ -2,13 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .home-grid-pattern {
+    background-image:
+      linear-gradient(rgba(206, 167, 133, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(206, 167, 133, 0.055) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 92%);
+  }
+
+  .home-orb {
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(206, 167, 133, 0.24), rgba(206, 167, 133, 0.05) 55%, transparent 76%);
+    filter: blur(24px);
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(206, 167, 133, 0.2);
+    background: rgba(206, 167, 133, 0.08);
+    padding: 0.65rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(206, 167, 133, 0.94);
+  }
+
+  .home-panel {
+    border: 1px solid rgba(206, 167, 133, 0.14);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+  }
+
+  .home-paper {
+    border: 1px solid rgba(215, 192, 161, 0.86);
+    background: linear-gradient(180deg, rgba(255, 251, 243, 0.98) 0%, rgba(245, 236, 221, 0.98) 100%);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.18);
+  }
+
+  .home-soft-line {
+    border-color: rgba(206, 167, 133, 0.14);
   }
 
   .blog-grid-pattern {

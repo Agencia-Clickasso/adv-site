@@ -27,18 +27,26 @@ export const dynamic = "force-dynamic"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-custom-bg-primary relative">
-      <JsonLd data={buildLegalServiceSchema()} />
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Blog />
-      <Contact />
-      <Footer />
-      
-      {/* Scroll to top button */}
-      <ScrollToTop />
-    </div>
+    <main className="relative min-h-screen overflow-hidden bg-custom-bg-primary">
+      <div className="pointer-events-none absolute inset-0 opacity-70">
+        <div className="home-grid-pattern absolute inset-0" />
+        <div className="home-orb absolute left-[-10rem] top-20 h-[26rem] w-[26rem]" />
+        <div className="home-orb absolute right-[-8rem] top-[34rem] h-[22rem] w-[22rem]" />
+      </div>
+
+      <div className="relative">
+        <JsonLd data={buildLegalServiceSchema()} />
+        <Header />
+        <Hero />
+        <About />
+        <Services />
+        <Blog />
+        <Contact />
+        <Footer />
+
+        {/* Scroll to top button */}
+        <ScrollToTop />
+      </div>
+    </main>
   )
 }

@@ -1,199 +1,96 @@
 import Image from "next/image"
-import { Award, BookOpen, Users, Clock, GraduationCap, CheckCircle, Star, TrendingUp } from "lucide-react"
+import { BookOpen, GraduationCap, Landmark, MoveUpRight } from "lucide-react"
+import { blogSerif } from "@/lib/blog-design"
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-custom-bg-secondary relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(206,167,133,0.03),transparent_50%)]"></div>
-      <div className="absolute top-0 right-0 w-64 h-64 bg-custom-text-primary/5 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-7xl mx-auto">
-          {/* Enhanced header section */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-custom-text-primary/10 border border-custom-text-primary/20 rounded-full px-4 py-2 text-sm text-custom-text-primary font-medium mb-6">
-              <Star className="h-4 w-4" />
-              Sobre Nossa Advocacia
-            </div>
-            <h2 className="text-5xl font-bold text-custom-text-secondary mb-6 leading-tight">
-              Dra. Lucimeire Xavier
-            </h2>
-            <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
-              Advogada com atuação voltada ao Direito Tributário, unindo formação jurídica e visão empresarial
-              para apoiar decisões com impacto direto em caixa, passivo fiscal e segurança operacional.
-            </p>
-          </div>
-
-          {/* Main content with improved layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
-            {/* Enhanced image section */}
-            <div className="relative group">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <Image
-                  src="/profile-photo.jpeg"
-                  alt="Dra. Lucimeire Xavier"
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Overlay with professional info */}
-                <div className="absolute inset-0 bg-gradient-to-t from-custom-bg-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-custom-text-secondary">
-                    <h4 className="text-xl font-semibold mb-2">Especialista em Direito Tributário</h4>
-                    <p className="text-sm text-custom-text-primary/90">Formada pela Universidade São Judas Tadeu</p>
-                  </div>
-                </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-custom-text-primary/20 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-custom-text-primary/10 rounded-full blur-lg"></div>
-            </div>
-
-            {/* Enhanced content section */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-3xl font-bold text-custom-text-secondary mb-8 flex items-center gap-3">
-                  <GraduationCap className="h-8 w-8 text-custom-text-primary" />
-                  Formação e Visão de Negócio
-                </h3>
-
-                <div className="p-6 bg-custom-text-primary/10 rounded-xl border border-custom-text-primary/20">
-                  <p className="text-custom-text-primary/90 leading-relaxed">
-                    A atuação é direcionada a empresas e profissionais que precisam organizar a operação fiscal,
-                    revisar tributos pagos, estruturar prevenção contra autuações e responder com rapidez a
-                    execuções fiscais e cobranças indevidas.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  {/* UNISC */}
-                  <div className="p-6 bg-custom-bg-primary/30 rounded-xl border border-custom-text-primary/10 hover:bg-custom-bg-primary/50 transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-custom-text-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <GraduationCap className="h-6 w-6 text-custom-text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-custom-text-secondary text-lg mb-2">UNISC</h4>
-                        <p className="text-custom-text-primary/90 mb-2">Pós-graduação em Direito Tributário</p>
-                        <p className="text-sm text-custom-text-primary/70">2024 - 2025</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Universidade São Judas Tadeu */}
-                  <div className="p-6 bg-custom-bg-primary/30 rounded-xl border border-custom-text-primary/10 hover:bg-custom-bg-primary/50 transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-custom-text-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <GraduationCap className="h-6 w-6 text-custom-text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-custom-text-secondary text-lg mb-2">Universidade São Judas Tadeu</h4>
-                        <p className="text-custom-text-primary/90 mb-2">Bacharela em Direito</p>
-                        <p className="text-sm text-custom-text-primary/70">2019 - 2023</p>
-                        <p className="text-sm text-custom-text-primary/70 mt-2">
-                          Formação jurídica com aprofundamento em temas empresariais e tributários.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* TCC Section */}
-                  <div className="p-6 bg-custom-bg-primary/30 rounded-xl border border-custom-text-primary/10 hover:bg-custom-bg-primary/50 transition-all duration-300">
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <BookOpen className="h-5 w-5 text-custom-text-primary" />
-                        <h5 className="font-semibold text-custom-text-secondary">Pesquisa aplicada em matéria tributária</h5>
-                      </div>
-                      <div className="space-y-3">
-                        <p className="text-sm text-custom-text-primary/90">
-                          <strong className="text-custom-text-secondary">Tema:</strong> &quot;O Impacto do Incentivo Fiscal Drawback nas Exportações de Carne de Frango in natura&quot;
-                        </p>
-                        <p className="text-sm text-custom-text-primary/80 leading-relaxed">
-                          O estudo reforça uma base prática em incentivos fiscais, competitividade empresarial
-                          e interpretação de instrumentos tributários aplicados à realidade econômica.
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-custom-text-primary/70">Período: nov de 2022 - nov de 2023</span>
-                          <a 
-                            href="https://repositorio-api.animaeducacao.com.br/server/api/core/bitstreams/7f34702a-53ac-4367-b201-9fabd77e8a29/content" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-custom-text-primary hover:text-custom-text-primary/80 underline transition-colors duration-200"
-                          >
-                            📄 Acessar TCC Completo
-                            <TrendingUp className="h-3 w-3" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Cursos de Extensão */}
-                  <div className="p-6 bg-custom-bg-primary/30 rounded-xl border border-custom-text-primary/10 hover:bg-custom-bg-primary/50 transition-all duration-300">
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <BookOpen className="h-5 w-5 text-custom-text-primary" />
-                        <h5 className="font-semibold text-custom-text-secondary">Aprofundamento técnico contínuo</h5>
-                      </div>
-                      <ul className="space-y-2">
-                        {[
-                          'Curso "Universo Tributário: teoria e prática descomplicadas" (45h) - CEISC (2024-2025)',
-                          'Projeto de Extensão "Propostas para integração de imigrantes e refugiados" (80h) - USTJ',
-                          'Curso "Tópicos aprofundados de Teoria Penal e crimes em espécie" (24h) - USJT',
-                          'Curso "Introdução às Ciências Penais" (24h) - USJT',
-                          'Curso "Direito das Sucessões" (40h) - USJT',
-                          'Curso "Direito civil: pessoas" (32h) - USJT'
-                        ].map((course, index) => (
-                          <li key={index} className="flex items-start gap-2 text-sm text-custom-text-primary/80">
-                            <CheckCircle className="h-3 w-3 text-custom-text-primary mt-1 flex-shrink-0" />
-                            <span>{course}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Competências */}
-                  <div className="p-4 bg-custom-text-primary/10 rounded-xl border border-custom-text-primary/20">
-                    <p className="text-sm text-custom-text-primary/90">
-                      <strong className="text-custom-text-secondary">Diferencial de atuação:</strong> leitura jurídica com foco em operação, negociação e prevenção de risco tributário.
-                    </p>
-                  </div>
-                </div>
+    <section id="about" className="relative py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <div className="home-panel rounded-[2rem] p-6 sm:p-8">
+            <div className="relative overflow-hidden rounded-[1.6rem]">
+              <Image
+                src="/profile-photo.jpeg"
+                alt="Dra. Lucimeire Xavier"
+                width={640}
+                height={760}
+                className="h-auto w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/70 to-transparent p-6">
+                <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/72">Atuação boutique</p>
+                <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>Lucimeire Xavier</p>
               </div>
             </div>
           </div>
 
-          {/* Enhanced stats grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <Award className="h-8 w-8 text-custom-text-primary" />
+          <div className="space-y-8">
+            <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-9">
+              <div className="section-kicker text-[#7f5b39]">
+                <Landmark className="h-3.5 w-3.5" />
+                Sobre o escritório
               </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Tributário</h4>
-              <p className="text-custom-text-primary/80">Atuação com foco em matéria fiscal</p>
+              <h2 className={`${blogSerif.className} mt-6 text-4xl leading-tight sm:text-5xl`}>
+                Formação jurídica sólida com foco direto em operação, prevenção e risco tributário.
+              </h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">
+                A atuação é voltada a empresas e profissionais que precisam organizar a rotina fiscal, reduzir exposição
+                a autuações e enfrentar cobranças com mais clareza estratégica. O trabalho combina técnica, leitura de
+                negócio e atenção prática ao impacto financeiro das decisões.
+              </p>
             </div>
-            <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <GraduationCap className="h-8 w-8 text-custom-text-primary" />
+
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="home-panel rounded-[1.7rem] p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
+                  <GraduationCap className="h-6 w-6" />
+                </div>
+                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>Formação</h3>
+                <div className="mt-4 space-y-5 text-sm leading-7 text-custom-text-primary/82">
+                  <div>
+                    <p className="font-semibold text-custom-text-secondary">UNISC</p>
+                    <p>Pós-graduação em Direito Tributário</p>
+                    <p className="text-custom-text-primary/58">2024 - 2025</p>
+                  </div>
+                  <div className="border-t home-soft-line pt-5">
+                    <p className="font-semibold text-custom-text-secondary">Universidade São Judas Tadeu</p>
+                    <p>Bacharela em Direito</p>
+                    <p className="text-custom-text-primary/58">2019 - 2023</p>
+                  </div>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">São Bernardo</h4>
-              <p className="text-custom-text-primary/80">Atendimento com base local</p>
+
+              <div className="home-panel rounded-[1.7rem] p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
+                  <BookOpen className="h-6 w-6" />
+                </div>
+                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>Pesquisa aplicada</h3>
+                <p className="mt-4 text-sm leading-7 text-custom-text-primary/82">
+                  O trabalho de conclusão sobre incentivo fiscal Drawback em exportações reforça uma base prática em
+                  competitividade, incentivos e interpretação de instrumentos tributários.
+                </p>
+                <a
+                  href="https://repositorio-api.animaeducacao.com.br/server/api/core/bitstreams/7f34702a-53ac-4367-b201-9fabd77e8a29/content"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-custom-text-primary transition hover:text-custom-text-secondary"
+                >
+                  Acessar TCC completo
+                  <MoveUpRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-            <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <BookOpen className="h-8 w-8 text-custom-text-primary" />
-              </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Prevenção</h4>
-              <p className="text-custom-text-primary/80">Consultoria para reduzir exposição fiscal</p>
-            </div>
-            <div className="group text-center p-8 bg-custom-bg-primary/50 backdrop-blur-sm rounded-2xl border border-custom-text-primary/20 hover:bg-custom-bg-primary/70 hover:border-custom-text-primary/40 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <Users className="h-8 w-8 text-custom-text-primary" />
-              </div>
-              <h4 className="text-2xl font-bold text-custom-text-secondary mb-2">Estratégia</h4>
-              <p className="text-custom-text-primary/80">Defesa e planejamento para empresas</p>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                ["Tributário", "Planejamento, cobrança e defesa fiscal como eixo principal."],
+                ["Prevenção", "Consultoria para reduzir desgaste antes do litígio."],
+                ["Estratégia", "Leitura jurídica conectada à realidade da empresa."],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/12 p-5">
+                  <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{title}</p>
+                  <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

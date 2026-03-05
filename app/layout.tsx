@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import { blogSans } from "@/lib/blog-design"
 import { SEO } from "@/lib/seo"
 
 export const metadata: Metadata = {
@@ -47,7 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning className={`${blogSans.className} antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }

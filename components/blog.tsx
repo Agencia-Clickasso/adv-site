@@ -1,149 +1,91 @@
-import { Calendar, ArrowRight, User, Star, Clock, TrendingUp } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { getSortedPostsData, PRIORITY_POST_SLUGS, sortPostsByPriority } from "@/lib/blog"
 import Link from "next/link"
+import { ArrowRight, Calendar, Clock3, Sparkles, User } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { PRIORITY_POST_SLUGS, getSortedPostsData, sortPostsByPriority } from "@/lib/blog"
+import { blogSerif, formatBlogDate } from "@/lib/blog-design"
 
 export default async function Blog() {
   const posts = await getSortedPostsData()
   const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
-  const displayPosts = sortPostsByPriority(posts).slice(0, 6)
+  const displayPosts = sortPostsByPriority(posts).slice(0, 3)
+  const [leadPost, ...restPosts] = displayPosts
 
   return (
-    <section id="blog" className="py-24 bg-custom-bg-secondary relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(206,167,133,0.03),transparent_50%)]"></div>
-      <div className="absolute top-0 right-0 w-64 h-64 bg-custom-text-primary/5 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-7xl mx-auto">
-          {/* Enhanced header section */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-custom-text-primary/10 border border-custom-text-primary/20 rounded-full px-4 py-2 text-sm text-custom-text-primary font-medium mb-6">
-              <TrendingUp className="h-4 w-4" />
-              Conteúdo Jurídico
-            </div>
-            <h2 className="text-5xl font-bold text-custom-text-secondary mb-6 leading-tight">
-              Conteúdo sobre Direito Tributário
-            </h2>
-            <p className="text-xl text-custom-text-primary/90 max-w-4xl mx-auto leading-relaxed">
-              Artigos voltados a planejamento tributário, execução fiscal, compliance e prevenção de riscos para
-              empresas e profissionais que precisam tomar decisões com mais segurança.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
-              {[
-                "Planejamento Tributário",
-                "Execução Fiscal",
-                "Consultoria Fiscal",
-                "Recuperação de Créditos",
-                "Cobrança Tributária",
-                "Suspensão de Execução",
-              ].map((topic) => (
-                <span
-                  key={topic}
-                  className="rounded-full border border-custom-text-primary/20 bg-custom-text-primary/10 px-4 py-2 text-sm font-medium text-custom-text-primary"
-                >
-                  {topic}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Enhanced blog posts grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {displayPosts.map((post, index) => (
-              <Card 
-                key={index} 
-                className="group h-full bg-custom-bg-primary/30 backdrop-blur-sm border border-custom-text-primary/10 hover:bg-custom-bg-primary/50 hover:border-custom-text-primary/30 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-              >
-                <CardHeader className="pb-4">
-                  {/* Enhanced metadata section */}
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-sm text-custom-text-primary/70">
-                        <Calendar className="h-4 w-4" />
-                        {new Date(post.date).toLocaleDateString('pt-BR', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
-                      </div>
-                      <div className="flex items-center gap-1 text-xs text-custom-text-primary/60 bg-custom-text-primary/10 px-2 py-1 rounded-full">
-                        <Clock className="h-3 w-3" />
-                        {post.readTime}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="inline-flex items-center gap-1 bg-custom-text-primary/20 text-custom-text-primary px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        {post.category}
-                      </div>
-                      {prioritySlugs.has(post.slug) ? (
-                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-custom-text-primary">
-                          Prioridade
-                        </div>
-                      ) : post.author ? (
-                        <div className="flex items-center text-xs text-custom-text-primary/70">
-                          <User className="h-3 w-3 mr-1" />
-                          {post.author}
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  {/* Enhanced title and description */}
-                  <CardTitle className="text-xl text-custom-text-secondary leading-tight mb-3 group-hover:text-custom-text-primary transition-colors duration-300">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-custom-text-primary/80 leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent className="pt-0">
-                  {/* Enhanced CTA section */}
-                  <div className="flex items-center justify-between pt-4 border-t border-custom-text-primary/10">
-                    <div className="flex items-center gap-2 text-sm text-custom-text-primary/70">
-                      <Star className="h-3 w-3 text-custom-text-primary/50" />
-                      <span>{prioritySlugs.has(post.slug) ? "Artigo prioritário do cluster tributário" : "Artigo recomendado"}</span>
-                    </div>
-                    <Link href={`/blog/${post.slug}`}>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="text-custom-text-primary hover:text-custom-text-secondary hover:bg-custom-text-primary/10 group/btn transition-all duration-300"
-                      >
-                        Ler mais 
-                        <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Enhanced CTA section */}
-          <div className="text-center">
-            <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-custom-bg-primary/30 backdrop-blur-sm border border-custom-text-primary/20 rounded-2xl px-8 py-6">
-              <div className="text-left">
-                <h3 className="text-xl font-semibold text-custom-text-secondary mb-2">
-                  Quer entender melhor seu risco tributário?
-                </h3>
-                <p className="text-custom-text-primary/80 max-w-md">
-                  Acesse o blog e veja conteúdos práticos para reduzir incerteza fiscal e agir antes da autuação.
-                </p>
+    <section id="blog" className="relative py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="space-y-6">
+              <div className="section-kicker">
+                <Sparkles className="h-3.5 w-3.5" />
+                Conteúdo estratégico
               </div>
-              <Link href="/blog">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary bg-transparent rounded-xl px-8 py-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-                >
-                  Ver Todos os Artigos
-                  <ArrowRight className="h-5 w-5 ml-2" />
+              <h2 className={`${blogSerif.className} max-w-3xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}>
+                O blog agora funciona como extensão editorial da proposta do escritório.
+              </h2>
+              <p className="max-w-2xl text-lg leading-8 text-custom-text-primary/84">
+                Em vez de artigos soltos, a home apresenta o blog como repertório de decisão: execução fiscal,
+                planejamento tributário, cobrança e prevenção com curadoria clara.
+              </p>
+              <Link href="/blog" className="inline-flex">
+                <Button className="rounded-full bg-custom-text-primary px-7 text-custom-bg-primary hover:bg-custom-text-secondary">
+                  Ver caderno completo
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
+            </div>
+
+            <div className="grid gap-5">
+              {leadPost ? (
+                <article className="home-paper rounded-[1.9rem] p-7 text-slate-900 sm:p-8">
+                  <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#7f5b39]">
+                    <span className="rounded-full border border-[#d2b290] bg-white/70 px-3 py-1">{leadPost.category}</span>
+                    {prioritySlugs.has(leadPost.slug) ? <span>Prioridade editorial</span> : null}
+                  </div>
+                  <h3 className={`${blogSerif.className} mt-5 text-4xl leading-tight`}>{leadPost.title}</h3>
+                  <p className="mt-4 text-base leading-8 text-slate-700">{leadPost.excerpt}</p>
+                  <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600">
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      {formatBlogDate(leadPost.date)}
+                    </span>
+                    <span className="inline-flex items-center gap-2">
+                      <Clock3 className="h-4 w-4" />
+                      {leadPost.readTime}
+                    </span>
+                    {leadPost.author ? (
+                      <span className="inline-flex items-center gap-2">
+                        <User className="h-4 w-4" />
+                        {leadPost.author}
+                      </span>
+                    ) : null}
+                  </div>
+                  <Link href={`/blog/${leadPost.slug}`} className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#7f5b39] transition hover:text-slate-950">
+                    Ler artigo
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </article>
+              ) : null}
+
+              <div className="grid gap-4 md:grid-cols-2">
+                {restPosts.map((post) => (
+                  <article key={post.slug} className="home-panel rounded-[1.6rem] p-5">
+                    <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/62">{post.category}</p>
+                    <h3 className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary`}>
+                      {post.title}
+                    </h3>
+                    <p className="mt-3 line-clamp-3 text-sm leading-7 text-custom-text-primary/76">{post.excerpt}</p>
+                    <div className="mt-4 flex items-center justify-between gap-3 text-xs text-custom-text-primary/58">
+                      <span>{formatBlogDate(post.date)}</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <Link href={`/blog/${post.slug}`} className="mt-4 inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary">
+                      Abrir leitura
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>

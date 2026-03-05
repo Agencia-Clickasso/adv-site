@@ -1,61 +1,52 @@
-import { Button } from "@/components/ui/button"
-import { Scale, Shield, Users, ArrowRight, Star } from "lucide-react"
 import Link from "next/link"
+import { ArrowRight, ChartNoAxesColumn, Scale, ShieldCheck, Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { blogSerif } from "@/lib/blog-design"
 
 export default function Hero() {
   return (
-    <section id="home" className="relative bg-custom-bg-primary text-custom-text-secondary pt-20 overflow-hidden">
-      {/* Background with enhanced gradient and pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-custom-bg-primary via-custom-bg-secondary to-custom-bg-primary"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(206,167,133,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(254,251,215,0.05),transparent_50%)]"></div>
-      
-      {/* Floating elements for visual interest */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-custom-text-primary/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-32 h-32 bg-custom-text-primary/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-custom-text-primary/8 rounded-full blur-lg animate-pulse delay-500"></div>
-      
-      {/* Additional floating decorative elements */}
-      <div className="absolute top-32 left-1/3 w-8 h-8 bg-custom-text-primary/20 rounded-full animate-float"></div>
-      <div className="absolute top-48 right-1/4 w-6 h-6 bg-custom-text-primary/15 rounded-full animate-float-delay-1"></div>
-      <div className="absolute bottom-32 right-1/3 w-10 h-10 bg-custom-text-primary/12 rounded-full animate-float-delay-2"></div>
-
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="max-w-6xl mx-auto">
-          {/* Main content with improved layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="text-left space-y-8">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-custom-text-primary/10 border border-custom-text-primary/20 rounded-full px-4 py-2 text-sm text-custom-text-primary font-medium">
-                <Star className="h-4 w-4" />
-                Especialista em Direito Tributário
+    <section id="home" className="relative overflow-hidden pt-32 text-custom-text-secondary sm:pt-36">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+            <div className="space-y-8 rounded-[2rem] border border-custom-text-primary/14 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-7 shadow-[0_28px_100px_rgba(0,0,0,0.26)] backdrop-blur-sm sm:p-10 lg:p-12">
+              <div className="section-kicker">
+                <Sparkles className="h-3.5 w-3.5" />
+                Boutique jurídica tributária
               </div>
 
-              {/* Main heading with improved typography */}
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                  <span className="text-custom-text-secondary">Advogada</span>
-                  <span className="text-custom-text-primary block bg-gradient-to-r from-custom-text-primary to-custom-text-primary/80 bg-clip-text text-transparent">
-                    Tributarista em São Bernardo
-                  </span>
+              <div className="space-y-6">
+                <h1 className={`${blogSerif.className} max-w-5xl text-5xl leading-[0.95] sm:text-6xl lg:text-7xl`}>
+                  Estratégia tributária para empresas que não podem decidir no escuro.
                 </h1>
-                <p className="text-xl md:text-2xl text-custom-text-primary/90 leading-relaxed max-w-lg">
-                  Assessoria em Direito Tributário para empresas e profissionais que precisam reduzir riscos fiscais,
-                  revisar a carga tributária e enfrentar execuções fiscais com estratégia e segurança jurídica.
+                <p className="max-w-2xl text-lg leading-8 text-custom-text-primary/88 sm:text-xl">
+                  Planejamento, defesa fiscal e consultoria preventiva com leitura jurídica conectada ao caixa,
+                  ao passivo e ao risco real da operação.
                 </p>
               </div>
 
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Atuação central</p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>Tributário</p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Planejamento, execução fiscal e revisão de carga.</p>
+                </div>
+                <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Perfil de cliente</p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>Empresas</p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atendimento com visão de negócio e prevenção.</p>
+                </div>
+                <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Base</p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>São Bernardo</p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atuação local com leitura nacional de risco fiscal.</p>
+                </div>
+              </div>
 
-
-              {/* CTA buttons with enhanced styling */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-custom-text-primary hover:bg-custom-text-primary/90 text-custom-bg-secondary font-semibold px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <Link href="#contact" className="flex items-center gap-2">
-                    Falar com Especialista
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-8 text-custom-bg-primary hover:bg-custom-text-secondary">
+                  <Link href="#contact">
+                    Solicitar análise tributária
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -63,73 +54,55 @@ export default function Hero() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-2 border-custom-text-primary text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-secondary font-semibold px-8 py-4 text-lg rounded-xl bg-transparent transition-all duration-300 transform hover:-translate-y-1"
+                  className="rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
                 >
-                    <Link href="#services">Ver Como Atuamos</Link>
-                  </Button>
+                  <Link href="#services">Ver frentes de atuação</Link>
+                </Button>
               </div>
             </div>
 
-            {/* Right side - Stats and features */}
-            <div className="space-y-8">
-              {/* Stats cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-custom-bg-secondary/50 backdrop-blur-sm border border-custom-text-primary/20 rounded-2xl p-6 text-center hover:bg-custom-bg-secondary/70 transition-all duration-300 group">
-                  <div className="text-3xl font-bold text-custom-text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Tributário</div>
-                  <div className="text-sm text-custom-text-primary/80">Foco principal de atuação</div>
-                </div>
-                <div className="bg-custom-bg-secondary/50 backdrop-blur-sm border border-custom-text-primary/20 rounded-2xl p-6 text-center hover:bg-custom-bg-secondary/70 transition-all duration-300 group">
-                  <div className="text-3xl font-bold text-custom-text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Empresas</div>
-                  <div className="text-sm text-custom-text-primary/80">Atendimento com visão de negócio</div>
-                </div>
+            <div className="grid gap-5">
+              <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-8">
+                <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">Como a atuação entra</p>
+                <h2 className={`${blogSerif.className} mt-4 text-4xl leading-tight sm:text-5xl`}>
+                  Diagnóstico técnico antes que o problema vire custo permanente.
+                </h2>
+                <p className="mt-4 text-base leading-8 text-slate-700">
+                  A proposta do escritório é organizar decisão, não apenas reagir ao litígio. O trabalho começa com
+                  leitura da operação, da exposição tributária e do melhor caminho de resposta.
+                </p>
               </div>
 
-              {/* Feature highlights */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-custom-bg-secondary/30 rounded-xl border border-custom-text-primary/10 hover:bg-custom-bg-secondary/50 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-custom-text-primary/20 rounded-full flex items-center justify-center group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                    <Scale className="h-5 w-5 text-custom-text-primary" />
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    icon: Scale,
+                    title: "Planejamento tributário",
+                    text: "Estrutura fiscal com menos improviso e mais previsibilidade.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "Defesa fiscal",
+                    text: "Resposta técnica para cobrança, autuação e execução.",
+                  },
+                  {
+                    icon: ChartNoAxesColumn,
+                    title: "Leitura de impacto",
+                    text: "Avaliação do reflexo jurídico no caixa e na operação.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={item.title}
+                    className={`home-panel rounded-[1.6rem] p-5 ${index === 2 ? "sm:col-span-2" : ""}`}
+                  >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
+                      <item.icon className="h-5 w-5" />
+                    </div>
+                    <h3 className={`${blogSerif.className} mt-5 text-2xl text-custom-text-secondary`}>{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-custom-text-primary/78">{item.text}</p>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-custom-text-secondary">Planejamento</h4>
-                    <p className="text-sm text-custom-text-primary/80">Estratégia para pagar tributos com segurança</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 p-4 bg-custom-bg-secondary/30 rounded-xl border border-custom-text-primary/10 hover:bg-custom-bg-secondary/50 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-custom-text-primary/20 rounded-full flex items-center justify-center group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                    <Shield className="h-5 w-5 text-custom-text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-custom-text-secondary">Defesa Fiscal</h4>
-                    <p className="text-sm text-custom-text-primary/80">Apoio em autuações, passivos e execuções</p>
-                  </div>
-                </div>
+                ))}
               </div>
-            </div>
-          </div>
-
-          {/* Bottom features grid with enhanced styling */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            <div className="group text-center p-8 bg-custom-bg-secondary/30 backdrop-blur-sm rounded-2xl border border-custom-text-primary/10 hover:bg-custom-bg-secondary/50 hover:border-custom-text-primary/30 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <Scale className="h-8 w-8 text-custom-text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-custom-text-secondary">Planejamento Tributário</h3>
-              <p className="text-custom-text-primary/80 leading-relaxed">Analisamos enquadramento, operação e carga tributária para reduzir riscos e evitar pagamento indevido.</p>
-            </div>
-            <div className="group text-center p-8 bg-custom-bg-secondary/30 backdrop-blur-sm rounded-2xl border border-custom-text-primary/10 hover:bg-custom-bg-secondary/50 hover:border-custom-text-primary/30 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <Shield className="h-8 w-8 text-custom-text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-custom-text-secondary">Execução Fiscal</h3>
-              <p className="text-custom-text-primary/80 leading-relaxed">Atuação técnica para defender patrimônio, negociar passivos e estruturar a melhor resposta jurídica.</p>
-            </div>
-            <div className="group text-center p-8 bg-custom-bg-secondary/30 backdrop-blur-sm rounded-2xl border border-custom-text-primary/10 hover:bg-custom-bg-secondary/50 hover:border-custom-text-primary/30 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-custom-text-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-custom-text-primary/30 transition-colors duration-300">
-                <Users className="h-8 w-8 text-custom-text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-custom-text-secondary">Consultoria Preventiva</h3>
-              <p className="text-custom-text-primary/80 leading-relaxed">Orientação para decisões empresariais com mais previsibilidade fiscal e menos exposição a autuações.</p>
             </div>
           </div>
         </div>
