@@ -9,17 +9,19 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-            <div className="space-y-8 rounded-[2rem] border border-custom-text-primary/14 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-7 shadow-[0_28px_100px_rgba(0,0,0,0.26)] backdrop-blur-sm sm:p-10 lg:p-12">
+            <div className="space-y-7 rounded-[1.8rem] border border-custom-text-primary/14 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-5 shadow-[0_28px_100px_rgba(0,0,0,0.26)] backdrop-blur-sm sm:space-y-8 sm:rounded-[2rem] sm:p-10 lg:p-12">
               <div className="section-kicker">
                 <Sparkles className="h-3.5 w-3.5" />
                 Boutique jurídica tributária
               </div>
 
               <div className="space-y-6">
-                <h1 className={`${blogSerif.className} max-w-5xl text-5xl leading-[0.95] sm:text-6xl lg:text-7xl`}>
+                <h1
+                  className={`${blogSerif.className} max-w-5xl text-[3rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
+                >
                   Advogada tributarista em São Bernardo do Campo para empresas que precisam decidir com mais clareza.
                 </h1>
-                <p className="max-w-2xl text-lg leading-8 text-custom-text-primary/88 sm:text-xl">
+                <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-xl sm:leading-8">
                   Planejamento tributário, execução fiscal e consultoria fiscal preventiva com leitura jurídica
                   conectada ao caixa, ao passivo e ao risco real da operação.
                 </p>
@@ -44,7 +46,7 @@ export default function Hero() {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-8 text-custom-bg-primary hover:bg-custom-text-secondary">
+                <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8">
                   <Link href="#contact">
                     Solicitar análise tributária
                     <ArrowRight className="h-5 w-5" />
@@ -62,12 +64,12 @@ export default function Hero() {
             </div>
 
             <div className="grid gap-5">
-              <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-8">
+              <div className="home-paper rounded-[1.8rem] p-5 text-slate-900 sm:rounded-[2rem] sm:p-8">
                 <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">Como a atuação entra</p>
-                <h2 className={`${blogSerif.className} mt-4 text-4xl leading-tight sm:text-5xl`}>
+                <h2 className={`${blogSerif.className} mt-4 text-[2.35rem] leading-[1.02] sm:text-5xl`}>
                   Diagnóstico técnico antes que o problema vire custo permanente.
                 </h2>
-                <p className="mt-4 text-base leading-8 text-slate-700">
+                <p className="mt-4 text-[0.98rem] leading-7 text-slate-700 sm:text-base sm:leading-8">
                   A proposta do escritório é organizar decisão, não apenas reagir ao litígio. O trabalho começa com
                   leitura da operação, da exposição tributária e do melhor caminho de resposta.
                 </p>

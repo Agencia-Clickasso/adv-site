@@ -31,10 +31,10 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-50 flex items-center justify-center w-12 h-12 bg-custom-text-primary/80 hover:bg-custom-text-primary text-custom-bg-secondary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
+          className="group fixed bottom-20 left-4 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-custom-text-primary/80 text-custom-bg-secondary shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-custom-text-primary hover:shadow-xl sm:bottom-6 sm:left-6 sm:z-50 sm:h-12 sm:w-12"
           aria-label="Voltar ao topo"
         >
-          <ChevronUp className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+          <ChevronUp className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
         </button>
       )}
     </>

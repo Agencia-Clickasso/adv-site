@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import FloatingWhatsApp from "@/components/floating-whatsapp"
 import { blogSans } from "@/lib/blog-design"
 import { SEO } from "@/lib/seo"
 
@@ -52,6 +53,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body suppressHydrationWarning className={`${blogSans.className} antialiased`}>
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   )

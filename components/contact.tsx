@@ -67,24 +67,26 @@ export default function Contact() {
     "h-12 rounded-2xl border-custom-text-primary/18 bg-custom-bg-primary/45 text-custom-text-secondary placeholder:text-custom-text-primary/48 focus-visible:ring-custom-text-primary/25"
 
   return (
-    <section id="contact" className="relative py-24">
+    <section id="contact" className="relative py-18 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="home-paper rounded-[2.2rem] p-7 text-slate-900 shadow-[0_32px_120px_rgba(0,0,0,0.22)] sm:p-10">
+          <div className="home-paper rounded-[2rem] p-5 text-slate-900 shadow-[0_32px_120px_rgba(0,0,0,0.22)] sm:rounded-[2.2rem] sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="section-kicker text-[#7f5b39]">
                   <Sparkles className="h-3.5 w-3.5" />
                   Contato direto
                 </div>
 
                 <div>
-                  <h2 className={`${blogSerif.className} max-w-3xl text-5xl leading-[0.96] text-slate-950 sm:text-6xl`}>
-                    Agende uma consulta tributária ou empresarial com mais contexto e menos ruído.
+                  <h2
+                    className={`${blogSerif.className} max-w-3xl text-[2.9rem] leading-[0.98] tracking-[-0.03em] text-slate-950 sm:text-5xl lg:text-6xl`}
+                  >
+                    Fale sobre seu caso com clareza.
                   </h2>
-                  <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700">
-                    Use o formulário para descrever a situação com objetividade. Se houver cobrança, autuação,
-                    execução fiscal ou decisão empresarial com reflexo tributário, isso deve aparecer logo no primeiro contato.
+                  <p className="mt-4 max-w-2xl text-[0.98rem] leading-7 text-slate-700 sm:mt-5 sm:text-base sm:leading-8">
+                    Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com impacto tributário,
+                    descreva isso logo no primeiro contato.
                   </p>
                 </div>
 
@@ -111,7 +113,7 @@ export default function Contact() {
                       body: "Segunda a Sexta: 8h às 18h\nSábado: 8h às 12h",
                     },
                   ].map((item) => (
-                    <div key={item.title} className="rounded-[1.5rem] border border-[#dcc3a4] bg-white/65 p-5">
+                    <div key={item.title} className="rounded-[1.35rem] border border-[#dcc3a4] bg-white/65 p-4 sm:rounded-[1.5rem] sm:p-5">
                       <div className="flex items-start gap-4">
                         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#ecd5ba] text-[#7f5b39]">
                           <item.icon className="h-5 w-5" />
@@ -126,12 +128,12 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="rounded-[2rem] bg-[#161c25] p-6 text-custom-text-secondary shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
+              <div className="rounded-[1.8rem] bg-[#161c25] p-5 text-custom-text-secondary shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:rounded-[2rem] sm:p-8">
                 <div className="mb-6 border-b border-custom-text-primary/10 pb-6">
                   <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Formulário de triagem</p>
-                  <h3 className={`${blogSerif.className} mt-3 text-4xl`}>Solicitar atendimento jurídico</h3>
+                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>Solicitar atendimento</h3>
                   <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
-                    Informe o máximo possível em poucas linhas: natureza da demanda, urgência e contexto empresarial.
+                    Resuma a demanda, a urgência e o ponto principal que precisa ser analisado.
                   </p>
                 </div>
 
