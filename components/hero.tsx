@@ -17,11 +17,11 @@ export default function Hero() {
 
               <div className="space-y-6">
                 <h1 className={`${blogSerif.className} max-w-5xl text-5xl leading-[0.95] sm:text-6xl lg:text-7xl`}>
-                  Estratégia tributária para empresas que não podem decidir no escuro.
+                  Advogada tributarista em São Bernardo do Campo para empresas que precisam decidir com mais clareza.
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-custom-text-primary/88 sm:text-xl">
-                  Planejamento, defesa fiscal e consultoria preventiva com leitura jurídica conectada ao caixa,
-                  ao passivo e ao risco real da operação.
+                  Planejamento tributário, execução fiscal e consultoria fiscal preventiva com leitura jurídica
+                  conectada ao caixa, ao passivo e ao risco real da operação.
                 </p>
               </div>
 

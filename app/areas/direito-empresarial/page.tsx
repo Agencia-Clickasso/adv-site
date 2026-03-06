@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Building, FileText, Shield, Users } from "lucide-react"
 import AreaPage from "@/components/area-page"
-import { createAreaMetadata } from "@/lib/seo"
+import JsonLd from "@/components/seo/json-ld"
+import { buildAreaServiceSchema, buildFaqSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("direito-empresarial")
 
@@ -52,6 +53,45 @@ export default function DireitoEmpresarialPage() {
       finalText="Revisamos contratos, estrutura e risco da operação. Quando houver reflexo fiscal, o encaminhamento para o tributário já entra no mesmo fluxo."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Ir para Direito Tributário", href: "/areas/direito-tributario" }}
-    />
+      relatedLinks={[
+        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+        { label: "Consultoria jurídica preventiva em São Bernardo do Campo", href: "/areas/consultoria-juridica" },
+        { label: "Planejamento tributário para empresas: quando revisar e como reduzir riscos", href: "/blog/planejamento-tributario-para-empresas-como-reduzir-riscos" },
+      ]}
+      faqs={[
+        {
+          question: "Quando procurar apoio em direito empresarial?",
+          answer: "Quando a empresa precisa revisar contratos, estrutura societária, compliance ou tomar decisão que pode afetar risco operacional e financeiro.",
+        },
+        {
+          question: "Direito empresarial também pode ter impacto tributário?",
+          answer: "Sim. Mudanças societárias, contratos e reorganizações podem alterar exposição fiscal e precisam de leitura conjunta com o tributário.",
+        },
+      ]}
+    >
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "direito-empresarial",
+          serviceType: "Direito Empresarial",
+          name: "Consultoria em Direito Empresarial em São Bernardo do Campo",
+          description:
+            "Consultoria em Direito Empresarial para empresas, com apoio em contratos comerciais, compliance, estrutura societária e decisões com reflexo tributário.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando procurar apoio em direito empresarial?",
+            answer:
+              "Quando a empresa precisa revisar contratos, estrutura societária, compliance ou tomar decisão que pode afetar risco operacional e financeiro.",
+          },
+          {
+            question: "Direito empresarial também pode ter impacto tributário?",
+            answer:
+              "Sim. Mudanças societárias, contratos e reorganizações podem alterar exposição fiscal e precisam de leitura conjunta com o tributário.",
+          },
+        ])}
+      />
+    </AreaPage>
   )
 }

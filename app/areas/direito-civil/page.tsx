@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { FileText, Scale, Shield, Users } from "lucide-react"
 import AreaPage from "@/components/area-page"
-import { createAreaMetadata } from "@/lib/seo"
+import JsonLd from "@/components/seo/json-ld"
+import { buildAreaServiceSchema, buildFaqSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("direito-civil")
 
@@ -52,6 +53,45 @@ export default function DireitoCivilPage() {
       finalText="A análise certa no início reduz desgaste, custo e exposição. Se houver impacto patrimonial ou empresarial, a frente tributária entra junto na leitura do caso."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Falar com tributário", href: "/areas/direito-tributario" }}
-    />
+      relatedLinks={[
+        { label: "Direito empresarial em São Bernardo do Campo", href: "/areas/direito-empresarial" },
+        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+        { label: "Blog de Direito Tributário para Empresas", href: "/blog" },
+      ]}
+      faqs={[
+        {
+          question: "Quando buscar apoio em direito civil?",
+          answer: "Quando há necessidade de revisar contratos, lidar com responsabilidade civil, proteger patrimônio ou organizar um conflito antes que ele escale.",
+        },
+        {
+          question: "Direito civil pode se conectar com tributário?",
+          answer: "Sim. Em contratos, disputas patrimoniais e relações entre sócios, o reflexo fiscal pode ser relevante e precisa entrar cedo na análise.",
+        },
+      ]}
+    >
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "direito-civil",
+          serviceType: "Direito Civil",
+          name: "Atuação em Direito Civil em São Bernardo do Campo",
+          description:
+            "Atuação em Direito Civil com suporte em contratos, responsabilidade civil e proteção patrimonial.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando buscar apoio em direito civil?",
+            answer:
+              "Quando há necessidade de revisar contratos, lidar com responsabilidade civil, proteger patrimônio ou organizar um conflito antes que ele escale.",
+          },
+          {
+            question: "Direito civil pode se conectar com tributário?",
+            answer:
+              "Sim. Em contratos, disputas patrimoniais e relações entre sócios, o reflexo fiscal pode ser relevante e precisa entrar cedo na análise.",
+          },
+        ])}
+      />
+    </AreaPage>
   )
 }

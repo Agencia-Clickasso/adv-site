@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Calculator, FileText, Scale, Shield } from "lucide-react"
 import AreaPage from "@/components/area-page"
 import JsonLd from "@/components/seo/json-ld"
-import { buildTaxServiceSchema, createAreaMetadata } from "@/lib/seo"
+import { buildAreaServiceSchema, buildFaqSchema, buildTaxServiceSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("direito-tributario")
 
@@ -53,8 +53,55 @@ export default function DireitoTributarioPage() {
       finalText="A análise certa reduz improviso, protege patrimônio e organiza os próximos passos com base no risco real da empresa."
       finalPrimaryCta={{ label: "Solicitar atendimento", href: "/#contact" }}
       finalSecondaryCta={{ label: "Voltar ao início", href: "/" }}
+      relatedLinks={[
+        { label: "Planejamento tributário para empresas: quando revisar e como reduzir riscos", href: "/blog/planejamento-tributario-para-empresas-como-reduzir-riscos" },
+        { label: "Execução fiscal para empresas: o que fazer nos primeiros dias", href: "/blog/defesa-em-execucao-fiscal-estrategias-para-empresas" },
+        { label: "Consultoria fiscal para empresas: quando contratar antes da autuação", href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita" },
+      ]}
+      faqs={[
+        {
+          question: "Quando vale procurar uma advogada tributarista?",
+          answer: "Quando a empresa enfrenta cobrança tributária, dúvida sobre regime, execução fiscal, autuação ou necessidade de revisar a estrutura tributária com mais segurança.",
+        },
+        {
+          question: "Planejamento tributário serve apenas para empresas grandes?",
+          answer: "Não. Empresas de diferentes portes podem revisar regime, operação e obrigações para reduzir risco e evitar pagamento indevido dentro da legalidade.",
+        },
+        {
+          question: "Execução fiscal sempre exige processo longo?",
+          answer: "Não necessariamente. A estratégia depende da fase da cobrança, dos documentos, da existência de garantia e das alternativas administrativas ou judiciais disponíveis.",
+        },
+      ]}
     >
       <JsonLd data={buildTaxServiceSchema()} />
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "direito-tributario",
+          serviceType: "Direito Tributário",
+          name: "Advogada Tributarista em São Bernardo do Campo",
+          description:
+            "Assessoria em Direito Tributário para empresas e profissionais, com foco em planejamento tributário, consultoria fiscal, execução fiscal e contencioso tributário.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando vale procurar uma advogada tributarista?",
+            answer:
+              "Quando a empresa enfrenta cobrança tributária, dúvida sobre regime, execução fiscal, autuação ou necessidade de revisar a estrutura tributária com mais segurança.",
+          },
+          {
+            question: "Planejamento tributário serve apenas para empresas grandes?",
+            answer:
+              "Não. Empresas de diferentes portes podem revisar regime, operação e obrigações para reduzir risco e evitar pagamento indevido dentro da legalidade.",
+          },
+          {
+            question: "Execução fiscal sempre exige processo longo?",
+            answer:
+              "Não necessariamente. A estratégia depende da fase da cobrança, dos documentos, da existência de garantia e das alternativas administrativas ou judiciais disponíveis.",
+          },
+        ])}
+      />
     </AreaPage>
   )
 }

@@ -7,9 +7,9 @@ import { blogSans, blogSerif, formatBlogDate } from "@/lib/blog-design"
 import { createPageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Blog Jurídico e Tributário",
+  title: "Blog de Direito Tributário para Empresas",
   description:
-    "Conteúdo jurídico com foco em Direito Tributário, compliance, contratos e prevenção de riscos para empresas e profissionais.",
+    "Blog de Direito Tributário com conteúdos sobre planejamento tributário, execução fiscal, consultoria fiscal, compliance e prevenção de riscos para empresas.",
   path: "/blog",
   keywords: [
     "blog direito tributário",
@@ -17,6 +17,7 @@ export const metadata: Metadata = createPageMetadata({
     "compliance tributário",
     "execução fiscal",
     "planejamento tributário",
+    "consultoria fiscal",
   ],
 })
 

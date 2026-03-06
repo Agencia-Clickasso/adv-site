@@ -100,11 +100,11 @@ export default function Services() {
               </div>
               <div>
                 <h2 className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}>
-                  Direito tributário como núcleo, com áreas complementares orbitando a operação.
+                  Direito tributário como núcleo da atuação, com apoio jurídico complementar para a operação.
                 </h2>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-custom-text-primary/84">
-                  A home deixa isso explícito: o escritório não disputa atenção com seis serviços equivalentes. O eixo
-                  principal é tributário; as demais áreas entram quando ajudam a resolver o caso com mais completude.
+                  O escritório concentra sua proposta em planejamento tributário, execução fiscal e consultoria fiscal.
+                  As demais áreas entram quando ajudam a resolver o caso com mais contexto e menor risco.
                 </p>
               </div>
             </div>

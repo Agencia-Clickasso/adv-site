@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   keywords: [
     "advogada tributarista",
     "direito tributário",
+    "advogada tributarista são bernardo do campo",
+    "advogado tributário são bernardo do campo",
     "planejamento tributário",
     "execução fiscal",
     "consultoria fiscal",

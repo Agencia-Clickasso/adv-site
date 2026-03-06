@@ -80,11 +80,11 @@ export default function Contact() {
 
                 <div>
                   <h2 className={`${blogSerif.className} max-w-3xl text-5xl leading-[0.96] text-slate-950 sm:text-6xl`}>
-                    Traga o caso com contexto. A resposta começa melhor quando a triagem já vem certa.
+                    Agende uma consulta tributária ou empresarial com mais contexto e menos ruído.
                   </h2>
                   <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700">
-                    Use o formulário para descrever a situação com objetividade. Se houver cobrança, autuação, execução
-                    ou decisão empresarial com reflexo fiscal, isso deve aparecer logo no primeiro contato.
+                    Use o formulário para descrever a situação com objetividade. Se houver cobrança, autuação,
+                    execução fiscal ou decisão empresarial com reflexo tributário, isso deve aparecer logo no primeiro contato.
                   </p>
                 </div>
 
@@ -129,7 +129,7 @@ export default function Contact() {
               <div className="rounded-[2rem] bg-[#161c25] p-6 text-custom-text-secondary shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
                 <div className="mb-6 border-b border-custom-text-primary/10 pb-6">
                   <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Formulário de triagem</p>
-                  <h3 className={`${blogSerif.className} mt-3 text-4xl`}>Agende sua consulta</h3>
+                  <h3 className={`${blogSerif.className} mt-3 text-4xl`}>Solicitar atendimento jurídico</h3>
                   <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
                     Informe o máximo possível em poucas linhas: natureza da demanda, urgência e contexto empresarial.
                   </p>
