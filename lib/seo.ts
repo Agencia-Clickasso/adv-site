@@ -6,7 +6,7 @@ export const SEO = {
   locale: "pt_BR",
   defaultTitle: "Advogada Tributarista em São Bernardo do Campo",
   defaultDescription:
-    "Lucimeire Xavier Advocacia oferece assessoria em Direito Tributário para empresas e profissionais em São Bernardo do Campo, com foco em planejamento tributário, execuções fiscais e consultoria fiscal.",
+    "Assessoria em Direito Tributário para empresas e profissionais em São Bernardo do Campo, com foco em planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
   phoneDisplay: "(11) 96758-6911",
   phoneIntl: "+55-11-96758-6911",
   email: "contato@lucimeirexavieradvocacia.adv.br",
@@ -94,12 +94,14 @@ const areaPages: Record<
   { title: string; description: string; keywords: string[] }
 > = {
   "direito-tributario": {
-    title: "Direito Tributário para Empresas e Profissionais",
+    title: "Advogada Tributarista em São Bernardo do Campo",
     description:
-      "Assessoria em Direito Tributário em São Bernardo do Campo com foco em planejamento tributário, consultoria fiscal, execuções fiscais e contencioso tributário.",
+      "Advogada tributarista em São Bernardo do Campo para empresas e profissionais. Atuação em planejamento tributário, consultoria fiscal, execução fiscal e contencioso tributário.",
     keywords: [
       "direito tributário",
       "advogada tributarista",
+      "advogada tributarista são bernardo do campo",
+      "advogado tributário são bernardo do campo",
       "planejamento tributário",
       "execução fiscal",
       "consultoria fiscal",
@@ -107,40 +109,40 @@ const areaPages: Record<
     ],
   },
   "direito-empresarial": {
-    title: "Direito Empresarial e Contratos Comerciais",
+    title: "Direito Empresarial em São Bernardo do Campo",
     description:
-      "Consultoria em Direito Empresarial para empresas, com apoio em contratos comerciais, compliance e estruturação jurídica de negócios em São Bernardo do Campo.",
-    keywords: ["direito empresarial", "contratos comerciais", "compliance empresarial"],
+      "Consultoria em Direito Empresarial para empresas em São Bernardo do Campo, com apoio em contratos comerciais, compliance, estrutura societária e decisões com reflexo tributário.",
+    keywords: ["direito empresarial", "advogado empresarial são bernardo do campo", "contratos comerciais", "compliance empresarial"],
   },
   "direito-civil": {
-    title: "Direito Civil e Contratos",
+    title: "Direito Civil e Contratos em São Bernardo do Campo",
     description:
-      "Atuação em Direito Civil com suporte em contratos, responsabilidade civil e proteção de direitos pessoais, com atendimento em São Bernardo do Campo.",
-    keywords: ["direito civil", "contratos civis", "responsabilidade civil"],
+      "Atuação em Direito Civil com suporte em contratos, responsabilidade civil e proteção patrimonial, com atendimento em São Bernardo do Campo.",
+    keywords: ["direito civil", "advogado civil são bernardo do campo", "contratos civis", "responsabilidade civil"],
   },
   "direito-imobiliario": {
-    title: "Direito Imobiliário para Compra, Venda e Locação",
+    title: "Direito Imobiliário em São Bernardo do Campo",
     description:
-      "Assessoria em Direito Imobiliário para compra e venda, locações e regularização de imóveis, com atendimento jurídico em São Bernardo do Campo.",
-    keywords: ["direito imobiliário", "compra e venda de imóveis", "locação", "regularização"],
+      "Assessoria em Direito Imobiliário para compra e venda, locações e regularização de imóveis em São Bernardo do Campo, com atenção a risco patrimonial e impacto tributário.",
+    keywords: ["direito imobiliário", "advogado imobiliário são bernardo do campo", "compra e venda de imóveis", "locação", "regularização"],
   },
   "direito-trabalhista": {
-    title: "Direito Trabalhista e Consultoria Preventiva",
+    title: "Direito Trabalhista em São Bernardo do Campo",
     description:
-      "Atendimento em Direito Trabalhista para rescisões, ações trabalhistas e consultoria preventiva para empresas e trabalhadores em São Bernardo do Campo.",
-    keywords: ["direito trabalhista", "ações trabalhistas", "consultoria trabalhista"],
+      "Atendimento em Direito Trabalhista para rescisões, ações trabalhistas e consultoria preventiva em São Bernardo do Campo, com foco em redução de passivo e organização da operação.",
+    keywords: ["direito trabalhista", "advogado trabalhista são bernardo do campo", "ações trabalhistas", "consultoria trabalhista"],
   },
   "direito-processual": {
-    title: "Direito Processual e Representação em Ações",
+    title: "Direito Processual e Estratégia Processual",
     description:
-      "Representação em processos judiciais e administrativos, com foco em estratégia processual, recursos e execuções em São Bernardo do Campo.",
-    keywords: ["direito processual", "ações judiciais", "recursos", "execuções"],
+      "Representação em processos judiciais e administrativos, com foco em estratégia processual, recursos, execuções e disputas com impacto tributário em São Bernardo do Campo.",
+    keywords: ["direito processual", "advogado processual são bernardo do campo", "ações judiciais", "recursos", "execuções"],
   },
   "consultoria-juridica": {
-    title: "Consultoria Jurídica Preventiva e Estratégica",
+    title: "Consultoria Jurídica Preventiva em São Bernardo do Campo",
     description:
-      "Consultoria jurídica preventiva para pessoas físicas e jurídicas, com pareceres, due diligence e suporte estratégico em São Bernardo do Campo.",
-    keywords: ["consultoria jurídica", "parecer jurídico", "due diligence"],
+      "Consultoria jurídica preventiva para empresas e profissionais, com pareceres, due diligence e suporte estratégico em São Bernardo do Campo.",
+    keywords: ["consultoria jurídica", "consultoria jurídica empresarial", "parecer jurídico", "due diligence"],
   },
 }
 
@@ -202,6 +204,33 @@ export function buildTaxServiceSchema() {
   }
 }
 
+export function buildAreaServiceSchema(input: {
+  slug: string
+  serviceType: string
+  name: string
+  description: string
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SEO.siteUrl}/areas/${input.slug}#service`,
+    serviceType: input.serviceType,
+    name: input.name,
+    provider: {
+      "@type": "LegalService",
+      name: SEO.siteName,
+      url: SEO.siteUrl,
+    },
+    areaServed: ["São Bernardo do Campo", "São Paulo", "Brasil"],
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: `${SEO.siteUrl}/areas/${input.slug}`,
+    },
+    description: input.description,
+  }
+}
+
 export function buildBlogPostingSchema(input: {
   title: string
   description: string
@@ -230,5 +259,25 @@ export function buildBlogPostingSchema(input: {
     },
     mainEntityOfPage: canonicalUrl(`/blog/${input.slug}`),
     url: canonicalUrl(`/blog/${input.slug}`),
+  }
+}
+
+export function buildFaqSchema(
+  questions: Array<{
+    question: string
+    answer: string
+  }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   }
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { FileText, Gavel, Scale, Shield } from "lucide-react"
 import AreaPage from "@/components/area-page"
-import { createAreaMetadata } from "@/lib/seo"
+import JsonLd from "@/components/seo/json-ld"
+import { buildAreaServiceSchema, buildFaqSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("direito-processual")
 
@@ -52,6 +53,45 @@ export default function DireitoProcessualPage() {
       finalText="A resposta errada aumenta custo, demora e exposição. Em demandas com componente fiscal, a condução considera desde o início o impacto tributário do caso."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Ir para Direito Tributário", href: "/areas/direito-tributario" }}
-    />
+      relatedLinks={[
+        { label: "Execução fiscal para empresas: o que fazer nos primeiros dias", href: "/blog/defesa-em-execucao-fiscal-estrategias-para-empresas" },
+        { label: "Como suspender execução fiscal da empresa: medidas possíveis e o que avaliar", href: "/blog/como-suspender-execucao-fiscal-para-empresa" },
+        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+      ]}
+      faqs={[
+        {
+          question: "Quando procurar apoio em direito processual?",
+          answer: "Quando já existe disputa judicial ou administrativa, ou quando a resposta processual precisa ser definida com rapidez para evitar perda de prazo e aumento de exposição.",
+        },
+        {
+          question: "Processo com cobrança fiscal exige análise tributária junto?",
+          answer: "Sim. Quando o litígio envolve cobrança tributária, execução fiscal ou tese fiscal, a estratégia processual precisa caminhar junto com o tributário.",
+        },
+      ]}
+    >
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "direito-processual",
+          serviceType: "Direito Processual",
+          name: "Estratégia Processual em São Bernardo do Campo",
+          description:
+            "Representação em processos judiciais e administrativos, com foco em estratégia processual, recursos, execuções e disputas com impacto tributário.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando procurar apoio em direito processual?",
+            answer:
+              "Quando já existe disputa judicial ou administrativa, ou quando a resposta processual precisa ser definida com rapidez para evitar perda de prazo e aumento de exposição.",
+          },
+          {
+            question: "Processo com cobrança fiscal exige análise tributária junto?",
+            answer:
+              "Sim. Quando o litígio envolve cobrança tributária, execução fiscal ou tese fiscal, a estratégia processual precisa caminhar junto com o tributário.",
+          },
+        ])}
+      />
+    </AreaPage>
   )
 }

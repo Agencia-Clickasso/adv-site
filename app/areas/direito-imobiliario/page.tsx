@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { FileText, Home, Scale, Shield } from "lucide-react"
 import AreaPage from "@/components/area-page"
-import { createAreaMetadata } from "@/lib/seo"
+import JsonLd from "@/components/seo/json-ld"
+import { buildAreaServiceSchema, buildFaqSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("direito-imobiliario")
 
@@ -52,6 +53,45 @@ export default function DireitoImobiliarioPage() {
       finalText="Revisar a operação antes da assinatura reduz risco contratual e custo de correção. Se houver efeito fiscal, a análise segue integrada com a frente tributária."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Falar com tributário", href: "/areas/direito-tributario" }}
-    />
+      relatedLinks={[
+        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+        { label: "Recuperação de créditos tributários para empresas: quem pode avaliar", href: "/blog/recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados" },
+        { label: "Direito civil e contratos em São Bernardo do Campo", href: "/areas/direito-civil" },
+      ]}
+      faqs={[
+        {
+          question: "Quando procurar apoio em direito imobiliário?",
+          answer: "Antes de comprar, vender, alugar ou regularizar imóvel, especialmente quando há documentação complexa, patrimônio relevante ou dúvida sobre segurança da operação.",
+        },
+        {
+          question: "Operação imobiliária pode ter impacto tributário?",
+          answer: "Sim. ITBI, ganho de capital, holdings e organização patrimonial podem alterar o custo e o risco da operação imobiliária.",
+        },
+      ]}
+    >
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "direito-imobiliario",
+          serviceType: "Direito Imobiliário",
+          name: "Assessoria em Direito Imobiliário em São Bernardo do Campo",
+          description:
+            "Assessoria em Direito Imobiliário para compra e venda, locações e regularização de imóveis, com atenção a risco patrimonial e impacto tributário.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando procurar apoio em direito imobiliário?",
+            answer:
+              "Antes de comprar, vender, alugar ou regularizar imóvel, especialmente quando há documentação complexa, patrimônio relevante ou dúvida sobre segurança da operação.",
+          },
+          {
+            question: "Operação imobiliária pode ter impacto tributário?",
+            answer:
+              "Sim. ITBI, ganho de capital, holdings e organização patrimonial podem alterar o custo e o risco da operação imobiliária.",
+          },
+        ])}
+      />
+    </AreaPage>
   )
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Briefcase, FileText, Shield, Users } from "lucide-react"
 import AreaPage from "@/components/area-page"
-import { createAreaMetadata } from "@/lib/seo"
+import JsonLd from "@/components/seo/json-ld"
+import { buildAreaServiceSchema, buildFaqSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("consultoria-juridica")
 
@@ -52,6 +53,45 @@ export default function ConsultoriaJuridicaPage() {
       finalText="Uma boa consulta preventiva reduz retrabalho, exposição e custo de correção. Se a decisão envolver tributos, a análise segue integrada com a frente principal do escritório."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Falar com tributário", href: "/areas/direito-tributario" }}
-    />
+      relatedLinks={[
+        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+        { label: "Consultoria fiscal para empresas: quando contratar antes da autuação", href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita" },
+        { label: "Direito empresarial em São Bernardo do Campo", href: "/areas/direito-empresarial" },
+      ]}
+      faqs={[
+        {
+          question: "Quando vale contratar consultoria jurídica preventiva?",
+          answer: "Antes de assinar contratos, reorganizar a empresa, revisar processos internos ou assumir risco relevante sem clareza jurídica suficiente.",
+        },
+        {
+          question: "Consultoria jurídica substitui a análise tributária?",
+          answer: "Não. Quando a decisão tem reflexo fiscal, a consultoria jurídica precisa caminhar junto com a análise tributária para evitar visão incompleta.",
+        },
+      ]}
+    >
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "consultoria-juridica",
+          serviceType: "Consultoria Jurídica",
+          name: "Consultoria Jurídica Preventiva em São Bernardo do Campo",
+          description:
+            "Consultoria jurídica preventiva para empresas e profissionais, com pareceres, due diligence e suporte estratégico.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando vale contratar consultoria jurídica preventiva?",
+            answer:
+              "Antes de assinar contratos, reorganizar a empresa, revisar processos internos ou assumir risco relevante sem clareza jurídica suficiente.",
+          },
+          {
+            question: "Consultoria jurídica substitui a análise tributária?",
+            answer:
+              "Não. Quando a decisão tem reflexo fiscal, a consultoria jurídica precisa caminhar junto com a análise tributária para evitar visão incompleta.",
+          },
+        ])}
+      />
+    </AreaPage>
   )
 }

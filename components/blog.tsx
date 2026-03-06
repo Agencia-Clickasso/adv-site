@@ -21,11 +21,11 @@ export default async function Blog() {
                 Conteúdo estratégico
               </div>
               <h2 className={`${blogSerif.className} max-w-3xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}>
-                O blog agora funciona como extensão editorial da proposta do escritório.
+                Conteúdo de Direito Tributário para empresas que precisam entender risco antes de decidir.
               </h2>
               <p className="max-w-2xl text-lg leading-8 text-custom-text-primary/84">
-                Em vez de artigos soltos, a home apresenta o blog como repertório de decisão: execução fiscal,
-                planejamento tributário, cobrança e prevenção com curadoria clara.
+                O blog organiza conteúdos sobre planejamento tributário, execução fiscal, cobrança tributária,
+                consultoria fiscal e prevenção de riscos com recorte prático para tomada de decisão.
               </p>
               <Link href="/blog" className="inline-flex">
                 <Button className="rounded-full bg-custom-text-primary px-7 text-custom-bg-primary hover:bg-custom-text-secondary">

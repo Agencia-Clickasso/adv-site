@@ -22,6 +22,16 @@ type AreaCta = {
   href: string
 }
 
+type AreaFaq = {
+  question: string
+  answer: string
+}
+
+type AreaRelatedLink = {
+  label: string
+  href: string
+}
+
 interface AreaPageProps {
   icon: LucideIcon
   title: string
@@ -38,6 +48,8 @@ interface AreaPageProps {
   finalText: string
   finalPrimaryCta: AreaCta
   finalSecondaryCta: AreaCta
+  faqs?: AreaFaq[]
+  relatedLinks?: AreaRelatedLink[]
   children?: ReactNode
 }
 
@@ -57,6 +69,8 @@ export default function AreaPage({
   finalText,
   finalPrimaryCta,
   finalSecondaryCta,
+  faqs,
+  relatedLinks,
   children,
 }: AreaPageProps) {
   return (
@@ -179,6 +193,55 @@ export default function AreaPage({
             </div>
           </div>
         </section>
+
+        {faqs && faqs.length > 0 ? (
+          <section className="py-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-6xl">
+                <div className="home-panel rounded-[2rem] p-7 sm:p-10">
+                  <h2 className={`${blogSerif.className} text-4xl leading-tight text-custom-text-secondary sm:text-5xl`}>
+                    Perguntas frequentes sobre {title.toLowerCase()}
+                  </h2>
+                  <div className="mt-8 grid gap-5 md:grid-cols-2">
+                    {faqs.map((item) => (
+                      <article key={item.question} className="rounded-[1.6rem] border border-custom-text-primary/12 bg-black/10 p-6">
+                        <h3 className={`${blogSerif.className} text-2xl leading-tight text-custom-text-secondary`}>
+                          {item.question}
+                        </h3>
+                        <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{item.answer}</p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {relatedLinks && relatedLinks.length > 0 ? (
+          <section className="py-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-6xl">
+                <div className="rounded-[1.8rem] border border-custom-text-primary/12 bg-white/5 p-7">
+                  <h2 className={`${blogSerif.className} text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}>
+                    Leitura relacionada
+                  </h2>
+                  <div className="mt-6 grid gap-4 md:grid-cols-3">
+                    {relatedLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="rounded-[1.4rem] border border-custom-text-primary/10 bg-black/10 p-5 text-sm leading-7 text-custom-text-primary/78 transition hover:border-custom-text-primary/26 hover:text-custom-text-secondary"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="py-12 pb-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">

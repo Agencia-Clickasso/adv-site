@@ -5,8 +5,7 @@ import { blogSerif } from "@/lib/blog-design"
 
 export default function Footer() {
   return (
-    <>
-      <footer className="relative border-t border-custom-text-primary/12 bg-custom-bg-secondary text-custom-text-secondary">
+    <footer className="relative border-t border-custom-text-primary/12 bg-custom-bg-secondary text-custom-text-secondary">
         <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
@@ -107,22 +106,5 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-
-      <a
-        href="https://api.whatsapp.com/send?phone=11967586911"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Fale conosco no WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-custom-text-secondary"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="16" fill="#25D366" />
-          <path
-            d="M23.472 19.339c-.355-.177-2.104-1.037-2.43-1.155-.326-.119-.563-.177-.8.177-.237.355-.914 1.155-1.122 1.392-.207.237-.414.266-.77.089-.355-.178-1.5-.553-2.86-1.763-1.057-.944-1.77-2.108-1.98-2.463-.207-.355-.022-.547.155-.724.159-.158.355-.414.533-.622.178-.207.237-.355.355-.592.119-.237.06-.444-.03-.622-.089-.178-.8-1.924-1.096-2.637-.289-.693-.583-.599-.8-.61-.207-.009-.444-.011-.681-.011-.237 0-.622.089-.948.444-.326.355-1.24 1.211-1.24 2.949 0 1.738 1.27 3.417 1.447 3.654.178.237 2.5 3.82 6.063 5.207.849.292 1.51.466 2.027.596.851.204 1.627.175 2.24.106.683-.077 2.104-.859 2.403-1.689.296-.83.296-1.541.207-1.689-.089-.148-.326-.237-.681-.414z"
-            fill="#fff"
-          />
-        </svg>
-      </a>
-    </>
   )
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { FileText, Scale, Shield, Users } from "lucide-react"
 import AreaPage from "@/components/area-page"
-import { createAreaMetadata } from "@/lib/seo"
+import JsonLd from "@/components/seo/json-ld"
+import { buildAreaServiceSchema, buildFaqSchema, createAreaMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createAreaMetadata("direito-trabalhista")
 
@@ -52,6 +53,45 @@ export default function DireitoTrabalhistaPage() {
       finalText="Revisar rotina, contratos e contingências antes do litígio costuma custar menos do que corrigir depois. Quando o caso tocar estrutura fiscal, a frente tributária entra no mesmo fluxo."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Falar com tributário", href: "/areas/direito-tributario" }}
-    />
+      relatedLinks={[
+        { label: "Consultoria jurídica preventiva em São Bernardo do Campo", href: "/areas/consultoria-juridica" },
+        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+        { label: "Consultoria fiscal para empresas: quando contratar antes da autuação", href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita" },
+      ]}
+      faqs={[
+        {
+          question: "Quando vale buscar consultoria trabalhista preventiva?",
+          answer: "Antes de acumular passivo, revisar contratos, ajustar rotinas internas ou responder a sinais de risco trabalhista recorrente.",
+        },
+        {
+          question: "Passivo trabalhista pode afetar o planejamento fiscal?",
+          answer: "Sim. O impacto financeiro e estrutural do passivo trabalhista pode alterar decisões de caixa, encargos e leitura mais ampla da operação.",
+        },
+      ]}
+    >
+      <JsonLd
+        data={buildAreaServiceSchema({
+          slug: "direito-trabalhista",
+          serviceType: "Direito Trabalhista",
+          name: "Assessoria em Direito Trabalhista em São Bernardo do Campo",
+          description:
+            "Atendimento em Direito Trabalhista para rescisões, ações trabalhistas e consultoria preventiva, com foco em redução de passivo e organização da operação.",
+        })}
+      />
+      <JsonLd
+        data={buildFaqSchema([
+          {
+            question: "Quando vale buscar consultoria trabalhista preventiva?",
+            answer:
+              "Antes de acumular passivo, revisar contratos, ajustar rotinas internas ou responder a sinais de risco trabalhista recorrente.",
+          },
+          {
+            question: "Passivo trabalhista pode afetar o planejamento fiscal?",
+            answer:
+              "Sim. O impacto financeiro e estrutural do passivo trabalhista pode alterar decisões de caixa, encargos e leitura mais ampla da operação.",
+          },
+        ])}
+      />
+    </AreaPage>
   )
 }

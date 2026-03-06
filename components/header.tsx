@@ -21,14 +21,14 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container mx-auto px-4 pt-4 sm:px-6 lg:px-8">
-        <div className="home-panel flex h-20 items-center justify-between rounded-full px-4 sm:px-6">
-          <Link href="/" className="flex items-center gap-3" aria-label="Lucimeire Xavier Advocacia">
+        <div className="home-panel flex h-16 items-center justify-between rounded-full px-4 sm:h-20 sm:px-6">
+          <Link href="/" className="flex items-center gap-3 pr-3" aria-label="Lucimeire Xavier Advocacia">
             <Image
               src="/images/logo.png"
               alt="Lucimeire Xavier Advocacia"
               width={200}
               height={80}
-              className="h-11 w-auto sm:h-12"
+              className="h-8 w-auto sm:h-12"
               priority
             />
           </Link>
@@ -60,8 +60,8 @@ export default function Header() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-custom-text-secondary md:hidden">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="h-10 w-10 text-custom-text-secondary md:hidden">
+                <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="border-custom-text-primary/12 bg-custom-bg-secondary text-custom-text-secondary">
