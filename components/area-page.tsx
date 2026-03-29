@@ -1,7 +1,8 @@
 import Link from "next/link"
 import type { ReactNode } from "react"
 import type { LucideIcon } from "lucide-react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, MapPin, Phone } from "lucide-react"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { blogSerif } from "@/lib/blog-design"
 
@@ -32,6 +33,11 @@ type AreaRelatedLink = {
   href: string
 }
 
+type AreaLocalDetail = {
+  title: string
+  value: string
+}
+
 interface AreaPageProps {
   icon: LucideIcon
   title: string
@@ -50,6 +56,7 @@ interface AreaPageProps {
   finalSecondaryCta: AreaCta
   faqs?: AreaFaq[]
   relatedLinks?: AreaRelatedLink[]
+  localDetails?: AreaLocalDetail[]
   children?: ReactNode
 }
 
@@ -71,6 +78,7 @@ export default function AreaPage({
   finalSecondaryCta,
   faqs,
   relatedLinks,
+  localDetails,
   children,
 }: AreaPageProps) {
   return (
@@ -112,10 +120,15 @@ export default function AreaPage({
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-8 text-custom-bg-primary hover:bg-custom-text-secondary">
-                    <Link href={primaryCta.href}>
+                    <TrackedLink
+                      href={primaryCta.href}
+                      ctaLabel={primaryCta.label}
+                      ctaLocation="area_page_primary_cta"
+                      trafficContext={primaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                    >
                       {primaryCta.label}
                       <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    </TrackedLink>
                   </Button>
                   <Button
                     asChild
@@ -123,7 +136,14 @@ export default function AreaPage({
                     size="lg"
                     className="rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
                   >
-                    <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                    <TrackedLink
+                      href={secondaryCta.href}
+                      ctaLabel={secondaryCta.label}
+                      ctaLocation="area_page_secondary_cta"
+                      trafficContext={secondaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                    >
+                      {secondaryCta.label}
+                    </TrackedLink>
                   </Button>
                 </div>
               </div>
@@ -180,15 +200,21 @@ export default function AreaPage({
               <div className="rounded-[1.9rem] border border-custom-text-primary/12 bg-black/12 px-6 py-8 text-center">
                 <h2 className={`${blogSerif.className} text-4xl leading-tight text-custom-text-secondary`}>{bridgeTitle}</h2>
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-custom-text-primary/78">{bridgeText}</p>
-                <Link href={bridgeCta.href} className="mt-6 inline-flex">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="mt-6 rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
+                >
+                  <TrackedLink
+                    href={bridgeCta.href}
+                    ctaLabel={bridgeCta.label}
+                    ctaLocation="area_page_bridge_cta"
+                    trafficContext={bridgeCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
                   >
                     {bridgeCta.label}
-                  </Button>
-                </Link>
+                  </TrackedLink>
+                </Button>
               </div>
             </div>
           </div>
@@ -211,6 +237,53 @@ export default function AreaPage({
                         <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{item.answer}</p>
                       </article>
                     ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {localDetails && localDetails.length > 0 ? (
+          <section className="py-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-6xl">
+                <div className="rounded-[2rem] border border-custom-text-primary/12 bg-[#f6eddc] p-7 text-slate-900 sm:p-10">
+                  <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
+                    <MapPin className="h-4 w-4" />
+                    Presença local
+                  </div>
+                  <h2 className={`${blogSerif.className} mt-4 text-4xl leading-tight sm:text-5xl`}>
+                    Atendimento tributário com base em São Bernardo do Campo e foco em empresas do ABC.
+                  </h2>
+                  <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                    {localDetails.map((item) => (
+                      <article key={item.title} className="rounded-[1.4rem] border border-[#dcc3a4] bg-white/70 p-5">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[#7f5b39]">{item.title}</p>
+                        <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">{item.value}</p>
+                      </article>
+                    ))}
+                  </div>
+                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <TrackedLink
+                      href="/#contact"
+                      ctaLabel="Solicitar atendimento tributário"
+                      ctaLocation="tax_page_local_block"
+                      trafficContext="lead_capture"
+                      className="inline-flex items-center justify-center rounded-full bg-[#1b2028] px-6 py-3 text-sm text-[#f8f0df] transition hover:bg-[#0f1319]"
+                    >
+                      Solicitar atendimento tributário
+                    </TrackedLink>
+                    <TrackedLink
+                      href="tel:+5511967586911"
+                      ctaLabel="Telefone da página tributária"
+                      ctaLocation="tax_page_local_phone"
+                      trafficContext="lead_capture"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-[#b99066] px-6 py-3 text-sm text-[#7f5b39] transition hover:bg-[#1b2028] hover:text-[#f8f0df]"
+                    >
+                      <Phone className="h-4 w-4" />
+                      Falar pelo telefone
+                    </TrackedLink>
                   </div>
                 </div>
               </div>
@@ -251,7 +324,14 @@ export default function AreaPage({
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-700">{finalText}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
                   <Button asChild size="lg" className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]">
-                    <Link href={finalPrimaryCta.href}>{finalPrimaryCta.label}</Link>
+                    <TrackedLink
+                      href={finalPrimaryCta.href}
+                      ctaLabel={finalPrimaryCta.label}
+                      ctaLocation="area_page_final_primary_cta"
+                      trafficContext={finalPrimaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                    >
+                      {finalPrimaryCta.label}
+                    </TrackedLink>
                   </Button>
                   <Button
                     asChild
@@ -259,7 +339,14 @@ export default function AreaPage({
                     size="lg"
                     className="rounded-full border-[#b99066] bg-transparent px-8 text-[#7f5b39] hover:bg-[#1b2028] hover:text-[#f8f0df]"
                   >
-                    <Link href={finalSecondaryCta.href}>{finalSecondaryCta.label}</Link>
+                    <TrackedLink
+                      href={finalSecondaryCta.href}
+                      ctaLabel={finalSecondaryCta.label}
+                      ctaLocation="area_page_final_secondary_cta"
+                      trafficContext={finalSecondaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                    >
+                      {finalSecondaryCta.label}
+                    </TrackedLink>
                   </Button>
                 </div>
               </div>

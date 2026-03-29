@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, ChartNoAxesColumn, Scale, ShieldCheck, Sparkles } from "lucide-react"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { blogSerif } from "@/lib/blog-design"
 
@@ -19,12 +20,16 @@ export default function Hero() {
                 <h1
                   className={`${blogSerif.className} max-w-5xl text-[3rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
                 >
-                  Advogada tributarista em São Bernardo do Campo para empresas que precisam decidir com mais clareza.
+                  Advogada tributarista em São Bernardo do Campo para empresas do ABC que precisam decidir com mais clareza.
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-xl sm:leading-8">
                   Planejamento tributário, execução fiscal e consultoria fiscal preventiva com leitura jurídica
-                  conectada ao caixa, ao passivo e ao risco real da operação.
+                  conectada ao caixa, ao passivo e ao risco real da operação em São Bernardo do Campo e na região do ABC.
                 </p>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5 text-sm leading-7 text-custom-text-primary/80">
+                Base em São Bernardo do Campo, atendimento estratégico para empresas e profissionais do ABC com cobrança tributária, revisão de regime, consultoria fiscal preventiva e resposta a execuções fiscais.
               </div>
 
               <div className="grid gap-4 sm:grid-cols-3">
@@ -47,10 +52,15 @@ export default function Hero() {
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8">
-                  <Link href="#contact">
-                    Solicitar análise tributária
+                  <TrackedLink
+                    href="#contact"
+                    ctaLabel="Solicitar atendimento tributário"
+                    ctaLocation="home_hero_primary"
+                    trafficContext="lead_capture"
+                  >
+                    Solicitar atendimento tributário
                     <ArrowRight className="h-5 w-5" />
-                  </Link>
+                  </TrackedLink>
                 </Button>
                 <Button
                   asChild
@@ -58,7 +68,14 @@ export default function Hero() {
                   size="lg"
                   className="rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
                 >
-                  <Link href="#services">Ver frentes de atuação</Link>
+                  <TrackedLink
+                    href="/areas/direito-tributario"
+                    ctaLabel="Ver consultoria tributária para empresas"
+                    ctaLocation="home_hero_secondary"
+                    trafficContext="commercial_page"
+                  >
+                    Ver consultoria tributária para empresas
+                  </TrackedLink>
                 </Button>
               </div>
             </div>

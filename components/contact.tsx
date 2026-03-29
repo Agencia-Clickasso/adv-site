@@ -4,10 +4,12 @@ import type React from "react"
 
 import { useState } from "react"
 import { AlertCircle, CheckCircle, Clock, Mail, MapPin, Phone, Send, Sparkles } from "lucide-react"
+import { trackLeadSubmission } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { blogSerif } from "@/lib/blog-design"
+import { SEO } from "@/lib/seo"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -37,6 +39,11 @@ export default function Contact() {
       })
 
       if (response.ok) {
+        trackLeadSubmission({
+          cta_label: "Envio do formulário de contato",
+          cta_location: "contact_form",
+          traffic_context: "lead_capture",
+        })
         setSubmitStatus("success")
         setFormData({
           name: "",
@@ -100,12 +107,12 @@ export default function Contact() {
                     {
                       icon: Phone,
                       title: "Telefone",
-                      body: "(11) 96758-6911",
+                      body: SEO.phoneDisplay,
                     },
                     {
                       icon: Mail,
                       title: "E-mail",
-                      body: "contato@lucimeirexavieradvocacia.adv.br",
+                      body: SEO.email,
                     },
                     {
                       icon: Clock,

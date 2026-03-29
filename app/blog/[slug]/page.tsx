@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, Clock3, Compass, FolderOpen, User } from "lucide-react"
 import Link from "next/link"
 import { MDXRemote } from "next-mdx-remote/rsc"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import mdxComponents from "@/components/mdx-components"
 import JsonLd from "@/components/seo/json-ld"
@@ -140,11 +141,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <p className="mt-4 text-sm leading-7 text-slate-700">
                   O escritório pode avaliar risco, documentos e estratégia antes de qualquer resposta formal.
                 </p>
-                <Link href="/#contact" className="mt-6 inline-flex">
-                  <Button className="rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]">
+                <Button asChild className="mt-6 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]">
+                  <TrackedLink
+                    href="/#contact"
+                    ctaLabel="Solicitar orientação tributária"
+                    ctaLocation="blog_post_sidebar_cta"
+                    trafficContext="lead_capture"
+                  >
                     Solicitar orientação
-                  </Button>
-                </Link>
+                  </TrackedLink>
+                </Button>
               </div>
             </aside>
           </div>

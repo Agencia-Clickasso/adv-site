@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, Phone } from "lucide-react"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
@@ -46,15 +47,25 @@ export default function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <a
+            <TrackedLink
               href="tel:+5511967586911"
+              ctaLabel="Telefone do topo"
+              ctaLocation="header_phone"
+              trafficContext="lead_capture"
               className="inline-flex items-center gap-2 rounded-full border border-custom-text-primary/14 px-4 py-2 text-sm text-custom-text-primary transition hover:border-custom-text-primary/36 hover:text-custom-text-secondary"
             >
               <Phone className="h-4 w-4" />
               (11) 96758-6911
-            </a>
+            </TrackedLink>
             <Button asChild className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary">
-              <Link href="#contact">Agendar consulta</Link>
+              <TrackedLink
+                href="#contact"
+                ctaLabel="Agendar análise tributária"
+                ctaLocation="header_primary_cta"
+                trafficContext="lead_capture"
+              >
+                Agendar análise tributária
+              </TrackedLink>
             </Button>
           </div>
 
@@ -77,9 +88,15 @@ export default function Header() {
                   </Link>
                 ))}
                 <Button asChild className="mt-4 rounded-full bg-custom-text-primary text-custom-bg-primary hover:bg-custom-text-secondary">
-                  <Link href="#contact" onClick={() => setIsOpen(false)}>
-                    Agendar consulta
-                  </Link>
+                  <TrackedLink
+                    href="#contact"
+                    ctaLabel="Agendar análise tributária"
+                    ctaLocation="mobile_menu_cta"
+                    trafficContext="lead_capture"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Agendar análise tributária
+                  </TrackedLink>
                 </Button>
               </div>
             </SheetContent>

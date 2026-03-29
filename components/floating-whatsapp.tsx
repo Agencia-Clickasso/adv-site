@@ -1,10 +1,15 @@
+import TrackedLink from "@/components/tracked-link"
+
 export default function FloatingWhatsApp() {
   return (
-    <a
+    <TrackedLink
       href="https://api.whatsapp.com/send?phone=11967586911"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Fale conosco no WhatsApp"
+      ariaLabel="Fale conosco no WhatsApp"
+      ctaLabel="Fale conosco no WhatsApp"
+      ctaLocation="floating_whatsapp"
+      trafficContext="lead_capture"
       className="fixed bottom-5 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-custom-text-secondary sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" fill="none" className="sm:h-[30px] sm:w-[30px]">
@@ -14,6 +19,6 @@ export default function FloatingWhatsApp() {
           fill="#fff"
         />
       </svg>
-    </a>
+    </TrackedLink>
   )
 }

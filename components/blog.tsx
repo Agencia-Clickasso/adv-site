@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, Calendar, Clock3, Sparkles, User } from "lucide-react"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { PRIORITY_POST_SLUGS, getSortedPostsData, sortPostsByPriority } from "@/lib/blog"
 import { blogSerif, formatBlogDate } from "@/lib/blog-design"
@@ -27,12 +28,25 @@ export default async function Blog() {
                 O blog organiza conteúdos sobre planejamento tributário, execução fiscal, cobrança tributária,
                 consultoria fiscal e prevenção de riscos com recorte prático para tomada de decisão.
               </p>
+              <p className="max-w-2xl text-sm leading-7 text-custom-text-primary/72">
+                Os artigos prioritários desta sprint reforçam a página comercial de Direito Tributário em São Bernardo do Campo e ajudam a distribuir autoridade para termos de intenção alta.
+              </p>
               <Link href="/blog" className="inline-flex">
                 <Button className="rounded-full bg-custom-text-primary px-7 text-custom-bg-primary hover:bg-custom-text-secondary">
                   Ver caderno completo
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
+              <TrackedLink
+                href="/areas/direito-tributario"
+                ctaLabel="Consultoria tributária para empresas"
+                ctaLocation="home_blog_intro"
+                trafficContext="commercial_page"
+                className="inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary"
+              >
+                Consultoria tributária para empresas
+                <ArrowRight className="h-4 w-4" />
+              </TrackedLink>
             </div>
 
             <div className="grid gap-5">

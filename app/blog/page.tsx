@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { ArrowLeft, ArrowRight, Calendar, Clock3, User } from "lucide-react"
 import Link from "next/link"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { PRIORITY_POST_SLUGS, getSortedPostsData, sortPostsByPriority } from "@/lib/blog"
 import { blogSans, blogSerif, formatBlogDate } from "@/lib/blog-design"
@@ -322,11 +323,16 @@ export default async function BlogPage() {
                     Use o blog como referência inicial, mas trate a decisão jurídica com contexto real do seu negócio.
                   </p>
                 </div>
-                <Link href="/#contact">
-                  <Button className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]">
+                <Button asChild className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]">
+                  <TrackedLink
+                    href="/#contact"
+                    ctaLabel="Falar com o escritório"
+                    ctaLocation="blog_hub_final_cta"
+                    trafficContext="lead_capture"
+                  >
                     Falar com o escritório
-                  </Button>
-                </Link>
+                  </TrackedLink>
+                </Button>
               </div>
             </section>
           ) : null}

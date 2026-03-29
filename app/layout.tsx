@@ -49,8 +49,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_ID
+
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        {googleAnalyticsId ? (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = gtag;
+                  gtag('js', new Date());
+                  gtag('config', '${googleAnalyticsId}');
+                `,
+              }}
+            />
+          </>
+        ) : (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: "window.dataLayer = window.dataLayer || [];",
+            }}
+          />
+        )}
+      </head>
       <body suppressHydrationWarning className={`${blogSans.className} antialiased`}>
         {children}
         <FloatingWhatsApp />

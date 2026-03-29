@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react"
+import TrackedLink from "@/components/tracked-link"
 import { blogSerif } from "@/lib/blog-design"
+import { SEO } from "@/lib/seo"
 
 export default function Footer() {
   return (
@@ -18,7 +20,7 @@ export default function Footer() {
                   className="h-12 w-auto"
                 />
                 <p className={`${blogSerif.className} max-w-xl text-3xl leading-tight text-custom-text-secondary`}>
-                  Advocacia tributária para decisões empresariais com mais clareza, menos improviso e melhor resposta jurídica.
+                  Advocacia tributária para decisões empresariais com mais clareza, menos improviso e melhor resposta jurídica em São Bernardo do Campo e no ABC.
                 </p>
                 <p className="max-w-xl text-sm leading-7 text-custom-text-primary/76">
                   Escritório com foco principal em Direito Tributário e atuação complementar em áreas que cercam a
@@ -60,7 +62,7 @@ export default function Footer() {
                 <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/58">Navegação</p>
                 <div className="mt-5 space-y-3 text-sm text-custom-text-primary/78">
                   <Link href="/areas/direito-tributario" className="block transition hover:text-custom-text-secondary">
-                    Direito Tributário
+                    Advogada tributarista em São Bernardo do Campo
                   </Link>
                   <Link href="/blog" className="block transition hover:text-custom-text-secondary">
                     Blog jurídico
@@ -68,9 +70,15 @@ export default function Footer() {
                   <Link href="/#services" className="block transition hover:text-custom-text-secondary">
                     Áreas complementares
                   </Link>
-                  <Link href="/#contact" className="block transition hover:text-custom-text-secondary">
-                    Agendar consulta
-                  </Link>
+                  <TrackedLink
+                    href="/#contact"
+                    ctaLabel="Agendar análise tributária"
+                    ctaLocation="footer_contact_cta"
+                    trafficContext="lead_capture"
+                    className="block transition hover:text-custom-text-secondary"
+                  >
+                    Agendar análise tributária
+                  </TrackedLink>
                 </div>
               </div>
 
@@ -80,20 +88,36 @@ export default function Footer() {
                   <div className="flex items-start gap-3">
                     <MapPin className="mt-1 h-5 w-5 text-custom-text-primary" />
                     <span>
-                      Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101
+                      {SEO.address.streetAddress}
                       <br />
-                      Centro - São Bernardo do Campo - SP
+                      Centro - {SEO.address.addressLocality} - {SEO.address.addressRegion}
                       <br />
-                      CEP: 09750-730
+                      CEP: {SEO.address.postalCode}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-custom-text-primary" />
-                    <span>(11) 96758-6911</span>
+                    <TrackedLink
+                      href={`tel:${SEO.phoneIntl.replace(/-/g, "")}`}
+                      ctaLabel="Telefone do rodapé"
+                      ctaLocation="footer_phone"
+                      trafficContext="lead_capture"
+                      className="transition hover:text-custom-text-secondary"
+                    >
+                      {SEO.phoneDisplay}
+                    </TrackedLink>
                   </div>
                   <div className="flex items-center gap-3 break-all">
                     <Mail className="h-5 w-5 text-custom-text-primary" />
-                    <span>contato@lucimeirexavieradvocacia.adv.br</span>
+                    <TrackedLink
+                      href={`mailto:${SEO.email}`}
+                      ctaLabel="Email do rodapé"
+                      ctaLocation="footer_email"
+                      trafficContext="lead_capture"
+                      className="transition hover:text-custom-text-secondary"
+                    >
+                      {SEO.email}
+                    </TrackedLink>
                   </div>
                 </div>
               </div>

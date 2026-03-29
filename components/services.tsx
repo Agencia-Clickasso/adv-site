@@ -10,6 +10,7 @@ import {
   Star,
   Users,
 } from "lucide-react"
+import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { blogSerif } from "@/lib/blog-design"
 
@@ -124,10 +125,15 @@ export default function Services() {
                 ))}
               </div>
               <Button asChild className="mt-7 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]">
-                <Link href={primaryService.href}>
-                  Ver página principal
+                <TrackedLink
+                  href={primaryService.href}
+                  ctaLabel="Advogada tributarista em São Bernardo do Campo"
+                  ctaLocation="services_primary_card"
+                  trafficContext="commercial_page"
+                >
+                  Advogada tributarista em São Bernardo do Campo
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </TrackedLink>
               </Button>
             </div>
           </div>
@@ -166,6 +172,16 @@ export default function Services() {
               Se a demanda mistura cobrança fiscal, contrato, societário ou passivo trabalhista, a análise começa pelo
               tributário e integra o restante do caso no mesmo fluxo.
             </p>
+            <TrackedLink
+              href="/areas/direito-tributario"
+              ctaLabel="Planejamento tributário para empresas"
+              ctaLocation="services_bottom_banner"
+              trafficContext="commercial_page"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary"
+            >
+              Planejamento tributário para empresas
+              <ArrowRight className="h-4 w-4" />
+            </TrackedLink>
           </div>
         </div>
       </div>

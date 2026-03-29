@@ -6,7 +6,7 @@ export const SEO = {
   locale: "pt_BR",
   defaultTitle: "Advogada Tributarista em São Bernardo do Campo",
   defaultDescription:
-    "Assessoria em Direito Tributário para empresas e profissionais em São Bernardo do Campo, com foco em planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
+    "Assessoria em Direito Tributário para empresas e profissionais em São Bernardo do Campo e no ABC, com foco em planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
   phoneDisplay: "(11) 96758-6911",
   phoneIntl: "+55-11-96758-6911",
   email: "contato@lucimeirexavieradvocacia.adv.br",
@@ -96,12 +96,14 @@ const areaPages: Record<
   "direito-tributario": {
     title: "Advogada Tributarista em São Bernardo do Campo",
     description:
-      "Advogada tributarista em São Bernardo do Campo para empresas e profissionais. Atuação em planejamento tributário, consultoria fiscal, execução fiscal e contencioso tributário.",
+      "Advogada tributarista em São Bernardo do Campo e no ABC para empresas e profissionais. Atuação em planejamento tributário, consultoria fiscal, execução fiscal e contencioso tributário.",
     keywords: [
       "direito tributário",
       "advogada tributarista",
       "advogada tributarista são bernardo do campo",
       "advogado tributário são bernardo do campo",
+      "advogada tributarista abc",
+      "consultoria tributária abc",
       "planejamento tributário",
       "execução fiscal",
       "consultoria fiscal",
@@ -166,7 +168,7 @@ export function buildLegalServiceSchema() {
     image: `${SEO.siteUrl}/images/logo.png`,
     telephone: SEO.phoneIntl,
     email: SEO.email,
-    areaServed: ["São Bernardo do Campo", "São Paulo", "Brasil"],
+    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
     serviceType: [
       "Direito Tributário",
       "Planejamento Tributário",
@@ -193,7 +195,7 @@ export function buildTaxServiceSchema() {
       name: SEO.siteName,
       url: SEO.siteUrl,
     },
-    areaServed: ["São Bernardo do Campo", "São Paulo", "Brasil"],
+    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -221,7 +223,7 @@ export function buildAreaServiceSchema(input: {
       name: SEO.siteName,
       url: SEO.siteUrl,
     },
-    areaServed: ["São Bernardo do Campo", "São Paulo", "Brasil"],
+    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -259,6 +261,45 @@ export function buildBlogPostingSchema(input: {
     },
     mainEntityOfPage: canonicalUrl(`/blog/${input.slug}`),
     url: canonicalUrl(`/blog/${input.slug}`),
+  }
+}
+
+export function buildLocalOfficeSchema(input: {
+  path: string
+  serviceName: string
+  description: string
+}) {
+  const url = canonicalUrl(input.path)
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "@id": `${url}#local-office`,
+    name: SEO.siteName,
+    url,
+    image: `${SEO.siteUrl}/images/logo.png`,
+    telephone: SEO.phoneIntl,
+    email: SEO.email,
+    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
+    address: {
+      "@type": "PostalAddress",
+      ...SEO.address,
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: input.serviceName,
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: input.serviceName,
+            description: input.description,
+          },
+        },
+      ],
+    },
+    sameAs: SEO.sameAs,
   }
 }
 
