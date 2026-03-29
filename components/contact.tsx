@@ -12,6 +12,7 @@ import { blogSerif } from "@/lib/blog-design"
 import { SEO } from "@/lib/seo"
 
 export default function Contact() {
+  const formspreeEndpoint = "https://formspree.io/f/mwvwlvpk"
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,11 +32,14 @@ export default function Contact() {
     try {
       const form = e.target as HTMLFormElement
       const formDataObj = new FormData(form)
+      formDataObj.set("_subject", "Novo contato - Lucimeire Xavier Advocacia")
 
-      const response = await fetch("/", {
+      const response = await fetch(formspreeEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formDataObj as any).toString(),
+        headers: {
+          Accept: "application/json",
+        },
+        body: formDataObj,
       })
 
       if (response.ok) {
@@ -147,15 +151,10 @@ export default function Contact() {
                 <form
                   name="contact"
                   method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-5"
                 >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <div className="hidden">
-                    <input name="bot-field" />
-                  </div>
+                  <input type="hidden" name="_subject" value="Novo contato - Lucimeire Xavier Advocacia" />
 
                   {submitStatus === "success" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-green-400/25 bg-green-500/12 p-4 text-green-300">
