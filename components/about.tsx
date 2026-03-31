@@ -17,7 +17,6 @@ export default function About() {
                 className="h-auto w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/70 to-transparent p-6">
-                <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/72">Atuação boutique</p>
                 <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>Lucimeire Xavier</p>
               </div>
             </div>
