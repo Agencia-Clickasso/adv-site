@@ -8,12 +8,15 @@ import { blogSans, blogSerif, formatBlogDate } from "@/lib/blog-design"
 import { createPageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Blog de Direito Tributário para Empresas",
+  title: "Blog de Direito Tributário, IRPF e Consultoria Tributária",
   description:
-    "Blog de Direito Tributário com conteúdos sobre planejamento tributário, execução fiscal, consultoria fiscal, compliance e prevenção de riscos para empresas.",
+    "Blog de Direito Tributário com conteúdos sobre IRPF, malha fina, execução fiscal, consultoria tributária, compliance e prevenção de riscos para empresas e pessoa física.",
   path: "/blog",
   keywords: [
     "blog direito tributário",
+    "imposto de renda pessoa física",
+    "malha fina",
+    "irpf 2026",
     "artigos tributários",
     "compliance tributário",
     "execução fiscal",
@@ -74,19 +77,20 @@ export default async function BlogPage() {
           <section className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr]">
             <div className="rounded-[2rem] border border-custom-text-primary/15 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-6 shadow-[0_32px_120px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:p-8 lg:p-10">
               <div className="mb-8 flex flex-wrap items-center gap-3">
-                <span className="blog-kicker">Caderno tributário</span>
+                <span className="blog-kicker">Caderno tributário e IRPF</span>
                 <span className="rounded-full border border-custom-text-primary/10 px-3 py-1 text-xs uppercase tracking-[0.28em] text-custom-text-primary/70">
                   Atualizado em {posts[0] ? formatBlogDate(posts[0].date) : "breve"}
                 </span>
               </div>
 
               <h1 className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.95] text-custom-text-secondary sm:text-6xl lg:text-7xl`}>
-                Análises jurídicas para quem precisa decidir antes do problema virar passivo.
+                Análises jurídicas para empresas e contribuintes que precisam decidir antes do problema virar passivo.
               </h1>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-custom-text-primary/88 sm:text-xl">
                 O blog foi reorganizado como uma mesa editorial: prioridade clara para tributário, leitura mais fluida e
-                acesso rápido aos artigos que ajudam empresas a reduzir risco, reagir a cobranças e estruturar prevenção.
+                acesso rápido aos artigos que ajudam empresas a reduzir risco, reagir a cobranças, estruturar prevenção e
+                revisar IRPF com mais segurança.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -111,7 +115,7 @@ export default async function BlogPage() {
                 {[
                   "Planejamento tributário para reduzir exposição antes de autuações.",
                   "Execução fiscal e suspensão de cobrança em situações críticas.",
-                  "Consultoria preventiva para contratos, compliance e rotina empresarial.",
+                  "IRPF, malha fina e revisão da declaração para pessoa física.",
                 ].map((item) => (
                   <div key={item} className="rounded-[1.25rem] border border-custom-text-primary/10 bg-white/5 p-4 text-sm leading-7 text-custom-text-primary/82">
                     {item}
@@ -202,9 +206,11 @@ export default async function BlogPage() {
             {[
               "Execução Fiscal",
               "Planejamento Tributário",
+              "IRPF 2026",
+              "Malha Fina",
               "Compliance",
               "Cobrança Tributária",
-              "Consultoria Empresarial",
+              "Carnê-Leão",
               "Contratos",
             ].map((topic) => (
               <span
