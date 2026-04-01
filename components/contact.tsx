@@ -124,14 +124,19 @@ export default function Contact() {
                       body: "Segunda a Sexta: 8h às 18h\nSábado: 8h às 12h",
                     },
                   ].map((item) => (
-                    <div key={item.title} className="rounded-[1.35rem] border border-[#dcc3a4] bg-white/65 p-4 sm:rounded-[1.5rem] sm:p-5">
+                    <div
+                      key={item.title}
+                      className="w-full overflow-hidden rounded-[1.35rem] border border-[#dcc3a4] bg-white/65 p-4 sm:rounded-[1.5rem] sm:p-5"
+                    >
                       <div className="flex items-start gap-4">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#ecd5ba] text-[#7f5b39]">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#ecd5ba] text-[#7f5b39]">
                           <item.icon className="h-5 w-5" />
                         </div>
-                        <div>
+                        <div className="min-w-0 flex-1">
                           <p className="font-semibold text-slate-900">{item.title}</p>
-                          <p className="mt-1 whitespace-pre-line text-sm leading-7 text-slate-700">{item.body}</p>
+                          <p className="mt-1 whitespace-pre-line break-words text-sm leading-7 text-slate-700">
+                            {item.body}
+                          </p>
                         </div>
                       </div>
                     </div>

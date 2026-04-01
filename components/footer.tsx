@@ -86,8 +86,8 @@ export default function Footer() {
                 <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/58">Contato</p>
                 <div className="mt-5 space-y-4 text-sm leading-7 text-custom-text-primary/78">
                   <div className="flex items-start gap-3">
-                    <MapPin className="mt-1 h-5 w-5 text-custom-text-primary" />
-                    <span>
+                    <MapPin className="mt-1 h-5 w-5 shrink-0 text-custom-text-primary" />
+                    <span className="min-w-0 break-words">
                       {SEO.address.streetAddress}
                       <br />
                       Centro - {SEO.address.addressLocality} - {SEO.address.addressRegion}
@@ -96,25 +96,25 @@ export default function Footer() {
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-custom-text-primary" />
+                    <Phone className="h-5 w-5 shrink-0 text-custom-text-primary" />
                     <TrackedLink
                       href={`tel:${SEO.phoneIntl.replace(/-/g, "")}`}
                       ctaLabel="Telefone do rodapé"
                       ctaLocation="footer_phone"
                       trafficContext="lead_capture"
-                      className="transition hover:text-custom-text-secondary"
+                      className="min-w-0 break-words transition hover:text-custom-text-secondary"
                     >
                       {SEO.phoneDisplay}
                     </TrackedLink>
                   </div>
                   <div className="flex items-center gap-3 break-all">
-                    <Mail className="h-5 w-5 text-custom-text-primary" />
+                    <Mail className="h-5 w-5 shrink-0 text-custom-text-primary" />
                     <TrackedLink
                       href={`mailto:${SEO.email}`}
                       ctaLabel="Email do rodapé"
                       ctaLocation="footer_email"
                       trafficContext="lead_capture"
-                      className="transition hover:text-custom-text-secondary"
+                      className="min-w-0 break-all transition hover:text-custom-text-secondary"
                     >
                       {SEO.email}
                     </TrackedLink>

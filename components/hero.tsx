@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="space-y-7 rounded-[1.8rem] border border-custom-text-primary/14 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-5 shadow-[0_28px_100px_rgba(0,0,0,0.26)] backdrop-blur-sm sm:space-y-8 sm:rounded-[2rem] sm:p-10 lg:p-12">
               <div className="section-kicker">
                 <Sparkles className="h-3.5 w-3.5" />
-                Boutique jurídica tributária
+                Advocacia tributária estratégica
               </div>
 
               <div className="space-y-6">
