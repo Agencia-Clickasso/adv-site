@@ -82,17 +82,17 @@ export default function AreaPage({
   children,
 }: AreaPageProps) {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-custom-bg-primary text-custom-text-secondary">
+    <main className="relative min-h-screen overflow-x-clip bg-custom-bg-primary text-custom-text-secondary">
       <div className="pointer-events-none absolute inset-0 opacity-65">
         <div className="home-grid-pattern absolute inset-0" />
         <div className="home-orb absolute left-[-8rem] top-20 h-[22rem] w-[22rem]" />
         <div className="home-orb absolute right-[-8rem] top-[28rem] h-[18rem] w-[18rem]" />
       </div>
 
-      <div className="relative">
+      <div className="relative pt-24 sm:pt-28">
         {children}
 
-        <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+        <div className="container mx-auto px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
           <Link href="/" className="inline-flex">
             <Button
               variant="ghost"
@@ -107,19 +107,27 @@ export default function AreaPage({
         <section className="pb-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-              <div className="space-y-7 rounded-[2rem] border border-custom-text-primary/14 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-7 shadow-[0_28px_100px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:p-10">
-                <div className="section-kicker">{badge}</div>
+              <div className="space-y-6 rounded-[2rem] border border-custom-text-primary/14 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-6 shadow-[0_28px_100px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:space-y-7 sm:p-10">
+                <div className="section-kicker max-w-full">{badge}</div>
                 <div className="flex h-16 w-16 items-center justify-center rounded-[1.4rem] bg-custom-text-primary/16 text-custom-text-primary">
                   <Icon className="h-8 w-8" />
                 </div>
                 <div>
-                  <h1 className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.95] text-custom-text-secondary sm:text-6xl`}>
+                  <h1
+                    className={`${blogSerif.className} max-w-4xl text-[2.9rem] leading-[0.96] tracking-[-0.03em] text-custom-text-secondary sm:text-6xl`}
+                  >
                     {title}
                   </h1>
-                  <p className="mt-5 max-w-3xl text-lg leading-8 text-custom-text-primary/84 sm:text-xl">{intro}</p>
+                  <p className="mt-4 max-w-3xl text-base leading-7 text-custom-text-primary/84 sm:mt-5 sm:text-xl sm:leading-8">
+                    {intro}
+                  </p>
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row">
-                  <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-8 text-custom-bg-primary hover:bg-custom-text-secondary">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:w-auto sm:px-8"
+                  >
                     <TrackedLink
                       href={primaryCta.href}
                       ctaLabel={primaryCta.label}
@@ -134,7 +142,7 @@ export default function AreaPage({
                     asChild
                     variant="outline"
                     size="lg"
-                    className="rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
+                    className="w-full rounded-full border-custom-text-primary/30 bg-transparent px-6 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary sm:w-auto sm:px-8"
                   >
                     <TrackedLink
                       href={secondaryCta.href}
@@ -260,7 +268,7 @@ export default function AreaPage({
                     {localDetails.map((item) => (
                       <article key={item.title} className="rounded-[1.4rem] border border-[#dcc3a4] bg-white/70 p-5">
                         <p className="text-xs uppercase tracking-[0.18em] text-[#7f5b39]">{item.title}</p>
-                        <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">{item.value}</p>
+                        <p className="mt-3 whitespace-pre-line break-words text-sm leading-7 text-slate-700">{item.value}</p>
                       </article>
                     ))}
                   </div>
@@ -270,7 +278,7 @@ export default function AreaPage({
                       ctaLabel="Solicitar atendimento tributário"
                       ctaLocation="tax_page_local_block"
                       trafficContext="lead_capture"
-                      className="inline-flex items-center justify-center rounded-full bg-[#1b2028] px-6 py-3 text-sm text-[#f8f0df] transition hover:bg-[#0f1319]"
+                      className="inline-flex w-full items-center justify-center rounded-full bg-[#1b2028] px-6 py-3 text-center text-sm text-[#f8f0df] transition hover:bg-[#0f1319] sm:w-auto"
                     >
                       Solicitar atendimento tributário
                     </TrackedLink>
@@ -279,7 +287,7 @@ export default function AreaPage({
                       ctaLabel="Telefone da página tributária"
                       ctaLocation="tax_page_local_phone"
                       trafficContext="lead_capture"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-[#b99066] px-6 py-3 text-sm text-[#7f5b39] transition hover:bg-[#1b2028] hover:text-[#f8f0df]"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#b99066] px-6 py-3 text-center text-sm text-[#7f5b39] transition hover:bg-[#1b2028] hover:text-[#f8f0df] sm:w-auto"
                     >
                       <Phone className="h-4 w-4" />
                       Falar pelo telefone
@@ -304,7 +312,7 @@ export default function AreaPage({
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="rounded-[1.4rem] border border-custom-text-primary/10 bg-black/10 p-5 text-sm leading-7 text-custom-text-primary/78 transition hover:border-custom-text-primary/26 hover:text-custom-text-secondary"
+                        className="rounded-[1.4rem] border border-custom-text-primary/10 bg-black/10 p-5 text-sm leading-7 text-custom-text-primary/78 transition hover:border-custom-text-primary/26 hover:text-custom-text-secondary break-words"
                       >
                         {item.label}
                       </Link>
@@ -321,9 +329,9 @@ export default function AreaPage({
             <div className="mx-auto max-w-5xl">
               <div className="home-paper rounded-[2rem] px-6 py-10 text-center text-slate-900 sm:px-10">
                 <h2 className={`${blogSerif.className} text-4xl leading-tight sm:text-5xl`}>{finalTitle}</h2>
-                <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-700">{finalText}</p>
+                <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">{finalText}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-                  <Button asChild size="lg" className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]">
+                  <Button asChild size="lg" className="w-full rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319] sm:w-auto sm:px-8">
                     <TrackedLink
                       href={finalPrimaryCta.href}
                       ctaLabel={finalPrimaryCta.label}
@@ -337,7 +345,7 @@ export default function AreaPage({
                     asChild
                     variant="outline"
                     size="lg"
-                    className="rounded-full border-[#b99066] bg-transparent px-8 text-[#7f5b39] hover:bg-[#1b2028] hover:text-[#f8f0df]"
+                    className="w-full rounded-full border-[#b99066] bg-transparent px-6 text-[#7f5b39] hover:bg-[#1b2028] hover:text-[#f8f0df] sm:w-auto sm:px-8"
                   >
                     <TrackedLink
                       href={finalSecondaryCta.href}
