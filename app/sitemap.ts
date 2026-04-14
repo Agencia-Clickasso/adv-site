@@ -1,21 +1,39 @@
+import fs from "node:fs"
+import path from "node:path"
 import { MetadataRoute } from "next"
-import { getAllPostSlugs } from "@/lib/blog"
+import { getAllPostSlugs, getSortedPostsData } from "@/lib/blog"
 import { SEO } from "@/lib/seo"
+
+export const revalidate = 3600
+
+function getFileLastModified(relativePath: string) {
+  try {
+    const absolutePath = path.join(process.cwd(), relativePath)
+    return fs.statSync(absolutePath).mtime
+  } catch {
+    return new Date("2026-03-31T00:00:00.000Z")
+  }
+}
 
 export async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SEO.siteUrl
-  const currentDate = new Date()
+  const posts = await getSortedPostsData()
+  const postDates = new Map(
+    posts.map((post) => [post.slug, new Date(post.date)])
+  )
+  const latestPostDate =
+    posts.length > 0 ? new Date(posts[0].date) : getFileLastModified("app/blog/page.tsx")
 
   const staticRoutes = [
     {
       url: baseUrl,
-      lastModified: currentDate,
+      lastModified: getFileLastModified("app/page.tsx"),
       changeFrequency: 'monthly' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: currentDate,
+      lastModified: latestPostDate,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
@@ -43,7 +61,7 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const areasRoutes = Object.keys(areasPriorityMap).map(area => ({
     url: `${baseUrl}/areas/${area}`,
-    lastModified: currentDate,
+    lastModified: getFileLastModified(`app/areas/${area}/page.tsx`),
     changeFrequency: areasChangeFrequencyMap[area],
     priority: areasPriorityMap[area],
   }))
@@ -70,10 +88,12 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogPosts = (await getAllPostSlugs()).map((slug) => {
     const config = postsPriorityMap[slug] || { priority: 0.4, changeFrequency: 'yearly' as const }
+    const lastModified =
+      postDates.get(slug) ?? getFileLastModified(`content/blog/${slug}.mdx`)
 
     return {
       url: `${baseUrl}/blog/${slug}`,
-      lastModified: currentDate,
+      lastModified,
       changeFrequency: config.changeFrequency,
       priority: config.priority,
     }

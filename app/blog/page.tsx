@@ -25,7 +25,7 @@ export const metadata: Metadata = createPageMetadata({
   ],
 })
 
-export const dynamic = "force-dynamic"
+export const revalidate = 3600
 
 function categoryId(category: string) {
   return category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-")
