@@ -22,10 +22,10 @@ export default function Footer() {
               <p
                 className={`${blogSerif.className} max-w-xl text-3xl leading-tight text-custom-text-secondary`}
               >
-                Advocacia tributária com clareza — para empresas e clínicas.
+                Advocacia tributária com clareza.
               </p>
               <p className="max-w-xl text-sm leading-7 text-custom-text-primary/76">
-                Base em São Bernardo do Campo e ABC, com atendimento estratégico em todo o Brasil.
+                Base em São Bernardo do Campo e ABC, com atendimento em todo o Brasil.
               </p>
               <div className="flex flex-wrap gap-3">
                 {(
@@ -89,34 +89,34 @@ export default function Footer() {
               </p>
               <div className="mt-5 space-y-3 text-sm text-custom-text-primary/78">
                 <Link
-                  href="/para/clinicas-medicas-e-odontologicas"
-                  className="block transition hover:text-custom-text-secondary"
-                >
-                  Tributário para clínicas de saúde
-                </Link>
-                <Link
                   href="/areas/direito-tributario"
                   className="block transition hover:text-custom-text-secondary"
                 >
-                  Advogada tributarista em São Bernardo do Campo
+                  Direito tributário
                 </Link>
                 <Link href="/blog" className="block transition hover:text-custom-text-secondary">
-                  Blog jurídico
+                  Blog
                 </Link>
                 <Link
                   href="/#services"
                   className="block transition hover:text-custom-text-secondary"
                 >
-                  Áreas complementares
+                  Áreas de atuação
+                </Link>
+                <Link
+                  href="/para/clinicas-medicas-e-odontologicas"
+                  className="block transition hover:text-custom-text-secondary"
+                >
+                  Soluções para clínicas
                 </Link>
                 <TrackedLink
                   href="/#contact"
-                  ctaLabel="Agendar análise tributária"
+                  ctaLabel="Solicitar atendimento"
                   ctaLocation="footer_contact_cta"
                   trafficContext="lead_capture"
                   className="block transition hover:text-custom-text-secondary"
                 >
-                  Agendar análise tributária
+                  Solicitar atendimento
                 </TrackedLink>
               </div>
             </div>

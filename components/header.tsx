@@ -13,8 +13,7 @@ export default function Header() {
 
   const navItems = [
     { name: "Início", href: "/" },
-    { name: "Clínicas", href: "/para/clinicas-medicas-e-odontologicas" },
-    { name: "Tributário", href: "/areas/direito-tributario" },
+    { name: "Atuação", href: "/areas/direito-tributario" },
     { name: "Blog", href: "/blog" },
     { name: "Contato", href: "/#contact" },
   ]

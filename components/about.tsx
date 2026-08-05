@@ -2,7 +2,7 @@ import Image from "next/image"
 import { GraduationCap, Landmark } from "lucide-react"
 import { blogSerif } from "@/lib/blog-design"
 
-/** About — photo on paper, text on glass (redesign full-width). */
+/** Sobre — geral, curto, sem nichar cliente. */
 export default function About() {
   return (
     <section id="about" className="relative py-16 sm:py-20">
@@ -10,7 +10,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[2rem] border border-custom-text-primary/16 bg-custom-bg-secondary/80 shadow-[0_32px_100px_rgba(0,0,0,0.35)]">
             <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="relative min-h-[22rem] lg:min-h-full">
+              <div className="relative min-h-[20rem] lg:min-h-full">
                 <Image
                   src="/profile-photo.jpeg"
                   alt="Dra. Lucimeire Xavier"
@@ -32,19 +32,18 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center space-y-6 p-7 sm:p-10">
+              <div className="flex flex-col justify-center space-y-5 p-7 sm:p-10">
                 <div className="section-kicker w-fit">
                   <Landmark className="h-3.5 w-3.5" />
-                  Sobre o escritório
+                  Sobre
                 </div>
                 <h2
                   className={`${blogSerif.className} text-4xl leading-[1.02] text-custom-text-secondary sm:text-5xl`}
                 >
-                  Técnica tributária com foco em operação e prevenção de risco.
+                  Técnica tributária com foco em prevenção de risco.
                 </h2>
                 <p className="max-w-xl text-base leading-8 text-custom-text-primary/85">
-                  Atuação para empresas e clínicas que precisam organizar a rotina fiscal, reduzir
-                  exposição e decidir com clareza — sem improviso.
+                  Atendimento a empresas, profissionais e organizações em todo o Brasil.
                 </p>
 
                 <div className="home-paper rounded-[1.4rem] p-5 text-slate-900">
@@ -52,29 +51,12 @@ export default function About() {
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-custom-bg-primary text-custom-text-primary">
                       <GraduationCap className="h-5 w-5" />
                     </div>
-                    <div className="space-y-2 text-sm leading-7">
+                    <div className="space-y-1 text-sm leading-7">
                       <p className="font-semibold text-slate-950">Formação</p>
-                      <p>
-                        Pós-graduação em Direito Tributário ·{" "}
-                        <span className="text-slate-600">UNISC</span>
-                      </p>
-                      <p>
-                        Bacharela em Direito ·{" "}
-                        <span className="text-slate-600">Universidade São Judas Tadeu</span>
-                      </p>
+                      <p>Pós-graduação em Direito Tributário · UNISC</p>
+                      <p>Bacharela em Direito · São Judas Tadeu</p>
                     </div>
                   </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {["Tributário", "Prevenção", "Estratégia", "Clínicas"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-custom-text-primary/30 bg-custom-text-primary/12 px-4 py-2 text-sm text-custom-text-secondary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
               </div>
             </div>

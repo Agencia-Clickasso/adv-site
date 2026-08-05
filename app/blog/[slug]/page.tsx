@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </p>
                 <Button
                   asChild
-                  className="mt-5 w-full rounded-full bg-[#1b2028] text-[#f8f0df] hover:bg-[#0f1319]"
+                  className="mt-5 w-full rounded-full bg-custom-bg-primary text-custom-text-secondary hover:bg-custom-bg-secondary"
                 >
                   <TrackedLink
                     href="/#contact"
@@ -165,12 +165,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     Solicitar orientação
                   </TrackedLink>
                 </Button>
-                <Link
-                  href="/para/clinicas-medicas-e-odontologicas"
-                  className="mt-3 block text-center text-sm font-medium text-[#7f5b39] transition hover:text-slate-950"
-                >
-                  Sou clínica de saúde →
-                </Link>
               </div>
             </aside>
           </div>

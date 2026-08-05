@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ArrowRight, Calendar, Clock3, Sparkles } from "lucide-react"
-import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
 import { PRIORITY_POST_SLUGS, getSortedPostsData, sortPostsByPriority } from "@/lib/blog"
 import { blogSerif, formatBlogDate } from "@/lib/blog-design"
@@ -24,11 +23,8 @@ export default async function Blog() {
               <h2
                 className={`${blogSerif.className} text-4xl leading-[0.98] text-custom-text-secondary sm:text-5xl lg:text-[3.4rem]`}
               >
-                Leitura tributária para decidir com menos improviso.
+                Leitura para decidir com menos improviso.
               </h2>
-              <p className="max-w-xl text-base leading-7 text-custom-text-primary/80 sm:text-lg sm:leading-8">
-                Planejamento, execução fiscal, cobrança e prevenção — com recorte prático.
-              </p>
             </div>
 
             <div className="flex shrink-0 flex-col gap-3 sm:items-end">
@@ -37,20 +33,10 @@ export default async function Blog() {
                 className="rounded-full bg-custom-text-primary px-7 text-custom-bg-primary hover:bg-custom-text-secondary"
               >
                 <Link href="/blog">
-                  Ver todos os artigos
+                  Ver o blog
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <TrackedLink
-                href="/para/clinicas-medicas-e-odontologicas"
-                ctaLabel="Assessoria para clínicas via blog home"
-                ctaLocation="home_blog_intro"
-                trafficContext="commercial_page"
-                className="inline-flex items-center gap-2 text-sm text-custom-text-primary/80 transition hover:text-custom-text-secondary"
-              >
-                Assessoria para clínicas
-                <ArrowRight className="h-4 w-4" />
-              </TrackedLink>
             </div>
           </div>
 

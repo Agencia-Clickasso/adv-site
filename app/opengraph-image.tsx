@@ -97,8 +97,7 @@ export default function OpenGraphImage() {
               maxWidth: 880,
             }}
           >
-            Direito tributário para empresas e clínicas — com clareza, prevenção e segurança
-            jurídica.
+            Direito tributário com clareza, prevenção e segurança jurídica.
           </div>
         </div>
       </div>

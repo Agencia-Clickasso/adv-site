@@ -96,7 +96,7 @@ export default async function BlogPage() {
                   Análises para decidir antes do problema virar passivo.
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-custom-text-primary/82 sm:text-lg">
-                  Tributário, IRPF, execução fiscal e prevenção — para empresas e clínicas.
+                  Tributário, IRPF, execução fiscal e prevenção.
                 </p>
               </div>
 
@@ -132,12 +132,6 @@ export default async function BlogPage() {
                     {category}
                   </a>
                 ))}
-                <Link
-                  href="/para/clinicas-medicas-e-odontologicas"
-                  className="rounded-full border border-custom-text-primary/35 bg-custom-text-primary/16 px-4 py-2 text-sm font-medium text-custom-text-secondary transition hover:bg-custom-text-primary/24"
-                >
-                  Clínicas de saúde
-                </Link>
               </div>
             ) : null}
           </section>
@@ -251,7 +245,6 @@ export default async function BlogPage() {
               "IRPF 2026",
               "Malha Fina",
               "Compliance",
-              "Clínicas",
               "Lucro Presumido",
               "Cobrança",
             ].map((topic) => (
@@ -389,30 +382,19 @@ export default async function BlogPage() {
                     caso.
                   </p>
                 </div>
-                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                  <Button
-                    asChild
-                    className="rounded-full bg-custom-bg-primary px-8 text-custom-text-secondary hover:bg-custom-bg-secondary"
+                <Button
+                  asChild
+                  className="rounded-full bg-custom-bg-primary px-8 text-custom-text-secondary hover:bg-custom-bg-secondary"
+                >
+                  <TrackedLink
+                    href="/#contact"
+                    ctaLabel="Falar com o escritório"
+                    ctaLocation="blog_hub_final_cta"
+                    trafficContext="lead_capture"
                   >
-                    <TrackedLink
-                      href="/#contact"
-                      ctaLabel="Falar com o escritório"
-                      ctaLocation="blog_hub_final_cta"
-                      trafficContext="lead_capture"
-                    >
-                      Falar com o escritório
-                    </TrackedLink>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="rounded-full border-custom-text-primary/50 bg-transparent text-custom-text-primary hover:bg-custom-bg-primary hover:text-custom-text-secondary"
-                  >
-                    <Link href="/para/clinicas-medicas-e-odontologicas">
-                      Assessoria para clínicas
-                    </Link>
-                  </Button>
-                </div>
+                    Falar com o escritório
+                  </TrackedLink>
+                </Button>
               </div>
             </section>
           ) : null}

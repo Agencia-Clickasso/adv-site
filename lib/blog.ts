@@ -17,19 +17,20 @@ export interface BlogPost {
   source?: "turso" | "file"
 }
 
+/** Home/blog hub highlights: general tax first; clinics posts remain available in the hub. */
 export const PRIORITY_POST_SLUGS = [
+  "planejamento-tributario-para-empresas-como-reduzir-riscos",
+  "defesa-em-execucao-fiscal-estrategias-para-empresas",
+  "consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",
+  "recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados",
+  "como-suspender-execucao-fiscal-para-empresa",
+  "o-que-fazer-ao-receber-cobranca-tributaria-na-empresa",
+  "imposto-de-renda-pessoa-fisica-2026-erros-silenciosos-e-oportunidades-tributarias",
+  "malha-fina-imposto-de-renda-2026-como-saber-e-o-que-fazer",
   "planejamento-tributario-para-clinicas-medicas-o-que-analisar",
   "lucro-presumido-em-clinicas-quando-revisar-o-regime",
   "recuperacao-de-creditos-tributarios-setor-saude-cuidados",
   "consultoria-tributaria-para-clinicas-odontologicas",
-  "planejamento-tributario-para-empresas-como-reduzir-riscos",
-  "defesa-em-execucao-fiscal-estrategias-para-empresas",
-  "consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",
-  "imposto-de-renda-pessoa-fisica-2026-erros-silenciosos-e-oportunidades-tributarias",
-  "recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados",
-  "malha-fina-imposto-de-renda-2026-como-saber-e-o-que-fazer",
-  "como-suspender-execucao-fiscal-para-empresa",
-  "o-que-fazer-ao-receber-cobranca-tributaria-na-empresa",
   "declaracao-simplificada-ou-completa-irpf-2026-como-escolher",
   "alugueis-no-imposto-de-renda-2026-como-declarar-e-evitar-erros",
 ] as const
