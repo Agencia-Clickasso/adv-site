@@ -43,10 +43,11 @@ export async function requestMagicLinkAction(formData: FormData) {
     email: formData.get("email"),
   })
 
-  if (!parsed.success) {
+  if (!parsed.success || !parsed.data) {
     redirectWithMessage("/admin/login", {
-      error: parsed.error.issues[0]?.message || "Dados inválidos",
+      error: parsed.error?.issues[0]?.message || "Dados inválidos",
     })
+    return
   }
 
   try {

@@ -1,95 +1,64 @@
 import Image from "next/image"
-import { BookOpen, GraduationCap, Landmark, MoveUpRight } from "lucide-react"
+import { GraduationCap, Landmark } from "lucide-react"
 import { blogSerif } from "@/lib/blog-design"
 
+/** Sobre — geral, curto, sem nichar cliente. */
 export default function About() {
   return (
-    <section id="about" className="relative py-24">
+    <section id="about" className="relative py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-          <div className="home-panel rounded-[2rem] p-6 sm:p-8">
-            <div className="relative overflow-hidden rounded-[1.6rem]">
-              <Image
-                src="/profile-photo.jpeg"
-                alt="Dra. Lucimeire Xavier"
-                width={640}
-                height={760}
-                className="h-auto w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/70 to-transparent p-6">
-                <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>Lucimeire Xavier</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-9">
-              <div className="section-kicker text-[#7f5b39]">
-                <Landmark className="h-3.5 w-3.5" />
-                Sobre o escritório
-              </div>
-              <h2 className={`${blogSerif.className} mt-6 text-4xl leading-tight sm:text-5xl`}>
-                Formação jurídica sólida com foco direto em operação, prevenção e risco tributário.
-              </h2>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-                A atuação é voltada a empresas e profissionais que precisam organizar a rotina fiscal, reduzir exposição
-                a autuações e enfrentar cobranças com mais clareza estratégica. O trabalho combina técnica, leitura de
-                negócio e atenção prática ao impacto financeiro das decisões.
-              </p>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="home-panel rounded-[1.7rem] p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
-                  <GraduationCap className="h-6 w-6" />
-                </div>
-                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>Formação</h3>
-                <div className="mt-4 space-y-5 text-sm leading-7 text-custom-text-primary/82">
-                  <div>
-                    <p className="font-semibold text-custom-text-secondary">UNISC</p>
-                    <p>Pós-graduação em Direito Tributário</p>
-                    <p className="text-custom-text-primary/58">2024 - 2025</p>
-                  </div>
-                  <div className="border-t home-soft-line pt-5">
-                    <p className="font-semibold text-custom-text-secondary">Universidade São Judas Tadeu</p>
-                    <p>Bacharela em Direito</p>
-                    <p className="text-custom-text-primary/58">2019 - 2023</p>
-                  </div>
+        <div className="mx-auto max-w-7xl">
+          <div className="overflow-hidden rounded-[2rem] border border-custom-text-primary/16 bg-custom-bg-secondary/80 shadow-[0_32px_100px_rgba(0,0,0,0.35)]">
+            <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="relative min-h-[20rem] lg:min-h-full">
+                <Image
+                  src="/profile-photo.jpeg"
+                  alt="Dra. Lucimeire Xavier"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-custom-bg-secondary/90" />
+                <div className="absolute bottom-0 left-0 p-6 sm:p-8">
+                  <p
+                    className={`${blogSerif.className} text-3xl text-custom-text-secondary sm:text-4xl`}
+                  >
+                    Lucimeire Xavier
+                  </p>
+                  <p className="mt-1 text-sm text-custom-text-primary">
+                    Advogada tributarista · OAB/SP 508.937
+                  </p>
                 </div>
               </div>
 
-              <div className="home-panel rounded-[1.7rem] p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
-                  <BookOpen className="h-6 w-6" />
+              <div className="flex flex-col justify-center space-y-5 p-7 sm:p-10">
+                <div className="section-kicker w-fit">
+                  <Landmark className="h-3.5 w-3.5" />
+                  Sobre
                 </div>
-                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>Pesquisa aplicada</h3>
-                <p className="mt-4 text-sm leading-7 text-custom-text-primary/82">
-                  O trabalho de conclusão sobre incentivo fiscal Drawback em exportações reforça uma base prática em
-                  competitividade, incentivos e interpretação de instrumentos tributários.
-                </p>
-                <a
-                  href="https://repositorio-api.animaeducacao.com.br/server/api/core/bitstreams/7f34702a-53ac-4367-b201-9fabd77e8a29/content"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-custom-text-primary transition hover:text-custom-text-secondary"
+                <h2
+                  className={`${blogSerif.className} text-4xl leading-[1.02] text-custom-text-secondary sm:text-5xl`}
                 >
-                  Acessar TCC completo
-                  <MoveUpRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
+                  Técnica tributária com foco em prevenção de risco.
+                </h2>
+                <p className="max-w-xl text-base leading-8 text-custom-text-primary/85">
+                  Atendimento a empresas, profissionais e organizações em todo o Brasil.
+                </p>
 
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                ["Tributário", "Planejamento, cobrança e defesa fiscal como eixo principal."],
-                ["Prevenção", "Consultoria para reduzir desgaste antes do litígio."],
-                ["Estratégia", "Leitura jurídica conectada à realidade da empresa."],
-              ].map(([title, text]) => (
-                <div key={title} className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/12 p-5">
-                  <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{title}</p>
-                  <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{text}</p>
+                <div className="home-paper rounded-[1.4rem] p-5 text-slate-900">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-custom-bg-primary text-custom-text-primary">
+                      <GraduationCap className="h-5 w-5" />
+                    </div>
+                    <div className="space-y-1 text-sm leading-7">
+                      <p className="font-semibold text-slate-950">Formação</p>
+                      <p>Pós-graduação em Direito Tributário · UNISC</p>
+                      <p>Bacharela em Direito · São Judas Tadeu</p>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>

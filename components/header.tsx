@@ -12,18 +12,21 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { name: "Início", href: "#home" },
-    { name: "Sobre", href: "#about" },
-    { name: "Serviços", href: "#services" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contato", href: "#contact" },
+    { name: "Início", href: "/" },
+    { name: "Atuação", href: "/areas/direito-tributario" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contato", href: "/#contact" },
   ]
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container mx-auto px-4 pt-3 sm:px-6 sm:pt-4 lg:px-8">
         <div className="home-panel flex h-14 items-center justify-between rounded-full px-4 sm:h-20 sm:px-6">
-          <Link href="/" className="flex items-center gap-3 pr-3" aria-label="Lucimeire Xavier Advocacia">
+          <Link
+            href="/"
+            className="flex items-center gap-3 pr-3"
+            aria-label="Lucimeire Xavier Advocacia"
+          >
             <Image
               src="/images/logo.png"
               alt="Lucimeire Xavier Advocacia"
@@ -57,9 +60,12 @@ export default function Header() {
               <Phone className="h-4 w-4" />
               (11) 96758-6911
             </TrackedLink>
-            <Button asChild className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary">
+            <Button
+              asChild
+              className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary"
+            >
               <TrackedLink
-                href="#contact"
+                href="/#contact"
                 ctaLabel="Agendar análise tributária"
                 ctaLocation="header_primary_cta"
                 trafficContext="lead_capture"
@@ -71,11 +77,18 @@ export default function Header() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-9 w-9 text-custom-text-secondary md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9 text-custom-text-secondary md:hidden"
+              >
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="border-custom-text-primary/12 bg-custom-bg-secondary text-custom-text-secondary">
+            <SheetContent
+              side="right"
+              className="border-custom-text-primary/12 bg-custom-bg-secondary text-custom-text-secondary"
+            >
               <div className="mt-10 flex flex-col space-y-5">
                 {navItems.map((item) => (
                   <Link
@@ -87,9 +100,12 @@ export default function Header() {
                     {item.name}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 rounded-full bg-custom-text-primary text-custom-bg-primary hover:bg-custom-text-secondary">
+                <Button
+                  asChild
+                  className="mt-4 rounded-full bg-custom-text-primary text-custom-bg-primary hover:bg-custom-text-secondary"
+                >
                   <TrackedLink
-                    href="#contact"
+                    href="/#contact"
                     ctaLabel="Agendar análise tributária"
                     ctaLocation="mobile_menu_cta"
                     trafficContext="lead_capture"

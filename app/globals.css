@@ -17,7 +17,12 @@
 
   .home-orb {
     border-radius: 9999px;
-    background: radial-gradient(circle, rgba(206, 167, 133, 0.24), rgba(206, 167, 133, 0.05) 55%, transparent 76%);
+    background: radial-gradient(
+      circle,
+      rgba(206, 167, 133, 0.24),
+      rgba(206, 167, 133, 0.05) 55%,
+      transparent 76%
+    );
     filter: blur(24px);
   }
 
@@ -45,7 +50,11 @@
 
   .home-paper {
     border: 1px solid rgba(215, 192, 161, 0.86);
-    background: linear-gradient(180deg, rgba(255, 251, 243, 0.98) 0%, rgba(245, 236, 221, 0.98) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 251, 243, 0.98) 0%,
+      rgba(245, 236, 221, 0.98) 100%
+    );
     box-shadow: 0 28px 90px rgba(0, 0, 0, 0.18);
   }
 
@@ -55,37 +64,52 @@
 
   .blog-grid-pattern {
     background-image:
-      linear-gradient(rgba(206, 167, 133, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(206, 167, 133, 0.06) 1px, transparent 1px);
-    background-size: 44px 44px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 90%);
+      linear-gradient(rgba(206, 167, 133, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(206, 167, 133, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 88%);
   }
 
   .blog-orb {
     border-radius: 9999px;
-    background: radial-gradient(circle, rgba(206, 167, 133, 0.28), rgba(206, 167, 133, 0.02) 60%, transparent 72%);
-    filter: blur(18px);
+    background: radial-gradient(
+      circle,
+      rgba(206, 167, 133, 0.22),
+      rgba(206, 167, 133, 0.03) 55%,
+      transparent 72%
+    );
+    filter: blur(22px);
   }
 
   .blog-kicker {
     display: inline-flex;
     align-items: center;
     border-radius: 9999px;
-    border: 1px solid rgba(206, 167, 133, 0.2);
-    background: rgba(206, 167, 133, 0.1);
+    border: 1px solid rgba(206, 167, 133, 0.35);
+    background: rgba(206, 167, 133, 0.14);
     padding: 0.55rem 0.95rem;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(254, 251, 215, 0.88);
+    color: rgba(232, 201, 168, 0.95);
   }
 
   .blog-paper {
-    background:
-      linear-gradient(180deg, rgba(255, 251, 244, 0.98) 0%, rgba(247, 239, 225, 0.98) 100%);
-    border: 1px solid rgba(214, 192, 166, 0.85);
-    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+      165deg,
+      rgba(255, 252, 247, 0.99) 0%,
+      rgba(248, 240, 226, 0.99) 55%,
+      rgba(243, 232, 214, 0.99) 100%
+    );
+    border: 1px solid rgba(214, 192, 166, 0.9);
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
+  .blog-prose {
+    color: #3f3a33;
   }
 
   .blog-prose > :first-child {
@@ -95,52 +119,72 @@
   .blog-prose > :last-child {
     margin-bottom: 0;
   }
-  
+
+  .blog-prose a {
+    word-break: break-word;
+  }
+
+  .blog-prose .blog-list > .blog-list-item {
+    position: relative;
+    padding-left: 1.15rem;
+  }
+
+  .blog-prose .blog-list > .blog-list-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 9999px;
+    background: #b88958;
+  }
+
   /* Custom animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-float-delay-1 {
     animation: float 6s ease-in-out infinite;
     animation-delay: 1s;
   }
-  
+
   .animate-float-delay-2 {
     animation: float 6s ease-in-out infinite;
     animation-delay: 2s;
   }
-  
+
   /* Gradient text utilities */
   .bg-gradient-text {
-    background: linear-gradient(135deg, #CEA785 0%, #FEFBD7 100%);
+    background: linear-gradient(135deg, #cea785 0%, #fefbd7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   /* Glass morphism effects */
   .glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
-  
+
   .glass-dark {
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   /* Custom shadows */
   .shadow-glow {
     box-shadow: 0 0 20px rgba(206, 167, 133, 0.3);
   }
-  
+
   .shadow-glow-lg {
     box-shadow: 0 0 40px rgba(206, 167, 133, 0.2);
   }
-  
+
   /* Line clamp utilities */
   .line-clamp-2 {
     display: -webkit-box;
@@ -148,40 +192,41 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
-  
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   ::-webkit-scrollbar-track {
-    background: #1A212B;
+    background: #1a212b;
   }
-  
+
   ::-webkit-scrollbar-thumb {
-    background: #CEA785;
+    background: #cea785;
     border-radius: 4px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #FEFBD7;
+    background: #fefbd7;
   }
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -275,7 +320,7 @@
   .prose {
     @apply text-slate-800 dark:text-slate-200;
   }
-  
+
   .prose h1,
   .prose h2,
   .prose h3,
@@ -284,32 +329,32 @@
   .prose h6 {
     @apply text-slate-900 dark:text-slate-100 font-bold;
   }
-  
+
   .prose p {
     @apply text-slate-700 dark:text-slate-300 leading-relaxed;
   }
-  
+
   .prose strong {
     @apply text-slate-900 dark:text-slate-100 font-semibold;
   }
-  
+
   .prose code {
     @apply bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 px-2 py-1 rounded text-sm;
   }
-  
+
   .prose pre {
     @apply bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600;
   }
-  
+
   .prose blockquote {
     @apply border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/20;
   }
-  
+
   .prose ul,
   .prose ol {
     @apply text-slate-700 dark:text-slate-300;
   }
-  
+
   .prose li {
     @apply text-slate-700 dark:text-slate-300;
   }

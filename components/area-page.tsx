@@ -132,7 +132,9 @@ export default function AreaPage({
                       href={primaryCta.href}
                       ctaLabel={primaryCta.label}
                       ctaLocation="area_page_primary_cta"
-                      trafficContext={primaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                      trafficContext={
+                        primaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"
+                      }
                     >
                       {primaryCta.label}
                       <ArrowRight className="h-4 w-4" />
@@ -148,7 +150,9 @@ export default function AreaPage({
                       href={secondaryCta.href}
                       ctaLabel={secondaryCta.label}
                       ctaLocation="area_page_secondary_cta"
-                      trafficContext={secondaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                      trafficContext={
+                        secondaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"
+                      }
                     >
                       {secondaryCta.label}
                     </TrackedLink>
@@ -159,8 +163,12 @@ export default function AreaPage({
               <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                 {highlights.map((item) => (
                   <div key={item.title} className="home-panel rounded-[1.6rem] p-5">
-                    <p className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>{item.title}</p>
-                    <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">{item.description}</p>
+                    <p className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>
+                      {item.title}
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
+                      {item.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -172,19 +180,29 @@ export default function AreaPage({
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-10">
-                <h2 className={`${blogSerif.className} text-4xl leading-tight sm:text-5xl`}>Como essa área entra na decisão</h2>
+                <h2 className={`${blogSerif.className} text-4xl leading-tight sm:text-5xl`}>
+                  Como essa área entra na decisão
+                </h2>
                 <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-                  A proposta aqui não é listar serviço genérico. É mostrar onde essa frente ajuda a reduzir risco,
-                  organizar resposta jurídica e proteger a operação ou o patrimônio do cliente.
+                  A proposta aqui não é listar serviço genérico. É mostrar onde essa frente ajuda a
+                  reduzir risco, organizar resposta jurídica e proteger a operação ou o patrimônio
+                  do cliente.
                 </p>
 
                 <div className="mt-8 grid gap-5 md:grid-cols-2">
                   {services.map((service) => (
-                    <article key={service.title} className="rounded-[1.6rem] border border-[#dcc3a4] bg-white/70 p-6">
+                    <article
+                      key={service.title}
+                      className="rounded-[1.6rem] border border-[#dcc3a4] bg-white/70 p-6"
+                    >
                       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ecd5ba] text-[#7f5b39]">
                         <service.icon className="h-6 w-6" />
                       </div>
-                      <h3 className={`${blogSerif.className} mt-5 text-3xl leading-tight text-slate-950`}>{service.title}</h3>
+                      <h3
+                        className={`${blogSerif.className} mt-5 text-3xl leading-tight text-slate-950`}
+                      >
+                        {service.title}
+                      </h3>
                       <p className="mt-3 text-sm leading-7 text-slate-700">{service.description}</p>
                       <ul className="mt-5 space-y-2 text-sm leading-7 text-slate-700">
                         {service.features.map((feature) => (
@@ -206,8 +224,14 @@ export default function AreaPage({
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-5xl">
               <div className="rounded-[1.9rem] border border-custom-text-primary/12 bg-black/12 px-6 py-8 text-center">
-                <h2 className={`${blogSerif.className} text-4xl leading-tight text-custom-text-secondary`}>{bridgeTitle}</h2>
-                <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-custom-text-primary/78">{bridgeText}</p>
+                <h2
+                  className={`${blogSerif.className} text-4xl leading-tight text-custom-text-secondary`}
+                >
+                  {bridgeTitle}
+                </h2>
+                <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-custom-text-primary/78">
+                  {bridgeText}
+                </p>
                 <Button
                   asChild
                   variant="outline"
@@ -218,7 +242,9 @@ export default function AreaPage({
                     href={bridgeCta.href}
                     ctaLabel={bridgeCta.label}
                     ctaLocation="area_page_bridge_cta"
-                    trafficContext={bridgeCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                    trafficContext={
+                      bridgeCta.href.includes("#contact") ? "lead_capture" : "commercial_page"
+                    }
                   >
                     {bridgeCta.label}
                   </TrackedLink>
@@ -233,16 +259,25 @@ export default function AreaPage({
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-6xl">
                 <div className="home-panel rounded-[2rem] p-7 sm:p-10">
-                  <h2 className={`${blogSerif.className} text-4xl leading-tight text-custom-text-secondary sm:text-5xl`}>
+                  <h2
+                    className={`${blogSerif.className} text-4xl leading-tight text-custom-text-secondary sm:text-5xl`}
+                  >
                     Perguntas frequentes sobre {title.toLowerCase()}
                   </h2>
                   <div className="mt-8 grid gap-5 md:grid-cols-2">
                     {faqs.map((item) => (
-                      <article key={item.question} className="rounded-[1.6rem] border border-custom-text-primary/12 bg-black/10 p-6">
-                        <h3 className={`${blogSerif.className} text-2xl leading-tight text-custom-text-secondary`}>
+                      <article
+                        key={item.question}
+                        className="rounded-[1.6rem] border border-custom-text-primary/12 bg-black/10 p-6"
+                      >
+                        <h3
+                          className={`${blogSerif.className} text-2xl leading-tight text-custom-text-secondary`}
+                        >
                           {item.question}
                         </h3>
-                        <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{item.answer}</p>
+                        <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">
+                          {item.answer}
+                        </p>
                       </article>
                     ))}
                   </div>
@@ -262,13 +297,21 @@ export default function AreaPage({
                     Presença local
                   </div>
                   <h2 className={`${blogSerif.className} mt-4 text-4xl leading-tight sm:text-5xl`}>
-                    Atendimento tributário com base em São Bernardo do Campo e foco em empresas do ABC.
+                    Atendimento tributário com base em São Bernardo do Campo e foco em empresas do
+                    ABC.
                   </h2>
                   <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     {localDetails.map((item) => (
-                      <article key={item.title} className="rounded-[1.4rem] border border-[#dcc3a4] bg-white/70 p-5">
-                        <p className="text-xs uppercase tracking-[0.18em] text-[#7f5b39]">{item.title}</p>
-                        <p className="mt-3 whitespace-pre-line break-words text-sm leading-7 text-slate-700">{item.value}</p>
+                      <article
+                        key={item.title}
+                        className="rounded-[1.4rem] border border-[#dcc3a4] bg-white/70 p-5"
+                      >
+                        <p className="text-xs uppercase tracking-[0.18em] text-[#7f5b39]">
+                          {item.title}
+                        </p>
+                        <p className="mt-3 whitespace-pre-line break-words text-sm leading-7 text-slate-700">
+                          {item.value}
+                        </p>
                       </article>
                     ))}
                   </div>
@@ -304,7 +347,9 @@ export default function AreaPage({
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-6xl">
                 <div className="rounded-[1.8rem] border border-custom-text-primary/12 bg-white/5 p-7">
-                  <h2 className={`${blogSerif.className} text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}>
+                  <h2
+                    className={`${blogSerif.className} text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}
+                  >
                     Leitura relacionada
                   </h2>
                   <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -328,15 +373,27 @@ export default function AreaPage({
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-5xl">
               <div className="home-paper rounded-[2rem] px-6 py-10 text-center text-slate-900 sm:px-10">
-                <h2 className={`${blogSerif.className} text-4xl leading-tight sm:text-5xl`}>{finalTitle}</h2>
-                <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">{finalText}</p>
+                <h2 className={`${blogSerif.className} text-4xl leading-tight sm:text-5xl`}>
+                  {finalTitle}
+                </h2>
+                <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+                  {finalText}
+                </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-                  <Button asChild size="lg" className="w-full rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319] sm:w-auto sm:px-8">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319] sm:w-auto sm:px-8"
+                  >
                     <TrackedLink
                       href={finalPrimaryCta.href}
                       ctaLabel={finalPrimaryCta.label}
                       ctaLocation="area_page_final_primary_cta"
-                      trafficContext={finalPrimaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                      trafficContext={
+                        finalPrimaryCta.href.includes("#contact")
+                          ? "lead_capture"
+                          : "commercial_page"
+                      }
                     >
                       {finalPrimaryCta.label}
                     </TrackedLink>
@@ -351,7 +408,11 @@ export default function AreaPage({
                       href={finalSecondaryCta.href}
                       ctaLabel={finalSecondaryCta.label}
                       ctaLocation="area_page_final_secondary_cta"
-                      trafficContext={finalSecondaryCta.href.includes("#contact") ? "lead_capture" : "commercial_page"}
+                      trafficContext={
+                        finalSecondaryCta.href.includes("#contact")
+                          ? "lead_capture"
+                          : "commercial_page"
+                      }
                     >
                       {finalSecondaryCta.label}
                     </TrackedLink>

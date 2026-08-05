@@ -1,4 +1,4 @@
-import createMDX from '@next/mdx'
+import createMDX from "@next/mdx"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   async redirects() {
     return [
       {
