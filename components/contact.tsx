@@ -167,19 +167,18 @@ export default function Contact({
 
               <div className="rounded-[1.8rem] bg-[#161c25] p-5 text-custom-text-secondary shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:rounded-[2rem] sm:p-8">
                 <div className="mb-6 border-b border-custom-text-primary/10 pb-6">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Formulário de triagem</p>
-                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>Solicitar atendimento</h3>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                    Formulário de triagem
+                  </p>
+                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>
+                    Solicitar atendimento
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
                     Resuma a demanda, a urgência e o ponto principal que precisa ser analisado.
                   </p>
                 </div>
 
-                <form
-                  name="contact"
-                  method="POST"
-                  onSubmit={handleSubmit}
-                  className="space-y-5"
-                >
+                <form name="contact" method="POST" onSubmit={handleSubmit} className="space-y-5">
                   <input type="hidden" name="_subject" value={formSubject} />
                   <input type="hidden" name="source_page" value={ctaLocation} />
 
@@ -193,7 +192,9 @@ export default function Contact({
                   {submitStatus === "error" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-red-400/25 bg-red-500/12 p-4 text-red-300">
                       <AlertCircle className="h-5 w-5" />
-                      <span>Erro ao enviar a mensagem. Tente novamente ou use o contato direto.</span>
+                      <span>
+                        Erro ao enviar a mensagem. Tente novamente ou use o contato direto.
+                      </span>
                     </div>
                   )}
 

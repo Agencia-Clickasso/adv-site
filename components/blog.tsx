@@ -7,7 +7,7 @@ import { blogSerif, formatBlogDate } from "@/lib/blog-design"
 
 export default async function Blog() {
   const posts = await getSortedPostsData()
-  const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
+  const prioritySlugs = new Set<string>(PRIORITY_POST_SLUGS)
   const displayPosts = sortPostsByPriority(posts).slice(0, 3)
   const [leadPost, ...restPosts] = displayPosts
 
@@ -117,7 +117,10 @@ export default async function Blog() {
                   <h3
                     className={`${blogSerif.className} mt-3 text-xl leading-snug text-custom-text-secondary sm:text-2xl`}
                   >
-                    <Link href={`/blog/${post.slug}`} className="transition hover:text-custom-text-primary">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="transition hover:text-custom-text-primary"
+                    >
                       {post.title}
                     </Link>
                   </h3>
@@ -127,7 +130,9 @@ export default async function Blog() {
                   </p>
 
                   <div className="mt-4 flex items-center justify-between gap-3 border-t border-custom-text-primary/10 pt-4">
-                    <span className="text-xs text-custom-text-primary/55">{formatBlogDate(post.date)}</span>
+                    <span className="text-xs text-custom-text-primary/55">
+                      {formatBlogDate(post.date)}
+                    </span>
                     <Link
                       href={`/blog/${post.slug}`}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-[#e0b990] transition hover:text-custom-text-secondary"

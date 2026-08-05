@@ -56,7 +56,10 @@ export default function RootLayout({
       <head>
         {googleAnalyticsId ? (
           <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+            />
             <script
               dangerouslySetInnerHTML={{
                 __html: `

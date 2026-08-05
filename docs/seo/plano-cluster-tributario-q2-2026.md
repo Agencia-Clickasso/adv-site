@@ -73,17 +73,17 @@ Transformar o site em um ativo orgânico com foco principal em Direito Tributár
 
 ## Mapa de páginas e intenção
 
-| URL alvo | Tipo | Intenção principal | Papel no funil |
-| --- | --- | --- | --- |
-| `/` | Home | Comercial local | Distribuir autoridade e empurrar para tributário |
-| `/areas/direito-tributario` | Página comercial | Comercial | Fechar tráfego e gerar lead |
-| `/blog` | Hub editorial | Navegação / descoberta | Organizar cluster |
-| `/blog/planejamento-tributario-para-empresas-como-reduzir-riscos` | Post BOFU | Comercial | Enviar lead para página comercial |
-| `/blog/defesa-em-execucao-fiscal-estrategias-para-empresas` | Post BOFU | Comercial | Captar urgência |
-| `/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita` | Post BOFU | Comercial | Converter avaliação em contato |
-| `/blog/recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados` | Post BOFU | Comercial | Captar demanda de revisão |
-| `/blog/compliance-tributario-como-evitar-autuacoes` | Post MOFU | Avaliação | Educar e empurrar para consulta |
-| `/blog/simples-nacional-lucro-presumido-e-lucro-real-como-avaliar-o-regime-tributario` | Post MOFU | Avaliação | Captar comparação de regime |
+| URL alvo                                                                               | Tipo             | Intenção principal     | Papel no funil                                   |
+| -------------------------------------------------------------------------------------- | ---------------- | ---------------------- | ------------------------------------------------ |
+| `/`                                                                                    | Home             | Comercial local        | Distribuir autoridade e empurrar para tributário |
+| `/areas/direito-tributario`                                                            | Página comercial | Comercial              | Fechar tráfego e gerar lead                      |
+| `/blog`                                                                                | Hub editorial    | Navegação / descoberta | Organizar cluster                                |
+| `/blog/planejamento-tributario-para-empresas-como-reduzir-riscos`                      | Post BOFU        | Comercial              | Enviar lead para página comercial                |
+| `/blog/defesa-em-execucao-fiscal-estrategias-para-empresas`                            | Post BOFU        | Comercial              | Captar urgência                                  |
+| `/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita`      | Post BOFU        | Comercial              | Converter avaliação em contato                   |
+| `/blog/recuperacao-de-creditos-tributarios-quem-pode-recuperar-e-cuidados`             | Post BOFU        | Comercial              | Captar demanda de revisão                        |
+| `/blog/compliance-tributario-como-evitar-autuacoes`                                    | Post MOFU        | Avaliação              | Educar e empurrar para consulta                  |
+| `/blog/simples-nacional-lucro-presumido-e-lucro-real-como-avaliar-o-regime-tributario` | Post MOFU        | Avaliação              | Captar comparação de regime                      |
 
 ## Plano editorial de 8 semanas
 
@@ -210,4 +210,3 @@ Transformar o site em um ativo orgânico com foco principal em Direito Tributár
   - `Execução Fiscal`
   - `Consultoria Fiscal`
   - `Recuperação de Créditos Tributários`
-

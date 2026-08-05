@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+build
+coverage
+package-lock.json
+public
+amplify.yml
+*.min.js
+*.min.css
+content/blog/**/*.mdx

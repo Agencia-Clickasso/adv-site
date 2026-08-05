@@ -17,8 +17,12 @@ export default function About() {
                 className="h-auto w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/70 to-transparent p-6">
-                <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>Lucimeire Xavier</p>
-                <p className="mt-1 text-sm text-custom-text-primary/78">Advogada tributarista · OAB/SP 508.937</p>
+                <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                  Lucimeire Xavier
+                </p>
+                <p className="mt-1 text-sm text-custom-text-primary/78">
+                  Advogada tributarista · OAB/SP 508.937
+                </p>
               </div>
             </div>
           </div>
@@ -33,8 +37,8 @@ export default function About() {
                 Técnica tributária com foco em operação e prevenção de risco.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700">
-                Atuação para empresas e clínicas que precisam organizar a rotina fiscal, reduzir exposição e decidir com
-                mais clareza — sem improviso.
+                Atuação para empresas e clínicas que precisam organizar a rotina fiscal, reduzir
+                exposição e decidir com mais clareza — sem improviso.
               </p>
             </div>
 
@@ -44,14 +48,20 @@ export default function About() {
                   <GraduationCap className="h-6 w-6" />
                 </div>
                 <div className="space-y-3 text-sm leading-7 text-custom-text-primary/82">
-                  <h3 className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>Formação</h3>
+                  <h3 className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>
+                    Formação
+                  </h3>
                   <p>
-                    <span className="font-semibold text-custom-text-secondary">Pós-graduação em Direito Tributário</span>
+                    <span className="font-semibold text-custom-text-secondary">
+                      Pós-graduação em Direito Tributário
+                    </span>
                     {" · "}
                     UNISC
                   </p>
                   <p>
-                    <span className="font-semibold text-custom-text-secondary">Bacharela em Direito</span>
+                    <span className="font-semibold text-custom-text-secondary">
+                      Bacharela em Direito
+                    </span>
                     {" · "}
                     Universidade São Judas Tadeu
                   </p>

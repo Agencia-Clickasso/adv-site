@@ -104,7 +104,13 @@ export async function createAdminSession(email: string) {
   await client.execute({
     sql: `INSERT INTO admin_sessions (id, email, session_hash, expires_at, created_at)
           VALUES (?, ?, ?, ?, ?)`,
-    args: [randomUUID(), email.toLowerCase(), sessionHash, expiresAt.toISOString(), now.toISOString()],
+    args: [
+      randomUUID(),
+      email.toLowerCase(),
+      sessionHash,
+      expiresAt.toISOString(),
+      now.toISOString(),
+    ],
   })
 
   const cookieStore = await cookies()
@@ -135,7 +141,13 @@ export async function issueAdminSession(email: string) {
   await client.execute({
     sql: `INSERT INTO admin_sessions (id, email, session_hash, expires_at, created_at)
           VALUES (?, ?, ?, ?, ?)`,
-    args: [randomUUID(), email.toLowerCase(), sessionHash, expiresAt.toISOString(), now.toISOString()],
+    args: [
+      randomUUID(),
+      email.toLowerCase(),
+      sessionHash,
+      expiresAt.toISOString(),
+      now.toISOString(),
+    ],
   })
 
   return { rawSession, expiresAt }

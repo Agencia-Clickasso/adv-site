@@ -34,7 +34,9 @@ export const PRIORITY_POST_SLUGS = [
   "alugueis-no-imposto-de-renda-2026-como-declarar-e-evitar-erros",
 ] as const
 
-const priorityPostIndex = new Map(PRIORITY_POST_SLUGS.map((slug, index) => [slug, index]))
+const priorityPostIndex = new Map<string, number>(
+  PRIORITY_POST_SLUGS.map((slug, index) => [slug, index])
+)
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
 

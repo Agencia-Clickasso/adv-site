@@ -5,7 +5,10 @@ import { blogSerif } from "@/lib/blog-design"
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-32 text-custom-text-secondary sm:pt-36">
+    <section
+      id="home"
+      className="relative overflow-hidden pt-32 text-custom-text-secondary sm:pt-36"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
@@ -19,11 +22,12 @@ export default function Hero() {
                 <h1
                   className={`${blogSerif.className} max-w-5xl text-[2.75rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
                 >
-                  Advogada tributarista em São Bernardo do Campo para empresas e clínicas que precisam decidir com clareza.
+                  Advogada tributarista em São Bernardo do Campo para empresas e clínicas que
+                  precisam decidir com clareza.
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-lg sm:leading-8">
-                  Planejamento tributário, execução fiscal e consultoria preventiva — com base no ABC e atendimento em
-                  todo o Brasil.
+                  Planejamento tributário, execução fiscal e consultoria preventiva — com base no
+                  ABC e atendimento em todo o Brasil.
                 </p>
               </div>
 
@@ -82,8 +86,12 @@ export default function Hero() {
 
             <div className="grid gap-5 lg:h-full lg:grid-rows-[auto_1fr]">
               <div className="home-paper rounded-[1.8rem] p-6 text-slate-900 sm:rounded-[2rem] sm:p-8">
-                <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">Como a atuação entra</p>
-                <h2 className={`${blogSerif.className} mt-4 text-[2.1rem] leading-[1.05] sm:text-4xl`}>
+                <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">
+                  Como a atuação entra
+                </p>
+                <h2
+                  className={`${blogSerif.className} mt-4 text-[2.1rem] leading-[1.05] sm:text-4xl`}
+                >
                   Diagnóstico técnico antes que o problema vire custo permanente.
                 </h2>
               </div>
@@ -99,7 +107,9 @@ export default function Hero() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <h3 className={`${blogSerif.className} mt-4 text-xl text-custom-text-secondary sm:text-2xl`}>
+                    <h3
+                      className={`${blogSerif.className} mt-4 text-xl text-custom-text-secondary sm:text-2xl`}
+                    >
                       {item.title}
                     </h3>
                   </div>

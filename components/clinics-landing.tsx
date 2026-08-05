@@ -41,9 +41,7 @@ const relatedArticles = [
 
 const WHATSAPP_CLINICS_HREF =
   "https://api.whatsapp.com/send?phone=5511967586911&text=" +
-  encodeURIComponent(
-    "Olá, tenho uma clínica e gostaria de solicitar uma análise tributária."
-  )
+  encodeURIComponent("Olá, tenho uma clínica e gostaria de solicitar uma análise tributária.")
 
 const services = [
   {
@@ -155,9 +153,10 @@ export default function ClinicsLanding() {
                     Soluções tributárias estratégicas para clínicas médicas e odontológicas
                   </h1>
                   <p className="max-w-3xl text-base leading-7 text-custom-text-primary/88 sm:text-xl sm:leading-8">
-                    A Lucimeire Xavier Advocacia Tributária analisa a estrutura tributária da clínica, identifica
-                    oportunidades de planejamento, reduz riscos fiscais e desenvolve soluções jurídicas personalizadas
-                    — sempre em conformidade com a legislação vigente.
+                    A Lucimeire Xavier Advocacia Tributária analisa a estrutura tributária da
+                    clínica, identifica oportunidades de planejamento, reduz riscos fiscais e
+                    desenvolve soluções jurídicas personalizadas — sempre em conformidade com a
+                    legislação vigente.
                   </p>
                 </div>
 
@@ -206,8 +205,12 @@ export default function ClinicsLanding() {
                       key={item.label}
                       className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5"
                     >
-                      <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">{item.label}</p>
-                      <p className={`${blogSerif.className} mt-3 text-2xl text-custom-text-secondary sm:text-3xl`}>
+                      <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                        {item.label}
+                      </p>
+                      <p
+                        className={`${blogSerif.className} mt-3 text-2xl text-custom-text-secondary sm:text-3xl`}
+                      >
                         {item.value}
                       </p>
                     </div>
@@ -233,8 +236,8 @@ export default function ClinicsLanding() {
                   Soluções jurídico-tributárias para o setor da saúde
                 </h2>
                 <p className="mt-5 text-base leading-8 text-custom-text-primary/84 sm:text-lg">
-                  Cada serviço é estruturado de forma personalizada, com foco na segurança jurídica e na eficiência
-                  fiscal da sua clínica.
+                  Cada serviço é estruturado de forma personalizada, com foco na segurança jurídica
+                  e na eficiência fiscal da sua clínica.
                 </p>
               </div>
 
@@ -247,7 +250,9 @@ export default function ClinicsLanding() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e7cfb3] text-[#7f5b39]">
                       <service.icon className="h-6 w-6" />
                     </div>
-                    <h3 className={`${blogSerif.className} mt-5 text-3xl leading-tight`}>{service.title}</h3>
+                    <h3 className={`${blogSerif.className} mt-5 text-3xl leading-tight`}>
+                      {service.title}
+                    </h3>
                     <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
                       {service.description}
                     </p>
@@ -264,7 +269,9 @@ export default function ClinicsLanding() {
             <div className="mx-auto max-w-7xl">
               <div className="rounded-[2rem] border border-custom-text-primary/12 bg-black/12 p-6 sm:p-10">
                 <div className="max-w-3xl">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">Nossos diferenciais</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">
+                    Nossos diferenciais
+                  </p>
                   <h2
                     className={`${blogSerif.className} mt-4 text-4xl leading-tight text-custom-text-secondary sm:text-5xl`}
                   >
@@ -281,10 +288,14 @@ export default function ClinicsLanding() {
                       <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                         <item.icon className="h-5 w-5" />
                       </div>
-                      <h3 className={`${blogSerif.className} mt-4 text-2xl text-custom-text-secondary`}>
+                      <h3
+                        className={`${blogSerif.className} mt-4 text-2xl text-custom-text-secondary`}
+                      >
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{item.description}</p>
+                      <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">
+                        {item.description}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -308,8 +319,8 @@ export default function ClinicsLanding() {
                   Clínicas e centros de saúde que buscam clareza fiscal
                 </h2>
                 <p className="mt-5 text-base leading-8 text-custom-text-primary/84 sm:text-lg">
-                  Atendimento a negócios do setor da saúde — do pequeno e médio porte a centros e grupos com operação
-                  mais complexa.
+                  Atendimento a negócios do setor da saúde — do pequeno e médio porte a centros e
+                  grupos com operação mais complexa.
                 </p>
               </div>
 
@@ -322,8 +333,14 @@ export default function ClinicsLanding() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <h3 className={`${blogSerif.className} mt-4 text-2xl text-custom-text-secondary`}>{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">{item.description}</p>
+                    <h3
+                      className={`${blogSerif.className} mt-4 text-2xl text-custom-text-secondary`}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
+                      {item.description}
+                    </p>
                   </article>
                 ))}
               </div>
@@ -336,14 +353,16 @@ export default function ClinicsLanding() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-5xl">
               <div className="home-paper rounded-[2rem] px-6 py-10 text-center text-slate-900 sm:px-10 sm:py-12">
-                <p className="text-xs uppercase tracking-[0.24em] text-[#7f5b39]">Vamos conversar?</p>
+                <p className="text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
+                  Vamos conversar?
+                </p>
                 <h2 className={`${blogSerif.className} mt-4 text-4xl leading-tight sm:text-5xl`}>
                   Uma análise tributária especializada pode revelar oportunidades para a sua clínica
                 </h2>
                 <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-700 sm:text-lg">
-                  Do planejamento e da adequação da estrutura tributária à recuperação de créditos, quando presentes os
-                  requisitos legais. Cada decisão com embasamento jurídico representa menos risco e maior eficiência
-                  financeira para o seu negócio.
+                  Do planejamento e da adequação da estrutura tributária à recuperação de créditos,
+                  quando presentes os requisitos legais. Cada decisão com embasamento jurídico
+                  representa menos risco e maior eficiência financeira para o seu negócio.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
                   <Button
@@ -392,7 +411,9 @@ export default function ClinicsLanding() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-6xl">
               <div className="rounded-[1.8rem] border border-custom-text-primary/12 bg-white/5 p-7 sm:p-9">
-                <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">Leitura relacionada</p>
+                <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">
+                  Leitura relacionada
+                </p>
                 <h2
                   className={`${blogSerif.className} mt-3 text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}
                 >
@@ -451,7 +472,9 @@ export default function ClinicsLanding() {
                       key={item.q}
                       className="rounded-[1.6rem] border border-custom-text-primary/12 bg-black/10 p-6"
                     >
-                      <h3 className={`${blogSerif.className} text-2xl leading-tight text-custom-text-secondary`}>
+                      <h3
+                        className={`${blogSerif.className} text-2xl leading-tight text-custom-text-secondary`}
+                      >
                         {item.q}
                       </h3>
                       <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{item.a}</p>

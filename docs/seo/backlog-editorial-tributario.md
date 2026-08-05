@@ -12,20 +12,20 @@ Ampliar a cobertura orgânica qualificada com foco em Direito Tributário para e
 
 ## Pautas Priorizadas (12)
 
-| Prioridade | Palavra-chave alvo | Intenção | Título sugerido |
-| --- | --- | --- | --- |
-| P1 | planejamento tributário para empresas | Comercial | Planejamento Tributário para Empresas: Como Reduzir Riscos e Pagar Tributos com Segurança |
-| P1 | defesa em execução fiscal | Comercial | Defesa em Execução Fiscal: Quais Estratégias Podem Ser Usadas Pela Empresa |
-| P1 | consultoria fiscal para empresas | Comercial | Consultoria Fiscal para Empresas: Quando Contratar e Quais Problemas Evita |
-| P1 | recuperação de créditos tributários | Comercial | Recuperação de Créditos Tributários: Quem Pode Recuperar e Quais Cuidados Tomar |
-| P1 | contencioso tributário administrativo e judicial | Comercial | Contencioso Tributário: Diferença Entre Esfera Administrativa e Judicial |
-| P1 | advogada tributarista são bernardo do campo | Local/Comercial | Como Escolher uma Advogada Tributarista em São Bernardo do Campo |
-| P2 | compliance tributário para empresas | Avaliação | Compliance Tributário: Como Estruturar Rotinas para Evitar Autuações |
-| P2 | regimes tributários comparação | Avaliação | Simples Nacional, Lucro Presumido e Lucro Real: Como Avaliar o Regime Tributário |
-| P2 | parcelamento de dívida fiscal empresa | Avaliação | Parcelamento de Dívida Fiscal: Quando Vale a Pena para Empresas |
-| P2 | compensação tributária empresa | Avaliação | Compensação Tributária para Empresas: Regras, Riscos e Boas Práticas |
-| P3 | erros tributários mais comuns em pequenas empresas | Informacional | 10 Erros Tributários Comuns em Pequenas Empresas e Como Evitá-los |
-| P3 | documentos para análise tributária | Informacional | Quais Documentos Separar Antes de uma Consultoria Tributária |
+| Prioridade | Palavra-chave alvo                                 | Intenção        | Título sugerido                                                                           |
+| ---------- | -------------------------------------------------- | --------------- | ----------------------------------------------------------------------------------------- |
+| P1         | planejamento tributário para empresas              | Comercial       | Planejamento Tributário para Empresas: Como Reduzir Riscos e Pagar Tributos com Segurança |
+| P1         | defesa em execução fiscal                          | Comercial       | Defesa em Execução Fiscal: Quais Estratégias Podem Ser Usadas Pela Empresa                |
+| P1         | consultoria fiscal para empresas                   | Comercial       | Consultoria Fiscal para Empresas: Quando Contratar e Quais Problemas Evita                |
+| P1         | recuperação de créditos tributários                | Comercial       | Recuperação de Créditos Tributários: Quem Pode Recuperar e Quais Cuidados Tomar           |
+| P1         | contencioso tributário administrativo e judicial   | Comercial       | Contencioso Tributário: Diferença Entre Esfera Administrativa e Judicial                  |
+| P1         | advogada tributarista são bernardo do campo        | Local/Comercial | Como Escolher uma Advogada Tributarista em São Bernardo do Campo                          |
+| P2         | compliance tributário para empresas                | Avaliação       | Compliance Tributário: Como Estruturar Rotinas para Evitar Autuações                      |
+| P2         | regimes tributários comparação                     | Avaliação       | Simples Nacional, Lucro Presumido e Lucro Real: Como Avaliar o Regime Tributário          |
+| P2         | parcelamento de dívida fiscal empresa              | Avaliação       | Parcelamento de Dívida Fiscal: Quando Vale a Pena para Empresas                           |
+| P2         | compensação tributária empresa                     | Avaliação       | Compensação Tributária para Empresas: Regras, Riscos e Boas Práticas                      |
+| P3         | erros tributários mais comuns em pequenas empresas | Informacional   | 10 Erros Tributários Comuns em Pequenas Empresas e Como Evitá-los                         |
+| P3         | documentos para análise tributária                 | Informacional   | Quais Documentos Separar Antes de uma Consultoria Tributária                              |
 
 ## Template de Artigo SEO (padrão)
 

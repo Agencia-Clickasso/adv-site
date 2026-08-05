@@ -1,12 +1,7 @@
 import type { Metadata } from "next"
 import ClinicsLanding from "@/components/clinics-landing"
 import JsonLd from "@/components/seo/json-ld"
-import {
-  SEO,
-  buildFaqSchema,
-  buildLocalOfficeSchema,
-  createPageMetadata,
-} from "@/lib/seo"
+import { SEO, buildFaqSchema, buildLocalOfficeSchema, createPageMetadata } from "@/lib/seo"
 
 const PATH = "/para/clinicas-medicas-e-odontologicas"
 

@@ -89,10 +89,7 @@ export function createBlogPostMetadata(input: {
   }
 }
 
-const areaPages: Record<
-  string,
-  { title: string; description: string; keywords: string[] }
-> = {
+const areaPages: Record<string, { title: string; description: string; keywords: string[] }> = {
   "direito-tributario": {
     title: "Advogada Tributarista em São Bernardo do Campo",
     description:
@@ -114,37 +111,69 @@ const areaPages: Record<
     title: "Direito Empresarial em São Bernardo do Campo",
     description:
       "Consultoria em Direito Empresarial para empresas em São Bernardo do Campo, com apoio em contratos comerciais, compliance, estrutura societária e decisões com reflexo tributário.",
-    keywords: ["direito empresarial", "advogado empresarial são bernardo do campo", "contratos comerciais", "compliance empresarial"],
+    keywords: [
+      "direito empresarial",
+      "advogado empresarial são bernardo do campo",
+      "contratos comerciais",
+      "compliance empresarial",
+    ],
   },
   "direito-civil": {
     title: "Direito Civil e Contratos em São Bernardo do Campo",
     description:
       "Atuação em Direito Civil com suporte em contratos, responsabilidade civil e proteção patrimonial, com atendimento em São Bernardo do Campo.",
-    keywords: ["direito civil", "advogado civil são bernardo do campo", "contratos civis", "responsabilidade civil"],
+    keywords: [
+      "direito civil",
+      "advogado civil são bernardo do campo",
+      "contratos civis",
+      "responsabilidade civil",
+    ],
   },
   "direito-imobiliario": {
     title: "Direito Imobiliário em São Bernardo do Campo",
     description:
       "Assessoria em Direito Imobiliário para compra e venda, locações e regularização de imóveis em São Bernardo do Campo, com atenção a risco patrimonial e impacto tributário.",
-    keywords: ["direito imobiliário", "advogado imobiliário são bernardo do campo", "compra e venda de imóveis", "locação", "regularização"],
+    keywords: [
+      "direito imobiliário",
+      "advogado imobiliário são bernardo do campo",
+      "compra e venda de imóveis",
+      "locação",
+      "regularização",
+    ],
   },
   "direito-trabalhista": {
     title: "Direito Trabalhista em São Bernardo do Campo",
     description:
       "Atendimento em Direito Trabalhista para rescisões, ações trabalhistas e consultoria preventiva em São Bernardo do Campo, com foco em redução de passivo e organização da operação.",
-    keywords: ["direito trabalhista", "advogado trabalhista são bernardo do campo", "ações trabalhistas", "consultoria trabalhista"],
+    keywords: [
+      "direito trabalhista",
+      "advogado trabalhista são bernardo do campo",
+      "ações trabalhistas",
+      "consultoria trabalhista",
+    ],
   },
   "direito-processual": {
     title: "Direito Processual e Estratégia Processual",
     description:
       "Representação em processos judiciais e administrativos, com foco em estratégia processual, recursos, execuções e disputas com impacto tributário em São Bernardo do Campo.",
-    keywords: ["direito processual", "advogado processual são bernardo do campo", "ações judiciais", "recursos", "execuções"],
+    keywords: [
+      "direito processual",
+      "advogado processual são bernardo do campo",
+      "ações judiciais",
+      "recursos",
+      "execuções",
+    ],
   },
   "consultoria-juridica": {
     title: "Consultoria Jurídica Preventiva em São Bernardo do Campo",
     description:
       "Consultoria jurídica preventiva para empresas e profissionais, com pareceres, due diligence e suporte estratégico em São Bernardo do Campo.",
-    keywords: ["consultoria jurídica", "consultoria jurídica empresarial", "parecer jurídico", "due diligence"],
+    keywords: [
+      "consultoria jurídica",
+      "consultoria jurídica empresarial",
+      "parecer jurídico",
+      "due diligence",
+    ],
   },
 }
 

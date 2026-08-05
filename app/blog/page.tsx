@@ -38,7 +38,7 @@ function categoryId(category: string) {
 export default async function BlogPage() {
   const posts = await getSortedPostsData()
   const taxPosts = posts.filter((post) => post.category.toLowerCase().includes("tribut"))
-  const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
+  const prioritySlugs = new Set<string>(PRIORITY_POST_SLUGS)
   const featuredPosts = sortPostsByPriority(posts).slice(0, 4)
   const [leadPost, ...secondaryFeaturedPosts] = featuredPosts
   const categoriesMap = posts.reduce(
@@ -97,7 +97,8 @@ export default async function BlogPage() {
                   Análises para decidir antes do problema virar passivo.
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-custom-text-primary/82 sm:text-lg">
-                  Tributário, IRPF, execução fiscal e prevenção — com leitura prática para empresas e clínicas.
+                  Tributário, IRPF, execução fiscal e prevenção — com leitura prática para empresas
+                  e clínicas.
                 </p>
               </div>
 
@@ -111,8 +112,12 @@ export default async function BlogPage() {
                     key={stat.label}
                     className="rounded-2xl border border-[#cea785]/25 bg-[#cea785]/10 px-3 py-4 text-center"
                   >
-                    <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{stat.value}</div>
-                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.16em] text-[#d4b08a]">{stat.label}</p>
+                    <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                      {stat.value}
+                    </div>
+                    <p className="mt-1 text-[0.65rem] uppercase tracking-[0.16em] text-[#d4b08a]">
+                      {stat.label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -144,8 +149,12 @@ export default async function BlogPage() {
             <section className="mt-12">
               <div className="mb-6 flex items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c9a67a]">Em destaque</p>
-                  <h2 className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary sm:text-4xl`}>
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c9a67a]">
+                    Em destaque
+                  </p>
+                  <h2
+                    className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary sm:text-4xl`}
+                  >
                     Leituras prioritárias
                   </h2>
                 </div>
@@ -164,10 +173,14 @@ export default async function BlogPage() {
                       </span>
                     ) : null}
                   </div>
-                  <h2 className={`${blogSerif.className} relative mt-5 text-3xl leading-[1.06] sm:text-4xl lg:text-[2.6rem]`}>
+                  <h2
+                    className={`${blogSerif.className} relative mt-5 text-3xl leading-[1.06] sm:text-4xl lg:text-[2.6rem]`}
+                  >
                     {leadPost.title}
                   </h2>
-                  <p className="relative mt-4 flex-1 text-base leading-8 text-slate-700">{leadPost.excerpt}</p>
+                  <p className="relative mt-4 flex-1 text-base leading-8 text-slate-700">
+                    {leadPost.excerpt}
+                  </p>
                   <div className="relative mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-[#dcc3a4]/80 pt-5 text-sm text-slate-600">
                     <span className="inline-flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-[#9c744a]" />
@@ -200,12 +213,17 @@ export default async function BlogPage() {
                     >
                       <div className="flex items-center justify-between gap-2 text-[0.65rem] uppercase tracking-[0.16em] text-[#c9a67a]">
                         <span className="truncate">{post.category}</span>
-                        <span className="shrink-0 text-custom-text-primary/50">{post.readTime}</span>
+                        <span className="shrink-0 text-custom-text-primary/50">
+                          {post.readTime}
+                        </span>
                       </div>
                       <h3
                         className={`${blogSerif.className} mt-3 text-xl leading-snug text-custom-text-secondary sm:text-[1.35rem]`}
                       >
-                        <Link href={`/blog/${post.slug}`} className="transition hover:text-[#e8c9a8]">
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="transition hover:text-[#e8c9a8]"
+                        >
                           {post.title}
                         </Link>
                       </h3>
@@ -213,7 +231,9 @@ export default async function BlogPage() {
                         {post.excerpt}
                       </p>
                       <div className="mt-4 flex items-center justify-between gap-2 border-t border-custom-text-primary/10 pt-3">
-                        <span className="text-xs text-custom-text-primary/50">{formatBlogDate(post.date)}</span>
+                        <span className="text-xs text-custom-text-primary/50">
+                          {formatBlogDate(post.date)}
+                        </span>
                         <Link
                           href={`/blog/${post.slug}`}
                           className="inline-flex items-center gap-1 text-sm font-medium text-[#e0b990] transition group-hover:text-custom-text-secondary"
@@ -265,7 +285,9 @@ export default async function BlogPage() {
                       <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#c9a67a]">
                         Seção
                       </p>
-                      <h2 className={`${blogSerif.className} mt-1 text-3xl text-custom-text-secondary sm:text-4xl`}>
+                      <h2
+                        className={`${blogSerif.className} mt-1 text-3xl text-custom-text-secondary sm:text-4xl`}
+                      >
                         {category}
                       </h2>
                     </div>
@@ -292,7 +314,9 @@ export default async function BlogPage() {
                             }`}
                           >
                             <span>{isLead ? "Destaque" : formatBlogDate(post.date)}</span>
-                            <span className={isLead ? "text-slate-600" : "text-custom-text-primary/50"}>
+                            <span
+                              className={isLead ? "text-slate-600" : "text-custom-text-primary/50"}
+                            >
                               {post.readTime}
                             </span>
                           </div>
@@ -348,7 +372,9 @@ export default async function BlogPage() {
 
           {posts.length === 0 ? (
             <section className="mt-16 rounded-[2rem] border border-custom-text-primary/12 bg-white/5 px-6 py-16 text-center">
-              <h2 className={`${blogSerif.className} text-4xl text-custom-text-secondary`}>Nenhum artigo publicado</h2>
+              <h2 className={`${blogSerif.className} text-4xl text-custom-text-secondary`}>
+                Nenhum artigo publicado
+              </h2>
               <p className="mx-auto mt-4 max-w-2xl text-custom-text-primary/82">
                 O espaço editorial está preparado para receber novos conteúdos.
               </p>
@@ -366,11 +392,15 @@ export default async function BlogPage() {
                     Se o tema encosta na sua operação, o melhor momento para agir é agora.
                   </h2>
                   <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700">
-                    Use o blog como referência inicial e trate a decisão jurídica com o contexto real do caso.
+                    Use o blog como referência inicial e trate a decisão jurídica com o contexto
+                    real do caso.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                  <Button asChild className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]">
+                  <Button
+                    asChild
+                    className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]"
+                  >
                     <TrackedLink
                       href="/#contact"
                       ctaLabel="Falar com o escritório"
@@ -385,7 +415,9 @@ export default async function BlogPage() {
                     variant="outline"
                     className="rounded-full border-[#b99066] bg-transparent text-[#7f5b39] hover:bg-[#1b2028] hover:text-[#f8f0df]"
                   >
-                    <Link href="/para/clinicas-medicas-e-odontologicas">Assessoria para clínicas</Link>
+                    <Link href="/para/clinicas-medicas-e-odontologicas">
+                      Assessoria para clínicas
+                    </Link>
                   </Button>
                 </div>
               </div>

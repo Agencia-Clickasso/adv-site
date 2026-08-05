@@ -22,7 +22,7 @@ export type BlogPostFormValues = z.infer<typeof blogPostFormSchema>
 
 export async function validateAndNormalizeBlogPost(
   raw: BlogPostFormValues,
-  options?: { existingId?: string },
+  options?: { existingId?: string }
 ) {
   const parsed = blogPostFormSchema.parse(raw)
   const normalizedSlug = slugify(parsed.slug || parsed.title)
@@ -57,7 +57,13 @@ export async function updateDraft(id: string, values: BlogPostFormValues) {
 export async function publishPost(id: string) {
   const existing = await getDbPostById(id)
   if (!existing) throw new Error("Post não encontrado")
-  if (!existing.title || !existing.slug || !existing.excerpt || !existing.contentMdx || !existing.category) {
+  if (
+    !existing.title ||
+    !existing.slug ||
+    !existing.excerpt ||
+    !existing.contentMdx ||
+    !existing.category
+  ) {
     throw new Error("Campos obrigatórios ausentes para publicação")
   }
   await publishDbPost(id)

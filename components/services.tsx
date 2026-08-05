@@ -40,7 +40,8 @@ export default function Services() {
                 Direito tributário no centro. O resto entra quando o caso pede.
               </h2>
               <p className="max-w-2xl text-base leading-8 text-custom-text-primary/84 sm:text-lg">
-                Planejamento, execução fiscal e consultoria. Áreas complementares só quando ajudam a fechar a solução.
+                Planejamento, execução fiscal e consultoria. Áreas complementares só quando ajudam a
+                fechar a solução.
               </p>
             </div>
 
@@ -48,8 +49,12 @@ export default function Services() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e7cfb3] text-[#7f5b39]">
                 <Calculator className="h-7 w-7" />
               </div>
-              <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">Foco principal</p>
-              <h3 className={`${blogSerif.className} mt-3 text-4xl leading-tight`}>Direito Tributário</h3>
+              <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
+                Foco principal
+              </p>
+              <h3 className={`${blogSerif.className} mt-3 text-4xl leading-tight`}>
+                Direito Tributário
+              </h3>
               <ul className="mt-5 space-y-2.5 text-sm leading-7 text-slate-700">
                 {[
                   "Diagnóstico e estrutura tributária",
@@ -63,7 +68,10 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <Button asChild className="mt-7 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]">
+              <Button
+                asChild
+                className="mt-7 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]"
+              >
                 <TrackedLink
                   href="/areas/direito-tributario"
                   ctaLabel="Ver direito tributário"
@@ -80,7 +88,9 @@ export default function Services() {
           {/* Nicho clínicas */}
           <div className="mt-10 home-paper rounded-[1.8rem] p-6 text-slate-900 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
             <div className="max-w-2xl">
-              <p className="text-xs uppercase tracking-[0.24em] text-[#7f5b39]">Nicho prioritário</p>
+              <p className="text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
+                Nicho prioritário
+              </p>
               <h3 className={`${blogSerif.className} mt-3 text-3xl leading-tight sm:text-4xl`}>
                 Clínicas médicas e odontológicas
               </h3>
@@ -106,8 +116,12 @@ export default function Services() {
 
           {/* Áreas complementares — só título (feedback Lucimeire) */}
           <div className="mt-12">
-            <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">Áreas complementares</p>
-            <p className={`${blogSerif.className} mt-3 text-2xl text-custom-text-secondary sm:text-3xl`}>
+            <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">
+              Áreas complementares
+            </p>
+            <p
+              className={`${blogSerif.className} mt-3 text-2xl text-custom-text-secondary sm:text-3xl`}
+            >
               Clique para ver o detalhe, se precisar.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -120,7 +134,9 @@ export default function Services() {
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-custom-text-primary/16 text-custom-text-primary">
                     <area.icon className="h-5 w-5" />
                   </div>
-                  <span className={`${blogSerif.className} flex-1 text-xl text-custom-text-secondary`}>
+                  <span
+                    className={`${blogSerif.className} flex-1 text-xl text-custom-text-secondary`}
+                  >
                     {area.title}
                   </span>
                   <ArrowRight className="h-4 w-4 text-custom-text-primary/50 transition group-hover:text-custom-text-secondary" />

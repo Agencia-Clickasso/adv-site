@@ -136,7 +136,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   Leitura guiada
                 </p>
                 <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">
-                  Trate o artigo como insumo técnico. Decisões fiscais e societárias pedem o contexto real do caso.
+                  Trate o artigo como insumo técnico. Decisões fiscais e societárias pedem o
+                  contexto real do caso.
                 </p>
               </div>
 
@@ -151,7 +152,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <p className="mt-3 text-sm leading-7 text-slate-700">
                   Avaliamos risco, documentos e estratégia antes de qualquer resposta formal.
                 </p>
-                <Button asChild className="mt-5 w-full rounded-full bg-[#1b2028] text-[#f8f0df] hover:bg-[#0f1319]">
+                <Button
+                  asChild
+                  className="mt-5 w-full rounded-full bg-[#1b2028] text-[#f8f0df] hover:bg-[#0f1319]"
+                >
                   <TrackedLink
                     href="/#contact"
                     ctaLabel="Solicitar orientação tributária"
@@ -177,7 +181,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#c9a67a]">
                   Continue lendo
                 </p>
-                <p className={`${blogSerif.className} mt-2 text-2xl text-custom-text-secondary sm:text-3xl`}>
+                <p
+                  className={`${blogSerif.className} mt-2 text-2xl text-custom-text-secondary sm:text-3xl`}
+                >
                   Explore outras análises do blog.
                 </p>
               </div>
