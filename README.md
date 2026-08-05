@@ -1,30 +1,61 @@
-# Lawyer website design
+# Lucimeire Xavier Advocacia — site
 
-_Automatically synced with your [v0.dev](https://v0.dev) deployments_
+Site institucional em **Next.js App Router** com blog MDX, SEO técnico e admin de posts (Turso).
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/usedotted/v0-lawyer-website-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/BZLXY9NOZUq)
+Domínio: [www.lucimeirexavieradvocacia.adv.br](https://www.lucimeirexavieradvocacia.adv.br)
 
-## Overview
+## Shape
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+```
+app/                 rotas públicas + admin
+components/          UI (home, áreas, blog, clínicas)
+components/clinics/  landing clínicas (content + sections)
+content/blog/        posts MDX
+lib/                 SEO, blog, auth, Turso, helpers testáveis
+scripts/             checks headless
+```
 
-## Deployment
+Agent rules: see **[AGENTS.md](./AGENTS.md)**.
 
-Your project is live at:
+## Setup
 
-**[https://vercel.com/usedotted/v0-lawyer-website-design](https://vercel.com/usedotted/v0-lawyer-website-design)**
+```bash
+npm ci --legacy-peer-deps
+# or
+npm install
+```
 
-## Build your app
+## Dev
 
-Continue building your app on:
+```bash
+npm run dev
+```
 
-**[https://v0.dev/chat/projects/BZLXY9NOZUq](https://v0.dev/chat/projects/BZLXY9NOZUq)**
+## One-shot validation (CI local)
 
-## How It Works
+```bash
+npm run ci
+```
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Runs: lint → prettier check → typecheck → vitest → production build.
+
+Individual:
+
+```bash
+npm run lint
+npm run format:check
+npm run typecheck
+npm test
+npm run build
+```
+
+Pre-commit (husky): lint-staged + tests.
+
+## Key public routes
+
+| Route                                    | Role                       |
+| ---------------------------------------- | -------------------------- |
+| `/`                                      | Home                       |
+| `/para/clinicas-medicas-e-odontologicas` | Landing clínicas (nicho)   |
+| `/areas/direito-tributario`              | Pilar comercial tributário |
+| `/blog`                                  | Hub editorial              |
