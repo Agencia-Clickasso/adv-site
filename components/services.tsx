@@ -8,6 +8,7 @@ import {
   Gavel,
   Home,
   Star,
+  Stethoscope,
   Users,
 } from "lucide-react"
 import TrackedLink from "@/components/tracked-link"
@@ -23,54 +24,64 @@ const supportAreas = [
   { icon: FileText, title: "Direito Trabalhista", href: "/areas/direito-trabalhista" },
 ]
 
+const taxFeatures = [
+  "Diagnóstico e estrutura tributária",
+  "Defesa em cobrança e execução fiscal",
+  "Planejamento e revisão de regime",
+  "Consultoria preventiva",
+]
+
+/** Services — cream primary + dark niche banner (redesign). */
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 sm:py-24">
+    <section id="services" className="relative py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <div className="space-y-6">
+        <div className="mx-auto max-w-7xl space-y-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl space-y-4">
               <div className="section-kicker">
                 <Star className="h-3.5 w-3.5" />
                 Foco de atuação
               </div>
               <h2
-                className={`${blogSerif.className} max-w-3xl text-4xl leading-[0.98] text-custom-text-secondary sm:text-5xl lg:text-6xl`}
+                className={`${blogSerif.className} text-4xl leading-[0.98] text-custom-text-secondary sm:text-5xl lg:text-6xl`}
               >
-                Direito tributário no centro. O resto entra quando o caso pede.
+                Tributário no centro.
+                <br />
+                <span className="text-custom-text-primary">O resto entra se o caso pedir.</span>
               </h2>
-              <p className="max-w-2xl text-base leading-8 text-custom-text-primary/84 sm:text-lg">
-                Planejamento, execução fiscal e consultoria. Áreas complementares só quando ajudam a
-                fechar a solução.
-              </p>
             </div>
+            <p className="max-w-sm text-sm leading-7 text-custom-text-primary/80 sm:text-base">
+              Planejamento, execução fiscal e consultoria. Áreas complementares só no detalhe.
+            </p>
+          </div>
 
-            <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-8">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e7cfb3] text-[#7f5b39]">
+          {/* Bento: big tax + clinics */}
+          <div className="grid gap-5 lg:grid-cols-2">
+            <div className="home-paper flex flex-col rounded-[1.8rem] p-7 text-slate-900 sm:p-9">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-custom-bg-primary text-custom-text-primary">
                 <Calculator className="h-7 w-7" />
               </div>
-              <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
+              <p className="mt-5 text-xs uppercase tracking-[0.24em] text-custom-text-primary">
                 Foco principal
               </p>
-              <h3 className={`${blogSerif.className} mt-3 text-4xl leading-tight`}>
+              <h3 className={`${blogSerif.className} mt-2 text-4xl leading-tight`}>
                 Direito Tributário
               </h3>
-              <ul className="mt-5 space-y-2.5 text-sm leading-7 text-slate-700">
-                {[
-                  "Diagnóstico e estrutura tributária",
-                  "Defesa em cobrança e execução fiscal",
-                  "Planejamento e revisão de regime",
-                  "Consultoria preventiva",
-                ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <span className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#9c744a]" />
-                    <span>{feature}</span>
+              <ul className="mt-6 flex-1 space-y-3">
+                {taxFeatures.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-center gap-3 rounded-xl border border-custom-text-primary/20 bg-white/60 px-4 py-3 text-sm text-slate-800"
+                  >
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-custom-text-primary" />
+                    {feature}
                   </li>
                 ))}
               </ul>
               <Button
                 asChild
-                className="mt-7 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]"
+                className="mt-8 w-full rounded-full bg-custom-bg-primary text-custom-text-secondary hover:bg-custom-bg-secondary sm:w-auto"
               >
                 <TrackedLink
                   href="/areas/direito-tributario"
@@ -83,65 +94,56 @@ export default function Services() {
                 </TrackedLink>
               </Button>
             </div>
-          </div>
 
-          {/* Nicho clínicas */}
-          <div className="mt-10 home-paper rounded-[1.8rem] p-6 text-slate-900 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
-            <div className="max-w-2xl">
-              <p className="text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
-                Nicho prioritário
-              </p>
-              <h3 className={`${blogSerif.className} mt-3 text-3xl leading-tight sm:text-4xl`}>
-                Clínicas médicas e odontológicas
-              </h3>
-              <p className="mt-3 text-base leading-7 text-slate-700">
-                Diagnóstico, planejamento, créditos e consultoria com foco no setor da saúde.
-              </p>
-            </div>
-            <Button
-              asChild
-              className="mt-5 shrink-0 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319] sm:mt-0"
-            >
-              <TrackedLink
-                href="/para/clinicas-medicas-e-odontologicas"
-                ctaLabel="Abrir landing de clínicas"
-                ctaLocation="services_clinics_banner"
-                trafficContext="commercial_page"
-              >
-                Ver soluções para clínicas
-                <ArrowRight className="h-4 w-4" />
-              </TrackedLink>
-            </Button>
-          </div>
-
-          {/* Áreas complementares — só título (feedback Lucimeire) */}
-          <div className="mt-12">
-            <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">
-              Áreas complementares
-            </p>
-            <p
-              className={`${blogSerif.className} mt-3 text-2xl text-custom-text-secondary sm:text-3xl`}
-            >
-              Clique para ver o detalhe, se precisar.
-            </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {supportAreas.map((area) => (
-                <Link
-                  key={area.title}
-                  href={area.href}
-                  className="group home-panel flex items-center gap-4 rounded-[1.4rem] px-5 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-custom-text-primary/28"
+            <div className="flex flex-col gap-5">
+              <div className="relative flex flex-1 flex-col overflow-hidden rounded-[1.8rem] border border-custom-text-primary/30 bg-gradient-to-br from-custom-text-primary/20 via-custom-bg-secondary to-custom-bg-primary p-7 sm:p-9">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-custom-text-primary text-custom-bg-primary">
+                  <Stethoscope className="h-7 w-7" />
+                </div>
+                <p className="mt-5 text-xs uppercase tracking-[0.24em] text-custom-text-primary">
+                  Nicho prioritário
+                </p>
+                <h3
+                  className={`${blogSerif.className} mt-2 text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-custom-text-primary/16 text-custom-text-primary">
-                    <area.icon className="h-5 w-5" />
-                  </div>
-                  <span
-                    className={`${blogSerif.className} flex-1 text-xl text-custom-text-secondary`}
+                  Clínicas médicas e odontológicas
+                </h3>
+                <p className="mt-4 flex-1 text-base leading-8 text-custom-text-primary/90">
+                  Diagnóstico, planejamento, créditos e consultoria com foco no setor da saúde.
+                </p>
+                <Button
+                  asChild
+                  className="mt-6 w-full rounded-full bg-custom-text-primary text-custom-bg-primary hover:bg-custom-text-secondary sm:w-auto"
+                >
+                  <TrackedLink
+                    href="/para/clinicas-medicas-e-odontologicas"
+                    ctaLabel="Abrir landing de clínicas"
+                    ctaLocation="services_clinics_banner"
+                    trafficContext="commercial_page"
                   >
-                    {area.title}
-                  </span>
-                  <ArrowRight className="h-4 w-4 text-custom-text-primary/50 transition group-hover:text-custom-text-secondary" />
-                </Link>
-              ))}
+                    Ver soluções para clínicas
+                    <ArrowRight className="h-4 w-4" />
+                  </TrackedLink>
+                </Button>
+              </div>
+
+              <div className="home-panel rounded-[1.5rem] px-6 py-5">
+                <p className="text-xs uppercase tracking-[0.2em] text-custom-text-primary/60">
+                  Também atendemos
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {supportAreas.map((area) => (
+                    <Link
+                      key={area.title}
+                      href={area.href}
+                      className="inline-flex items-center gap-2 rounded-full border border-custom-text-primary/20 bg-black/20 px-3 py-1.5 text-sm text-custom-text-secondary transition hover:border-custom-text-primary/45 hover:bg-custom-text-primary/10"
+                    >
+                      <area.icon className="h-3.5 w-3.5 text-custom-text-primary" />
+                      {area.title.replace("Direito ", "")}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

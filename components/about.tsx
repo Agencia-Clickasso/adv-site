@@ -2,82 +2,81 @@ import Image from "next/image"
 import { GraduationCap, Landmark } from "lucide-react"
 import { blogSerif } from "@/lib/blog-design"
 
+/** About — photo on paper, text on glass (redesign full-width). */
 export default function About() {
   return (
-    <section id="about" className="relative py-20 sm:py-24">
+    <section id="about" className="relative py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-          <div className="home-panel rounded-[2rem] p-6 sm:p-8">
-            <div className="relative overflow-hidden rounded-[1.6rem]">
-              <Image
-                src="/profile-photo.jpeg"
-                alt="Dra. Lucimeire Xavier"
-                width={640}
-                height={760}
-                className="h-auto w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/70 to-transparent p-6">
-                <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
-                  Lucimeire Xavier
-                </p>
-                <p className="mt-1 text-sm text-custom-text-primary/78">
-                  Advogada tributarista · OAB/SP 508.937
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="home-paper rounded-[2rem] p-7 text-slate-900 sm:p-9">
-              <div className="section-kicker text-[#7f5b39]">
-                <Landmark className="h-3.5 w-3.5" />
-                Sobre
-              </div>
-              <h2 className={`${blogSerif.className} mt-5 text-4xl leading-tight sm:text-5xl`}>
-                Técnica tributária com foco em operação e prevenção de risco.
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700">
-                Atuação para empresas e clínicas que precisam organizar a rotina fiscal, reduzir
-                exposição e decidir com mais clareza — sem improviso.
-              </p>
-            </div>
-
-            <div className="home-panel rounded-[1.7rem] p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
-                  <GraduationCap className="h-6 w-6" />
-                </div>
-                <div className="space-y-3 text-sm leading-7 text-custom-text-primary/82">
-                  <h3 className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>
-                    Formação
-                  </h3>
-                  <p>
-                    <span className="font-semibold text-custom-text-secondary">
-                      Pós-graduação em Direito Tributário
-                    </span>
-                    {" · "}
-                    UNISC
+        <div className="mx-auto max-w-7xl">
+          <div className="overflow-hidden rounded-[2rem] border border-custom-text-primary/16 bg-custom-bg-secondary/80 shadow-[0_32px_100px_rgba(0,0,0,0.35)]">
+            <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="relative min-h-[22rem] lg:min-h-full">
+                <Image
+                  src="/profile-photo.jpeg"
+                  alt="Dra. Lucimeire Xavier"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-custom-bg-secondary/90" />
+                <div className="absolute bottom-0 left-0 p-6 sm:p-8">
+                  <p
+                    className={`${blogSerif.className} text-3xl text-custom-text-secondary sm:text-4xl`}
+                  >
+                    Lucimeire Xavier
                   </p>
-                  <p>
-                    <span className="font-semibold text-custom-text-secondary">
-                      Bacharela em Direito
-                    </span>
-                    {" · "}
-                    Universidade São Judas Tadeu
+                  <p className="mt-1 text-sm text-custom-text-primary">
+                    Advogada tributarista · OAB/SP 508.937
                   </p>
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-wrap gap-3">
-              {["Tributário", "Prevenção", "Estratégia"].map((title) => (
-                <div
-                  key={title}
-                  className="rounded-full border border-custom-text-primary/14 bg-black/12 px-5 py-2.5 text-sm text-custom-text-secondary"
+              <div className="flex flex-col justify-center space-y-6 p-7 sm:p-10">
+                <div className="section-kicker w-fit">
+                  <Landmark className="h-3.5 w-3.5" />
+                  Sobre o escritório
+                </div>
+                <h2
+                  className={`${blogSerif.className} text-4xl leading-[1.02] text-custom-text-secondary sm:text-5xl`}
                 >
-                  {title}
+                  Técnica tributária com foco em operação e prevenção de risco.
+                </h2>
+                <p className="max-w-xl text-base leading-8 text-custom-text-primary/85">
+                  Atuação para empresas e clínicas que precisam organizar a rotina fiscal, reduzir
+                  exposição e decidir com clareza — sem improviso.
+                </p>
+
+                <div className="home-paper rounded-[1.4rem] p-5 text-slate-900">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-custom-bg-primary text-custom-text-primary">
+                      <GraduationCap className="h-5 w-5" />
+                    </div>
+                    <div className="space-y-2 text-sm leading-7">
+                      <p className="font-semibold text-slate-950">Formação</p>
+                      <p>
+                        Pós-graduação em Direito Tributário ·{" "}
+                        <span className="text-slate-600">UNISC</span>
+                      </p>
+                      <p>
+                        Bacharela em Direito ·{" "}
+                        <span className="text-slate-600">Universidade São Judas Tadeu</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              ))}
+
+                <div className="flex flex-wrap gap-2">
+                  {["Tributário", "Prevenção", "Estratégia", "Clínicas"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-custom-text-primary/30 bg-custom-text-primary/12 px-4 py-2 text-sm text-custom-text-secondary"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
