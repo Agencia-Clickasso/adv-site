@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { ArrowRight, ChartNoAxesColumn, Scale, ShieldCheck, Sparkles } from "lucide-react"
 import TrackedLink from "@/components/tracked-link"
 import { Button } from "@/components/ui/button"
@@ -16,49 +15,50 @@ export default function Hero() {
                 Advocacia tributária estratégica
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <h1
-                  className={`${blogSerif.className} max-w-5xl text-[3rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
+                  className={`${blogSerif.className} max-w-5xl text-[2.75rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
                 >
-                  Advogada tributarista em São Bernardo do Campo para empresas do ABC que precisam decidir com mais clareza.
+                  Advogada tributarista em São Bernardo do Campo para empresas e clínicas que precisam decidir com clareza.
                 </h1>
-                <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-xl sm:leading-8">
-                  Planejamento tributário, execução fiscal e consultoria fiscal preventiva com leitura jurídica
-                  conectada ao caixa, ao passivo e ao risco real da operação em São Bernardo do Campo e na região do ABC.
+                <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-lg sm:leading-8">
+                  Planejamento tributário, execução fiscal e consultoria preventiva — com base no ABC e atendimento em
+                  todo o Brasil.
                 </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5 text-sm leading-7 text-custom-text-primary/80">
-                Base em São Bernardo do Campo, atendimento estratégico para empresas e profissionais do ABC com cobrança tributária, revisão de regime, consultoria fiscal preventiva e resposta a execuções fiscais.
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Atuação central</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>Tributário</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Planejamento, execução fiscal e revisão de carga.</p>
-                </div>
-                <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Perfil de cliente</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>Empresas</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atendimento com visão de negócio e prevenção.</p>
-                </div>
-                <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Base</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>São Bernardo</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atuação local com leitura nacional de risco fiscal.</p>
-                </div>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { label: "Tributário", value: "Núcleo da atuação" },
+                  { label: "Clínicas", value: "Nicho prioritário" },
+                  { label: "Base", value: "São Bernardo · ABC" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-full border border-custom-text-primary/14 bg-black/15 px-4 py-2.5"
+                  >
+                    <span className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/62">
+                      {item.label}
+                    </span>
+                    <span className="mx-2 text-custom-text-primary/30">·</span>
+                    <span className="text-sm text-custom-text-secondary">{item.value}</span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8"
+                >
                   <TrackedLink
                     href="#contact"
                     ctaLabel="Solicitar atendimento tributário"
                     ctaLocation="home_hero_primary"
                     trafficContext="lead_capture"
                   >
-                    Solicitar atendimento tributário
+                    Solicitar atendimento
                     <ArrowRight className="h-5 w-5" />
                   </TrackedLink>
                 </Button>
@@ -69,63 +69,39 @@ export default function Hero() {
                   className="rounded-full border-custom-text-primary/30 bg-transparent px-8 text-custom-text-primary hover:bg-custom-text-primary hover:text-custom-bg-primary"
                 >
                   <TrackedLink
-                    href="/areas/direito-tributario"
-                    ctaLabel="Ver consultoria tributária para empresas"
+                    href="/para/clinicas-medicas-e-odontologicas"
+                    ctaLabel="Assessoria para clínicas de saúde"
                     ctaLocation="home_hero_secondary"
                     trafficContext="commercial_page"
                   >
-                    Ver consultoria tributária para empresas
+                    Análise para clínicas
                   </TrackedLink>
                 </Button>
               </div>
             </div>
 
-            <div className="grid gap-5 lg:h-full lg:grid-rows-[minmax(22rem,0.95fr)_minmax(0,1.05fr)]">
-              <div className="home-paper rounded-[1.8rem] p-6 text-slate-900 sm:rounded-[2rem] sm:p-8 lg:flex lg:min-h-[24rem] lg:flex-col lg:justify-between">
+            <div className="grid gap-5 lg:h-full lg:grid-rows-[auto_1fr]">
+              <div className="home-paper rounded-[1.8rem] p-6 text-slate-900 sm:rounded-[2rem] sm:p-8">
                 <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">Como a atuação entra</p>
-                <h2 className={`${blogSerif.className} mt-4 text-[2.35rem] leading-[1.02] sm:text-5xl`}>
+                <h2 className={`${blogSerif.className} mt-4 text-[2.1rem] leading-[1.05] sm:text-4xl`}>
                   Diagnóstico técnico antes que o problema vire custo permanente.
                 </h2>
-                <p className="mt-4 text-[0.98rem] leading-7 text-slate-700 sm:text-base sm:leading-8">
-                  A proposta do escritório é organizar decisão, não apenas reagir ao litígio. O trabalho começa com
-                  leitura da operação, da exposição tributária e do melhor caminho de resposta.
-                </p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 lg:h-full">
+              <div className="grid gap-4 sm:grid-cols-2">
                 {[
-                  {
-                    icon: Scale,
-                    title: "Planejamento tributário",
-                    text: "Estrutura fiscal desenhada para reduzir improviso e sustentar decisões com previsibilidade.",
-                  },
-                  {
-                    icon: ShieldCheck,
-                    title: "Defesa fiscal",
-                    text: "Resposta técnica para cobrança, autuação e execução sem perder o controle do impacto operacional.",
-                  },
-                  {
-                    icon: ChartNoAxesColumn,
-                    title: "Leitura de impacto",
-                    text: "Avaliação do reflexo jurídico no caixa, na rotina fiscal e no custo de continuar exposto.",
-                  },
-                  {
-                    icon: Sparkles,
-                    title: "Consultoria preventiva",
-                    text: "Ajustes jurídicos antes da autuação, da cobrança e do desgaste desnecessário.",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={item.title}
-                    className="home-panel rounded-[1.6rem] p-5 lg:h-full"
-                  >
+                  { icon: Scale, title: "Planejamento tributário" },
+                  { icon: ShieldCheck, title: "Defesa fiscal" },
+                  { icon: ChartNoAxesColumn, title: "Leitura de impacto" },
+                  { icon: Sparkles, title: "Consultoria preventiva" },
+                ].map((item) => (
+                  <div key={item.title} className="home-panel rounded-[1.6rem] p-5">
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <div>
-                      <h3 className={`${blogSerif.className} mt-5 text-2xl text-custom-text-secondary`}>{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-custom-text-primary/78">{item.text}</p>
-                    </div>
+                    <h3 className={`${blogSerif.className} mt-4 text-xl text-custom-text-secondary sm:text-2xl`}>
+                      {item.title}
+                    </h3>
                   </div>
                 ))}
               </div>

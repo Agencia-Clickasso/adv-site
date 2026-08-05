@@ -11,13 +11,32 @@ import { Textarea } from "@/components/ui/textarea"
 import { blogSerif } from "@/lib/blog-design"
 import { SEO } from "@/lib/seo"
 
-export default function Contact() {
+type ContactProps = {
+  title?: string
+  description?: string
+  formSubject?: string
+  messagePlaceholder?: string
+  ctaLocation?: string
+  showClinicType?: boolean
+  defaultSubject?: string
+}
+
+export default function Contact({
+  title = "Fale sobre seu caso com clareza.",
+  description = "Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com impacto tributário, descreva isso logo no primeiro contato.",
+  formSubject = "Novo contato - Lucimeire Xavier Advocacia",
+  messagePlaceholder = "Descreva brevemente o caso, o tipo de risco ou cobrança e o que precisa decidir.",
+  ctaLocation = "contact_form",
+  showClinicType = false,
+  defaultSubject = "",
+}: ContactProps) {
   const formspreeEndpoint = "https://formspree.io/f/mwvwlvpk"
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "",
+    subject: defaultSubject,
+    clinicType: "",
     message: "",
   })
 
@@ -32,7 +51,7 @@ export default function Contact() {
     try {
       const form = e.target as HTMLFormElement
       const formDataObj = new FormData(form)
-      formDataObj.set("_subject", "Novo contato - Lucimeire Xavier Advocacia")
+      formDataObj.set("_subject", formSubject)
 
       const response = await fetch(formspreeEndpoint, {
         method: "POST",
@@ -45,7 +64,7 @@ export default function Contact() {
       if (response.ok) {
         trackLeadSubmission({
           cta_label: "Envio do formulário de contato",
-          cta_location: "contact_form",
+          cta_location: ctaLocation,
           traffic_context: "lead_capture",
         })
         setSubmitStatus("success")
@@ -53,7 +72,8 @@ export default function Contact() {
           name: "",
           email: "",
           phone: "",
-          subject: "",
+          subject: defaultSubject,
+          clinicType: "",
           message: "",
         })
       } else {
@@ -67,7 +87,9 @@ export default function Contact() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -93,11 +115,10 @@ export default function Contact() {
                   <h2
                     className={`${blogSerif.className} max-w-3xl text-[2.9rem] leading-[0.98] tracking-[-0.03em] text-slate-950 sm:text-5xl lg:text-6xl`}
                   >
-                    Fale sobre seu caso com clareza.
+                    {title}
                   </h2>
                   <p className="mt-4 max-w-2xl text-[0.98rem] leading-7 text-slate-700 sm:mt-5 sm:text-base sm:leading-8">
-                    Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com impacto tributário,
-                    descreva isso logo no primeiro contato.
+                    {description}
                   </p>
                 </div>
 
@@ -159,7 +180,8 @@ export default function Contact() {
                   onSubmit={handleSubmit}
                   className="space-y-5"
                 >
-                  <input type="hidden" name="_subject" value="Novo contato - Lucimeire Xavier Advocacia" />
+                  <input type="hidden" name="_subject" value={formSubject} />
+                  <input type="hidden" name="source_page" value={ctaLocation} />
 
                   {submitStatus === "success" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-green-400/25 bg-green-500/12 p-4 text-green-300">
@@ -218,9 +240,26 @@ export default function Contact() {
                     />
                   </div>
 
+                  {showClinicType ? (
+                    <select
+                      name="clinicType"
+                      value={formData.clinicType}
+                      onChange={handleChange}
+                      required
+                      disabled={isSubmitting}
+                      className={`${inputClassName} w-full px-3`}
+                    >
+                      <option value="">Tipo de clínica</option>
+                      <option value="medica">Clínica médica</option>
+                      <option value="odontologica">Clínica odontológica</option>
+                      <option value="centro">Centro médico / diagnóstico</option>
+                      <option value="multidisciplinar">Multidisciplinar / outra</option>
+                    </select>
+                  ) : null}
+
                   <Textarea
                     name="message"
-                    placeholder="Descreva brevemente o caso, o tipo de risco ou cobrança e o que precisa decidir."
+                    placeholder={messagePlaceholder}
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}

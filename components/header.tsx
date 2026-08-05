@@ -12,11 +12,11 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { name: "Início", href: "#home" },
-    { name: "Sobre", href: "#about" },
-    { name: "Serviços", href: "#services" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contato", href: "#contact" },
+    { name: "Início", href: "/" },
+    { name: "Clínicas", href: "/para/clinicas-medicas-e-odontologicas" },
+    { name: "Tributário", href: "/areas/direito-tributario" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contato", href: "/#contact" },
   ]
 
   return (
@@ -59,7 +59,7 @@ export default function Header() {
             </TrackedLink>
             <Button asChild className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary">
               <TrackedLink
-                href="#contact"
+                href="/#contact"
                 ctaLabel="Agendar análise tributária"
                 ctaLocation="header_primary_cta"
                 trafficContext="lead_capture"
@@ -89,7 +89,7 @@ export default function Header() {
                 ))}
                 <Button asChild className="mt-4 rounded-full bg-custom-text-primary text-custom-bg-primary hover:bg-custom-text-secondary">
                   <TrackedLink
-                    href="#contact"
+                    href="/#contact"
                     ctaLabel="Agendar análise tributária"
                     ctaLocation="mobile_menu_cta"
                     trafficContext="lead_capture"

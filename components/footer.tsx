@@ -20,11 +20,10 @@ export default function Footer() {
                   className="h-12 w-auto"
                 />
                 <p className={`${blogSerif.className} max-w-xl text-3xl leading-tight text-custom-text-secondary`}>
-                  Advocacia tributária para decisões empresariais com mais clareza, menos improviso e melhor resposta jurídica em São Bernardo do Campo e no ABC.
+                  Advocacia tributária com clareza — para empresas e clínicas.
                 </p>
                 <p className="max-w-xl text-sm leading-7 text-custom-text-primary/76">
-                  Escritório com foco principal em Direito Tributário e atuação complementar em áreas que cercam a
-                  operação, o passivo e a estrutura jurídica do cliente.
+                  Base em São Bernardo do Campo e ABC, com atendimento estratégico em todo o Brasil.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {[
@@ -61,6 +60,9 @@ export default function Footer() {
               <div>
                 <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/58">Navegação</p>
                 <div className="mt-5 space-y-3 text-sm text-custom-text-primary/78">
+                  <Link href="/para/clinicas-medicas-e-odontologicas" className="block transition hover:text-custom-text-secondary">
+                    Tributário para clínicas de saúde
+                  </Link>
                   <Link href="/areas/direito-tributario" className="block transition hover:text-custom-text-secondary">
                     Advogada tributarista em São Bernardo do Campo
                   </Link>

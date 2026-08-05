@@ -32,6 +32,12 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/para/clinicas-medicas-e-odontologicas`,
+      lastModified: getFileLastModified("app/para/clinicas-medicas-e-odontologicas/page.tsx"),
+      changeFrequency: 'weekly' as const,
+      priority: 0.96,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: latestPostDate,
       changeFrequency: 'weekly' as const,
@@ -67,6 +73,10 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   const postsPriorityMap: Record<string, { priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }> = {
+    'planejamento-tributario-para-clinicas-medicas-o-que-analisar': { priority: 0.88, changeFrequency: 'monthly' },
+    'lucro-presumido-em-clinicas-quando-revisar-o-regime': { priority: 0.88, changeFrequency: 'monthly' },
+    'recuperacao-de-creditos-tributarios-setor-saude-cuidados': { priority: 0.87, changeFrequency: 'monthly' },
+    'consultoria-tributaria-para-clinicas-odontologicas': { priority: 0.87, changeFrequency: 'monthly' },
     'planejamento-tributario-para-empresas-como-reduzir-riscos': { priority: 0.8, changeFrequency: 'monthly' },
     'defesa-em-execucao-fiscal-estrategias-para-empresas': { priority: 0.8, changeFrequency: 'monthly' },
     'consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita': { priority: 0.8, changeFrequency: 'monthly' },

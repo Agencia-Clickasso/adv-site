@@ -18,6 +18,10 @@ export interface BlogPost {
 }
 
 export const PRIORITY_POST_SLUGS = [
+  "planejamento-tributario-para-clinicas-medicas-o-que-analisar",
+  "lucro-presumido-em-clinicas-quando-revisar-o-regime",
+  "recuperacao-de-creditos-tributarios-setor-saude-cuidados",
+  "consultoria-tributaria-para-clinicas-odontologicas",
   "planejamento-tributario-para-empresas-como-reduzir-riscos",
   "defesa-em-execucao-fiscal-estrategias-para-empresas",
   "consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",

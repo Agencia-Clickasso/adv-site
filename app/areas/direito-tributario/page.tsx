@@ -60,8 +60,8 @@ export default function DireitoTributarioPage() {
         { title: "Atendimento", value: "Segunda a Sexta, das 8h às 18h. Sábado, das 8h às 12h." },
       ]}
       relatedLinks={[
+        { label: "Assessoria tributária para clínicas médicas e odontológicas", href: "/para/clinicas-medicas-e-odontologicas" },
         { label: "Planejamento tributário para empresas: quando revisar e como reduzir riscos", href: "/blog/planejamento-tributario-para-empresas-como-reduzir-riscos" },
-        { label: "Execução fiscal para empresas: o que fazer nos primeiros dias", href: "/blog/defesa-em-execucao-fiscal-estrategias-para-empresas" },
         { label: "Consultoria fiscal para empresas: quando contratar antes da autuação", href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita" },
       ]}
       faqs={[
