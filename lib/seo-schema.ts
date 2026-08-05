@@ -7,7 +7,7 @@ export function buildLegalServiceSchema() {
     "@id": `${SEO.siteUrl}/#legalservice`,
     name: SEO.siteName,
     url: SEO.siteUrl,
-    image: `${SEO.siteUrl}/images/logo.png`,
+    image: [`${SEO.siteUrl}${SEO.ogImagePath}`, `${SEO.siteUrl}/images/logo.png`],
     telephone: SEO.phoneIntl,
     email: SEO.email,
     areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
