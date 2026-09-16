@@ -32,11 +32,20 @@ export const metadata: Metadata = {
     title: `${SEO.siteName} | Direito Tributário em São Paulo e no ABC`,
     description: SEO.defaultDescription,
     url: SEO.siteUrl,
+    images: [
+      {
+        url: SEO.ogImagePath,
+        width: 1200,
+        height: 630,
+        alt: SEO.ogImageAlt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SEO.siteName,
     description: SEO.defaultDescription,
+    images: [SEO.ogImagePath],
   },
   alternates: {
     canonical: "/",
