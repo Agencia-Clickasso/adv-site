@@ -14,58 +14,105 @@ export default function DireitoTrabalhistaPage() {
       badge="Área complementar"
       intro="Orientação trabalhista para reduzir passivo, revisar rotinas e responder a disputas com mais segurança. Para empresas, essa frente ganha valor quando alinhada à organização tributária e ao custo real da operação."
       highlights={[
-        { title: "Onde entra", description: "Na prevenção de litígio, revisão documental e organização de relações de trabalho." },
-        { title: "Quando cruza com tributário", description: "Quando o passivo trabalhista afeta caixa, encargos e estrutura financeira da empresa." },
-        { title: "Leitura prática", description: "Corrigir cedo quase sempre custa menos do que reagir depois." },
+        {
+          title: "Onde entra",
+          description:
+            "Na prevenção de litígio, revisão documental e organização de relações de trabalho.",
+        },
+        {
+          title: "Quando cruza com tributário",
+          description:
+            "Quando o passivo trabalhista afeta caixa, encargos e estrutura financeira da empresa.",
+        },
+        {
+          title: "Leitura prática",
+          description: "Corrigir cedo quase sempre custa menos do que reagir depois.",
+        },
       ]}
       services={[
         {
           icon: FileText,
           title: "Rescisões contratuais",
           description: "Assessoria em processos de demissão, cálculos rescisórios e acordos.",
-          features: ["Cálculo de verbas rescisórias", "Acordos trabalhistas", "Demissões por justa causa", "Demissões sem justa causa"],
+          features: [
+            "Cálculo de verbas rescisórias",
+            "Acordos trabalhistas",
+            "Demissões por justa causa",
+            "Demissões sem justa causa",
+          ],
         },
         {
           icon: Shield,
           title: "Ações trabalhistas",
-          description: "Defesa dos direitos e interesses em todas as instâncias da Justiça do Trabalho.",
-          features: ["Reclamações trabalhistas", "Recursos trabalhistas", "Execuções trabalhistas", "Defesas em processos"],
+          description:
+            "Defesa dos direitos e interesses em todas as instâncias da Justiça do Trabalho.",
+          features: [
+            "Reclamações trabalhistas",
+            "Recursos trabalhistas",
+            "Execuções trabalhistas",
+            "Defesas em processos",
+          ],
         },
         {
           icon: Users,
           title: "Consultoria preventiva",
-          description: "Orientações para reduzir risco trabalhista e manter conformidade nas rotinas internas.",
-          features: ["Revisão de contratos", "Políticas internas", "Treinamentos", "Auditorias trabalhistas"],
+          description:
+            "Orientações para reduzir risco trabalhista e manter conformidade nas rotinas internas.",
+          features: [
+            "Revisão de contratos",
+            "Políticas internas",
+            "Treinamentos",
+            "Auditorias trabalhistas",
+          ],
         },
         {
           icon: Scale,
           title: "Direitos coletivos",
           description: "Assessoria em negociações, acordos e convenções coletivas.",
-          features: ["Negociações coletivas", "Acordos coletivos", "Convenções coletivas", "Sindicatos"],
+          features: [
+            "Negociações coletivas",
+            "Acordos coletivos",
+            "Convenções coletivas",
+            "Sindicatos",
+          ],
         },
       ]}
       bridgeTitle="Passivo trabalhista também afeta caixa e planejamento fiscal"
       bridgeText="Empresas que acumulam risco trabalhista normalmente convivem com impacto financeiro e reflexos tributários na operação. Por isso, a análise pode evoluir para um diagnóstico mais amplo da estrutura."
       bridgeCta={{ label: "Ver diagnóstico tributário", href: "/areas/direito-tributario" }}
       primaryCta={{ label: "Avaliar risco trabalhista", href: "/#contact" }}
-      secondaryCta={{ label: "Ver atuação em Direito Tributário", href: "/areas/direito-tributario" }}
+      secondaryCta={{
+        label: "Ver atuação em Direito Tributário",
+        href: "/areas/direito-tributario",
+      }}
       finalTitle="Precisa reduzir risco trabalhista antes que vire passivo?"
       finalText="Revisar rotina, contratos e contingências antes do litígio costuma custar menos do que corrigir depois. Quando o caso tocar estrutura fiscal, a frente tributária entra no mesmo fluxo."
       finalPrimaryCta={{ label: "Agendar consulta", href: "/#contact" }}
       finalSecondaryCta={{ label: "Falar com tributário", href: "/areas/direito-tributario" }}
       relatedLinks={[
-        { label: "Consultoria jurídica preventiva em São Bernardo do Campo", href: "/areas/consultoria-juridica" },
-        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
-        { label: "Consultoria fiscal para empresas: quando contratar antes da autuação", href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita" },
+        {
+          label: "Consultoria jurídica preventiva em São Bernardo do Campo",
+          href: "/areas/consultoria-juridica",
+        },
+        {
+          label: "Direito tributário para empresas e profissionais",
+          href: "/areas/direito-tributario",
+        },
+        {
+          label: "Consultoria fiscal para empresas: quando contratar antes da autuação",
+          href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita",
+        },
       ]}
       faqs={[
         {
           question: "Quando vale buscar consultoria trabalhista preventiva?",
-          answer: "Antes de acumular passivo, revisar contratos, ajustar rotinas internas ou responder a sinais de risco trabalhista recorrente.",
+          answer:
+            "Antes de acumular passivo, revisar contratos, ajustar rotinas internas ou responder a sinais de risco trabalhista recorrente.",
         },
         {
           question: "Passivo trabalhista pode afetar o planejamento fiscal?",
-          answer: "Sim. O impacto financeiro e estrutural do passivo trabalhista pode alterar decisões de caixa, encargos e leitura mais ampla da operação.",
+          answer:
+            "Sim. O impacto financeiro e estrutural do passivo trabalhista pode alterar decisões de caixa, encargos e leitura mais ampla da operação.",
         },
       ]}
     >

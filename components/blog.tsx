@@ -7,7 +7,7 @@ import { blogSerif, formatBlogDate } from "@/lib/blog-design"
 
 export default async function Blog() {
   const posts = await getSortedPostsData()
-  const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
+  const prioritySlugs = new Set<string>(PRIORITY_POST_SLUGS)
   const displayPosts = sortPostsByPriority(posts).slice(0, 3)
   const [leadPost, ...restPosts] = displayPosts
 
@@ -21,15 +21,21 @@ export default async function Blog() {
                 <Sparkles className="h-3.5 w-3.5" />
                 Conteúdo estratégico
               </div>
-              <h2 className={`${blogSerif.className} max-w-3xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}>
-                Conteúdo de Direito Tributário para empresas que precisam entender risco antes de decidir.
+              <h2
+                className={`${blogSerif.className} max-w-3xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}
+              >
+                Conteúdo de Direito Tributário para empresas que precisam entender risco antes de
+                decidir.
               </h2>
               <p className="max-w-2xl text-lg leading-8 text-custom-text-primary/84">
-                O blog organiza conteúdos sobre planejamento tributário, execução fiscal, cobrança tributária,
-                consultoria fiscal e prevenção de riscos com recorte prático para tomada de decisão.
+                O blog organiza conteúdos sobre planejamento tributário, execução fiscal, cobrança
+                tributária, consultoria fiscal e prevenção de riscos com recorte prático para tomada
+                de decisão.
               </p>
               <p className="max-w-2xl text-sm leading-7 text-custom-text-primary/72">
-                Os artigos prioritários desta sprint reforçam a página comercial de Direito Tributário em São Bernardo do Campo e ajudam a distribuir autoridade para termos de intenção alta.
+                Os artigos prioritários desta sprint reforçam a página comercial de Direito
+                Tributário em São Bernardo do Campo e ajudam a distribuir autoridade para termos de
+                intenção alta.
               </p>
               <Link href="/blog" className="inline-flex">
                 <Button className="rounded-full bg-custom-text-primary px-7 text-custom-bg-primary hover:bg-custom-text-secondary">
@@ -53,10 +59,14 @@ export default async function Blog() {
               {leadPost ? (
                 <article className="home-paper rounded-[1.9rem] p-7 text-slate-900 sm:p-8">
                   <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#7f5b39]">
-                    <span className="rounded-full border border-[#d2b290] bg-white/70 px-3 py-1">{leadPost.category}</span>
+                    <span className="rounded-full border border-[#d2b290] bg-white/70 px-3 py-1">
+                      {leadPost.category}
+                    </span>
                     {prioritySlugs.has(leadPost.slug) ? <span>Prioridade editorial</span> : null}
                   </div>
-                  <h3 className={`${blogSerif.className} mt-5 text-4xl leading-tight`}>{leadPost.title}</h3>
+                  <h3 className={`${blogSerif.className} mt-5 text-4xl leading-tight`}>
+                    {leadPost.title}
+                  </h3>
                   <p className="mt-4 text-base leading-8 text-slate-700">{leadPost.excerpt}</p>
                   <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600">
                     <span className="inline-flex items-center gap-2">
@@ -74,7 +84,10 @@ export default async function Blog() {
                       </span>
                     ) : null}
                   </div>
-                  <Link href={`/blog/${leadPost.slug}`} className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#7f5b39] transition hover:text-slate-950">
+                  <Link
+                    href={`/blog/${leadPost.slug}`}
+                    className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#7f5b39] transition hover:text-slate-950"
+                  >
                     Ler artigo
                     <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -84,16 +97,25 @@ export default async function Blog() {
               <div className="grid gap-4 md:grid-cols-2">
                 {restPosts.map((post) => (
                   <article key={post.slug} className="home-panel rounded-[1.6rem] p-5">
-                    <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/62">{post.category}</p>
-                    <h3 className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary`}>
+                    <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/62">
+                      {post.category}
+                    </p>
+                    <h3
+                      className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary`}
+                    >
                       {post.title}
                     </h3>
-                    <p className="mt-3 line-clamp-3 text-sm leading-7 text-custom-text-primary/76">{post.excerpt}</p>
+                    <p className="mt-3 line-clamp-3 text-sm leading-7 text-custom-text-primary/76">
+                      {post.excerpt}
+                    </p>
                     <div className="mt-4 flex items-center justify-between gap-3 text-xs text-custom-text-primary/58">
                       <span>{formatBlogDate(post.date)}</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <Link href={`/blog/${post.slug}`} className="mt-4 inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="mt-4 inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary"
+                    >
                       Abrir leitura
                       <ArrowRight className="h-4 w-4" />
                     </Link>

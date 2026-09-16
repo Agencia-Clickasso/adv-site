@@ -3,13 +3,36 @@
 import type React from "react"
 
 import { useState } from "react"
-import { AlertCircle, CheckCircle, Clock, Mail, MapPin, Phone, Send, Sparkles } from "lucide-react"
+import {
+  AlertCircle,
+  ArrowUpRight,
+  CheckCircle,
+  Clock,
+  Mail,
+  MapPin,
+  Send,
+  Sparkles,
+} from "lucide-react"
 import { trackLeadSubmission } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import TrackedLink from "@/components/tracked-link"
+import WhatsAppIcon from "@/components/icons/whatsapp-icon"
 import { blogSerif } from "@/lib/blog-design"
 import { SEO } from "@/lib/seo"
+import { buildWhatsAppUrl } from "@/lib/whatsapp"
+
+type ContactCard = {
+  title: string
+  body: string
+  icon?: typeof MapPin
+  iconNode?: React.ReactNode
+  href?: string
+  external?: boolean
+  ctaLabel?: string
+  ctaLocation?: string
+}
 
 export default function Contact() {
   const formspreeEndpoint = "https://formspree.io/f/mwvwlvpk"
@@ -96,41 +119,53 @@ export default function Contact() {
                     Fale sobre seu caso com clareza.
                   </h2>
                   <p className="mt-4 max-w-2xl text-[0.98rem] leading-7 text-slate-700 sm:mt-5 sm:text-base sm:leading-8">
-                    Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com impacto tributário,
-                    descreva isso logo no primeiro contato.
+                    Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com
+                    impacto tributário, descreva isso logo no primeiro contato.
                   </p>
                 </div>
 
                 <div className="grid gap-4">
-                  {[
-                    {
-                      icon: MapPin,
-                      title: "Endereço",
-                      body: "Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101\nCentro - São Bernardo do Campo - SP\nCEP: 09750-730",
-                    },
-                    {
-                      icon: Phone,
-                      title: "Telefone",
-                      body: SEO.phoneDisplay,
-                    },
-                    {
-                      icon: Mail,
-                      title: "E-mail",
-                      body: SEO.email,
-                    },
-                    {
-                      icon: Clock,
-                      title: "Atendimento",
-                      body: "Segunda a Sexta: 8h às 18h\nSábado: 8h às 12h",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.title}
-                      className="w-full overflow-hidden rounded-[1.35rem] border border-[#dcc3a4] bg-white/65 p-4 sm:rounded-[1.5rem] sm:p-5"
-                    >
+                  {(
+                    [
+                      {
+                        icon: MapPin,
+                        title: "Endereço",
+                        body: "Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101\nCentro - São Bernardo do Campo - SP\nCEP: 09750-730",
+                        href: SEO.mapsUrl,
+                        external: true,
+                        ctaLabel: "Abrir endereço no Google Maps",
+                        ctaLocation: "contact_address_map",
+                      },
+                      {
+                        iconNode: <WhatsAppIcon className="h-[18px] w-[18px]" />,
+                        title: "Telefone e WhatsApp",
+                        body: SEO.phoneDisplay,
+                        href: buildWhatsAppUrl(
+                          "Olá, vim pelo site e gostaria de falar sobre uma questão tributária."
+                        ),
+                        external: true,
+                        ctaLabel: "Falar no WhatsApp",
+                        ctaLocation: "contact_whatsapp",
+                      },
+                      {
+                        icon: Mail,
+                        title: "E-mail",
+                        body: SEO.email,
+                      },
+                      {
+                        icon: Clock,
+                        title: "Atendimento",
+                        body: "Segunda a Sexta: 8h às 18h\nSábado: 8h às 12h",
+                      },
+                    ] as ContactCard[]
+                  ).map((item) => {
+                    const cardClassName =
+                      "w-full overflow-hidden rounded-[1.35rem] border border-[#dcc3a4] bg-white/65 p-4 sm:rounded-[1.5rem] sm:p-5"
+
+                    const content = (
                       <div className="flex items-start gap-4">
                         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#ecd5ba] text-[#7f5b39]">
-                          <item.icon className="h-5 w-5" />
+                          {item.iconNode ?? (item.icon ? <item.icon className="h-5 w-5" /> : null)}
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className="font-semibold text-slate-900">{item.title}</p>
@@ -138,28 +173,55 @@ export default function Contact() {
                             {item.body}
                           </p>
                         </div>
+                        {item.href && <ArrowUpRight className="h-4 w-4 shrink-0 text-[#7f5b39]" />}
                       </div>
-                    </div>
-                  ))}
+                    )
+
+                    if (!item.href) {
+                      return (
+                        <div key={item.title} className={cardClassName}>
+                          {content}
+                        </div>
+                      )
+                    }
+
+                    return (
+                      <TrackedLink
+                        key={item.title}
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                        ctaLabel={item.ctaLabel ?? item.title}
+                        ctaLocation={item.ctaLocation ?? "contact_card"}
+                        trafficContext="lead_capture"
+                        className={`${cardClassName} block transition hover:border-[#b99066] hover:bg-white`}
+                      >
+                        {content}
+                      </TrackedLink>
+                    )
+                  })}
                 </div>
               </div>
 
               <div className="rounded-[1.8rem] bg-[#161c25] p-5 text-custom-text-secondary shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:rounded-[2rem] sm:p-8">
                 <div className="mb-6 border-b border-custom-text-primary/10 pb-6">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Formulário de triagem</p>
-                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>Solicitar atendimento</h3>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                    Formulário de triagem
+                  </p>
+                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>
+                    Solicitar atendimento
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
                     Resuma a demanda, a urgência e o ponto principal que precisa ser analisado.
                   </p>
                 </div>
 
-                <form
-                  name="contact"
-                  method="POST"
-                  onSubmit={handleSubmit}
-                  className="space-y-5"
-                >
-                  <input type="hidden" name="_subject" value="Novo contato - Lucimeire Xavier Advocacia" />
+                <form name="contact" method="POST" onSubmit={handleSubmit} className="space-y-5">
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="Novo contato - Lucimeire Xavier Advocacia"
+                  />
 
                   {submitStatus === "success" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-green-400/25 bg-green-500/12 p-4 text-green-300">
@@ -171,7 +233,9 @@ export default function Contact() {
                   {submitStatus === "error" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-red-400/25 bg-red-500/12 p-4 text-red-300">
                       <AlertCircle className="h-5 w-5" />
-                      <span>Erro ao enviar a mensagem. Tente novamente ou use o contato direto.</span>
+                      <span>
+                        Erro ao enviar a mensagem. Tente novamente ou use o contato direto.
+                      </span>
                     </div>
                   )}
 
@@ -248,6 +312,31 @@ export default function Contact() {
                   </Button>
                 </form>
               </div>
+            </div>
+
+            <div className="mt-8 sm:mt-10">
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#dcc3a4] sm:rounded-[1.8rem]">
+                <iframe
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(SEO.fullAddress)}&output=embed`}
+                  title={`Mapa do escritório em ${SEO.address.addressLocality}`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-[280px] w-full border-0 sm:h-[360px]"
+                />
+              </div>
+              <TrackedLink
+                href={SEO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                ctaLabel="Ver endereço no Google Maps"
+                ctaLocation="contact_map_caption"
+                trafficContext="lead_campaign"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#7f5b39] transition hover:text-[#1b2028]"
+              >
+                <MapPin className="h-4 w-4" />
+                Ver endereço no Google Maps
+                <ArrowUpRight className="h-4 w-4" />
+              </TrackedLink>
             </div>
           </div>
         </div>
