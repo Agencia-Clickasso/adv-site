@@ -57,6 +57,7 @@ interface AreaPageProps {
   faqs?: AreaFaq[]
   relatedLinks?: AreaRelatedLink[]
   localDetails?: AreaLocalDetail[]
+  localTitle?: string
   children?: ReactNode
 }
 
@@ -79,6 +80,7 @@ export default function AreaPage({
   faqs,
   relatedLinks,
   localDetails,
+  localTitle = "Atendimento tributário com base em São Bernardo do Campo e foco em empresas do ABC.",
   children,
 }: AreaPageProps) {
   return (
@@ -262,7 +264,7 @@ export default function AreaPage({
                     Presença local
                   </div>
                   <h2 className={`${blogSerif.className} mt-4 text-4xl leading-tight sm:text-5xl`}>
-                    Atendimento tributário com base em São Bernardo do Campo e foco em empresas do ABC.
+                    {localTitle}
                   </h2>
                   <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     {localDetails.map((item) => (

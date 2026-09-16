@@ -37,10 +37,36 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/teses-e-oportunidades-tributarias`,
+      lastModified: getFileLastModified("app/teses-e-oportunidades-tributarias/page.tsx"),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/advogada-tributarista-sao-bernardo-do-campo`,
+      lastModified: getFileLastModified("app/advogada-tributarista-sao-bernardo-do-campo/page.tsx"),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/advogada-tributarista-sao-paulo`,
+      lastModified: getFileLastModified("app/advogada-tributarista-sao-paulo/page.tsx"),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/advogada-tributarista-grande-sao-paulo-e-interior`,
+      lastModified: getFileLastModified("app/advogada-tributarista-grande-sao-paulo-e-interior/page.tsx"),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    },
   ]
 
   const areasPriorityMap: Record<string, number> = {
     'direito-tributario': 0.95,
+    'direito-previdenciario': 0.7,
+    'inventario': 0.7,
     'direito-empresarial': 0.55,
     'direito-processual': 0.5,
     'consultoria-juridica': 0.5,
@@ -51,6 +77,8 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const areasChangeFrequencyMap: Record<string, MetadataRoute.Sitemap[number]["changeFrequency"]> = {
     'direito-tributario': 'weekly',
+    'direito-previdenciario': 'monthly',
+    'inventario': 'monthly',
     'direito-empresarial': 'monthly',
     'direito-processual': 'monthly',
     'consultoria-juridica': 'monthly',

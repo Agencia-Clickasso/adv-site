@@ -20,16 +20,16 @@ export default function Hero() {
                 <h1
                   className={`${blogSerif.className} max-w-5xl text-[3rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
                 >
-                  Advogada tributarista em São Bernardo do Campo para empresas do ABC que precisam decidir com mais clareza.
+                  Advogada tributarista para empresas de São Paulo, ABC e Grande São Paulo que precisam decidir com mais clareza.
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-xl sm:leading-8">
                   Planejamento tributário, execução fiscal e consultoria fiscal preventiva com leitura jurídica
-                  conectada ao caixa, ao passivo e ao risco real da operação em São Bernardo do Campo e na região do ABC.
+                  conectada ao caixa, ao passivo e ao risco real da operação em São Paulo, no ABC e na Grande São Paulo.
                 </p>
               </div>
 
               <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5 text-sm leading-7 text-custom-text-primary/80">
-                Base em São Bernardo do Campo, atendimento estratégico para empresas e profissionais do ABC com cobrança tributária, revisão de regime, consultoria fiscal preventiva e resposta a execuções fiscais.
+                Base em São Bernardo do Campo, atendimento a empresas e profissionais de São Paulo, ABC, Grande São Paulo e interior com cobrança tributária, revisão de regime, consultoria fiscal preventiva e resposta a execuções fiscais.
               </div>
 
               <div className="grid gap-4 sm:grid-cols-3">
@@ -44,9 +44,9 @@ export default function Hero() {
                   <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atendimento com visão de negócio e prevenção.</p>
                 </div>
                 <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Base</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>São Bernardo</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atuação local com leitura nacional de risco fiscal.</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Atendimento</p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>SP e região</p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Base em São Bernardo do Campo, atendimento em São Paulo, ABC e Grande São Paulo.</p>
                 </div>
               </div>
 

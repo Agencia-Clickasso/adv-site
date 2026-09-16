@@ -20,7 +20,7 @@ export default function Footer() {
                   className="h-12 w-auto"
                 />
                 <p className={`${blogSerif.className} max-w-xl text-3xl leading-tight text-custom-text-secondary`}>
-                  Advocacia tributária para decisões empresariais com mais clareza, menos improviso e melhor resposta jurídica em São Bernardo do Campo e no ABC.
+                  Advocacia tributária para decisões empresariais com mais clareza, menos improviso e melhor resposta jurídica em São Paulo, no ABC e na Grande São Paulo.
                 </p>
                 <p className="max-w-xl text-sm leading-7 text-custom-text-primary/76">
                   Escritório com foco principal em Direito Tributário e atuação complementar em áreas que cercam a
@@ -62,7 +62,10 @@ export default function Footer() {
                 <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/58">Navegação</p>
                 <div className="mt-5 space-y-3 text-sm text-custom-text-primary/78">
                   <Link href="/areas/direito-tributario" className="block transition hover:text-custom-text-secondary">
-                    Advogada tributarista em São Bernardo do Campo
+                    Advogada tributarista
+                  </Link>
+                  <Link href="/teses-e-oportunidades-tributarias" className="block transition hover:text-custom-text-secondary">
+                    Teses e oportunidades tributárias
                   </Link>
                   <Link href="/blog" className="block transition hover:text-custom-text-secondary">
                     Blog jurídico
@@ -87,13 +90,22 @@ export default function Footer() {
                 <div className="mt-5 space-y-4 text-sm leading-7 text-custom-text-primary/78">
                   <div className="flex items-start gap-3">
                     <MapPin className="mt-1 h-5 w-5 shrink-0 text-custom-text-primary" />
-                    <span className="min-w-0 break-words">
+                    <TrackedLink
+                      href={SEO.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ctaLabel="Endereço do rodapé no Google Maps"
+                      ctaLocation="footer_address_map"
+                      trafficContext="lead_capture"
+                      ariaLabel="Abrir o endereço do escritório no Google Maps"
+                      className="min-w-0 break-words transition hover:text-custom-text-secondary"
+                    >
                       {SEO.address.streetAddress}
                       <br />
                       Centro - {SEO.address.addressLocality} - {SEO.address.addressRegion}
                       <br />
                       CEP: {SEO.address.postalCode}
-                    </span>
+                    </TrackedLink>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 shrink-0 text-custom-text-primary" />
@@ -120,6 +132,25 @@ export default function Footer() {
                     </TrackedLink>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-10 border-t border-custom-text-primary/12 pt-6">
+              <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/58">Onde atendemos</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {[
+                  { label: "São Bernardo do Campo e ABC", href: "/advogada-tributarista-sao-bernardo-do-campo" },
+                  { label: "São Paulo (capital)", href: "/advogada-tributarista-sao-paulo" },
+                  { label: "Grande São Paulo e interior", href: "/advogada-tributarista-grande-sao-paulo-e-interior" },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-full border border-custom-text-primary/14 px-4 py-2 text-sm text-custom-text-primary/78 transition hover:border-custom-text-primary/38 hover:text-custom-text-secondary"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
 

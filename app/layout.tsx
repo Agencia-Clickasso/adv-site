@@ -7,7 +7,7 @@ import { SEO } from "@/lib/seo"
 export const metadata: Metadata = {
   metadataBase: new URL(SEO.siteUrl),
   title: {
-    default: `${SEO.siteName} | Direito Tributário em São Bernardo do Campo`,
+    default: `${SEO.siteName} | Direito Tributário em São Paulo e no ABC`,
     template: `%s | ${SEO.siteName}`,
   },
   description: SEO.defaultDescription,
@@ -15,18 +15,21 @@ export const metadata: Metadata = {
   keywords: [
     "advogada tributarista",
     "direito tributário",
+    "advogada tributarista são paulo",
     "advogada tributarista são bernardo do campo",
     "advogado tributário são bernardo do campo",
+    "advogada tributarista abc",
     "planejamento tributário",
     "execução fiscal",
     "consultoria fiscal",
+    "São Paulo",
     "São Bernardo do Campo",
   ],
   openGraph: {
     type: "website",
     locale: SEO.locale,
     siteName: SEO.siteName,
-    title: `${SEO.siteName} | Direito Tributário em São Bernardo do Campo`,
+    title: `${SEO.siteName} | Direito Tributário em São Paulo e no ABC`,
     description: SEO.defaultDescription,
     url: SEO.siteUrl,
   },

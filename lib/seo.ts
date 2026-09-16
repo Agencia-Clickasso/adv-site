@@ -1,22 +1,37 @@
 import type { Metadata } from "next"
 
+const address = {
+  streetAddress: "Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101",
+  addressLocality: "São Bernardo do Campo",
+  addressRegion: "SP",
+  postalCode: "09750-730",
+  addressCountry: "BR",
+}
+
+const fullAddress = `${address.streetAddress}, Centro - ${address.addressLocality} - ${address.addressRegion}, CEP ${address.postalCode}`
+
+export const AREA_SERVED = [
+  "São Bernardo do Campo",
+  "ABC Paulista",
+  "São Paulo",
+  "Grande São Paulo",
+  "Interior de São Paulo",
+  "Brasil",
+]
+
 export const SEO = {
   siteName: "Lucimeire Xavier Advocacia",
   siteUrl: "https://www.lucimeirexavieradvocacia.adv.br",
   locale: "pt_BR",
-  defaultTitle: "Advogada Tributarista em São Bernardo do Campo",
+  defaultTitle: "Advogada Tributarista em São Paulo, ABC e Grande São Paulo",
   defaultDescription:
-    "Assessoria em Direito Tributário para empresas e profissionais em São Bernardo do Campo e no ABC, com foco em planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
+    "Assessoria em Direito Tributário para empresas e profissionais em São Paulo, no ABC e na Grande São Paulo, com base em São Bernardo do Campo — planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
   phoneDisplay: "(11) 96758-6911",
   phoneIntl: "+55-11-96758-6911",
   email: "contato@lucimeirexavieradvocacia.adv.br",
-  address: {
-    streetAddress: "Rua José Versolato, nº 111, BL B - 11° andar – Cj. 1101",
-    addressLocality: "São Bernardo do Campo",
-    addressRegion: "SP",
-    postalCode: "09750-730",
-    addressCountry: "BR",
-  },
+  address,
+  fullAddress,
+  mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`,
   sameAs: [
     "https://www.instagram.com/dra.lucimeirexavier",
     "https://www.facebook.com/share/1AuufW4tkE/",
@@ -103,11 +118,14 @@ const areaPages: Record<
       "advogada tributarista são bernardo do campo",
       "advogado tributário são bernardo do campo",
       "advogada tributarista abc",
+      "advogada tributarista são paulo",
+      "advogada tributarista grande são paulo",
       "consultoria tributária abc",
       "planejamento tributário",
       "execução fiscal",
       "consultoria fiscal",
       "São Bernardo do Campo",
+      "São Paulo",
     ],
   },
   "direito-empresarial": {
@@ -146,6 +164,36 @@ const areaPages: Record<
       "Consultoria jurídica preventiva para empresas e profissionais, com pareceres, due diligence e suporte estratégico em São Bernardo do Campo.",
     keywords: ["consultoria jurídica", "consultoria jurídica empresarial", "parecer jurídico", "due diligence"],
   },
+  "direito-previdenciario": {
+    title: "Direito Previdenciário em São Bernardo do Campo e São Paulo",
+    description:
+      "Atuação em Direito Previdenciário para aposentadorias, revisões de benefício, contribuições recolhidas acima do teto e recuperação de INSS, com atendimento em São Bernardo do Campo, São Paulo e Grande São Paulo.",
+    keywords: [
+      "direito previdenciário",
+      "advogado previdenciário são bernardo do campo",
+      "advogada previdenciária são paulo",
+      "revisão de aposentadoria",
+      "recuperação de inss",
+      "inss acima do teto",
+      "revisão do fap",
+      "gilrat rat",
+    ],
+  },
+  inventario: {
+    title: "Inventário e Planejamento Sucessório em São Bernardo do Campo e São Paulo",
+    description:
+      "Assessoria em inventário judicial e extrajudicial, partilha, holding familiar e planejamento sucessório, com atenção ao impacto tributário do ITCMD e do ganho de capital em São Bernardo do Campo, São Paulo e Grande São Paulo.",
+    keywords: [
+      "inventário",
+      "advogado inventário são bernardo do campo",
+      "advogada inventário são paulo",
+      "inventário extrajudicial",
+      "partilha de bens",
+      "planejamento sucessório",
+      "holding familiar",
+      "itcmd",
+    ],
+  },
 }
 
 export function createAreaMetadata(slug: keyof typeof areaPages): Metadata {
@@ -168,7 +216,7 @@ export function buildLegalServiceSchema() {
     image: `${SEO.siteUrl}/images/logo.png`,
     telephone: SEO.phoneIntl,
     email: SEO.email,
-    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
+    areaServed: AREA_SERVED,
     serviceType: [
       "Direito Tributário",
       "Planejamento Tributário",
@@ -195,7 +243,7 @@ export function buildTaxServiceSchema() {
       name: SEO.siteName,
       url: SEO.siteUrl,
     },
-    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
+    areaServed: AREA_SERVED,
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -223,7 +271,7 @@ export function buildAreaServiceSchema(input: {
       name: SEO.siteName,
       url: SEO.siteUrl,
     },
-    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
+    areaServed: AREA_SERVED,
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -280,7 +328,7 @@ export function buildLocalOfficeSchema(input: {
     image: `${SEO.siteUrl}/images/logo.png`,
     telephone: SEO.phoneIntl,
     email: SEO.email,
-    areaServed: ["São Bernardo do Campo", "ABC Paulista", "São Paulo", "Brasil"],
+    areaServed: AREA_SERVED,
     address: {
       "@type": "PostalAddress",
       ...SEO.address,
@@ -300,6 +348,59 @@ export function buildLocalOfficeSchema(input: {
       ],
     },
     sameAs: SEO.sameAs,
+  }
+}
+
+export function buildServiceSchema(input: {
+  path: string
+  serviceType: string
+  name: string
+  description: string
+}) {
+  const url = canonicalUrl(input.path)
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: input.serviceType,
+    name: input.name,
+    provider: {
+      "@type": "LegalService",
+      name: SEO.siteName,
+      url: SEO.siteUrl,
+    },
+    areaServed: AREA_SERVED,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url,
+    },
+    description: input.description,
+  }
+}
+
+export function buildItemListSchema(input: {
+  path: string
+  name: string
+  description: string
+  items: Array<{ name: string }>
+}) {
+  const url = canonicalUrl(input.path)
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${url}#teses`,
+    name: input.name,
+    description: input.description,
+    url,
+    numberOfItems: input.items.length,
+    itemListElement: input.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+    })),
   }
 }
 

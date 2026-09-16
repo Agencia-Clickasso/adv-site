@@ -11,14 +11,16 @@ import JsonLd from "@/components/seo/json-ld"
 import { buildLegalServiceSchema, createPageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Advogada Tributarista em São Bernardo do Campo para Empresas",
+  title: "Advogada Tributarista em São Paulo, ABC e Grande São Paulo",
   description:
-    "Advogada tributarista em São Bernardo do Campo para empresas e profissionais. Assessoria em planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
+    "Advogada tributarista para empresas e profissionais de São Paulo, do ABC e da Grande São Paulo. Assessoria em planejamento tributário, execução fiscal, consultoria fiscal e prevenção de riscos tributários.",
   path: "/",
   keywords: [
+    "advogada tributarista",
+    "advogada tributarista são paulo",
     "advogada tributarista são bernardo do campo",
-    "direito tributário são bernardo do campo",
-    "advogado tributário são bernardo do campo",
+    "advogada tributarista abc",
+    "direito tributário são paulo",
     "planejamento tributário",
     "execução fiscal",
     "consultoria fiscal",

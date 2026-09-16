@@ -60,9 +60,12 @@ export default function DireitoTributarioPage() {
         { title: "Atendimento", value: "Segunda a Sexta, das 8h às 18h. Sábado, das 8h às 12h." },
       ]}
       relatedLinks={[
+        { label: "Teses e oportunidades tributárias analisadas pelo escritório", href: "/teses-e-oportunidades-tributarias" },
         { label: "Planejamento tributário para empresas: quando revisar e como reduzir riscos", href: "/blog/planejamento-tributario-para-empresas-como-reduzir-riscos" },
         { label: "Execução fiscal para empresas: o que fazer nos primeiros dias", href: "/blog/defesa-em-execucao-fiscal-estrategias-para-empresas" },
         { label: "Consultoria fiscal para empresas: quando contratar antes da autuação", href: "/blog/consultoria-fiscal-para-empresas-quando-contratar-e-quais-problemas-evita" },
+        { label: "Advogada tributarista em São Paulo (capital)", href: "/advogada-tributarista-sao-paulo" },
+        { label: "Advogada tributarista na Grande São Paulo e no interior", href: "/advogada-tributarista-grande-sao-paulo-e-interior" },
       ]}
       faqs={[
         {
