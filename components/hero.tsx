@@ -6,7 +6,10 @@ import { blogSerif } from "@/lib/blog-design"
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-32 text-custom-text-secondary sm:pt-36">
+    <section
+      id="home"
+      className="relative overflow-hidden pt-32 text-custom-text-secondary sm:pt-36"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
@@ -20,38 +23,64 @@ export default function Hero() {
                 <h1
                   className={`${blogSerif.className} max-w-5xl text-[3rem] leading-[0.97] tracking-[-0.035em] sm:text-6xl lg:text-7xl`}
                 >
-                  Advogada tributarista para empresas de São Paulo, ABC e Grande São Paulo que precisam decidir com mais clareza.
+                  Advogada tributarista para empresas de São Paulo, ABC e Grande São Paulo que
+                  precisam decidir com mais clareza.
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-custom-text-primary/88 sm:text-xl sm:leading-8">
-                  Planejamento tributário, execução fiscal e consultoria fiscal preventiva com leitura jurídica
-                  conectada ao caixa, ao passivo e ao risco real da operação em São Paulo, no ABC e na Grande São Paulo.
+                  Planejamento tributário, execução fiscal e consultoria fiscal preventiva com
+                  leitura jurídica conectada ao caixa, ao passivo e ao risco real da operação em São
+                  Paulo, no ABC e na Grande São Paulo.
                 </p>
               </div>
 
               <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5 text-sm leading-7 text-custom-text-primary/80">
-                Base em São Bernardo do Campo, atendimento a empresas e profissionais de São Paulo, ABC, Grande São Paulo e interior com cobrança tributária, revisão de regime, consultoria fiscal preventiva e resposta a execuções fiscais.
+                Base em São Bernardo do Campo, atendimento a empresas e profissionais de São Paulo,
+                ABC, Grande São Paulo e interior com cobrança tributária, revisão de regime,
+                consultoria fiscal preventiva e resposta a execuções fiscais.
               </div>
 
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Atuação central</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>Tributário</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Planejamento, execução fiscal e revisão de carga.</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                    Atuação central
+                  </p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>
+                    Tributário
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">
+                    Planejamento, execução fiscal e revisão de carga.
+                  </p>
                 </div>
                 <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Perfil de cliente</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>Empresas</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Atendimento com visão de negócio e prevenção.</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                    Perfil de cliente
+                  </p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>
+                    Empresas
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">
+                    Atendimento com visão de negócio e prevenção.
+                  </p>
                 </div>
                 <div className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/15 p-5">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Atendimento</p>
-                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>SP e região</p>
-                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">Base em São Bernardo do Campo, atendimento em São Paulo, ABC e Grande São Paulo.</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                    Atendimento
+                  </p>
+                  <p className={`${blogSerif.className} mt-3 text-3xl text-custom-text-secondary`}>
+                    SP e região
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-custom-text-primary/76">
+                    Base em São Bernardo do Campo, atendimento em São Paulo, ABC e Grande São Paulo.
+                  </p>
                 </div>
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8"
+                >
                   <TrackedLink
                     href="#contact"
                     ctaLabel="Solicitar atendimento tributário"
@@ -82,13 +111,18 @@ export default function Hero() {
 
             <div className="grid gap-5 lg:h-full lg:grid-rows-[minmax(22rem,0.95fr)_minmax(0,1.05fr)]">
               <div className="home-paper rounded-[1.8rem] p-6 text-slate-900 sm:rounded-[2rem] sm:p-8 lg:flex lg:min-h-[24rem] lg:flex-col lg:justify-between">
-                <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">Como a atuação entra</p>
-                <h2 className={`${blogSerif.className} mt-4 text-[2.35rem] leading-[1.02] sm:text-5xl`}>
+                <p className="text-xs uppercase tracking-[0.26em] text-[#7f5b39]">
+                  Como a atuação entra
+                </p>
+                <h2
+                  className={`${blogSerif.className} mt-4 text-[2.35rem] leading-[1.02] sm:text-5xl`}
+                >
                   Diagnóstico técnico antes que o problema vire custo permanente.
                 </h2>
                 <p className="mt-4 text-[0.98rem] leading-7 text-slate-700 sm:text-base sm:leading-8">
-                  A proposta do escritório é organizar decisão, não apenas reagir ao litígio. O trabalho começa com
-                  leitura da operação, da exposição tributária e do melhor caminho de resposta.
+                  A proposta do escritório é organizar decisão, não apenas reagir ao litígio. O
+                  trabalho começa com leitura da operação, da exposição tributária e do melhor
+                  caminho de resposta.
                 </p>
               </div>
 
@@ -115,16 +149,19 @@ export default function Hero() {
                     text: "Ajustes jurídicos antes da autuação, da cobrança e do desgaste desnecessário.",
                   },
                 ].map((item, index) => (
-                  <div
-                    key={item.title}
-                    className="home-panel rounded-[1.6rem] p-5 lg:h-full"
-                  >
+                  <div key={item.title} className="home-panel rounded-[1.6rem] p-5 lg:h-full">
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                       <item.icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <h3 className={`${blogSerif.className} mt-5 text-2xl text-custom-text-secondary`}>{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-custom-text-primary/78">{item.text}</p>
+                      <h3
+                        className={`${blogSerif.className} mt-5 text-2xl text-custom-text-secondary`}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-custom-text-primary/78">
+                        {item.text}
+                      </p>
                     </div>
                   </div>
                 ))}

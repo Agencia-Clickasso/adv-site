@@ -15,23 +15,31 @@ export default function TeseCard({ tese }: TeseCardProps) {
         Tese {String(tese.numero).padStart(2, "0")}
       </p>
 
-      <h3 className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary sm:text-[1.75rem]`}>
+      <h3
+        className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary sm:text-[1.75rem]`}
+      >
         {tese.title}
       </h3>
 
       <div className="mt-5 space-y-4 text-sm leading-7 text-custom-text-primary/82">
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/55">Oportunidade</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/55">
+            Oportunidade
+          </p>
           <p className="mt-1">{tese.oportunidade}</p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/55">Para quem é</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/55">
+            Para quem é
+          </p>
           <p className="mt-1">{tese.paraQuem}</p>
         </div>
       </div>
 
       <div className="mt-5 rounded-[1.4rem] border border-custom-text-primary/12 bg-black/15 p-4">
-        <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/55">Análise personalizada</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/55">
+          Análise personalizada
+        </p>
         <p className="mt-2 text-sm leading-7 text-custom-text-primary/78">{tese.analise}</p>
       </div>
 

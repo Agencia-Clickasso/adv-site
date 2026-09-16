@@ -3,7 +3,16 @@
 import type React from "react"
 
 import { useState } from "react"
-import { AlertCircle, ArrowUpRight, CheckCircle, Clock, Mail, MapPin, Send, Sparkles } from "lucide-react"
+import {
+  AlertCircle,
+  ArrowUpRight,
+  CheckCircle,
+  Clock,
+  Mail,
+  MapPin,
+  Send,
+  Sparkles,
+} from "lucide-react"
 import { trackLeadSubmission } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -110,8 +119,8 @@ export default function Contact() {
                     Fale sobre seu caso com clareza.
                   </h2>
                   <p className="mt-4 max-w-2xl text-[0.98rem] leading-7 text-slate-700 sm:mt-5 sm:text-base sm:leading-8">
-                    Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com impacto tributário,
-                    descreva isso logo no primeiro contato.
+                    Se houver cobrança, execução fiscal, autuação ou uma decisão empresarial com
+                    impacto tributário, descreva isso logo no primeiro contato.
                   </p>
                 </div>
 
@@ -196,20 +205,23 @@ export default function Contact() {
 
               <div className="rounded-[1.8rem] bg-[#161c25] p-5 text-custom-text-secondary shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:rounded-[2rem] sm:p-8">
                 <div className="mb-6 border-b border-custom-text-primary/10 pb-6">
-                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">Formulário de triagem</p>
-                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>Solicitar atendimento</h3>
+                  <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/62">
+                    Formulário de triagem
+                  </p>
+                  <h3 className={`${blogSerif.className} mt-3 text-3xl sm:text-4xl`}>
+                    Solicitar atendimento
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-custom-text-primary/76">
                     Resuma a demanda, a urgência e o ponto principal que precisa ser analisado.
                   </p>
                 </div>
 
-                <form
-                  name="contact"
-                  method="POST"
-                  onSubmit={handleSubmit}
-                  className="space-y-5"
-                >
-                  <input type="hidden" name="_subject" value="Novo contato - Lucimeire Xavier Advocacia" />
+                <form name="contact" method="POST" onSubmit={handleSubmit} className="space-y-5">
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="Novo contato - Lucimeire Xavier Advocacia"
+                  />
 
                   {submitStatus === "success" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-green-400/25 bg-green-500/12 p-4 text-green-300">
@@ -221,7 +233,9 @@ export default function Contact() {
                   {submitStatus === "error" && (
                     <div className="flex items-center gap-3 rounded-2xl border border-red-400/25 bg-red-500/12 p-4 text-red-300">
                       <AlertCircle className="h-5 w-5" />
-                      <span>Erro ao enviar a mensagem. Tente novamente ou use o contato direto.</span>
+                      <span>
+                        Erro ao enviar a mensagem. Tente novamente ou use o contato direto.
+                      </span>
                     </div>
                   )}
 

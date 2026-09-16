@@ -13,6 +13,7 @@
 ### Task 1: Criar verificacao de SEO tecnico para rotas publicas
 
 **Files:**
+
 - Create: `scripts/verify-public-seo.mjs`
 - Test: `scripts/verify-public-seo.mjs`
 
@@ -23,11 +24,7 @@ import fs from "node:fs"
 import path from "node:path"
 
 const root = process.cwd()
-const publicRoutes = [
-  "app/page.tsx",
-  "app/blog/page.tsx",
-  "app/blog/[slug]/page.tsx",
-]
+const publicRoutes = ["app/page.tsx", "app/blog/page.tsx", "app/blog/[slug]/page.tsx"]
 
 const failures = []
 
@@ -81,6 +78,7 @@ git commit -m "fix: make public pages crawl-friendly"
 ### Task 2: Validar build e comportamento gerado
 
 **Files:**
+
 - Modify: `app/page.tsx`
 - Modify: `app/blog/page.tsx`
 - Modify: `app/blog/[slug]/page.tsx`

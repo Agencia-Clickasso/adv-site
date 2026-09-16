@@ -36,6 +36,7 @@ Seu conteúdo aqui...
 ## Nome do Arquivo
 
 O nome do arquivo será usado como URL do post:
+
 - `meu-post-exemplo.mdx` → `/blog/meu-post-exemplo`
 - Use apenas letras minúsculas, números e hífens
 - Evite acentos e caracteres especiais
@@ -43,31 +44,36 @@ O nome do arquivo será usado como URL do post:
 ## Recursos Disponíveis
 
 ### Markdown Padrão
+
 - Títulos (# ## ### ####)
 - Parágrafos
 - Listas (numeradas e com marcadores)
 - Links
-- Texto em **negrito** e *itálico*
+- Texto em **negrito** e _itálico_
 - `código inline`
 - Citações
 
 ### Blocos de Código
+
 ```javascript
 // Exemplo de código
-const exemplo = "funciona perfeitamente";
+const exemplo = "funciona perfeitamente"
 ```
 
 ### Tabelas
+
 | Coluna 1 | Coluna 2 |
-|----------|----------|
+| -------- | -------- |
 | Valor 1  | Valor 2  |
 
 ### Citações Destacadas
+
 > Esta é uma citação importante que será destacada visualmente.
 
 ## Estilização
 
 Todos os elementos são automaticamente estilizados seguindo o tema do site:
+
 - Cores personalizadas (custom-text-primary, custom-text-secondary, etc.)
 - Tipografia consistente
 - Espaçamento adequado
@@ -98,7 +104,7 @@ Conflitos no ambiente de trabalho são mais comuns do que imaginamos...
 ## Principais Causas
 
 1. **Questões salariais**
-2. **Ambiente de trabalho**  
+2. **Ambiente de trabalho**
 3. **Comunicação deficiente**
 
 ### Mediação Prévia

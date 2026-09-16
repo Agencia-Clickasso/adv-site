@@ -44,39 +44,72 @@ export default async function AdminEditPostPage({ params, searchParams }: EditPa
       </div>
 
       {error && (
-        <div className="rounded-xl border border-red-400/40 bg-red-500/10 p-3 text-sm text-red-200">{error}</div>
+        <div className="rounded-xl border border-red-400/40 bg-red-500/10 p-3 text-sm text-red-200">
+          {error}
+        </div>
       )}
       {success && (
-        <div className="rounded-xl border border-green-400/40 bg-green-500/10 p-3 text-sm text-green-200">{success}</div>
+        <div className="rounded-xl border border-green-400/40 bg-green-500/10 p-3 text-sm text-green-200">
+          {success}
+        </div>
       )}
 
-      <form action={updatePostAction} className="space-y-4 rounded-2xl border border-custom-text-primary/10 bg-custom-bg-secondary/40 p-5">
+      <form
+        action={updatePostAction}
+        className="space-y-4 rounded-2xl border border-custom-text-primary/10 bg-custom-bg-secondary/40 p-5"
+      >
         <input type="hidden" name="id" value={post.id} />
 
         <div className="grid gap-4 md:grid-cols-2">
           <label className="text-sm">
             <span className="mb-2 block">Título</span>
-            <input name="title" required defaultValue={post.title} className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2" />
+            <input
+              name="title"
+              required
+              defaultValue={post.title}
+              className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2"
+            />
           </label>
           <label className="text-sm">
             <span className="mb-2 block">Slug</span>
-            <input name="slug" required defaultValue={post.slug} className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2" />
+            <input
+              name="slug"
+              required
+              defaultValue={post.slug}
+              className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2"
+            />
           </label>
         </div>
 
         <label className="block text-sm">
           <span className="mb-2 block">Resumo (excerpt)</span>
-          <textarea name="excerpt" required rows={3} defaultValue={post.excerpt} className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2" />
+          <textarea
+            name="excerpt"
+            required
+            rows={3}
+            defaultValue={post.excerpt}
+            className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2"
+          />
         </label>
 
         <div className="grid gap-4 md:grid-cols-2">
           <label className="text-sm">
             <span className="mb-2 block">Categoria</span>
-            <input name="category" required defaultValue={post.category} className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2" />
+            <input
+              name="category"
+              required
+              defaultValue={post.category}
+              className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2"
+            />
           </label>
           <label className="text-sm">
             <span className="mb-2 block">Autor</span>
-            <input name="authorName" required defaultValue={post.authorName} className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2" />
+            <input
+              name="authorName"
+              required
+              defaultValue={post.authorName}
+              className="w-full rounded-xl border border-custom-text-primary/20 bg-custom-bg-primary/60 px-3 py-2"
+            />
           </label>
         </div>
 
@@ -93,10 +126,16 @@ export default async function AdminEditPostPage({ params, searchParams }: EditPa
 
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="text-sm text-custom-text-primary/70">
-            Status atual: <strong className="text-custom-text-secondary">{post.status === "published" ? "Publicado" : "Rascunho"}</strong>
+            Status atual:{" "}
+            <strong className="text-custom-text-secondary">
+              {post.status === "published" ? "Publicado" : "Rascunho"}
+            </strong>
           </div>
           <div className="flex flex-wrap gap-2">
-            <button type="submit" className="rounded-xl border border-custom-text-primary/20 px-4 py-2 text-sm hover:bg-custom-text-primary/10">
+            <button
+              type="submit"
+              className="rounded-xl border border-custom-text-primary/20 px-4 py-2 text-sm hover:bg-custom-text-primary/10"
+            >
               Salvar alterações
             </button>
           </div>

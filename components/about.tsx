@@ -17,7 +17,9 @@ export default function About() {
                 className="h-auto w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-custom-bg-primary via-custom-bg-primary/70 to-transparent p-6">
-                <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>Lucimeire Xavier</p>
+                <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>
+                  Lucimeire Xavier
+                </p>
               </div>
             </div>
           </div>
@@ -32,9 +34,10 @@ export default function About() {
                 Formação jurídica sólida com foco direto em operação, prevenção e risco tributário.
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-                A atuação é voltada a empresas e profissionais que precisam organizar a rotina fiscal, reduzir exposição
-                a autuações e enfrentar cobranças com mais clareza estratégica. O trabalho combina técnica, leitura de
-                negócio e atenção prática ao impacto financeiro das decisões.
+                A atuação é voltada a empresas e profissionais que precisam organizar a rotina
+                fiscal, reduzir exposição a autuações e enfrentar cobranças com mais clareza
+                estratégica. O trabalho combina técnica, leitura de negócio e atenção prática ao
+                impacto financeiro das decisões.
               </p>
             </div>
 
@@ -43,7 +46,9 @@ export default function About() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                   <GraduationCap className="h-6 w-6" />
                 </div>
-                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>Formação</h3>
+                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>
+                  Formação
+                </h3>
                 <div className="mt-4 space-y-5 text-sm leading-7 text-custom-text-primary/82">
                   <div>
                     <p className="font-semibold text-custom-text-secondary">UNISC</p>
@@ -51,7 +56,9 @@ export default function About() {
                     <p className="text-custom-text-primary/58">2024 - 2025</p>
                   </div>
                   <div className="border-t home-soft-line pt-5">
-                    <p className="font-semibold text-custom-text-secondary">Universidade São Judas Tadeu</p>
+                    <p className="font-semibold text-custom-text-secondary">
+                      Universidade São Judas Tadeu
+                    </p>
                     <p>Bacharela em Direito</p>
                     <p className="text-custom-text-primary/58">2019 - 2023</p>
                   </div>
@@ -62,10 +69,13 @@ export default function About() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                   <BookOpen className="h-6 w-6" />
                 </div>
-                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>Pesquisa aplicada</h3>
+                <h3 className={`${blogSerif.className} mt-5 text-3xl text-custom-text-secondary`}>
+                  Pesquisa aplicada
+                </h3>
                 <p className="mt-4 text-sm leading-7 text-custom-text-primary/82">
-                  O trabalho de conclusão sobre incentivo fiscal Drawback em exportações reforça uma base prática em
-                  competitividade, incentivos e interpretação de instrumentos tributários.
+                  O trabalho de conclusão sobre incentivo fiscal Drawback em exportações reforça uma
+                  base prática em competitividade, incentivos e interpretação de instrumentos
+                  tributários.
                 </p>
                 <a
                   href="https://repositorio-api.animaeducacao.com.br/server/api/core/bitstreams/7f34702a-53ac-4367-b201-9fabd77e8a29/content"
@@ -85,8 +95,13 @@ export default function About() {
                 ["Prevenção", "Consultoria para reduzir desgaste antes do litígio."],
                 ["Estratégia", "Leitura jurídica conectada à realidade da empresa."],
               ].map(([title, text]) => (
-                <div key={title} className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/12 p-5">
-                  <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{title}</p>
+                <div
+                  key={title}
+                  className="rounded-[1.5rem] border border-custom-text-primary/12 bg-black/12 p-5"
+                >
+                  <p className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                    {title}
+                  </p>
                   <p className="mt-3 text-sm leading-7 text-custom-text-primary/78">{text}</p>
                 </div>
               ))}

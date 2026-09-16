@@ -2,7 +2,10 @@ import { TESE_CATEGORIES } from "@/lib/teses"
 
 export default function TesesCategoryNav() {
   return (
-    <nav aria-label="Categorias de teses e oportunidades tributárias" className="flex flex-wrap gap-3">
+    <nav
+      aria-label="Categorias de teses e oportunidades tributárias"
+      className="flex flex-wrap gap-3"
+    >
       {TESE_CATEGORIES.map((categoria) => (
         <a
           key={categoria.id}

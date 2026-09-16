@@ -2,7 +2,13 @@ import type { Metadata } from "next"
 import { Building2, FileSearch, Landmark, TrendingUp, Users } from "lucide-react"
 import AreaPage from "@/components/area-page"
 import JsonLd from "@/components/seo/json-ld"
-import { SEO, buildFaqSchema, buildLocalOfficeSchema, buildServiceSchema, createPageMetadata } from "@/lib/seo"
+import {
+  SEO,
+  buildFaqSchema,
+  buildLocalOfficeSchema,
+  buildServiceSchema,
+  createPageMetadata,
+} from "@/lib/seo"
 
 const PATH = "/advogada-tributarista-sao-paulo"
 
@@ -55,45 +61,85 @@ export default function AdvogadaTributaristaSaoPauloPage() {
       badge="Atendimento na capital"
       intro="Assessoria tributária para empresas e profissionais da capital paulista, com atendimento online e reuniões agendadas. O trabalho parte da operação real do cliente — regime, rotina fiscal, passivo e decisões em aberto — para definir o que precisa ser enfrentado primeiro."
       highlights={[
-        { title: "Como funciona", description: "Atendimento online, com documentos por meio digital e reuniões agendadas." },
-        { title: "Base do escritório", description: "São Bernardo do Campo, no ABC — a cerca de 30 minutos da capital." },
-        { title: "Perfil de cliente", description: "Empresas de serviços, comércio, indústria e profissionais liberais com decisão fiscal em jogo." },
+        {
+          title: "Como funciona",
+          description: "Atendimento online, com documentos por meio digital e reuniões agendadas.",
+        },
+        {
+          title: "Base do escritório",
+          description: "São Bernardo do Campo, no ABC — a cerca de 30 minutos da capital.",
+        },
+        {
+          title: "Perfil de cliente",
+          description:
+            "Empresas de serviços, comércio, indústria e profissionais liberais com decisão fiscal em jogo.",
+        },
       ]}
       services={[
         {
           icon: TrendingUp,
           title: "Planejamento tributário",
-          description: "Revisão de regime e estrutura para reduzir carga e eliminar improviso na rotina fiscal.",
-          features: ["Comparativo de regimes", "Reorganização societária", "Holding e sucessão", "Decisões de caixa e investimento"],
+          description:
+            "Revisão de regime e estrutura para reduzir carga e eliminar improviso na rotina fiscal.",
+          features: [
+            "Comparativo de regimes",
+            "Reorganização societária",
+            "Holding e sucessão",
+            "Decisões de caixa e investimento",
+          ],
         },
         {
           icon: FileSearch,
           title: "Contencioso e defesa",
-          description: "Atuação em autuações, cobranças e execuções fiscais, com leitura do impacto operacional.",
-          features: ["Defesa em auto de infração", "Execução fiscal", "Responsabilidade tributária", "Transação e parcelamento"],
+          description:
+            "Atuação em autuações, cobranças e execuções fiscais, com leitura do impacto operacional.",
+          features: [
+            "Defesa em auto de infração",
+            "Execução fiscal",
+            "Responsabilidade tributária",
+            "Transação e parcelamento",
+          ],
         },
         {
           icon: Users,
           title: "Pessoa física e alta renda",
-          description: "Planejamento e revisão de tributação para pessoa física com patrimônio relevante.",
-          features: ["Ganho de capital", "Aluguéis e investimentos", "Isenções de IR", "Planejamento sucessório"],
+          description:
+            "Planejamento e revisão de tributação para pessoa física com patrimônio relevante.",
+          features: [
+            "Ganho de capital",
+            "Aluguéis e investimentos",
+            "Isenções de IR",
+            "Planejamento sucessório",
+          ],
         },
         {
           icon: Landmark,
           title: "Recuperação de créditos",
-          description: "Verificação de créditos e oportunidades tributárias aplicáveis ao histórico da empresa.",
-          features: ["Exclusão do ICMS da base do PIS/COFINS", "Créditos de insumo", "PIS/COFINS monofásico", "Revisão de contribuições"],
+          description:
+            "Verificação de créditos e oportunidades tributárias aplicáveis ao histórico da empresa.",
+          features: [
+            "Exclusão do ICMS da base do PIS/COFINS",
+            "Créditos de insumo",
+            "PIS/COFINS monofásico",
+            "Revisão de contribuições",
+          ],
         },
       ]}
       bridgeTitle="Decisão tributária na capital costuma ter prazo curto"
       bridgeText="Notificação, autuação e cobrança têm prazo, e reagir depois costuma custar mais. O diagnóstico técnico organiza prioridades e define o que precisa de resposta imediata e o que pode ser planejado."
       bridgeCta={{ label: "Ver teses e oportunidades", href: "/teses-e-oportunidades-tributarias" }}
       primaryCta={{ label: "Agendar diagnóstico", href: "/#contact" }}
-      secondaryCta={{ label: "Ver atuação em Direito Tributário", href: "/areas/direito-tributario" }}
+      secondaryCta={{
+        label: "Ver atuação em Direito Tributário",
+        href: "/areas/direito-tributario",
+      }}
       finalTitle="Precisa resolver uma questão tributária na capital?"
       finalText="O primeiro passo é entender a operação, o histórico fiscal e o prazo envolvido. A partir daí o escritório indica o caminho cabível, sempre com análise individual da documentação."
       finalPrimaryCta={{ label: "Solicitar atendimento", href: "/#contact" }}
-      finalSecondaryCta={{ label: "Falar no WhatsApp", href: "https://api.whatsapp.com/send?phone=5511967586911" }}
+      finalSecondaryCta={{
+        label: "Falar no WhatsApp",
+        href: "https://api.whatsapp.com/send?phone=5511967586911",
+      }}
       localDetails={[
         {
           title: "Endereço",
@@ -104,9 +150,15 @@ export default function AdvogadaTributaristaSaoPauloPage() {
         { title: "Região", value: "São Paulo (capital)" },
       ]}
       relatedLinks={[
-        { label: "Advogada tributarista em São Bernardo do Campo e no ABC", href: "/advogada-tributarista-sao-bernardo-do-campo" },
+        {
+          label: "Advogada tributarista em São Bernardo do Campo e no ABC",
+          href: "/advogada-tributarista-sao-bernardo-do-campo",
+        },
         { label: "Teses e oportunidades tributárias", href: "/teses-e-oportunidades-tributarias" },
-        { label: "Direito tributário para empresas e profissionais", href: "/areas/direito-tributario" },
+        {
+          label: "Direito tributário para empresas e profissionais",
+          href: "/areas/direito-tributario",
+        },
       ]}
       faqs={faqs}
     >

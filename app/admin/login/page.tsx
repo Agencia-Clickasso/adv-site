@@ -34,7 +34,8 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
 
         {!isTursoConfigured() && (
           <div className="mb-4 rounded-xl border border-amber-400/40 bg-amber-500/10 p-3 text-sm text-amber-200">
-            Turso ainda não está configurado neste ambiente. Configure as variáveis de ambiente antes de usar o painel.
+            Turso ainda não está configurado neste ambiente. Configure as variáveis de ambiente
+            antes de usar o painel.
           </div>
         )}
 

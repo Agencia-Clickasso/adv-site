@@ -28,13 +28,17 @@ export const metadata: Metadata = createPageMetadata({
 export const revalidate = 3600
 
 function categoryId(category: string) {
-  return category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-")
+  return category
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
 }
 
 export default async function BlogPage() {
   const posts = await getSortedPostsData()
   const taxPosts = posts.filter((post) => post.category.toLowerCase().includes("tribut"))
-  const prioritySlugs = new Set(PRIORITY_POST_SLUGS)
+  const prioritySlugs = new Set<string>(PRIORITY_POST_SLUGS)
   const featuredPosts = sortPostsByPriority(posts).slice(0, 4)
   const [leadPost, ...secondaryFeaturedPosts] = featuredPosts
   const categoriesMap = posts.reduce(
@@ -55,7 +59,9 @@ export default async function BlogPage() {
   })
 
   return (
-    <main className={`relative min-h-screen overflow-hidden bg-custom-bg-primary text-custom-text-secondary ${blogSans.className}`}>
+    <main
+      className={`relative min-h-screen overflow-hidden bg-custom-bg-primary text-custom-text-secondary ${blogSans.className}`}
+    >
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="blog-grid-pattern absolute inset-0" />
         <div className="blog-orb absolute left-[-10rem] top-12 h-80 w-80" />
@@ -83,48 +89,70 @@ export default async function BlogPage() {
                 </span>
               </div>
 
-              <h1 className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.95] text-custom-text-secondary sm:text-6xl lg:text-7xl`}>
-                Análises jurídicas para empresas e contribuintes que precisam decidir antes do problema virar passivo.
+              <h1
+                className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.95] text-custom-text-secondary sm:text-6xl lg:text-7xl`}
+              >
+                Análises jurídicas para empresas e contribuintes que precisam decidir antes do
+                problema virar passivo.
               </h1>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-custom-text-primary/88 sm:text-xl">
-                O blog foi reorganizado como uma mesa editorial: prioridade clara para tributário, leitura mais fluida e
-                acesso rápido aos artigos que ajudam empresas a reduzir risco, reagir a cobranças, estruturar prevenção e
-                revisar IRPF com mais segurança.
+                O blog foi reorganizado como uma mesa editorial: prioridade clara para tributário,
+                leitura mais fluida e acesso rápido aos artigos que ajudam empresas a reduzir risco,
+                reagir a cobranças, estruturar prevenção e revisar IRPF com mais segurança.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-[1.5rem] border border-custom-text-primary/10 bg-black/15 p-5">
-                  <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{posts.length}</div>
-                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">Artigos publicados</p>
+                  <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                    {posts.length}
+                  </div>
+                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">
+                    Artigos publicados
+                  </p>
                 </div>
                 <div className="rounded-[1.5rem] border border-custom-text-primary/10 bg-black/15 p-5">
-                  <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{taxPosts.length}</div>
-                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">Foco tributário</p>
+                  <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                    {taxPosts.length}
+                  </div>
+                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">
+                    Foco tributário
+                  </p>
                 </div>
                 <div className="rounded-[1.5rem] border border-custom-text-primary/10 bg-black/15 p-5">
-                  <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>{categories.length}</div>
-                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">Frentes de atuação</p>
+                  <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                    {categories.length}
+                  </div>
+                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">
+                    Frentes de atuação
+                  </p>
                 </div>
               </div>
             </div>
 
             <aside className="rounded-[2rem] border border-custom-text-primary/15 bg-custom-bg-secondary/85 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.32)] sm:p-8">
-              <p className="text-xs uppercase tracking-[0.28em] text-custom-text-primary/70">Mapa de leitura</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-custom-text-primary/70">
+                Mapa de leitura
+              </p>
               <div className="mt-6 space-y-5">
                 {[
                   "Planejamento tributário para reduzir exposição antes de autuações.",
                   "Execução fiscal e suspensão de cobrança em situações críticas.",
                   "IRPF, malha fina e revisão da declaração para pessoa física.",
                 ].map((item) => (
-                  <div key={item} className="rounded-[1.25rem] border border-custom-text-primary/10 bg-white/5 p-4 text-sm leading-7 text-custom-text-primary/82">
+                  <div
+                    key={item}
+                    className="rounded-[1.25rem] border border-custom-text-primary/10 bg-white/5 p-4 text-sm leading-7 text-custom-text-primary/82"
+                  >
                     {item}
                   </div>
                 ))}
               </div>
 
               <div className="mt-8 border-t border-custom-text-primary/10 pt-6">
-                <p className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>Navegue por categoria</p>
+                <p className={`${blogSerif.className} text-2xl text-custom-text-secondary`}>
+                  Navegue por categoria
+                </p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {categories.map((category) => (
                     <a
@@ -144,13 +172,17 @@ export default async function BlogPage() {
             <section className="mt-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
               <article className="group rounded-[2rem] border border-custom-text-primary/15 bg-[#f6eddc] p-8 text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.24)] transition-transform duration-300 hover:-translate-y-1 sm:p-10">
                 <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
-                  <span className="rounded-full border border-[#d2b290] bg-white/70 px-3 py-1">{leadPost.category}</span>
+                  <span className="rounded-full border border-[#d2b290] bg-white/70 px-3 py-1">
+                    {leadPost.category}
+                  </span>
                   {prioritySlugs.has(leadPost.slug) ? <span>Prioridade editorial</span> : null}
                 </div>
                 <h2 className={`${blogSerif.className} mt-6 text-4xl leading-tight sm:text-5xl`}>
                   {leadPost.title}
                 </h2>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">{leadPost.excerpt}</p>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
+                  {leadPost.excerpt}
+                </p>
                 <div className="mt-8 flex flex-wrap items-center gap-5 text-sm text-slate-600">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
@@ -185,13 +217,22 @@ export default async function BlogPage() {
                       <span>{post.category}</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <h3 className={`${blogSerif.className} mt-4 text-3xl leading-tight text-custom-text-secondary`}>
+                    <h3
+                      className={`${blogSerif.className} mt-4 text-3xl leading-tight text-custom-text-secondary`}
+                    >
                       {post.title}
                     </h3>
-                    <p className="mt-3 line-clamp-3 text-sm leading-7 text-custom-text-primary/82">{post.excerpt}</p>
+                    <p className="mt-3 line-clamp-3 text-sm leading-7 text-custom-text-primary/82">
+                      {post.excerpt}
+                    </p>
                     <div className="mt-5 flex items-center justify-between gap-3">
-                      <span className="text-sm text-custom-text-primary/68">{formatBlogDate(post.date)}</span>
-                      <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary">
+                      <span className="text-sm text-custom-text-primary/68">
+                        {formatBlogDate(post.date)}
+                      </span>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="inline-flex items-center gap-2 text-sm text-custom-text-primary transition hover:text-custom-text-secondary"
+                      >
                         Abrir
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </Link>
@@ -230,12 +271,19 @@ export default async function BlogPage() {
                 <section key={category} id={categoryId(category)} className="scroll-mt-24">
                   <div className="flex flex-col gap-4 border-b border-custom-text-primary/12 pb-6 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.28em] text-custom-text-primary/60">Seção</p>
-                      <h2 className={`${blogSerif.className} mt-2 text-4xl text-custom-text-secondary sm:text-5xl`}>{category}</h2>
+                      <p className="text-xs uppercase tracking-[0.28em] text-custom-text-primary/60">
+                        Seção
+                      </p>
+                      <h2
+                        className={`${blogSerif.className} mt-2 text-4xl text-custom-text-secondary sm:text-5xl`}
+                      >
+                        {category}
+                      </h2>
                     </div>
                     <p className="max-w-2xl text-sm leading-7 text-custom-text-primary/76">
-                      {categoriesMap[category].length} artigo{categoriesMap[category].length !== 1 ? "s" : ""} nesta frente, com
-                      abordagem prática para decisão, prevenção e resposta jurídica.
+                      {categoriesMap[category].length} artigo
+                      {categoriesMap[category].length !== 1 ? "s" : ""} nesta frente, com abordagem
+                      prática para decisão, prevenção e resposta jurídica.
                     </p>
                   </div>
 
@@ -248,10 +296,14 @@ export default async function BlogPage() {
                           </span>
                           <span>{formatBlogDate(highlight.date)}</span>
                         </div>
-                        <h3 className={`${blogSerif.className} mt-5 text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}>
+                        <h3
+                          className={`${blogSerif.className} mt-5 text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}
+                        >
                           {highlight.title}
                         </h3>
-                        <p className="mt-4 max-w-2xl text-base leading-8 text-custom-text-primary/84">{highlight.excerpt}</p>
+                        <p className="mt-4 max-w-2xl text-base leading-8 text-custom-text-primary/84">
+                          {highlight.excerpt}
+                        </p>
                         <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-custom-text-primary/68">
                           <span className="inline-flex items-center gap-2">
                             <Clock3 className="h-4 w-4" />
@@ -286,15 +338,22 @@ export default async function BlogPage() {
                             <span>{formatBlogDate(post.date)}</span>
                             <span>{post.readTime}</span>
                           </div>
-                          <h3 className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary`}>
+                          <h3
+                            className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary`}
+                          >
                             {post.title}
                           </h3>
-                          <p className="mt-3 line-clamp-2 text-sm leading-7 text-custom-text-primary/78">{post.excerpt}</p>
+                          <p className="mt-3 line-clamp-2 text-sm leading-7 text-custom-text-primary/78">
+                            {post.excerpt}
+                          </p>
                           <div className="mt-4 flex items-center justify-between gap-3">
                             <span className="text-xs uppercase tracking-[0.18em] text-custom-text-primary/56">
                               {post.author || post.category}
                             </span>
-                            <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-sm text-custom-text-primary hover:text-custom-text-secondary">
+                            <Link
+                              href={`/blog/${post.slug}`}
+                              className="inline-flex items-center gap-2 text-sm text-custom-text-primary hover:text-custom-text-secondary"
+                            >
                               Ler mais
                               <ArrowRight className="h-4 w-4" />
                             </Link>
@@ -310,9 +369,12 @@ export default async function BlogPage() {
 
           {posts.length === 0 ? (
             <section className="mt-16 rounded-[2rem] border border-custom-text-primary/12 bg-white/5 px-6 py-16 text-center">
-              <h2 className={`${blogSerif.className} text-4xl text-custom-text-secondary`}>Nenhum artigo publicado</h2>
+              <h2 className={`${blogSerif.className} text-4xl text-custom-text-secondary`}>
+                Nenhum artigo publicado
+              </h2>
               <p className="mx-auto mt-4 max-w-2xl text-custom-text-primary/82">
-                O espaço editorial está preparado para receber novos conteúdos. Volte em breve para acompanhar as publicações.
+                O espaço editorial está preparado para receber novos conteúdos. Volte em breve para
+                acompanhar as publicações.
               </p>
             </section>
           ) : null}
@@ -321,15 +383,21 @@ export default async function BlogPage() {
             <section className="mt-20 rounded-[2rem] border border-custom-text-primary/14 bg-[#f6eddc] px-6 py-10 text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.22)] sm:px-8 lg:px-10">
               <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.28em] text-[#7f5b39]">Próximo passo</p>
+                  <p className="text-xs uppercase tracking-[0.28em] text-[#7f5b39]">
+                    Próximo passo
+                  </p>
                   <h2 className={`${blogSerif.className} mt-3 text-4xl leading-tight sm:text-5xl`}>
                     Se o tema do artigo encosta na sua operação, o melhor momento para agir é agora.
                   </h2>
                   <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700">
-                    Use o blog como referência inicial, mas trate a decisão jurídica com contexto real do seu negócio.
+                    Use o blog como referência inicial, mas trate a decisão jurídica com contexto
+                    real do seu negócio.
                   </p>
                 </div>
-                <Button asChild className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]">
+                <Button
+                  asChild
+                  className="rounded-full bg-[#1b2028] px-8 text-[#f8f0df] hover:bg-[#0f1319]"
+                >
                   <TrackedLink
                     href="/#contact"
                     ctaLabel="Falar com o escritório"

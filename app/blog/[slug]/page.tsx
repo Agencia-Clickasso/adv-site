@@ -52,7 +52,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <main className={`relative min-h-screen overflow-hidden bg-custom-bg-primary text-custom-text-secondary ${blogSans.className}`}>
+    <main
+      className={`relative min-h-screen overflow-hidden bg-custom-bg-primary text-custom-text-secondary ${blogSans.className}`}
+    >
       <JsonLd
         data={buildBlogPostingSchema({
           title: post.title,
@@ -88,7 +90,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span>Artigo jurídico</span>
             </div>
 
-            <h1 className={`${blogSerif.className} mt-6 max-w-4xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}>
+            <h1
+              className={`${blogSerif.className} mt-6 max-w-4xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}
+            >
               {post.title}
             </h1>
 
@@ -123,10 +127,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <aside className="space-y-6 lg:sticky lg:top-8">
               <div className="rounded-[1.75rem] border border-custom-text-primary/12 bg-custom-bg-secondary/88 p-6 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
-                <p className="text-xs uppercase tracking-[0.28em] text-custom-text-primary/65">Leitura guiada</p>
+                <p className="text-xs uppercase tracking-[0.28em] text-custom-text-primary/65">
+                  Leitura guiada
+                </p>
                 <div className="mt-5 space-y-4 text-sm leading-7 text-custom-text-primary/82">
-                  <p>O artigo foi diagramado para leitura longa, com contraste mais alto e espaçamento mais generoso.</p>
-                  <p>Se este tema afeta decisão fiscal, societária ou contratual, trate o conteúdo como insumo técnico, não como diagnóstico fechado.</p>
+                  <p>
+                    O artigo foi diagramado para leitura longa, com contraste mais alto e
+                    espaçamento mais generoso.
+                  </p>
+                  <p>
+                    Se este tema afeta decisão fiscal, societária ou contratual, trate o conteúdo
+                    como insumo técnico, não como diagnóstico fechado.
+                  </p>
                 </div>
               </div>
 
@@ -139,9 +151,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   Precisa aplicar isso no contexto real da empresa?
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-slate-700">
-                  O escritório pode avaliar risco, documentos e estratégia antes de qualquer resposta formal.
+                  O escritório pode avaliar risco, documentos e estratégia antes de qualquer
+                  resposta formal.
                 </p>
-                <Button asChild className="mt-6 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]">
+                <Button
+                  asChild
+                  className="mt-6 rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319]"
+                >
                   <TrackedLink
                     href="/#contact"
                     ctaLabel="Solicitar orientação tributária"
@@ -158,8 +174,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <footer className="mt-12 border-t border-custom-text-primary/12 pt-8">
             <div className="flex flex-col gap-6 rounded-[1.75rem] border border-custom-text-primary/12 bg-white/5 p-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.26em] text-custom-text-primary/60">Continue lendo</p>
-                <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>Explore outras análises do blog jurídico.</p>
+                <p className="text-xs uppercase tracking-[0.26em] text-custom-text-primary/60">
+                  Continue lendo
+                </p>
+                <p className={`${blogSerif.className} mt-2 text-3xl text-custom-text-secondary`}>
+                  Explore outras análises do blog jurídico.
+                </p>
               </div>
               <Link href="/blog">
                 <Button

@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "Lucimeire Xavier Advocacia — Direito Tributário em São Paulo, ABC e Grande São Paulo"
+export const alt =
+  "Lucimeire Xavier Advocacia — Direito Tributário em São Paulo, ABC e Grande São Paulo"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -61,7 +62,7 @@ export default function OpenGraphImage() {
             fontFamily: "system-ui, sans-serif",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            width: "fit-content",
+            alignSelf: "flex-start",
             fontWeight: 600,
           }}
         >

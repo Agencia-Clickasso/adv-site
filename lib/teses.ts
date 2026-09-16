@@ -31,8 +31,7 @@ export const TESE_CATEGORIES: TeseCategoria[] = [
         title: "Recuperação de INSS acima do teto",
         oportunidade:
           "Análise de contribuições previdenciárias do INSS recolhidas acima do teto previdenciário e da possibilidade de recuperação de valores.",
-        paraQuem:
-          "Profissionais com mais de um vínculo, como médicos, enfermeiros e professores.",
+        paraQuem: "Profissionais com mais de um vínculo, como médicos, enfermeiros e professores.",
         analise:
           "Verificamos os vínculos, contribuições e documentos para identificar eventual valor passível de recuperação.",
         ctaLabel: "Quero analisar meu caso",
@@ -147,8 +146,7 @@ export const TESE_CATEGORIES: TeseCategoria[] = [
         id: "ir-sobre-ganho-de-capital",
         numero: 11,
         title: "IR sobre ganho de capital",
-        oportunidade:
-          "Análise da apuração do Imposto de Renda incidente sobre ganho de capital.",
+        oportunidade: "Análise da apuração do Imposto de Renda incidente sobre ganho de capital.",
         paraQuem: "Pessoas que venderam imóveis ou outros bens com lucro.",
         analise:
           "Verificamos a operação realizada, os valores envolvidos e a forma de apuração do ganho de capital.",
@@ -177,8 +175,7 @@ export const TESE_CATEGORIES: TeseCategoria[] = [
         title: "Exclusão do ICMS da base do PIS/COFINS",
         oportunidade:
           "Análise da exclusão do ICMS da base de cálculo do PIS e da COFINS e da possibilidade de recuperação de valores.",
-        paraQuem:
-          "Empresas do comércio e da indústria tributadas pelo Lucro Real ou Presumido.",
+        paraQuem: "Empresas do comércio e da indústria tributadas pelo Lucro Real ou Presumido.",
         analise:
           "Analisamos a tributação da empresa e os períodos pertinentes para verificar eventual possibilidade de recuperação.",
         ctaLabel: "Quero verificar minha empresa",
@@ -285,8 +282,7 @@ export const TESE_CATEGORIES: TeseCategoria[] = [
         id: "revisao-das-bases-de-calculo-de-itcmd-itbi-e-itr",
         numero: 22,
         title: "Revisão das bases de cálculo de ITCMD, ITBI e ITR",
-        oportunidade:
-          "Análise de questões relacionadas às bases de cálculo do ITCMD, ITBI e ITR.",
+        oportunidade: "Análise de questões relacionadas às bases de cálculo do ITCMD, ITBI e ITR.",
         paraQuem: "Pessoas envolvidas em inventário, compra de imóvel ou doação.",
         analise:
           "Os documentos da operação e a base de cálculo utilizada são analisados para verificar eventual possibilidade de revisão.",

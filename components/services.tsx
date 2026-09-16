@@ -73,12 +73,16 @@ export default function Services() {
                 Foco de atuação
               </div>
               <div>
-                <h2 className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}>
-                  Direito tributário como núcleo da atuação, com apoio jurídico complementar para a operação.
+                <h2
+                  className={`${blogSerif.className} max-w-4xl text-5xl leading-[0.96] text-custom-text-secondary sm:text-6xl`}
+                >
+                  Direito tributário como núcleo da atuação, com apoio jurídico complementar para a
+                  operação.
                 </h2>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-custom-text-primary/84">
-                  O escritório concentra sua proposta em planejamento tributário, execução fiscal e consultoria fiscal.
-                  As demais áreas entram quando ajudam a resolver o caso com mais contexto e menor risco.
+                  O escritório concentra sua proposta em planejamento tributário, execução fiscal e
+                  consultoria fiscal. As demais áreas entram quando ajudam a resolver o caso com
+                  mais contexto e menor risco.
                 </p>
               </div>
             </div>
@@ -87,9 +91,15 @@ export default function Services() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e7cfb3] text-[#7f5b39]">
                 <primaryService.icon className="h-7 w-7" />
               </div>
-              <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">Foco principal</p>
-              <h3 className={`${blogSerif.className} mt-3 text-4xl leading-tight`}>{primaryService.title}</h3>
-              <p className="mt-4 text-base leading-8 text-slate-700">{primaryService.description}</p>
+              <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7f5b39]">
+                Foco principal
+              </p>
+              <h3 className={`${blogSerif.className} mt-3 text-4xl leading-tight`}>
+                {primaryService.title}
+              </h3>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                {primaryService.description}
+              </p>
               <div className="mt-6 space-y-3">
                 {primaryService.features.map((feature) => (
                   <TrackedLink
@@ -105,7 +115,10 @@ export default function Services() {
                   </TrackedLink>
                 ))}
               </div>
-              <Button asChild className="mt-7 w-full rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319] sm:w-auto">
+              <Button
+                asChild
+                className="mt-7 w-full rounded-full bg-[#1b2028] px-6 text-[#f8f0df] hover:bg-[#0f1319] sm:w-auto"
+              >
                 <TrackedLink
                   href={TESES_PATH}
                   ctaLabel="Ver as 39 teses e oportunidades tributárias"
@@ -143,7 +156,9 @@ export default function Services() {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-custom-text-primary/16 text-custom-text-primary">
                     <service.icon className="h-5 w-5" />
                   </span>
-                  <span className={`${blogSerif.className} text-xl leading-tight text-custom-text-secondary sm:text-2xl`}>
+                  <span
+                    className={`${blogSerif.className} text-xl leading-tight text-custom-text-secondary sm:text-2xl`}
+                  >
                     {service.title}
                   </span>
                 </span>
@@ -153,10 +168,14 @@ export default function Services() {
           </div>
 
           <div className="mt-12 rounded-[1.8rem] border border-custom-text-primary/12 bg-black/12 px-6 py-7">
-            <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">Leitura da casa</p>
-            <p className={`${blogSerif.className} mt-3 max-w-5xl text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}>
-              Se a demanda mistura cobrança fiscal, contrato, societário ou passivo trabalhista, a análise começa pelo
-              tributário e integra o restante do caso no mesmo fluxo.
+            <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/60">
+              Leitura da casa
+            </p>
+            <p
+              className={`${blogSerif.className} mt-3 max-w-5xl text-3xl leading-tight text-custom-text-secondary sm:text-4xl`}
+            >
+              Se a demanda mistura cobrança fiscal, contrato, societário ou passivo trabalhista, a
+              análise começa pelo tributário e integra o restante do caso no mesmo fluxo.
             </p>
             <TrackedLink
               href="/areas/direito-tributario"

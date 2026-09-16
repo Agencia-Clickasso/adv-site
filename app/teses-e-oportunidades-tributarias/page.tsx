@@ -77,9 +77,10 @@ export default function TesesPage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-custom-text-primary/88 sm:text-lg">
-              Reunimos as frentes de análise que o escritório acompanha com mais frequência — de contribuições
-              previdenciárias e imposto de renda a PIS/COFINS, ICMS, tributos patrimoniais, planejamento tributário e
-              defesa fiscal. Cada oportunidade depende de análise individual da documentação e do caso concreto.
+              Reunimos as frentes de análise que o escritório acompanha com mais frequência — de
+              contribuições previdenciárias e imposto de renda a PIS/COFINS, ICMS, tributos
+              patrimoniais, planejamento tributário e defesa fiscal. Cada oportunidade depende de
+              análise individual da documentação e do caso concreto.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -100,7 +101,9 @@ export default function TesesPage() {
                 </p>
               </div>
               <div className="rounded-[1.5rem] border border-custom-text-primary/10 bg-black/15 p-5">
-                <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>1 a 1</div>
+                <div className={`${blogSerif.className} text-3xl text-custom-text-secondary`}>
+                  1 a 1
+                </div>
                 <p className="mt-2 text-sm uppercase tracking-[0.22em] text-custom-text-primary/68">
                   Análise individual do caso
                 </p>
@@ -112,7 +115,11 @@ export default function TesesPage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8"
+              >
                 <TrackedLink
                   href={buildWhatsAppUrl(
                     "Olá, vim pelo site e quero entender qual oportunidade tributária se aplica ao meu caso."
@@ -142,7 +149,9 @@ export default function TesesPage() {
             {TESE_CATEGORIES.map((categoria) => (
               <section key={categoria.id} id={categoria.id} className="scroll-mt-24">
                 <div className="flex flex-wrap items-end justify-between gap-4 border-b border-custom-text-primary/12 pb-5">
-                  <h2 className={`${blogSerif.className} text-3xl text-custom-text-secondary sm:text-4xl`}>
+                  <h2
+                    className={`${blogSerif.className} text-3xl text-custom-text-secondary sm:text-4xl`}
+                  >
                     {categoria.title}
                   </h2>
                   <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/55">
@@ -166,7 +175,9 @@ export default function TesesPage() {
                 <AlertTriangle className="h-5 w-5" />
               </span>
               <div>
-                <h2 className={`${blogSerif.className} text-2xl text-custom-text-secondary sm:text-3xl`}>
+                <h2
+                  className={`${blogSerif.className} text-2xl text-custom-text-secondary sm:text-3xl`}
+                >
                   {TESE_DISCLAIMER.title}
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-custom-text-primary/80 sm:text-base sm:leading-8">
@@ -180,15 +191,22 @@ export default function TesesPage() {
           </section>
 
           <section className="mt-16 rounded-[2rem] border border-custom-text-primary/15 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-6 text-center shadow-[0_32px_120px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:p-10">
-            <h2 className={`${blogSerif.className} text-3xl text-custom-text-secondary sm:text-4xl`}>
+            <h2
+              className={`${blogSerif.className} text-3xl text-custom-text-secondary sm:text-4xl`}
+            >
               Não sabe qual tese se aplica ao seu caso?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-custom-text-primary/85">
-              O primeiro passo é um diagnóstico técnico. A partir da operação, dos documentos e do histórico fiscal, o
-              escritório indica o que faz sentido analisar — sem promessa de resultado.
+              O primeiro passo é um diagnóstico técnico. A partir da operação, dos documentos e do
+              histórico fiscal, o escritório indica o que faz sentido analisar — sem promessa de
+              resultado.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button asChild size="lg" className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full bg-custom-text-primary px-6 text-custom-bg-primary hover:bg-custom-text-secondary sm:px-8"
+              >
                 <TrackedLink
                   href={buildWhatsAppUrl(
                     "Olá, vim pelo site e quero um diagnóstico sobre as oportunidades tributárias do meu caso."

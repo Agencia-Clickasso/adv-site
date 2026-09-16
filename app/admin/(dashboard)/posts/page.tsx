@@ -26,10 +26,14 @@ export default async function AdminPostsPage({ searchParams }: PostsPageProps) {
   return (
     <div className="space-y-4">
       {error && (
-        <div className="rounded-xl border border-red-400/40 bg-red-500/10 p-3 text-sm text-red-200">{error}</div>
+        <div className="rounded-xl border border-red-400/40 bg-red-500/10 p-3 text-sm text-red-200">
+          {error}
+        </div>
       )}
       {success && (
-        <div className="rounded-xl border border-green-400/40 bg-green-500/10 p-3 text-sm text-green-200">{success}</div>
+        <div className="rounded-xl border border-green-400/40 bg-green-500/10 p-3 text-sm text-green-200">
+          {success}
+        </div>
       )}
 
       {!isTursoConfigured() ? (
@@ -77,9 +81,7 @@ export default async function AdminPostsPage({ searchParams }: PostsPageProps) {
                     </span>
                   </td>
                   <td className="px-4 py-3">{post.category}</td>
-                  <td className="px-4 py-3">
-                    {new Date(post.updatedAt).toLocaleString("pt-BR")}
-                  </td>
+                  <td className="px-4 py-3">{new Date(post.updatedAt).toLocaleString("pt-BR")}</td>
                   <td className="px-4 py-3">
                     <div className="flex gap-2">
                       <Link
