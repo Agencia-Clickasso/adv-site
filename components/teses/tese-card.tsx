@@ -11,12 +11,8 @@ type TeseCardProps = {
 export default function TeseCard({ tese }: TeseCardProps) {
   return (
     <article className="home-panel flex h-full flex-col rounded-[1.7rem] p-6">
-      <p className="text-xs uppercase tracking-[0.24em] text-custom-text-primary/58">
-        Tese {String(tese.numero).padStart(2, "0")}
-      </p>
-
       <h3
-        className={`${blogSerif.className} mt-3 text-2xl leading-tight text-custom-text-secondary sm:text-[1.75rem]`}
+        className={`${blogSerif.className} text-2xl leading-tight text-custom-text-secondary sm:text-[1.75rem]`}
       >
         {tese.title}
       </h3>

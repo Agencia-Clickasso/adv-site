@@ -7,11 +7,6 @@ describe("catálogo de teses", () => {
     expect(ALL_TESES).toHaveLength(39)
   })
 
-  it("numera as teses de 1 a 39 sem repetição", () => {
-    const numeros = ALL_TESES.map((tese) => tese.numero)
-    expect(numeros).toEqual(Array.from({ length: 39 }, (_, index) => index + 1))
-  })
-
   it("usa ids únicos em formato de slug", () => {
     const ids = ALL_TESES.map((tese) => tese.id)
     expect(new Set(ids).size).toBe(ids.length)
